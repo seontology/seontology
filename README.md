@@ -1,6 +1,6 @@
 ![WordLift Logo](img/220px-Wl-logo-horizontal.png)
 
-# SEOntology - Ontology Project
+# SEOntology
 
 ## Description
 
@@ -66,3 +66,6 @@ We use [Semantic Versioning](http://semver.org/) for this project.
 ## Documentation
 
 Detailed documentation will be soon available.
+
+## License
+This project is licensed under the MIT [LICENSE] - see the LICENSE.md file for details.
