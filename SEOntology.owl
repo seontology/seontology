@@ -199,8 +199,20 @@
         <Class IRI="#Image"/>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="https://schema.org/Person"/>
+        <Class IRI="#Author"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="https://schema.org/WebPage"/>
         <Class IRI="#WebPage"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#E_E_A_T"/>
+        <Class IRI="#Organization"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Organization"/>
+        <Class IRI="#Publisher"/>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#AnchorText"/>
