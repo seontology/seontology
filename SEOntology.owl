@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://purl.archive.org/seokg/"
+     xml:base="https://purl.archive.org/seovoc/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://purl.archive.org/seokg/"
-     versionIRI="https://purl.archive.org/seokg/1.0.0/">
+     ontologyIRI="https://purl.archive.org/seovoc/"
+     versionIRI="https://purl.archive.org/seovoc/1.0.0/">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -250,7 +251,7 @@
         <DataProperty IRI="#7DaysImpressions"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI=""/>
+        <NamedIndividual IRI="https://purl.archive.org/seokg/"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -341,7 +342,7 @@
     </SubClassOf>
     <ClassAssertion>
         <Class abbreviatedIRI="voaf:Vocabulary"/>
-        <NamedIndividual IRI=""/>
+        <NamedIndividual IRI="https://purl.archive.org/seokg/"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="owl:hasProperty"/>
@@ -699,7 +700,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#SeoKeyword</IRI>
-        <IRI></IRI>
+        <IRI>https://purl.archive.org/seokg/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -714,7 +715,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#WebPage</IRI>
-        <IRI></IRI>
+        <IRI>https://purl.archive.org/seokg/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
