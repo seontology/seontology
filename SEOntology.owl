@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://purl.archive.org/seovoc/"
+     xml:base="https://w3id.org/seovoc/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://purl.archive.org/seovoc/"
-     versionIRI="https://purl.archive.org/seovoc/1.0.0/">
+     ontologyIRI="https://w3id.org/seovoc/">
     <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -43,11 +42,14 @@
         <Literal>SEO Vocabulary</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty IRI="#extends"/>
+        <AnnotationProperty IRI="extends"/>
         <AbbreviatedIRI>schema:</AbbreviatedIRI>
     </Annotation>
     <Declaration>
         <Class abbreviatedIRI="voaf:Vocabulary"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:Thing"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="schema:WebPage"/>
@@ -59,199 +61,232 @@
         <Class abbreviatedIRI="owl:imports"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AnchorText"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Author"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Backlink"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Crawlability"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#E_E_A_T"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EmailStrategy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Image"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Internal_Links"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Menu"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MetaDescription"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MetaTitle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Organization"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Publisher"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Query"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Schema"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SeoKeyword"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SocialMedia"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SocialShare"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UserExperienceElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#User_Experience"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Video"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WebPage"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="https://schema.org/ImageObject"/>
     </Declaration>
     <Declaration>
         <Class IRI="https://schema.org/Person"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#containsImage"/>
+        <Class IRI="AnchorText"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#containsVideo"/>
+        <Class IRI="Author"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#followsEmailStrategy"/>
+        <Class IRI="Backlink"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAuthor"/>
+        <Class IRI="Crawlability"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasBacklink"/>
+        <Class IRI="E_E_A_T"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMenu"/>
+        <Class IRI="EmailStrategy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMetaDescription"/>
+        <Class IRI="Image"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMetaTitle"/>
+        <Class IRI="Internal_Links"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPublisher"/>
+        <Class IRI="Menu"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasQuery"/>
+        <Class IRI="MetaDescription"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSocialShare"/>
+        <Class IRI="MetaTitle"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#implementsUserExperience"/>
+        <Class IRI="Organization"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#influencedByQuery"/>
+        <Class IRI="Publisher"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#seoKeywords"/>
+        <Class IRI="Query"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesAnchorText"/>
+        <Class IRI="Schema"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSchema"/>
+        <Class IRI="SeoKeyword"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSocialMedia"/>
+        <Class IRI="SocialMedia"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#anchorTextContent"/>
+        <Class IRI="SocialShare"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ariaHidden"/>
+        <Class IRI="Thing"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#bounceRate"/>
+        <Class IRI="UserExperienceElement"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#clickDepth"/>
+        <Class IRI="User_Experience"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#fontSize"/>
+        <Class IRI="Video"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasARIAAttribute"/>
+        <Class IRI="WebPage"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasDuplicateCodeInSidebar"/>
+        <ObjectProperty IRI="containsImage"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasOptimizedImage"/>
+        <ObjectProperty IRI="containsVideo"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasUniqueContent"/>
+        <ObjectProperty IRI="followsEmailStrategy"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#isCrawlable"/>
+        <ObjectProperty IRI="hasAuthor"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#metaDescriptionContent"/>
+        <ObjectProperty IRI="hasBacklink"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#metaTitleContent"/>
+        <ObjectProperty IRI="hasMenu"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#pageLoadTime"/>
+        <ObjectProperty IRI="hasMetaDescription"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#publishingDate"/>
+        <ObjectProperty IRI="hasMetaTitle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#28DaysClicks"/>
+        <ObjectProperty IRI="hasPublisher"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#28DaysCtr"/>
+        <ObjectProperty IRI="hasQuery"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#28DaysImpressions"/>
+        <ObjectProperty IRI="hasSocialShare"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#3MonthsClicks"/>
+        <ObjectProperty IRI="implementsUserExperience"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#3MonthsCtr"/>
+        <ObjectProperty IRI="influencedByQuery"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#3MonthsImpressions"/>
+        <ObjectProperty IRI="seoKeywordOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#7DaysClicks"/>
+        <ObjectProperty IRI="seoKeywords"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#7DaysCtr"/>
+        <ObjectProperty IRI="usesAnchorText"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#7DaysImpressions"/>
+        <ObjectProperty IRI="usesSchema"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="https://purl.archive.org/seokg/"/>
+        <ObjectProperty IRI="usesSocialMedia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="anchorTextContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="ariaHidden"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="bounceRate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="clickDepth"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="dateCreated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="fontSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasARIAAttribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasDuplicateCodeInSidebar"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasOptimizedImage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasUniqueContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="isCrawlable"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="metaDescriptionContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="metaTitleContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="pageLoadTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="publishingDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="source"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="28DaysClicks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="28DaysCtr"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="28DaysImpressions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="28DaysPosition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="28DaysScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="3MonthsClicks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="3MonthsCtr"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="3MonthsImpressions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="3MonthsPosition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="3MonthsScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="7DaysClicks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="7DaysCtr"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="7DaysImpressions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="7DaysPosition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="7DaysScore"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI=""/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -278,504 +313,719 @@
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#extends"/>
+        <AnnotationProperty IRI="extends"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#Author"/>
-        <Class IRI="https://schema.org/Person"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#E_E_A_T"/>
-        <Class IRI="#Organization"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Image"/>
         <Class IRI="https://schema.org/ImageObject"/>
+        <Class IRI="Image"/>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Organization"/>
-        <Class IRI="#Publisher"/>
+        <Class IRI="https://schema.org/Person"/>
+        <Class IRI="Author"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="E_E_A_T"/>
+        <Class IRI="Organization"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="Organization"/>
+        <Class IRI="Publisher"/>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#AnchorText"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="AnchorText"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Author"/>
-        <Class IRI="#E_E_A_T"/>
+        <Class IRI="Author"/>
+        <Class IRI="E_E_A_T"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Backlink"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="Backlink"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Menu"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="Menu"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MetaDescription"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="MetaDescription"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MetaTitle"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="MetaTitle"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Organization"/>
-        <Class IRI="#E_E_A_T"/>
+        <Class IRI="Organization"/>
+        <Class IRI="E_E_A_T"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Publisher"/>
-        <Class IRI="#E_E_A_T"/>
+        <Class IRI="Publisher"/>
+        <Class IRI="E_E_A_T"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Query"/>
-        <Class IRI="#Internal_Links"/>
+        <Class IRI="Query"/>
+        <Class IRI="Internal_Links"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SocialShare"/>
-        <Class IRI="#SocialMedia"/>
+        <Class IRI="SocialShare"/>
+        <Class IRI="SocialMedia"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#UserExperienceElement"/>
-        <Class IRI="#User_Experience"/>
+        <Class IRI="UserExperienceElement"/>
+        <Class IRI="User_Experience"/>
     </SubClassOf>
     <ClassAssertion>
         <Class abbreviatedIRI="voaf:Vocabulary"/>
-        <NamedIndividual IRI="https://purl.archive.org/seokg/"/>
+        <NamedIndividual IRI=""/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="owl:hasProperty"/>
-        <AnonymousIndividual nodeID="_:genid2147483648"/>
+        <AnonymousIndividual nodeID="_:genid2147483654"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="owl:imports"/>
-        <AnonymousIndividual nodeID="_:genid2147483649"/>
+        <AnonymousIndividual nodeID="_:genid2147483655"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="owl:hasProperty"/>
-        <AnonymousIndividual nodeID="_:genid2147483650"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
     </ClassAssertion>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#containsImage"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="containsImage"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#containsVideo"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="containsVideo"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#followsEmailStrategy"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="followsEmailStrategy"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasAuthor"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasBacklink"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasBacklink"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMenu"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasMenu"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMetaDescription"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasMetaDescription"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMetaTitle"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasMetaTitle"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasPublisher"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasQuery"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSocialShare"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="hasSocialShare"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#implementsUserExperience"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="implementsUserExperience"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#influencedByQuery"/>
-        <Class IRI="#AnchorText"/>
+        <ObjectProperty IRI="influencedByQuery"/>
+        <Class IRI="AnchorText"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#seoKeywords"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="seoKeywordOf"/>
+        <Class IRI="SeoKeyword"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesAnchorText"/>
-        <Class IRI="#Backlink"/>
+        <ObjectProperty IRI="seoKeywords"/>
+        <Class IRI="Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSchema"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="seoKeywords"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesSocialMedia"/>
-        <Class IRI="#WebPage"/>
+        <ObjectProperty IRI="usesAnchorText"/>
+        <Class IRI="Backlink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesSchema"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesSocialMedia"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#containsImage"/>
-        <Class IRI="#Image"/>
+        <ObjectProperty IRI="containsImage"/>
+        <Class IRI="Image"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#containsVideo"/>
-        <Class IRI="#Video"/>
+        <ObjectProperty IRI="containsVideo"/>
+        <Class IRI="Video"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#followsEmailStrategy"/>
-        <Class IRI="#EmailStrategy"/>
+        <ObjectProperty IRI="followsEmailStrategy"/>
+        <Class IRI="EmailStrategy"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <Class IRI="#Author"/>
+        <ObjectProperty IRI="hasAuthor"/>
+        <Class IRI="Author"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasBacklink"/>
-        <Class IRI="#Backlink"/>
+        <ObjectProperty IRI="hasBacklink"/>
+        <Class IRI="Backlink"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMenu"/>
-        <Class IRI="#Menu"/>
+        <ObjectProperty IRI="hasMenu"/>
+        <Class IRI="Menu"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMetaDescription"/>
-        <Class IRI="#MetaDescription"/>
+        <ObjectProperty IRI="hasMetaDescription"/>
+        <Class IRI="MetaDescription"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMetaTitle"/>
-        <Class IRI="#MetaTitle"/>
+        <ObjectProperty IRI="hasMetaTitle"/>
+        <Class IRI="MetaTitle"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPublisher"/>
-        <Class IRI="#Publisher"/>
+        <ObjectProperty IRI="hasPublisher"/>
+        <Class IRI="Publisher"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#Query"/>
+        <ObjectProperty IRI="hasQuery"/>
+        <Class IRI="Query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSocialShare"/>
-        <Class IRI="#SocialShare"/>
+        <ObjectProperty IRI="hasSocialShare"/>
+        <Class IRI="SocialShare"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#implementsUserExperience"/>
-        <Class IRI="#UserExperienceElement"/>
+        <ObjectProperty IRI="implementsUserExperience"/>
+        <Class IRI="UserExperienceElement"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#influencedByQuery"/>
-        <Class IRI="#Query"/>
+        <ObjectProperty IRI="influencedByQuery"/>
+        <Class IRI="Query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#seoKeywords"/>
-        <Class IRI="#SeoKeyword"/>
+        <ObjectProperty IRI="seoKeywordOf"/>
+        <Class IRI="Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesAnchorText"/>
-        <Class IRI="#AnchorText"/>
+        <ObjectProperty IRI="seoKeywords"/>
+        <Class IRI="SeoKeyword"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSchema"/>
-        <Class IRI="#Schema"/>
+        <ObjectProperty IRI="usesAnchorText"/>
+        <Class IRI="AnchorText"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesSocialMedia"/>
-        <Class IRI="#SocialMedia"/>
+        <ObjectProperty IRI="usesSchema"/>
+        <Class IRI="Schema"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesSocialMedia"/>
+        <Class IRI="SocialMedia"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="name"/>
+        <DataProperty IRI="dateCreated"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
-        <DataProperty IRI="#anchorTextContent"/>
-        <Class IRI="#AnchorText"/>
+        <DataProperty IRI="anchorTextContent"/>
+        <Class IRI="AnchorText"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#ariaHidden"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="ariaHidden"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#bounceRate"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="bounceRate"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#clickDepth"/>
-        <Class IRI="#Crawlability"/>
+        <DataProperty IRI="clickDepth"/>
+        <Class IRI="Crawlability"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#clickDepth"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="clickDepth"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#fontSize"/>
-        <Class IRI="#UserExperienceElement"/>
+        <DataProperty IRI="dateCreated"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasARIAAttribute"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="fontSize"/>
+        <Class IRI="UserExperienceElement"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasDuplicateCodeInSidebar"/>
-        <Class IRI="#UserExperienceElement"/>
+        <DataProperty IRI="hasARIAAttribute"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasOptimizedImage"/>
-        <Class IRI="#Image"/>
+        <DataProperty IRI="hasDuplicateCodeInSidebar"/>
+        <Class IRI="UserExperienceElement"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasUniqueContent"/>
-        <Class IRI="#UserExperienceElement"/>
+        <DataProperty IRI="hasOptimizedImage"/>
+        <Class IRI="Image"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#isCrawlable"/>
-        <Class IRI="#Crawlability"/>
+        <DataProperty IRI="hasUniqueContent"/>
+        <Class IRI="UserExperienceElement"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#isCrawlable"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="isCrawlable"/>
+        <Class IRI="Crawlability"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#metaDescriptionContent"/>
-        <Class IRI="#Internal_Links"/>
+        <DataProperty IRI="isCrawlable"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#metaDescriptionContent"/>
-        <Class IRI="#MetaDescription"/>
+        <DataProperty IRI="metaDescriptionContent"/>
+        <Class IRI="Internal_Links"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#metaTitleContent"/>
-        <Class IRI="#Internal_Links"/>
+        <DataProperty IRI="metaDescriptionContent"/>
+        <Class IRI="MetaDescription"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#metaTitleContent"/>
-        <Class IRI="#MetaTitle"/>
+        <DataProperty IRI="metaTitleContent"/>
+        <Class IRI="Internal_Links"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#pageLoadTime"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="metaTitleContent"/>
+        <Class IRI="MetaTitle"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#publishingDate"/>
-        <Class IRI="#WebPage"/>
+        <DataProperty IRI="name"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#28DaysClicks"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="pageLoadTime"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#28DaysCtr"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="publishingDate"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#28DaysImpressions"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="source"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#3MonthsClicks"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="28DaysClicks"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#3MonthsCtr"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="28DaysCtr"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#3MonthsImpressions"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="28DaysImpressions"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#7DaysClicks"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="28DaysScore"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#7DaysCtr"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="3MonthsClicks"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#7DaysImpressions"/>
-        <Class IRI="#SeoKeyword"/>
+        <DataProperty IRI="3MonthsCtr"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="3MonthsImpressions"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="3MonthsPosition"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="3MonthsScore"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="7DaysClicks"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="7DaysCtr"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="7DaysImpressions"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="7DaysPosition"/>
+        <Class IRI="SeoKeyword"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="7DaysScore"/>
+        <Class IRI="SeoKeyword"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#anchorTextContent"/>
+        <DataProperty IRI="anchorTextContent"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#ariaHidden"/>
+        <DataProperty IRI="ariaHidden"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#bounceRate"/>
+        <DataProperty IRI="bounceRate"/>
         <Datatype abbreviatedIRI="xsd:decimal"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#clickDepth"/>
+        <DataProperty IRI="clickDepth"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#fontSize"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasARIAAttribute"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDuplicateCodeInSidebar"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasOptimizedImage"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasUniqueContent"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#isCrawlable"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#metaDescriptionContent"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#metaTitleContent"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#pageLoadTime"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#publishingDate"/>
+        <DataProperty IRI="dateCreated"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#28DaysClicks"/>
+        <DataProperty IRI="fontSize"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasARIAAttribute"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasDuplicateCodeInSidebar"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasOptimizedImage"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasUniqueContent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="isCrawlable"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="metaDescriptionContent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="metaTitleContent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="pageLoadTime"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="publishingDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="source"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="28DaysClicks"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#28DaysCtr"/>
+        <DataProperty IRI="28DaysCtr"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#28DaysImpressions"/>
+        <DataProperty IRI="28DaysImpressions"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#3MonthsClicks"/>
+        <DataProperty IRI="28DaysScore"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="3MonthsClicks"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#3MonthsCtr"/>
+        <DataProperty IRI="3MonthsCtr"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#3MonthsImpressions"/>
+        <DataProperty IRI="3MonthsImpressions"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#7DaysClicks"/>
+        <DataProperty IRI="3MonthsPosition"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="3MonthsScore"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="7DaysClicks"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#7DaysCtr"/>
+        <DataProperty IRI="7DaysCtr"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#7DaysImpressions"/>
+        <DataProperty IRI="7DaysImpressions"/>
         <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="7DaysPosition"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="7DaysScore"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SeoKeyword</IRI>
+        <IRI>SeoKeyword</IRI>
         <Literal xml:lang="en">An SEO Keyword relevant for the connected WebPage.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#SeoKeyword</IRI>
-        <IRI>https://purl.archive.org/seokg/</IRI>
+        <IRI>SeoKeyword</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SeoKeyword</IRI>
+        <IRI>SeoKeyword</IRI>
         <Literal xml:lang="en">SEO Keyword</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#WebPage</IRI>
+        <IRI>Thing</IRI>
+        <Literal xml:lang="en">A Thing that may have a schema:url, hence may have analytics data bound to it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Thing</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Thing</IRI>
+        <Literal xml:lang="en">Thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
+        <IRI>Thing</IRI>
+        <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>WebPage</IRI>
         <Literal xml:lang="en">A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#WebPage</IRI>
-        <IRI>https://purl.archive.org/seokg/</IRI>
+        <IRI>WebPage</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#WebPage</IRI>
+        <IRI>WebPage</IRI>
         <Literal xml:lang="en">WebPage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
-        <IRI>#WebPage</IRI>
+        <IRI>WebPage</IRI>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#seoKeywords</IRI>
-        <Literal xml:lang="en">SEO Keywords</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>dateCreated</IRI>
+        <Literal xml:lang="en">The date/time this keyword analytics data has been extracted and imported in the KG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>dateCreated</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#28DaysClicks</IRI>
+        <IRI>dateCreated</IRI>
+        <Literal xml:lang="en">Date Created</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>name</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>name</IRI>
+        <Literal xml:lang="en">Name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>seoKeywordOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>seoKeywordOf</IRI>
+        <Literal xml:lang="en">SEO Keyword of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>seoKeywords</IRI>
+        <Literal xml:lang="en">SEO Keywords</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>source</IRI>
+        <Literal xml:lang="en">The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>source</IRI>
+        <Literal xml:lang="en">Source</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>28DaysClicks</IRI>
         <Literal xml:lang="en">28 Days Clicks</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#28DaysCtr</IRI>
+        <IRI>28DaysCtr</IRI>
         <Literal xml:lang="en">28 Days CTR</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#28DaysImpressions</IRI>
+        <IRI>28DaysImpressions</IRI>
         <Literal xml:lang="en">28 Days Impressions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>28DaysPosition</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#3MonthsClicks</IRI>
+        <IRI>28DaysPosition</IRI>
+        <Literal xml:lang="en">28 Days Position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>28DaysScore</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>28DaysScore</IRI>
+        <Literal xml:lang="en">28 Days Score</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>3MonthsClicks</IRI>
         <Literal xml:lang="en">3 Months Clicks</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#3MonthsCtr</IRI>
+        <IRI>3MonthsCtr</IRI>
         <Literal xml:lang="en">3 Months CTR</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#3MonthsImpressions</IRI>
+        <IRI>3MonthsImpressions</IRI>
         <Literal xml:lang="en">3 Months Impressions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>3MonthsPosition</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#7DaysClicks</IRI>
+        <IRI>3MonthsPosition</IRI>
+        <Literal xml:lang="en">3 Months Position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>3MonthsScore</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>3MonthsScore</IRI>
+        <Literal xml:lang="en">3 Months Score</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>7DaysClicks</IRI>
         <Literal xml:lang="en">7 Days Clicks</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#7DaysCtr</IRI>
+        <IRI>7DaysCtr</IRI>
         <Literal xml:lang="en">7 Days CTR</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#7DaysImpressions</IRI>
+        <IRI>7DaysImpressions</IRI>
         <Literal xml:lang="en">7 Days Impressions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>7DaysPosition</IRI>
+        <Literal xml:lang="en">The average position for the keyword.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>7DaysPosition</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>7DaysPosition</IRI>
+        <Literal xml:lang="en">7 Days Position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>7DaysScore</IRI>
+        <Literal xml:lang="en">A calculated score ranging from 0.0 to 1.0 to determine the keywords with potential.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>7DaysScore</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>7DaysScore</IRI>
+        <Literal xml:lang="en">7 Days Score</Literal>
     </AnnotationAssertion>
 </Ontology>
 
