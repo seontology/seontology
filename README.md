@@ -1,4 +1,5 @@
-![WordLift Logo](img/220px-Wl-logo-horizontal.png)
+![seontology logo-04](https://github.com/seontology/seontology/assets/154995640/c34a350a-6823-4e5e-94ad-a5d60ccad1f2)
+
 
 # SEOntology
 
