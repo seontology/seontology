@@ -64,6 +64,10 @@ We use [Semantic Versioning](http://semver.org/) for this project.
 - [Thread on X](https://x.com/cyberandy/status/1715853285838430358?s=20)
 - For issues, use the GitHub [issues](link_to_issues_page) page.
 
+## Sponsor
+
+This project is sponsored by [Wordlift](https://www.wordlift.io/), a leading provider of AI-powered solutions for content optimization and knowledge graph creation. Their support enables us to continue developing and maintaining this open-source project, empowering our community with valuable tools and resources.
+
 ## Documentation
 
 Detailed documentation will be soon available.
