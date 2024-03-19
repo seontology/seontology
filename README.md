@@ -66,7 +66,7 @@ We use [Semantic Versioning](http://semver.org/) for this project.
 
 ## Sponsor
 
-This project is sponsored by [Wordlift](https://www.wordlift.io/), a leading provider of AI-powered solutions for content optimization and knowledge graph creation. Their support enables us to continue developing and maintaining this open-source project, empowering our community with valuable tools and resources.
+This project is sponsored by [WordLift](https://www.wordlift.io/), a leading provider of AI-powered solutions for content optimization and knowledge graph creation. Their support enables us to continue developing and maintaining this open-source project, empowering our community with valuable tools and resources.
 
 ## Documentation
 
