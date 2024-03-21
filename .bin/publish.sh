@@ -5,7 +5,7 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 echo "Working in $SCRIPT_DIR..."
 
 INITIAL_HASH=$(cat $SCRIPT_DIR/../seovoc.owx.md5)
-CURRENT_HASH=$(md5sum $SCRIPT_DIR/../seovoc.owx)
+CURRENT_HASH=$(md5sum $SCRIPT_DIR/../seovoc.owx | awk '{printf $1}')
 
 if [[ "$INITIAL_HASH" == "$CURRENT_HASH" ]]; then
     echo "seovoc.owx unchanged." && exit 0
