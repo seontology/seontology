@@ -17,11 +17,12 @@ on:
 
 jobs:
   convert:
-    name: Build with Maven
+    name: Convert
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-    
-     
+
+      - name: Convert
+        run: ./.bin/publish.sh
