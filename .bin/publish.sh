@@ -25,7 +25,7 @@ else
     rm $SCRIPT_DIR/../seovoc.owx.md5 && echo $CURRENT_HASH >$SCRIPT_DIR/../seovoc.owx.md5
 
     git add -A
-    git commit -m "update seovoc.owl and seovoc.ttl and hash file" -a
+    git commit -m "automatically update seovoc.owl, seovoc.ttl and seovoc.owx.md5 from seovoc.owx" -a
 
     echo "*** Pushing changes..."
     git push
