@@ -1,477 +1,460 @@
-@prefix : <https://purl.archive.org/seovoc/> .
+@prefix : <https://w3id.org/seovoc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix seo: <https://wordlift.io/ontology/SEO_Ontology#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://purl.archive.org/seovoc/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix schema: <http://schema.org/> .
+@base <https://w3id.org/seovoc/> .
 
-<https://purl.archive.org/seovoc/> rdf:type owl:Ontology ;
-                                    owl:versionIRI <https://purl.archive.org/seovoc/1.0.0/> ;
-                                    <http://purl.org/dc/elements/1.1/contributors> "Andrea Volpini, David Riccitelli" ;
-                                    <http://purl.org/dc/elements/1.1/creator> <https://wordlift.io> ;
-                                    <http://purl.org/dc/elements/1.1/description> "The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate."@en ;
-                                    <http://purl.org/dc/elements/1.1/identifier> "SEO Vocabulary" ;
-                                    <http://purl.org/dc/elements/1.1/issued> "2023-10-29T00:00:00Z" ;
-                                    <http://purl.org/dc/elements/1.1/title> "SEO Vocabulary" ;
-                                    <https://purl.archive.org/seovoc/#extends> <http://schema.org/> .
+<https://w3id.org/seovoc/> rdf:type owl:Ontology ;
+                            dc:contributors "Andrea Volpini, David Riccitelli" ;
+                            dc:creator <https://wordlift.io> ;
+                            dc:description "The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate."@en ;
+                            dc:identifier "SEO Vocabulary" ;
+                            dc:issued "2023-10-29T00:00:00Z" ;
+                            dc:title "SEO Vocabulary" ;
+                            :extends schema: .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/contributors
-<http://purl.org/dc/elements/1.1/contributors> rdf:type owl:AnnotationProperty .
+dc:contributors rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+dc:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/identifier
-<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty .
+dc:identifier rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/issued
-<http://purl.org/dc/elements/1.1/issued> rdf:type owl:AnnotationProperty .
+dc:issued rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+dc:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.org/license
-<http://schema.org/license> rdf:type owl:AnnotationProperty .
+schema:license rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
-<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
+skos:exactMatch rdf:type owl:AnnotationProperty .
 
 
-###  https://purl.archive.org/seovoc/#extends
-<https://purl.archive.org/seovoc/#extends> rdf:type owl:AnnotationProperty .
+###  https://w3id.org/seovoc/extends
+:extends rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://purl.archive.org/seovoc/#containsImage
-<https://purl.archive.org/seovoc/#containsImage> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                 rdfs:range <https://purl.archive.org/seovoc/#Image> .
+###  https://w3id.org/seovoc/containsImage
+:containsImage rdf:type owl:ObjectProperty ;
+               rdfs:domain :WebPage ;
+               rdfs:range :Image .
 
 
-###  https://purl.archive.org/seovoc/#containsVideo
-<https://purl.archive.org/seovoc/#containsVideo> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                 rdfs:range <https://purl.archive.org/seovoc/#Video> .
+###  https://w3id.org/seovoc/containsVideo
+:containsVideo rdf:type owl:ObjectProperty ;
+               rdfs:domain :WebPage ;
+               rdfs:range :Video .
 
 
-###  https://purl.archive.org/seovoc/#followsEmailStrategy
-<https://purl.archive.org/seovoc/#followsEmailStrategy> rdf:type owl:ObjectProperty ;
-                                                        rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                        rdfs:range <https://purl.archive.org/seovoc/#EmailStrategy> .
+###  https://w3id.org/seovoc/hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:domain :WebPage ;
+           rdfs:range :Author .
 
 
-###  https://purl.archive.org/seovoc/#hasAuthor
-<https://purl.archive.org/seovoc/#hasAuthor> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                             rdfs:range <https://purl.archive.org/seovoc/#Author> .
+###  https://w3id.org/seovoc/hasPublisher
+:hasPublisher rdf:type owl:ObjectProperty ;
+              rdfs:domain :WebPage ;
+              rdfs:range :Publisher .
 
 
-###  https://purl.archive.org/seovoc/#hasBacklink
-<https://purl.archive.org/seovoc/#hasBacklink> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                               rdfs:range <https://purl.archive.org/seovoc/#Backlink> .
+###  https://w3id.org/seovoc/hasQuery
+:hasQuery rdf:type owl:ObjectProperty ;
+          rdfs:domain :WebPage ;
+          rdfs:range :Query .
 
 
-###  https://purl.archive.org/seovoc/#hasMenu
-<https://purl.archive.org/seovoc/#hasMenu> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                           rdfs:range <https://purl.archive.org/seovoc/#Menu> .
+###  https://w3id.org/seovoc/hasURL
+:hasURL rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ,
+                 owl:InverseFunctionalProperty ;
+        rdfs:domain :WebPage ;
+        rdfs:range :URL .
 
 
-###  https://purl.archive.org/seovoc/#hasMetaDescription
-<https://purl.archive.org/seovoc/#hasMetaDescription> rdf:type owl:ObjectProperty ;
-                                                      rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                      rdfs:range <https://purl.archive.org/seovoc/#MetaDescription> .
+###  https://w3id.org/seovoc/influencedByQuery
+:influencedByQuery rdf:type owl:ObjectProperty ;
+                   rdfs:domain :AnchorText ;
+                   rdfs:range :Query .
 
 
-###  https://purl.archive.org/seovoc/#hasMetaTitle
-<https://purl.archive.org/seovoc/#hasMetaTitle> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                rdfs:range <https://purl.archive.org/seovoc/#MetaTitle> .
-
-
-###  https://purl.archive.org/seovoc/#hasPublisher
-<https://purl.archive.org/seovoc/#hasPublisher> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                rdfs:range <https://purl.archive.org/seovoc/#Publisher> .
-
-
-###  https://purl.archive.org/seovoc/#hasQuery
-<https://purl.archive.org/seovoc/#hasQuery> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                            rdfs:range <https://purl.archive.org/seovoc/#Query> .
-
-
-###  https://purl.archive.org/seovoc/#hasSocialShare
-<https://purl.archive.org/seovoc/#hasSocialShare> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                  rdfs:range <https://purl.archive.org/seovoc/#SocialShare> .
-
-
-###  https://purl.archive.org/seovoc/#implementsUserExperience
-<https://purl.archive.org/seovoc/#implementsUserExperience> rdf:type owl:ObjectProperty ;
-                                                            rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                            rdfs:range <https://purl.archive.org/seovoc/#UserExperienceElement> .
-
-
-###  https://purl.archive.org/seovoc/#influencedByQuery
-<https://purl.archive.org/seovoc/#influencedByQuery> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <https://purl.archive.org/seovoc/#AnchorText> ;
-                                                     rdfs:range <https://purl.archive.org/seovoc/#Query> .
-
-
-###  https://purl.archive.org/seovoc/#seoKeywords
-<https://purl.archive.org/seovoc/#seoKeywords> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                               rdfs:range <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                               rdfs:label "SEO Keywords"@en .
-
-
-###  https://purl.archive.org/seovoc/#usesAnchorText
-<https://purl.archive.org/seovoc/#usesAnchorText> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <https://purl.archive.org/seovoc/#Backlink> ;
-                                                  rdfs:range <https://purl.archive.org/seovoc/#AnchorText> .
-
-
-###  https://purl.archive.org/seovoc/#usesSchema
-<https://purl.archive.org/seovoc/#usesSchema> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                              rdfs:range <https://purl.archive.org/seovoc/#Schema> .
-
-
-###  https://purl.archive.org/seovoc/#usesSocialMedia
-<https://purl.archive.org/seovoc/#usesSocialMedia> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                   rdfs:range <https://purl.archive.org/seovoc/#SocialMedia> .
+###  https://w3id.org/seovoc/usesSchema
+:usesSchema rdf:type owl:ObjectProperty ;
+            rdfs:domain :WebPage ;
+            rdfs:range :Schema .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://purl.archive.org/seovoc/#anchorTextContent
-<https://purl.archive.org/seovoc/#anchorTextContent> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <https://purl.archive.org/seovoc/#AnchorText> ;
-                                                     rdfs:range xsd:string .
+###  https://w3id.org/seovoc/anchorValue
+:anchorValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain :AnchorText ;
+             rdfs:range xsd:string .
 
 
-###  https://purl.archive.org/seovoc/#ariaHidden
-<https://purl.archive.org/seovoc/#ariaHidden> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                              rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/ariaAttribute
+:ariaAttribute rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WebPage ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "as a replacement for hasARIAAttribute" .
 
 
-###  https://purl.archive.org/seovoc/#bounceRate
-<https://purl.archive.org/seovoc/#bounceRate> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                              rdfs:range xsd:decimal .
+###  https://w3id.org/seovoc/ariaHidden
+:ariaHidden rdf:type owl:DatatypeProperty ;
+            rdfs:domain :WebPage ;
+            rdfs:range xsd:boolean .
 
 
-###  https://purl.archive.org/seovoc/#clickDepth
-<https://purl.archive.org/seovoc/#clickDepth> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://purl.archive.org/seovoc/#Crawlability> ,
-                                                          <https://purl.archive.org/seovoc/#WebPage> ;
-                                              rdfs:range xsd:integer .
+###  https://w3id.org/seovoc/bounceRate
+:bounceRate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :WebPage ;
+            rdfs:range xsd:decimal .
 
 
-###  https://purl.archive.org/seovoc/#fontSize
-<https://purl.archive.org/seovoc/#fontSize> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <https://purl.archive.org/seovoc/#UserExperienceElement> ;
-                                            rdfs:range xsd:decimal .
+###  https://w3id.org/seovoc/clickDepth
+:clickDepth rdf:type owl:DatatypeProperty ;
+            rdfs:domain :WebPage ;
+            rdfs:range xsd:integer .
 
 
-###  https://purl.archive.org/seovoc/#hasARIAAttribute
-<https://purl.archive.org/seovoc/#hasARIAAttribute> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                    rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/clicks28Days
+:clicks28Days rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Query ;
+              rdfs:range xsd:long ;
+              rdfs:label "clicks28Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#hasDuplicateCodeInSidebar
-<https://purl.archive.org/seovoc/#hasDuplicateCodeInSidebar> rdf:type owl:DatatypeProperty ;
-                                                             rdfs:domain <https://purl.archive.org/seovoc/#UserExperienceElement> ;
-                                                             rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/clicks3Months
+:clicks3Months rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Query ;
+               rdfs:range xsd:long ;
+               rdfs:label "clicks3Months"@en .
 
 
-###  https://purl.archive.org/seovoc/#hasOptimizedImage
-<https://purl.archive.org/seovoc/#hasOptimizedImage> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <https://purl.archive.org/seovoc/#Image> ;
-                                                     rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/clicks7Days
+:clicks7Days rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Query ;
+             rdfs:range xsd:long ;
+             rdfs:label "clicks7Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#hasUniqueContent
-<https://purl.archive.org/seovoc/#hasUniqueContent> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <https://purl.archive.org/seovoc/#UserExperienceElement> ;
-                                                    rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/ctr28Days
+:ctr28Days rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Query ;
+           rdfs:range xsd:double ;
+           rdfs:label "ctr28Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#isCrawlable
-<https://purl.archive.org/seovoc/#isCrawlable> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <https://purl.archive.org/seovoc/#Crawlability> ,
-                                                           <https://purl.archive.org/seovoc/#WebPage> ;
-                                               rdfs:range xsd:boolean .
+###  https://w3id.org/seovoc/ctr3Months
+:ctr3Months rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Query ;
+            rdfs:range xsd:double ;
+            rdfs:label "ctr3Months"@en .
 
 
-###  https://purl.archive.org/seovoc/#metaDescriptionContent
-<https://purl.archive.org/seovoc/#metaDescriptionContent> rdf:type owl:DatatypeProperty ;
-                                                          rdfs:domain <https://purl.archive.org/seovoc/#Internal_Links> ,
-                                                                      <https://purl.archive.org/seovoc/#MetaDescription> ;
-                                                          rdfs:range xsd:string .
+###  https://w3id.org/seovoc/ctr7Days
+:ctr7Days rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Query ;
+          rdfs:range xsd:double ;
+          rdfs:label "ctr7Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#metaTitleContent
-<https://purl.archive.org/seovoc/#metaTitleContent> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <https://purl.archive.org/seovoc/#Internal_Links> ,
-                                                                <https://purl.archive.org/seovoc/#MetaTitle> ;
-                                                    rdfs:range xsd:string .
+###  https://w3id.org/seovoc/dateCreated
+:dateCreated rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Query ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "The date/time this keyword analytics data has been extracted and imported in the KG."@en ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "dateCreated"@en .
 
 
-###  https://purl.archive.org/seovoc/#pageLoadTime
-<https://purl.archive.org/seovoc/#pageLoadTime> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                rdfs:range xsd:decimal .
+###  https://w3id.org/seovoc/impressions28Days
+:impressions28Days rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Query ;
+                   rdfs:range xsd:long ;
+                   rdfs:label "impressions28Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#publishingDate
-<https://purl.archive.org/seovoc/#publishingDate> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain <https://purl.archive.org/seovoc/#WebPage> ;
-                                                  rdfs:range xsd:dateTime .
+###  https://w3id.org/seovoc/impressions3Months
+:impressions3Months rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Query ;
+                    rdfs:range xsd:long ;
+                    rdfs:label "impressions3Months"@en .
 
 
-###  https://purl.archive.org/seovoc/#28DaysClicks
-<https://purl.archive.org/seovoc/#28DaysClicks> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                                rdfs:range xsd:long ;
-                                                rdfs:label "28 Days Clicks"@en .
+###  https://w3id.org/seovoc/impressions7Days
+:impressions7Days rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Query ;
+                  rdfs:range xsd:long ;
+                  rdfs:label "impressions7Days"@en .
 
 
-###  https://purl.archive.org/seovoc/#28DaysCtr
-<https://purl.archive.org/seovoc/#28DaysCtr> rdf:type owl:DatatypeProperty ;
-                                             rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                             rdfs:range xsd:double ;
-                                             rdfs:label "28 Days CTR"@en .
+###  https://w3id.org/seovoc/isCrawlable
+:isCrawlable rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:boolean .
 
 
-###  https://purl.archive.org/seovoc/#28DaysImpressions
-<https://purl.archive.org/seovoc/#28DaysImpressions> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                                     rdfs:range xsd:long ;
-                                                     rdfs:label "28 Days Impressions"@en .
+###  https://w3id.org/seovoc/link
+:link rdf:type owl:DatatypeProperty ;
+      rdfs:domain :WebPage ;
+      rdfs:range xsd:string .
 
 
-###  https://purl.archive.org/seovoc/#3MonthsClicks
-<https://purl.archive.org/seovoc/#3MonthsClicks> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                                 rdfs:range xsd:long ;
-                                                 rdfs:label "3 Months Clicks"@en .
+###  https://w3id.org/seovoc/menu
+:menu rdf:type owl:DatatypeProperty ;
+      rdfs:domain :WebPage ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "as a replacement for hasMenu" .
 
 
-###  https://purl.archive.org/seovoc/#3MonthsCtr
-<https://purl.archive.org/seovoc/#3MonthsCtr> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                              rdfs:range xsd:double ;
-                                              rdfs:label "3 Months CTR"@en .
+###  https://w3id.org/seovoc/metaDescription
+:metaDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :WebPage ;
+                 rdfs:range xsd:string .
 
 
-###  https://purl.archive.org/seovoc/#3MonthsImpressions
-<https://purl.archive.org/seovoc/#3MonthsImpressions> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                                      rdfs:range xsd:long ;
-                                                      rdfs:label "3 Months Impressions"@en .
+###  https://w3id.org/seovoc/metaTitle
+:metaTitle rdf:type owl:DatatypeProperty ;
+           rdfs:domain :WebPage ;
+           rdfs:range xsd:string .
 
 
-###  https://purl.archive.org/seovoc/#7DaysClicks
-<https://purl.archive.org/seovoc/#7DaysClicks> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                               rdfs:range xsd:long ;
-                                               rdfs:label "7 Days Clicks"@en .
+###  https://w3id.org/seovoc/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :dateCreated ;
+      rdfs:domain :Query ;
+      rdfs:range xsd:string ;
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "name"@en .
 
 
-###  https://purl.archive.org/seovoc/#7DaysCtr
-<https://purl.archive.org/seovoc/#7DaysCtr> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                            rdfs:range xsd:double ;
-                                            rdfs:label "7 Days CTR"@en .
+###  https://w3id.org/seovoc/optimizedImage
+:optimizedImage rdf:type owl:DatatypeProperty ;
+                rdfs:domain :WebPage ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "as a replacement of hasOptimizedImage" .
 
 
-###  https://purl.archive.org/seovoc/#7DaysImpressions
-<https://purl.archive.org/seovoc/#7DaysImpressions> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <https://purl.archive.org/seovoc/#SeoKeyword> ;
-                                                    rdfs:range xsd:long ;
-                                                    rdfs:label "7 Days Impressions"@en .
+###  https://w3id.org/seovoc/pageLoadTime
+:pageLoadTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :WebPage ;
+              rdfs:range xsd:decimal .
+
+
+###  https://w3id.org/seovoc/position3Months
+:position3Months rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Query ;
+                 rdfs:range xsd:float ;
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "position3Months"@en .
+
+
+###  https://w3id.org/seovoc/position7Days
+:position7Days rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Query ;
+               rdfs:range xsd:float ;
+               rdfs:comment "The average position for the keyword."@en ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "position7Days "@en .
+
+
+###  https://w3id.org/seovoc/positon28Days
+:positon28Days rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Query ;
+               rdfs:range xsd:long .
+
+
+###  https://w3id.org/seovoc/publishingDate
+:publishingDate rdf:type owl:DatatypeProperty ;
+                rdfs:domain :WebPage ;
+                rdfs:range xsd:dateTime .
+
+
+###  https://w3id.org/seovoc/schemaValue
+:schemaValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Schema ;
+             rdfs:range xsd:string .
+
+
+###  https://w3id.org/seovoc/score28Days
+:score28Days rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Query ;
+             rdfs:range xsd:float ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "score28Days"@en .
+
+
+###  https://w3id.org/seovoc/score3Months
+:score3Months rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Query ;
+              rdfs:range xsd:float ;
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "score3Months"@en .
+
+
+###  https://w3id.org/seovoc/score7Days
+:score7Days rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Query ;
+            rdfs:range xsd:float ;
+            rdfs:comment "A calculated score ranging from 0.0 to 1.0 to determine the keywords with potential."@en ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "score7Days "@en .
+
+
+###  https://w3id.org/seovoc/source
+:source rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WebPage ;
+        rdfs:range xsd:string ;
+        dc:description "The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected." .
+
+
+###  https://w3id.org/seovoc/status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WebPage ;
+        rdfs:range xsd:int .
+
+
+###  https://w3id.org/seovoc/title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :WebPage ;
+       rdfs:range xsd:string .
+
+
+###  https://w3id.org/seovoc/value
+:value rdf:type owl:DatatypeProperty ;
+       rdfs:domain :URL ;
+       rdfs:range xsd:string .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://purl.org/vocommons/voaf#Vocabulary
-<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
-
-
-###  http://schema.org/WebPage
-<http://schema.org/WebPage> rdf:type owl:Class .
-
-
-###  http://www.w3.org/2002/07/owl#hasProperty
-owl:hasProperty rdf:type owl:Class .
-
-
-###  http://www.w3.org/2002/07/owl#imports
-owl:imports rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#AnchorText
-<https://purl.archive.org/seovoc/#AnchorText> rdf:type owl:Class ;
-                                              rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#Author
-<https://purl.archive.org/seovoc/#Author> rdf:type owl:Class ;
-                                          owl:equivalentClass <https://schema.org/Person> ;
-                                          rdfs:subClassOf <https://purl.archive.org/seovoc/#E_E_A_T> .
-
-
-###  https://purl.archive.org/seovoc/#Backlink
-<https://purl.archive.org/seovoc/#Backlink> rdf:type owl:Class ;
-                                            rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#Crawlability
-<https://purl.archive.org/seovoc/#Crawlability> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#E_E_A_T
-<https://purl.archive.org/seovoc/#E_E_A_T> rdf:type owl:Class ;
-                                           owl:equivalentClass <https://purl.archive.org/seovoc/#Organization> .
-
-
-###  https://purl.archive.org/seovoc/#EmailStrategy
-<https://purl.archive.org/seovoc/#EmailStrategy> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#Image
-<https://purl.archive.org/seovoc/#Image> rdf:type owl:Class ;
-                                         owl:equivalentClass <https://schema.org/ImageObject> .
-
-
-###  https://purl.archive.org/seovoc/#Internal_Links
-<https://purl.archive.org/seovoc/#Internal_Links> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#Menu
-<https://purl.archive.org/seovoc/#Menu> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#MetaDescription
-<https://purl.archive.org/seovoc/#MetaDescription> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#MetaTitle
-<https://purl.archive.org/seovoc/#MetaTitle> rdf:type owl:Class ;
-                                             rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#Organization
-<https://purl.archive.org/seovoc/#Organization> rdf:type owl:Class ;
-                                                owl:equivalentClass <https://purl.archive.org/seovoc/#Publisher> ;
-                                                rdfs:subClassOf <https://purl.archive.org/seovoc/#E_E_A_T> .
-
-
-###  https://purl.archive.org/seovoc/#Publisher
-<https://purl.archive.org/seovoc/#Publisher> rdf:type owl:Class ;
-                                             rdfs:subClassOf <https://purl.archive.org/seovoc/#E_E_A_T> .
-
-
-###  https://purl.archive.org/seovoc/#Query
-<https://purl.archive.org/seovoc/#Query> rdf:type owl:Class ;
-                                         rdfs:subClassOf <https://purl.archive.org/seovoc/#Internal_Links> .
-
-
-###  https://purl.archive.org/seovoc/#Schema
-<https://purl.archive.org/seovoc/#Schema> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#SeoKeyword
-<https://purl.archive.org/seovoc/#SeoKeyword> rdf:type owl:Class ;
-                                              rdfs:comment "An SEO Keyword relevant for the connected WebPage."@en ;
-                                              rdfs:isDefinedBy <https://purl.archive.org/seokg/> ;
-                                              rdfs:label "SEO Keyword"@en .
-
-
-###  https://purl.archive.org/seovoc/#SocialMedia
-<https://purl.archive.org/seovoc/#SocialMedia> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#SocialShare
-<https://purl.archive.org/seovoc/#SocialShare> rdf:type owl:Class ;
-                                               rdfs:subClassOf <https://purl.archive.org/seovoc/#SocialMedia> .
-
-
-###  https://purl.archive.org/seovoc/#UserExperienceElement
-<https://purl.archive.org/seovoc/#UserExperienceElement> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <https://purl.archive.org/seovoc/#User_Experience> .
-
-
-###  https://purl.archive.org/seovoc/#User_Experience
-<https://purl.archive.org/seovoc/#User_Experience> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#Video
-<https://purl.archive.org/seovoc/#Video> rdf:type owl:Class .
-
-
-###  https://purl.archive.org/seovoc/#WebPage
-<https://purl.archive.org/seovoc/#WebPage> rdf:type owl:Class ;
-                                           rdfs:comment "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page."@en ;
-                                           rdfs:isDefinedBy <https://purl.archive.org/seokg/> ;
-                                           rdfs:label "WebPage"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#exactMatch> <http://schema.org/WebPage> .
-
-
 ###  https://schema.org/ImageObject
-<https://schema.org/ImageObject> rdf:type owl:Class .
+<https://schema.org/ImageObject> rdf:type owl:Class ;
+                                 owl:equivalentClass :Image ;
+                                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://schema.org/Person
-<https://schema.org/Person> rdf:type owl:Class .
+<https://schema.org/Person> rdf:type owl:Class ;
+                            owl:equivalentClass :Author ;
+                            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/AnchorText
+:AnchorText rdf:type owl:Class ;
+            rdfs:comment <https://w3id.org/seovoc/> ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :E_E_A_T .
+
+
+###  https://w3id.org/seovoc/E_E_A_T
+:E_E_A_T rdf:type owl:Class ;
+         owl:equivalentClass :Organization ;
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Image
+:Image rdf:type owl:Class ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Organization
+:Organization rdf:type owl:Class ;
+              owl:equivalentClass :Publisher ;
+              rdfs:subClassOf :E_E_A_T ;
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Publisher
+:Publisher rdf:type owl:Class ;
+           rdfs:subClassOf :E_E_A_T ;
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Query
+:Query rdf:type owl:Class ;
+       rdfs:comment ""@en ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "Query"@en .
+
+
+###  https://w3id.org/seovoc/Schema
+:Schema rdf:type owl:Class ;
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/URL
+:URL rdf:type owl:Class ;
+     rdfs:comment "NOT equivalent to schema.org's URL but rather SEOntology implementation" ;
+     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Video
+:Video rdf:type owl:Class ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/WebPage
+:WebPage rdf:type owl:Class ;
+         rdfs:comment "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page."@en ;
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "WebPage"@en .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  https://purl.archive.org/seokg/
-<https://purl.archive.org/seokg/> rdf:type owl:NamedIndividual ,
-                                           <http://purl.org/vocommons/voaf#Vocabulary> .
+###  https://w3id.org/seovoc/
+<https://w3id.org/seovoc/> rdf:type owl:NamedIndividual .
 
 
-[ rdf:type owl:hasProperty
-] .
+#################################################################
+#    Annotations
+#################################################################
 
-[ rdf:type owl:imports
- ] .
+owl:Thing rdfs:comment "A Thing that may have a schema:url, hence may have analytics data bound to it." ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "Thing" .
 
-[ rdf:type owl:hasProperty
- ] .
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
