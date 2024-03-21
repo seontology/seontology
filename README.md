@@ -1,4 +1,4 @@
-![seontology logo-04](https://github.com/seontology/seontology/assets/154995640/c34a350a-6823-4e5e-94ad-a5d60ccad1f2)
+![seontology logo-04](.assets/seontology_logo.png)
 
 
 # SEOntology
@@ -73,4 +73,4 @@ This project is sponsored by [WordLift](https://www.wordlift.io/), a leading pro
 Detailed documentation will be soon available.
 
 ## License
-This project is licensed under the MIT [LICENSE] - see the LICENSE.md file for details.
+This project is licensed under the MIT [LICENSE](LICENSE.md) - see the LICENSE.md file for details.
