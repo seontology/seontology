@@ -16,11 +16,11 @@ else
     git config user.name github-actions
     git config user.email github-actions@github.com
 
-    docker run --rm -it -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
-        robot convert --input "/work/seovoc.owx" --format owl --output "/work/seovoc.owl"
+    docker run --rm -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
+        robot convert --input "/work/seovoc.owx" --format owl --output "/work/seovoc.owl" -vvv
 
-    docker run --rm -it -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
-        robot convert --input "/work/seovoc.owx" --format ttl --output "/work/seovoc.ttl"
+    docker run --rm -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
+        robot convert --input "/work/seovoc.owx" --format ttl --output "/work/seovoc.ttl" -vvv
 
     rm $SCRIPT_DIR/../seovoc.owx.md5 && echo $CURRENT_HASH >$SCRIPT_DIR/../seovoc.owx.md5
 
