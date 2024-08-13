@@ -105,6 +105,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/containsImage">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Image"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -114,6 +115,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/containsVideo">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Video"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -123,6 +125,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/hasAuthor">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Author"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -132,6 +135,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/hasPublisher">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Publisher"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -141,6 +145,17 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/hasQuery">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/hasTarget -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/hasTarget">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Link"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -152,6 +167,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/URL"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -161,6 +177,17 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/influencedByQuery">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/AnchorText"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/link -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/link">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/Link"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -170,6 +197,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/usesSchema">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Schema"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
 
@@ -190,6 +218,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/anchorValue">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/AnchorText"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -200,6 +229,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>as a replacement for hasARIAAttribute</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -209,6 +239,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ariaHidden">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -218,6 +249,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/bounceRate">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -227,6 +259,17 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clickDepth">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/clicks -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -236,6 +279,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks28Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">clicks28Days</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -246,6 +290,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks3Months">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">clicks3Months</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -256,7 +301,18 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks7Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">clicks7Days</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/ctr -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -266,6 +322,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr28Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">ctr28Days</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -276,6 +333,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr3Months">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">ctr3Months</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -286,6 +344,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr7Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">ctr7Days</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -303,11 +362,22 @@
     
 
 
+    <!-- https://w3id.org/seovoc/impressions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/impressions28Days -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions28Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">impressions28Days</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -318,6 +388,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions3Months">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">impressions3Months</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -328,6 +399,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions7Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">impressions7Days</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -338,15 +410,33 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/isCrawlable">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/seovoc/link -->
+    <!-- https://w3id.org/seovoc/linkType -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/link">
-        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/linkType">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Link"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Inbound</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Outbound</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -357,6 +447,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>as a replacement for hasMenu</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -366,6 +457,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/metaDescription">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -375,6 +467,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/metaTitle">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -391,12 +484,23 @@
     
 
 
+    <!-- https://w3id.org/seovoc/noFollow -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/noFollow">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Link"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/optimizedImage -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/optimizedImage">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>as a replacement of hasOptimizedImage</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -406,6 +510,17 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/pageLoadTime">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/position -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/position">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -438,6 +553,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/positon28Days">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -447,6 +563,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/publishingDate">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -456,6 +573,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/schemaValue">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Schema"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -500,6 +618,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:description>The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected.</dc:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -509,6 +628,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/status">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -518,6 +638,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/title">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -527,6 +648,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/value">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/URL"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -589,6 +711,14 @@
     <!-- https://w3id.org/seovoc/Image -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Image">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seovoc/Link -->
+
+    <owl:Class rdf:about="https://w3id.org/seovoc/Link">
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -692,5 +822,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
 

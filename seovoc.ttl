@@ -67,31 +67,43 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/containsImage
 :containsImage rdf:type owl:ObjectProperty ;
                rdfs:domain :WebPage ;
-               rdfs:range :Image .
+               rdfs:range :Image ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/containsVideo
 :containsVideo rdf:type owl:ObjectProperty ;
                rdfs:domain :WebPage ;
-               rdfs:range :Video .
+               rdfs:range :Video ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/hasAuthor
 :hasAuthor rdf:type owl:ObjectProperty ;
            rdfs:domain :WebPage ;
-           rdfs:range :Author .
+           rdfs:range :Author ;
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/hasPublisher
 :hasPublisher rdf:type owl:ObjectProperty ;
               rdfs:domain :WebPage ;
-              rdfs:range :Publisher .
+              rdfs:range :Publisher ;
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/hasQuery
 :hasQuery rdf:type owl:ObjectProperty ;
           rdfs:domain :WebPage ;
-          rdfs:range :Query .
+          rdfs:range :Query ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/hasTarget
+:hasTarget rdf:type owl:ObjectProperty ;
+           rdfs:domain :Link ;
+           rdfs:range :WebPage ;
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/hasURL
@@ -99,19 +111,29 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                  owl:FunctionalProperty ,
                  owl:InverseFunctionalProperty ;
         rdfs:domain :WebPage ;
-        rdfs:range :URL .
+        rdfs:range :URL ;
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/influencedByQuery
 :influencedByQuery rdf:type owl:ObjectProperty ;
                    rdfs:domain :AnchorText ;
-                   rdfs:range :Query .
+                   rdfs:range :Query ;
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/link
+:link rdf:type owl:ObjectProperty ;
+      rdfs:domain :WebPage ;
+      rdfs:range :Link ;
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/usesSchema
 :usesSchema rdf:type owl:ObjectProperty ;
             rdfs:domain :WebPage ;
-            rdfs:range :Schema .
+            rdfs:range :Schema ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 #################################################################
@@ -121,38 +143,51 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/anchorValue
 :anchorValue rdf:type owl:DatatypeProperty ;
              rdfs:domain :AnchorText ;
-             rdfs:range xsd:string .
+             rdfs:range xsd:string ;
+             rdfs:comment <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/ariaAttribute
 :ariaAttribute rdf:type owl:DatatypeProperty ;
                rdfs:domain :WebPage ;
                rdfs:range xsd:boolean ;
-               rdfs:comment "as a replacement for hasARIAAttribute" .
+               rdfs:comment "as a replacement for hasARIAAttribute" ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/ariaHidden
 :ariaHidden rdf:type owl:DatatypeProperty ;
             rdfs:domain :WebPage ;
-            rdfs:range xsd:boolean .
+            rdfs:range xsd:boolean ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/bounceRate
 :bounceRate rdf:type owl:DatatypeProperty ;
             rdfs:domain :WebPage ;
-            rdfs:range xsd:decimal .
+            rdfs:range xsd:decimal ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/clickDepth
 :clickDepth rdf:type owl:DatatypeProperty ;
             rdfs:domain :WebPage ;
-            rdfs:range xsd:integer .
+            rdfs:range xsd:integer ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/clicks
+:clicks rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WebPage ;
+        rdfs:range xsd:long ;
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/clicks28Days
 :clicks28Days rdf:type owl:DatatypeProperty ;
               rdfs:domain :Query ;
               rdfs:range xsd:long ;
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
               rdfs:label "clicks28Days"@en .
 
 
@@ -160,6 +195,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks3Months rdf:type owl:DatatypeProperty ;
                rdfs:domain :Query ;
                rdfs:range xsd:long ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                rdfs:label "clicks3Months"@en .
 
 
@@ -167,13 +203,22 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks7Days rdf:type owl:DatatypeProperty ;
              rdfs:domain :Query ;
              rdfs:range xsd:long ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
              rdfs:label "clicks7Days"@en .
+
+
+###  https://w3id.org/seovoc/ctr
+:ctr rdf:type owl:DatatypeProperty ;
+     rdfs:domain :WebPage ;
+     rdfs:range xsd:double ;
+     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/ctr28Days
 :ctr28Days rdf:type owl:DatatypeProperty ;
            rdfs:domain :Query ;
            rdfs:range xsd:double ;
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
            rdfs:label "ctr28Days"@en .
 
 
@@ -181,6 +226,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr3Months rdf:type owl:DatatypeProperty ;
             rdfs:domain :Query ;
             rdfs:range xsd:double ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
             rdfs:label "ctr3Months"@en .
 
 
@@ -188,6 +234,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr7Days rdf:type owl:DatatypeProperty ;
           rdfs:domain :Query ;
           rdfs:range xsd:double ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
           rdfs:label "ctr7Days"@en .
 
 
@@ -200,10 +247,18 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
              rdfs:label "dateCreated"@en .
 
 
+###  https://w3id.org/seovoc/impressions
+:impressions rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:long ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
 ###  https://w3id.org/seovoc/impressions28Days
 :impressions28Days rdf:type owl:DatatypeProperty ;
                    rdfs:domain :Query ;
                    rdfs:range xsd:long ;
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                    rdfs:label "impressions28Days"@en .
 
 
@@ -211,6 +266,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions3Months rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Query ;
                     rdfs:range xsd:long ;
+                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                     rdfs:label "impressions3Months"@en .
 
 
@@ -218,38 +274,52 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions7Days rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Query ;
                   rdfs:range xsd:long ;
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                   rdfs:label "impressions7Days"@en .
 
 
 ###  https://w3id.org/seovoc/isCrawlable
 :isCrawlable rdf:type owl:DatatypeProperty ;
              rdfs:domain :WebPage ;
-             rdfs:range xsd:boolean .
+             rdfs:range xsd:boolean ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
-###  https://w3id.org/seovoc/link
-:link rdf:type owl:DatatypeProperty ;
-      rdfs:domain :WebPage ;
-      rdfs:range xsd:string .
+###  https://w3id.org/seovoc/linkType
+:linkType rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Link ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:oneOf [ rdf:type rdf:List ;
+                                   rdf:first "Inbound" ;
+                                   rdf:rest [ rdf:type rdf:List ;
+                                              rdf:first "Outbound" ;
+                                              rdf:rest rdf:nil
+                                            ]
+                                 ]
+                     ] ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/menu
 :menu rdf:type owl:DatatypeProperty ;
       rdfs:domain :WebPage ;
       rdfs:range xsd:boolean ;
-      rdfs:comment "as a replacement for hasMenu" .
+      rdfs:comment "as a replacement for hasMenu" ;
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/metaDescription
 :metaDescription rdf:type owl:DatatypeProperty ;
                  rdfs:domain :WebPage ;
-                 rdfs:range xsd:string .
+                 rdfs:range xsd:string ;
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/metaTitle
 :metaTitle rdf:type owl:DatatypeProperty ;
            rdfs:domain :WebPage ;
-           rdfs:range xsd:string .
+           rdfs:range xsd:string ;
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/name
@@ -261,17 +331,33 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
       rdfs:label "name"@en .
 
 
+###  https://w3id.org/seovoc/noFollow
+:noFollow rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Link ;
+          rdfs:range xsd:boolean ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
 ###  https://w3id.org/seovoc/optimizedImage
 :optimizedImage rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WebPage ;
                 rdfs:range xsd:boolean ;
-                rdfs:comment "as a replacement of hasOptimizedImage" .
+                rdfs:comment "as a replacement of hasOptimizedImage" ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/pageLoadTime
 :pageLoadTime rdf:type owl:DatatypeProperty ;
               rdfs:domain :WebPage ;
-              rdfs:range xsd:decimal .
+              rdfs:range xsd:decimal ;
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/position
+:position rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WebPage ;
+          rdfs:range xsd:double ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/position3Months
@@ -294,19 +380,22 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/positon28Days
 :positon28Days rdf:type owl:DatatypeProperty ;
                rdfs:domain :Query ;
-               rdfs:range xsd:long .
+               rdfs:range xsd:long ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/publishingDate
 :publishingDate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WebPage ;
-                rdfs:range xsd:dateTime .
+                rdfs:range xsd:dateTime ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/schemaValue
 :schemaValue rdf:type owl:DatatypeProperty ;
              rdfs:domain :Schema ;
-             rdfs:range xsd:string .
+             rdfs:range xsd:string ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/score28Days
@@ -338,25 +427,29 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :source rdf:type owl:DatatypeProperty ;
         rdfs:domain :WebPage ;
         rdfs:range xsd:string ;
-        dc:description "The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected." .
+        dc:description "The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected." ;
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/status
 :status rdf:type owl:DatatypeProperty ;
         rdfs:domain :WebPage ;
-        rdfs:range xsd:int .
+        rdfs:range xsd:int ;
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/title
 :title rdf:type owl:DatatypeProperty ;
        rdfs:domain :WebPage ;
-       rdfs:range xsd:string .
+       rdfs:range xsd:string ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/value
 :value rdf:type owl:DatatypeProperty ;
        rdfs:domain :URL ;
-       rdfs:range xsd:string .
+       rdfs:range xsd:string ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 #################################################################
@@ -395,6 +488,11 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/Image
 :Image rdf:type owl:Class ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/Link
+:Link rdf:type owl:Class ;
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/Organization
@@ -457,4 +555,4 @@ owl:Thing rdfs:comment "A Thing that may have a schema:url, hence may have analy
           rdfs:label "Thing" .
 
 
-###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
