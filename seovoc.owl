@@ -13,7 +13,7 @@
      xmlns:schema="http://schema.org/"
      xmlns:seovoc="https://w3id.org/seovoc/">
     <owl:Ontology rdf:about="https://w3id.org/seovoc/">
-        <dc:contributors>Andrea Volpini, David Riccitelli</dc:contributors>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:creator rdf:resource="https://wordlift.io"/>
         <dc:description xml:lang="en">The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate.</dc:description>
         <dc:identifier>SEO Vocabulary</dc:identifier>
@@ -219,6 +219,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/AnchorText"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:resource="https://w3id.org/seovoc/"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -285,6 +286,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/clicks28DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks28DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/clicks3Months -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks3Months">
@@ -307,6 +318,26 @@
     
 
 
+    <!-- https://w3id.org/seovoc/clicks7DaysTo28DaysTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks7DaysTo28DaysTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/clicks7DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks7DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/ctr -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr">
@@ -324,6 +355,16 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">ctr28Days</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/ctr28DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr28DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -350,6 +391,26 @@
     
 
 
+    <!-- https://w3id.org/seovoc/ctr7DaysTo28DaysTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr7DaysTo28DaysTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/ctr7DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/ctr7DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/dateCreated -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/dateCreated">
@@ -358,6 +419,72 @@
         <rdfs:comment xml:lang="en">The date/time this keyword analytics data has been extracted and imported in the KG.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">dateCreated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/embedding -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/embedding">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The actual vector value for the embedding itself.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/embeddingModel -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/embeddingModel">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the NLP embedding model used to create vectorized version of the content.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/embeddingText -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/embeddingText">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The text used to create an embedding of the webpage itself.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/importHash -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/importHash">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A hash of the data to understand whether it changed</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/importID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/importID">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>An ID when available</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/importOrigin -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/importOrigin">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A string representing the source of data or the procedure</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -383,6 +510,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/impressions28DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions28DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/impressions3Months -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions3Months">
@@ -401,6 +538,26 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">impressions7Days</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/impressions7DaysTo28DaysTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions7DaysTo28DaysTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/impressions7DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/impressions7DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -525,6 +682,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/position28DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/position28DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/position3Months -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/position3Months">
@@ -544,6 +711,26 @@
         <rdfs:comment xml:lang="en">The average position for the keyword.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">position7Days </rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/position7DaysTo28DaysTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/position7DaysTo28DaysTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/position7DaysTo3MonthsTrend -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/position7DaysTo3MonthsTrend">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
 
@@ -612,12 +799,12 @@
     
 
 
-    <!-- https://w3id.org/seovoc/source -->
+    <!-- https://w3id.org/seovoc/sourceCode -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/source">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/sourceCode">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <dc:description>The name of the source used to ingest data about this WebPage. Useful to understand how the data has been collected.</dc:description>
+        <rdfs:comment>The raw HTML of the webpage itself.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
@@ -664,10 +851,40 @@
     
 
 
+    <!-- http://schema.org/Thing -->
+
+    <owl:Class rdf:about="http://schema.org/Thing">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/WebPage -->
+
+    <owl:Class rdf:about="http://schema.org/WebPage">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>A Thing that may have a schema:url, hence may have analytics data bound to it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+        <rdfs:label>Thing</rdfs:label>
+        <skos:exactMatch rdf:resource="http://schema.org/Thing"/>
+    </rdf:Description>
+    
+
+
     <!-- https://schema.org/ImageObject -->
 
     <owl:Class rdf:about="https://schema.org/ImageObject">
         <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/Image"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>A class representing an image file or photograph. This class is used to describe various attributes of an image.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -677,6 +894,8 @@
 
     <owl:Class rdf:about="https://schema.org/Person">
         <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/Author"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>A class representing an individual person. This class is used to describe attributes and relationships of a person.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -685,7 +904,9 @@
     <!-- https://w3id.org/seovoc/AnchorText -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/AnchorText">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:comment rdf:resource="https://w3id.org/seovoc/"/>
+        <rdfs:comment>A class representing the anchor text of a hyperlink, which is the clickable text displayed for a link on a webpage. This class captures the textual content used to describe the target of the link, often influencing search engine optimization (SEO) and user experience. The AnchorText class is important for understanding how links are represented in the context of a webpage and how they contribute to the navigation and relevance of the content</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -695,6 +916,8 @@
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Author">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seovoc/E_E_A_T"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
 
@@ -702,7 +925,7 @@
     <!-- https://w3id.org/seovoc/E_E_A_T -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/E_E_A_T">
-        <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/Organization"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -711,6 +934,7 @@
     <!-- https://w3id.org/seovoc/Image -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Image">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -719,6 +943,8 @@
     <!-- https://w3id.org/seovoc/Link -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Link">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>A class representing a hyperlink found on a webpage. This class captures the attributes of a link and its type, such as whether the link is internal (pointing to the same domain) or external (pointing to a different domain). The Link class is crucial for understanding the structure and navigation of a website, as well as for analyzing the relationships between different web resources in the context of SEO and web development.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -729,6 +955,7 @@
     <owl:Class rdf:about="https://w3id.org/seovoc/Organization">
         <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/Publisher"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/seovoc/E_E_A_T"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -738,6 +965,8 @@
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Publisher">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seovoc/E_E_A_T"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>A class representing an organization, such as a business, non-profit, governmental body, or other group of people working together for a common purpose. This class is used to describe various attributes of organizations, including their names, locations, contact information, and associated events or products. The Organization class is fundamental to defining the structure and relationships of entities within Schema.org&apos;s vocabulary, supporting a wide range of applications from web markup to data integration.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -746,7 +975,8 @@
     <!-- https://w3id.org/seovoc/Query -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Query">
-        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment xml:lang="en">A class representing a search query. Instances of this class encapsulate the parameters, conditions, and terms submitted to a search engine by users or systems. This class is fundamental to modeling and analyzing search behavior, including keyword selection, query intent, and search patterns in the context of SEO.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">Query</rdfs:label>
     </owl:Class>
@@ -756,6 +986,8 @@
     <!-- https://w3id.org/seovoc/Schema -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Schema">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>This class represents schema markup, a form of structured data that defines the semantic relationships between entities on a webpage. Schema markup is used to enhance the understanding of web content by search engines and other applications, facilitating better indexing, richer search results, and improved interoperability across different systems. This class provides a framework for describing the types, properties, and relationships that constitute schema markup, enabling consistent and meaningful representation of web content.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -764,7 +996,8 @@
     <!-- https://w3id.org/seovoc/URL -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/URL">
-        <rdfs:comment>NOT equivalent to schema.org&apos;s URL but rather SEOntology implementation</rdfs:comment>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>This class represents a unique URL that identifies a specific webpage. It is intended to serve as a stable and unambiguous reference to web content, ensuring consistent access to the webpage across various systems and applications. The URL should be a valid and well-formed HTTP or HTTPS address, uniquely pointing to a resource on the World Wide Web. NOT equivalent to schema.org&apos;s URL.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -773,6 +1006,8 @@
     <!-- https://w3id.org/seovoc/Video -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Video">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <rdfs:comment>This class represents a video object, typically used to describe a video file or stream. It encompasses metadata about the video. The VideoObject class is designed to enhance the discoverability and understanding of video content on the web by providing structured data that can be interpreted by search engines and other applications.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:Class>
     
@@ -781,9 +1016,12 @@
     <!-- https://w3id.org/seovoc/WebPage -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/WebPage">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:comment xml:lang="en">A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">WebPage</rdfs:label>
+        <skos:exactMatch rdf:resource="http://schema.org/WebPage"/>
     </owl:Class>
     
 
@@ -802,22 +1040,6 @@
     <!-- https://w3id.org/seovoc/ -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/seovoc/"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <rdfs:comment>A Thing that may have a schema:url, hence may have analytics data bound to it.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
-        <rdfs:label>Thing</rdfs:label>
-    </rdf:Description>
 </rdf:RDF>
 
 
