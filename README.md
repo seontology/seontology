@@ -5,31 +5,34 @@
 
 ## Description
 
-THe **SEOntology** is framework developed by WordLift and other SEOs for **content optimization**. Think of it as an operating system for your content strategy. This is an early draft.
+The **SEOntology** is a framework that WordLift, other SEOs, software engineers, and knowledge graph experts developed for **content optimization**. Think of it as an operating system for your content strategy. This is an early draft.
 
 ## Features
 
 - **Main Classes**: Our ontology provides a comprehensive coverage of various SEO elements, such as:
-  - `WebPage`: The primary entity representing a specific webpage.
-  - `Internal_Links`: Central to SEO, encompassing elements like `AnchorText`, `Backlink`, `Menu`, `MetaDescription`, `MetaTitle`, and `Query`.
-  - `E_E_A_T`: Representing Expertise, Authoritativeness, and Trustworthiness, which includes sub-classes like `Author`, `Organization`, and `Publisher`.
-  - `User_Experience`: Focused on elements ensuring optimal user experience, including `UserExperienceElement`.
-  - `SocialMedia`: Capturing aspects of social media presence, including `SocialShare`.
-  - And more: Including `Crawlability`, `EmailStrategy`, `Image`, `Schema`, `Video` and more.
+  - `WebPage`: The primary entity representing a specific webpage, extended from Schema.org.
+  - `Query`: The query for which the webpage ranks in SERPs, usually obtained through Google Search Console.
+  - `URL`: the unique identifier for the webpage.
+  - `AnchorText`: the anchor text which is influenced by the Query that the WebPage ranks for.
+  - `Link`: representing an internal or external link found on the webpage through crawling.
+  - `Thing`: The most generic type of item, expressed as an extension of the Thing class in Schema.org.
+  - `Schema`: all schema markup elements found on the webpage, in JSON-LD, or other formats.
+
 
 - **Object Properties**: These define relationships between classes. For instance:
-  - `containsImage` and `containsVideo`: To indicate media content in a `WebPage`.
-  - `hasAuthor`, `hasPublisher`: Indicating authorship and publishing entities for content.
-  - `hasBacklink`, `hasMenu`, `hasMetaDescription`, `hasMetaTitle`, `hasQuery`, `hasSocialShare`: Various properties associating a `WebPage` with different `Internal_Links` elements.
-  - `implementsUserExperience`: Connects a `WebPage` with elements ensuring user experience.
-  - And more: Including properties like `followsEmailStrategy`, `usesAnchorText`, `usesSchema`, `usesSocialMedia` that capture various other relationships.
+  - `hasQuery`: To indicate the queries for which a `WebPage` ranks.
+  - `influencedByQuery`: Indicating the connection between the `AnchorText` and the `Query` class.
+  - `hasURL`: Indicating the uniform resource locator (URL) for the `WebPage`.
+  - `link`: indicating the links found on the `WebPage`.
+  - `usesSchema`: indicating the schema markup used to describe the `WebPage` itself. 
 
 - **Data Properties**: These properties store specific values related to classes. Notably:
-  - `Google_Search_Console`: Integrating insights from Google Search Console.
-  - `anchorTextContent`, `metaDescriptionContent`, `metaTitleContent`: Content-related attributes.
-  - `isCrawlable`, `hasOptimizedImage`, `hasUniqueContent`: Booleans to capture certain features or states of a `WebPage`.
-  - `publishingDate`, `bounceRate`, `clickDepth`, `fontSize`, `pageLoadTime`: Specific metrics and attributes for a `WebPage`.
-  - Clicks & Impressions Metrics: `7DaysClicks`, `7DaysImpressions`, `28_Days_Clicks`, `28_Days_Impressions`, `90_Days_Clicks`, `90_Days_Impressions` for tracking webpage performance over time.
+  - `embeddingText`, `embedding`, `embeddingModel` for modeling embedding use cases with SEOntology.
+  - Clicks & Impressions Metrics: `clicks7Days`, `click28Days`, `ctr7Days`, and so on for tracking webpage performance over time.
+  - and more!
+ 
+## Schema Skeleton for the Data
+![seontology logo-04](.assets/FINAL_SEONTOLOGY_WORDLIFT.png)
 
 ## Getting Started
 
@@ -37,7 +40,8 @@ THe **SEOntology** is framework developed by WordLift and other SEOs for **conte
 
 - [Protege](https://protege.stanford.edu/) or any other ontology editing tool
 - Basic knowledge of [OWL/RDF/SPARQL/any other relevant technology]
-
+- [TIB EU visualisation software](https://service.tib.eu/webvowl/) to analyze the ontology (Select 'ontology' from the bottom menu -> click 'Select ontology file')
+  
 ### Installation & Setup
 
 1. Clone this repository:
