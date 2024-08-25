@@ -17,7 +17,7 @@
     <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
     <Prefix name="voaf" IRI="http://purl.org/vocommons/voaf#"/>
     <Prefix name="schema" IRI="http://schema.org/"/>
-    <Annotation> 
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </Annotation>
@@ -52,31 +52,10 @@
         <Class abbreviatedIRI="schema:WebPage"/>
     </Declaration>
     <Declaration>
-        <Class IRI="https://schema.org/ImageObject"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="https://schema.org/Person"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="AnchorText"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Author"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="E_E_A_T"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Image"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="Link"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Organization"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Publisher"/>
     </Declaration>
     <Declaration>
         <Class IRI="Query"/>
@@ -88,28 +67,10 @@
         <Class IRI="URL"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Video"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="WebPage"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="containsImage"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="containsVideo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasAuthor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasPublisher"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="hasQuery"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasTarget"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasURL"/>
@@ -125,12 +86,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="anchorValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="ariaAttribute"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="ariaHidden"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="bounceRate"/>
@@ -242,12 +197,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="noFollow"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="optimizedImage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="pageLoadTime"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="position"/>
@@ -327,30 +276,6 @@
     <Declaration>
         <AnnotationProperty IRI="extends"/>
     </Declaration>
-    <EquivalentClasses>
-        <Class IRI="https://schema.org/ImageObject"/>
-        <Class IRI="Image"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="https://schema.org/Person"/>
-        <Class IRI="Author"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="Organization"/>
-        <Class IRI="Publisher"/>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="Author"/>
-        <Class IRI="E_E_A_T"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Organization"/>
-        <Class IRI="E_E_A_T"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Publisher"/>
-        <Class IRI="E_E_A_T"/>
-    </SubClassOf>
     <SubClassOf>
         <Class IRI="WebPage"/>
         <Class abbreviatedIRI="owl:Thing"/>
@@ -362,28 +287,8 @@
         <ObjectProperty IRI="hasURL"/>
     </InverseFunctionalObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="containsImage"/>
-        <Class IRI="WebPage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="containsVideo"/>
-        <Class IRI="WebPage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasAuthor"/>
-        <Class IRI="WebPage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasPublisher"/>
-        <Class IRI="WebPage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="hasQuery"/>
         <Class IRI="WebPage"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasTarget"/>
-        <Class IRI="Link"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasURL"/>
@@ -402,28 +307,8 @@
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="containsImage"/>
-        <Class IRI="Image"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="containsVideo"/>
-        <Class IRI="Video"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasAuthor"/>
-        <Class IRI="Author"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasPublisher"/>
-        <Class IRI="Publisher"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="hasQuery"/>
         <Class IRI="Query"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasTarget"/>
-        <Class IRI="WebPage"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasURL"/>
@@ -448,14 +333,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="anchorValue"/>
         <Class IRI="AnchorText"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="ariaAttribute"/>
-        <Class IRI="WebPage"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="ariaHidden"/>
-        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="bounceRate"/>
@@ -606,14 +483,6 @@
         <Class IRI="Link"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="optimizedImage"/>
-        <Class IRI="WebPage"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="pageLoadTime"/>
-        <Class IRI="WebPage"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="position"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
@@ -680,14 +549,6 @@
     <DataPropertyRange>
         <DataProperty IRI="anchorValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="ariaAttribute"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="ariaHidden"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="bounceRate"/>
@@ -775,7 +636,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="importID"/>
-        <Datatype abbreviatedIRI="xsd:int"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="importOrigin"/>
@@ -839,14 +700,6 @@
     <DataPropertyRange>
         <DataProperty IRI="noFollow"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="optimizedImage"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="pageLoadTime"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="position"/>
@@ -918,9 +771,19 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
+        <Literal>The Thing class from Schema.org</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
+        <Literal>The WebPage class from Schema.org</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -949,36 +812,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>https://schema.org/ImageObject</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>https://schema.org/ImageObject</IRI>
-        <Literal>A class representing an image file or photograph. This class is used to describe various attributes of an image.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>https://schema.org/ImageObject</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>https://schema.org/Person</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>https://schema.org/Person</IRI>
-        <Literal>A class representing an individual person. This class is used to describe attributes and relationships of a person.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>https://schema.org/Person</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>AnchorText</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
@@ -999,36 +832,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>Author</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>Author</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>E_E_A_T</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>E_E_A_T</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>Image</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>Image</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Link</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
@@ -1040,31 +843,6 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>Link</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>Organization</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>Organization</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>Publisher</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Publisher</IRI>
-        <Literal>A class representing an organization, such as a business, non-profit, governmental body, or other group of people working together for a common purpose. This class is used to describe various attributes of organizations, including their names, locations, contact information, and associated events or products. The Organization class is fundamental to defining the structure and relationships of entities within Schema.org&apos;s vocabulary, supporting a wide range of applications from web markup to data integration.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>Publisher</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1119,21 +897,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <IRI>Video</IRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Video</IRI>
-        <Literal>This class represents a video object, typically used to describe a video file or stream. It encompasses metadata about the video. The VideoObject class is designed to enhance the discoverability and understanding of video content on the web by providing structured data that can be interpreted by search engines and other applications.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>Video</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>WebPage</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
@@ -1163,24 +926,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>anchorValue</IRI>
+        <Literal>The text of the anchor tied to the link itself</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>anchorValue</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>ariaAttribute</IRI>
-        <Literal>as a replacement for hasARIAAttribute</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>ariaAttribute</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>ariaHidden</IRI>
-        <IRI></IRI>
+        <IRI>bounceRate</IRI>
+        <Literal>The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1188,14 +946,29 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clickDepth</IRI>
+        <Literal>The click depth of the page itself. Example: https://wordlift.io/blog/en/seo-automation/ is on level 4 if we count the parts between //</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clickDepth</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks</IRI>
+        <Literal>The average number of clicks the pages have for a given time period.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks28Days</IRI>
+        <Literal>The total number of clicks the query has for a given time period of 28 Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1208,9 +981,19 @@
         <Literal xml:lang="en">clicks28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks28DaysTo3MonthsTrend</IRI>
+        <Literal>The trend of the clicks when we compare 28Days to 3Months period.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks3Months</IRI>
+        <Literal>The total number of clicks the query has for a given time period of 3 months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1223,6 +1006,11 @@
         <Literal xml:lang="en">clicks3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks7Days</IRI>
+        <Literal>The total number of clicks the query has for a given time period of 7 days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks7Days</IRI>
         <IRI></IRI>
@@ -1233,9 +1021,19 @@
         <Literal xml:lang="en">clicks7Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks7DaysTo28DaysTrend</IRI>
+        <Literal>The trend of the clicks when we compare 7Days to 28Days period</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks7DaysTo28DaysTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>clicks7DaysTo3MonthsTrend</IRI>
+        <Literal>The trend of the clicks when we compare 7Days to 3Months period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1243,19 +1041,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>containsImage</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>containsVideo</IRI>
-        <IRI></IRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr</IRI>
+        <Literal>The average click through rate (CTR) of the query for a given time period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ctr</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr28Days</IRI>
+        <Literal>The click through rate for 28 days period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1268,9 +1066,19 @@
         <Literal xml:lang="en">ctr28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr28DaysTo3MonthsTrend</IRI>
+        <Literal>The click through rate trend for 28Days to 3Months period</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ctr28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr3Months</IRI>
+        <Literal>The click through rate for 3 months period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1281,6 +1089,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>ctr3Months</IRI>
         <Literal xml:lang="en">ctr3Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr7Days</IRI>
+        <Literal>The click through rate for 7Days period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1296,6 +1109,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>ctr7DaysTo28DaysTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr7DaysTo28DaysTrend</IRI>
+        <Literal>The click through rate trend of 7days to 28days period</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ctr7DaysTo3MonthsTrend</IRI>
+        <Literal>The click through rate trend of 7Days to 3Months period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1323,6 +1146,11 @@
         <Literal>The actual vector value for the embedding itself.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>embedding</IRI>
+        <Literal>The vector embedding of the WebPage itself</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>embedding</IRI>
         <IRI></IRI>
@@ -1348,14 +1176,9 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>hasAuthor</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>hasPublisher</IRI>
-        <IRI></IRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasQuery</IRI>
+        <Literal>The hasQuery property represents the relationship between a WebPage and the Query that leads users to that page. It indicates that the WebPage is relevant or has been optimized for the specified Query. This relationship is crucial for understanding SEO dynamics, as it reflects the connection between user search behavior and web content.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1363,9 +1186,9 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>hasTarget</IRI>
-        <IRI></IRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasURL</IRI>
+        <Literal>The hasURL property establishes a unique and reciprocal relationship between a WebPage and its corresponding URL. It asserts that each WebPage is identified by exactly one URL, and conversely, each URL uniquely identifies one WebPage. As both a functional and inverse functional property, hasURL ensures that this link is both unique and bidirectional, which is critical for accurately representing the identity and accessibility of web content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1403,9 +1226,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions</IRI>
+        <Literal>Impressions of the webpage as a metric coming from Google Search Console</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions28Days</IRI>
+        <Literal>The impressions for a 28 months period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1418,9 +1251,19 @@
         <Literal xml:lang="en">impressions28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions28DaysTo3MonthsTrend</IRI>
+        <Literal>The impressions trend when you compare 28Days to 3Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions3Months</IRI>
+        <Literal>The impressions of the webpage for a 3 months time period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1433,6 +1276,11 @@
         <Literal xml:lang="en">impressions3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions7Days</IRI>
+        <Literal>The impressions for 7Days of the Webpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions7Days</IRI>
         <IRI></IRI>
@@ -1443,9 +1291,19 @@
         <Literal xml:lang="en">impressions7Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions7DaysTo28DaysTrend</IRI>
+        <Literal>The impressions trend of 7Days to 28Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions7DaysTo28DaysTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>impressions7DaysTo3MonthsTrend</IRI>
+        <Literal>The impressions trend of 7Days to 3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1453,9 +1311,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>influencedByQuery</IRI>
+        <Literal>The influencedByQuery property defines the relationship between AnchorText and the Query that may shape or determine the choice of that anchor text. It highlights how specific search queries can influence the wording and selection of anchor texts within a WebPage, reflecting SEO strategies aimed at optimizing link relevance and search engine visibility. This property is vital for understanding the interplay between user search behavior and content creation, particularly in the context of link building and on-page SEO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>influencedByQuery</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isCrawlable</IRI>
+        <Literal>Whether the page can be crawled according to robots.txt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1463,9 +1331,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>link</IRI>
+        <Literal>The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>link</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkType</IRI>
+        <Literal>The type of the link, with two possible values inbound and outbound (internal link coming from the same website or external link coming from an external website)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1483,9 +1361,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>metaDescription</IRI>
+        <Literal>The meta description of the webpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>metaDescription</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>metaTitle</IRI>
+        <Literal>The meta title of the webpage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1503,24 +1391,19 @@
         <Literal xml:lang="en">name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>noFollow</IRI>
+        <Literal>A metric to define whether the nofollow is in place (True for Yes and False for No)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>noFollow</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>optimizedImage</IRI>
-        <Literal>as a replacement of hasOptimizedImage</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>optimizedImage</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>pageLoadTime</IRI>
-        <IRI></IRI>
+        <IRI>position</IRI>
+        <Literal>The average ranking positon that the page has for a given time period on SERPs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1528,9 +1411,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>position28DaysTo3MonthsTrend</IRI>
+        <Literal>The ranking position trend for a given Query for 28Days to 3Months on SERPs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>position28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>position3Months</IRI>
+        <Literal>The ranking position of the given Query for a 3 months time period on SERPs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1545,7 +1438,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>position7Days</IRI>
-        <Literal xml:lang="en">The average position for the keyword.</Literal>
+        <Literal>The ranking positon of the given query for a 7Days time period on SERPs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1558,9 +1451,19 @@
         <Literal xml:lang="en">position7Days </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>position7DaysTo28DaysTrend</IRI>
+        <Literal>The ranking position trend of 7Days to 28Days on SERPs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>position7DaysTo28DaysTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>position7DaysTo3MonthsTrend</IRI>
+        <Literal>The ranking position trend of 7Days to 3Months on SERPs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1568,9 +1471,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>positon28Days</IRI>
+        <Literal>The ranking position for 28 Days on SERPs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>positon28Days</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>publishingDate</IRI>
+        <Literal>The date where the webpage was published</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1578,9 +1491,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>schemaValue</IRI>
+        <Literal>The schema value itself of the publicly available schema on the webpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>schemaValue</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>score28Days</IRI>
+        <Literal>The overall score for the query for 28Days time period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1591,6 +1514,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>score28Days</IRI>
         <Literal xml:lang="en">score28Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>score3Months</IRI>
+        <Literal>The overall score for the query for 3Months time period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1628,9 +1556,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>status</IRI>
+        <Literal>The HTTP status (response code) of the Webpage itself</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>status</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>title</IRI>
+        <Literal>The actual title of the webpage itself</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1638,9 +1576,19 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesSchema</IRI>
+        <Literal>The usesSchema property describes the relationship between a WebPage and the Schema it employs. The Schema class represents structured data, such as JSON-LD, Microdata, or RDFa, that is embedded in the webpage to provide search engines and other tools with enhanced information about the content. This property is crucial for understanding the implementation of semantic markup on webpages, which can significantly impact SEO by improving the visibility and interpretation of content in search engine results.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>usesSchema</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>value</IRI>
+        <Literal>The URL value of the Webpage itself</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
