@@ -64,46 +64,12 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/seovoc/containsImage
-:containsImage rdf:type owl:ObjectProperty ;
-               rdfs:domain :WebPage ;
-               rdfs:range :Image ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/containsVideo
-:containsVideo rdf:type owl:ObjectProperty ;
-               rdfs:domain :WebPage ;
-               rdfs:range :Video ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/hasAuthor
-:hasAuthor rdf:type owl:ObjectProperty ;
-           rdfs:domain :WebPage ;
-           rdfs:range :Author ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/hasPublisher
-:hasPublisher rdf:type owl:ObjectProperty ;
-              rdfs:domain :WebPage ;
-              rdfs:range :Publisher ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
 ###  https://w3id.org/seovoc/hasQuery
 :hasQuery rdf:type owl:ObjectProperty ;
           rdfs:domain :WebPage ;
           rdfs:range :Query ;
+          rdfs:comment "The hasQuery property represents the relationship between a WebPage and the Query that leads users to that page. It indicates that the WebPage is relevant or has been optimized for the specified Query. This relationship is crucial for understanding SEO dynamics, as it reflects the connection between user search behavior and web content." ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/hasTarget
-:hasTarget rdf:type owl:ObjectProperty ;
-           rdfs:domain :Link ;
-           rdfs:range :WebPage ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/hasURL
@@ -112,6 +78,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                  owl:InverseFunctionalProperty ;
         rdfs:domain :WebPage ;
         rdfs:range :URL ;
+        rdfs:comment "The hasURL property establishes a unique and reciprocal relationship between a WebPage and its corresponding URL. It asserts that each WebPage is identified by exactly one URL, and conversely, each URL uniquely identifies one WebPage. As both a functional and inverse functional property, hasURL ensures that this link is both unique and bidirectional, which is critical for accurately representing the identity and accessibility of web content" ;
         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -119,6 +86,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :influencedByQuery rdf:type owl:ObjectProperty ;
                    rdfs:domain :AnchorText ;
                    rdfs:range :Query ;
+                   rdfs:comment "The influencedByQuery property defines the relationship between AnchorText and the Query that may shape or determine the choice of that anchor text. It highlights how specific search queries can influence the wording and selection of anchor texts within a WebPage, reflecting SEO strategies aimed at optimizing link relevance and search engine visibility. This property is vital for understanding the interplay between user search behavior and content creation, particularly in the context of link building and on-page SEO" ;
                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -126,6 +94,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :link rdf:type owl:ObjectProperty ;
       rdfs:domain :WebPage ;
       rdfs:range :Link ;
+      rdfs:comment "The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation." ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -133,6 +102,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :usesSchema rdf:type owl:ObjectProperty ;
             rdfs:domain :WebPage ;
             rdfs:range :Schema ;
+            rdfs:comment "The usesSchema property describes the relationship between a WebPage and the Schema it employs. The Schema class represents structured data, such as JSON-LD, Microdata, or RDFa, that is embedded in the webpage to provide search engines and other tools with enhanced information about the content. This property is crucial for understanding the implementation of semantic markup on webpages, which can significantly impact SEO by improving the visibility and interpretation of content in search engine results." ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -144,29 +114,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :anchorValue rdf:type owl:DatatypeProperty ;
              rdfs:domain :AnchorText ;
              rdfs:range xsd:string ;
-             rdfs:comment <https://w3id.org/seovoc/> ;
+             rdfs:comment <https://w3id.org/seovoc/> ,
+                          "The text of the anchor tied to the link itself" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/ariaAttribute
-:ariaAttribute rdf:type owl:DatatypeProperty ;
-               rdfs:domain :WebPage ;
-               rdfs:range xsd:boolean ;
-               rdfs:comment "as a replacement for hasARIAAttribute" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/ariaHidden
-:ariaHidden rdf:type owl:DatatypeProperty ;
-            rdfs:domain :WebPage ;
-            rdfs:range xsd:boolean ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/bounceRate
 :bounceRate rdf:type owl:DatatypeProperty ;
             rdfs:domain :WebPage ;
             rdfs:range xsd:decimal ;
+            rdfs:comment "The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4" ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -174,6 +131,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clickDepth rdf:type owl:DatatypeProperty ;
             rdfs:domain :WebPage ;
             rdfs:range xsd:integer ;
+            rdfs:comment "The click depth of the page itself. Example: https://wordlift.io/blog/en/seo-automation/ is on level 4 if we count the parts between //" ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -181,6 +139,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks rdf:type owl:DatatypeProperty ;
         rdfs:domain :WebPage ;
         rdfs:range xsd:long ;
+        rdfs:comment "The average number of clicks the pages have for a given time period." ;
         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -188,6 +147,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks28Days rdf:type owl:DatatypeProperty ;
               rdfs:domain :Query ;
               rdfs:range xsd:long ;
+              rdfs:comment "The total number of clicks the query has for a given time period of 28 Days" ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
               rdfs:label "clicks28Days"@en .
 
@@ -196,6 +156,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                             rdfs:domain :Query ;
                             rdfs:range xsd:double ;
+                            rdfs:comment "The trend of the clicks when we compare 28Days to 3Months period." ;
                             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -203,6 +164,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks3Months rdf:type owl:DatatypeProperty ;
                rdfs:domain :Query ;
                rdfs:range xsd:long ;
+               rdfs:comment "The total number of clicks the query has for a given time period of 3 months" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                rdfs:label "clicks3Months"@en .
 
@@ -211,6 +173,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks7Days rdf:type owl:DatatypeProperty ;
              rdfs:domain :Query ;
              rdfs:range xsd:long ;
+             rdfs:comment "The total number of clicks the query has for a given time period of 7 days" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
              rdfs:label "clicks7Days"@en .
 
@@ -219,6 +182,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Query ;
                           rdfs:range xsd:double ;
+                          rdfs:comment "The trend of the clicks when we compare 7Days to 28Days period" ;
                           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -226,6 +190,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :clicks7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                            rdfs:domain :Query ;
                            rdfs:range xsd:double ;
+                           rdfs:comment "The trend of the clicks when we compare 7Days to 3Months period" ;
                            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -233,6 +198,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr rdf:type owl:DatatypeProperty ;
      rdfs:domain :WebPage ;
      rdfs:range xsd:double ;
+     rdfs:comment "The average click through rate (CTR) of the query for a given time period" ;
      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -240,6 +206,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr28Days rdf:type owl:DatatypeProperty ;
            rdfs:domain :Query ;
            rdfs:range xsd:double ;
+           rdfs:comment "The click through rate for 28 days period" ;
            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
            rdfs:label "ctr28Days"@en .
 
@@ -248,6 +215,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                          rdfs:domain :Query ;
                          rdfs:range xsd:double ;
+                         rdfs:comment "The click through rate trend for 28Days to 3Months period" ;
                          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -255,6 +223,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr3Months rdf:type owl:DatatypeProperty ;
             rdfs:domain :Query ;
             rdfs:range xsd:double ;
+            rdfs:comment "The click through rate for 3 months period" ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
             rdfs:label "ctr3Months"@en .
 
@@ -263,6 +232,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr7Days rdf:type owl:DatatypeProperty ;
           rdfs:domain :Query ;
           rdfs:range xsd:double ;
+          rdfs:comment "The click through rate for 7Days period" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
           rdfs:label "ctr7Days"@en .
 
@@ -271,13 +241,15 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :ctr7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
                        rdfs:domain :Query ;
                        rdfs:range xsd:double ;
-                       rdfs:comment <https://w3id.org/seovoc/> .
+                       rdfs:comment <https://w3id.org/seovoc/> ,
+                                    "The click through rate trend of 7days to 28days period" .
 
 
 ###  https://w3id.org/seovoc/ctr7DaysTo3MonthsTrend
 :ctr7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                         rdfs:domain :Query ;
                         rdfs:range xsd:double ;
+                        rdfs:comment "The click through rate trend of 7Days to 3Months period" ;
                         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -294,7 +266,8 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :embedding rdf:type owl:DatatypeProperty ;
            rdfs:domain :WebPage ;
            rdfs:range xsd:string ;
-           rdfs:comment "The actual vector value for the embedding itself." ;
+           rdfs:comment "The actual vector value for the embedding itself." ,
+                        "The vector embedding of the WebPage itself" ;
            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -325,7 +298,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/importID
 :importID rdf:type owl:DatatypeProperty ;
           rdfs:domain owl:Thing ;
-          rdfs:range xsd:int ;
+          rdfs:range xsd:string ;
           rdfs:comment "An ID when available" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
@@ -342,6 +315,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions rdf:type owl:DatatypeProperty ;
              rdfs:domain :WebPage ;
              rdfs:range xsd:long ;
+             rdfs:comment "Impressions of the webpage as a metric coming from Google Search Console" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -349,6 +323,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions28Days rdf:type owl:DatatypeProperty ;
                    rdfs:domain :Query ;
                    rdfs:range xsd:long ;
+                   rdfs:comment "The impressions for a 28 months period" ;
                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                    rdfs:label "impressions28Days"@en .
 
@@ -357,6 +332,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                                  rdfs:domain :Query ;
                                  rdfs:range xsd:double ;
+                                 rdfs:comment "The impressions trend when you compare 28Days to 3Months" ;
                                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -364,6 +340,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions3Months rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Query ;
                     rdfs:range xsd:long ;
+                    rdfs:comment "The impressions of the webpage for a 3 months time period" ;
                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                     rdfs:label "impressions3Months"@en .
 
@@ -372,6 +349,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions7Days rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Query ;
                   rdfs:range xsd:long ;
+                  rdfs:comment "The impressions for 7Days of the Webpage" ;
                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                   rdfs:label "impressions7Days"@en .
 
@@ -380,6 +358,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
                                rdfs:domain :Query ;
                                rdfs:range xsd:double ;
+                               rdfs:comment "The impressions trend of 7Days to 28Days" ;
                                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -387,6 +366,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :impressions7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                                 rdfs:domain :Query ;
                                 rdfs:range xsd:double ;
+                                rdfs:comment "The impressions trend of 7Days to 3Months" ;
                                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -394,6 +374,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :isCrawlable rdf:type owl:DatatypeProperty ;
              rdfs:domain :WebPage ;
              rdfs:range xsd:boolean ;
+             rdfs:comment "Whether the page can be crawled according to robots.txt" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -409,6 +390,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                                             ]
                                  ]
                      ] ;
+          rdfs:comment "The type of the link, with two possible values inbound and outbound (internal link coming from the same website or external link coming from an external website)" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -424,6 +406,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :metaDescription rdf:type owl:DatatypeProperty ;
                  rdfs:domain :WebPage ;
                  rdfs:range xsd:string ;
+                 rdfs:comment "The meta description of the webpage" ;
                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -431,6 +414,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :metaTitle rdf:type owl:DatatypeProperty ;
            rdfs:domain :WebPage ;
            rdfs:range xsd:string ;
+           rdfs:comment "The meta title of the webpage" ;
            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -447,28 +431,15 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :noFollow rdf:type owl:DatatypeProperty ;
           rdfs:domain :Link ;
           rdfs:range xsd:boolean ;
+          rdfs:comment "A metric to define whether the nofollow is in place (True for Yes and False for No)" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/optimizedImage
-:optimizedImage rdf:type owl:DatatypeProperty ;
-                rdfs:domain :WebPage ;
-                rdfs:range xsd:boolean ;
-                rdfs:comment "as a replacement of hasOptimizedImage" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/pageLoadTime
-:pageLoadTime rdf:type owl:DatatypeProperty ;
-              rdfs:domain :WebPage ;
-              rdfs:range xsd:decimal ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/position
 :position rdf:type owl:DatatypeProperty ;
           rdfs:domain :WebPage ;
           rdfs:range xsd:double ;
+          rdfs:comment "The average ranking positon that the page has for a given time period on SERPs" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -476,6 +447,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :position28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                               rdfs:domain :Query ;
                               rdfs:range xsd:double ;
+                              rdfs:comment "The ranking position trend for a given Query for 28Days to 3Months on SERPs" ;
                               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -483,6 +455,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :position3Months rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Query ;
                  rdfs:range xsd:float ;
+                 rdfs:comment "The ranking position of the given Query for a 3 months time period on SERPs" ;
                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                  rdfs:label "position3Months"@en .
 
@@ -491,7 +464,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :position7Days rdf:type owl:DatatypeProperty ;
                rdfs:domain :Query ;
                rdfs:range xsd:float ;
-               rdfs:comment "The average position for the keyword."@en ;
+               rdfs:comment "The ranking positon of the given query for a 7Days time period on SERPs" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
                rdfs:label "position7Days "@en .
 
@@ -500,6 +473,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :position7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
                             rdfs:domain :Query ;
                             rdfs:range xsd:double ;
+                            rdfs:comment "The ranking position trend of 7Days to 28Days on SERPs" ;
                             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -507,6 +481,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :position7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                              rdfs:domain :Query ;
                              rdfs:range xsd:double ;
+                             rdfs:comment "The ranking position trend of 7Days to 3Months on SERPs" ;
                              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -514,6 +489,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :positon28Days rdf:type owl:DatatypeProperty ;
                rdfs:domain :Query ;
                rdfs:range xsd:long ;
+               rdfs:comment "The ranking position for 28 Days on SERPs" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -521,6 +497,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :publishingDate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WebPage ;
                 rdfs:range xsd:dateTime ;
+                rdfs:comment "The date where the webpage was published" ;
                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -528,6 +505,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :schemaValue rdf:type owl:DatatypeProperty ;
              rdfs:domain :Schema ;
              rdfs:range xsd:string ;
+             rdfs:comment "The schema value itself of the publicly available schema on the webpage" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -535,6 +513,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :score28Days rdf:type owl:DatatypeProperty ;
              rdfs:domain :Query ;
              rdfs:range xsd:float ;
+             rdfs:comment "The overall score for the query for 28Days time period" ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
              rdfs:label "score28Days"@en .
 
@@ -543,6 +522,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :score3Months rdf:type owl:DatatypeProperty ;
               rdfs:domain :Query ;
               rdfs:range xsd:float ;
+              rdfs:comment "The overall score for the query for 3Months time period" ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
               rdfs:label "score3Months"@en .
 
@@ -568,6 +548,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :status rdf:type owl:DatatypeProperty ;
         rdfs:domain :WebPage ;
         rdfs:range xsd:int ;
+        rdfs:comment "The HTTP status (response code) of the Webpage itself" ;
         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -575,6 +556,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :title rdf:type owl:DatatypeProperty ;
        rdfs:domain :WebPage ;
        rdfs:range xsd:string ;
+       rdfs:comment "The actual title of the webpage itself" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -582,6 +564,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 :value rdf:type owl:DatatypeProperty ;
        rdfs:domain :URL ;
        rdfs:range xsd:string ;
+       rdfs:comment "The URL value of the Webpage itself" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -591,12 +574,14 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 
 ###  http://schema.org/Thing
 schema:Thing rdf:type owl:Class ;
-             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" .
+             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+             rdfs:comment "The Thing class from Schema.org" .
 
 
 ###  http://schema.org/WebPage
 schema:WebPage rdf:type owl:Class ;
-               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" .
+               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+               rdfs:comment "The WebPage class from Schema.org" .
 
 
 ###  http://www.w3.org/2002/07/owl#Thing
@@ -607,22 +592,6 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
           skos:exactMatch schema:Thing .
 
 
-###  https://schema.org/ImageObject
-<https://schema.org/ImageObject> rdf:type owl:Class ;
-                                 owl:equivalentClass :Image ;
-                                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-                                 rdfs:comment "A class representing an image file or photograph. This class is used to describe various attributes of an image." ;
-                                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://schema.org/Person
-<https://schema.org/Person> rdf:type owl:Class ;
-                            owl:equivalentClass :Author ;
-                            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-                            rdfs:comment "A class representing an individual person. This class is used to describe attributes and relationships of a person." ;
-                            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
 ###  https://w3id.org/seovoc/AnchorText
 :AnchorText rdf:type owl:Class ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
@@ -631,46 +600,11 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
-###  https://w3id.org/seovoc/Author
-:Author rdf:type owl:Class ;
-        rdfs:subClassOf :E_E_A_T ;
-        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/E_E_A_T
-:E_E_A_T rdf:type owl:Class ;
-         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/Image
-:Image rdf:type owl:Class ;
-       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
 ###  https://w3id.org/seovoc/Link
 :Link rdf:type owl:Class ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       rdfs:comment "A class representing a hyperlink found on a webpage. This class captures the attributes of a link and its type, such as whether the link is internal (pointing to the same domain) or external (pointing to a different domain). The Link class is crucial for understanding the structure and navigation of a website, as well as for analyzing the relationships between different web resources in the context of SEO and web development." ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/Organization
-:Organization rdf:type owl:Class ;
-              owl:equivalentClass :Publisher ;
-              rdfs:subClassOf :E_E_A_T ;
-              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/Publisher
-:Publisher rdf:type owl:Class ;
-           rdfs:subClassOf :E_E_A_T ;
-           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-           rdfs:comment "A class representing an organization, such as a business, non-profit, governmental body, or other group of people working together for a common purpose. This class is used to describe various attributes of organizations, including their names, locations, contact information, and associated events or products. The Organization class is fundamental to defining the structure and relationships of entities within Schema.org's vocabulary, supporting a wide range of applications from web markup to data integration." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/Query
@@ -693,13 +627,6 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
      rdfs:comment "This class represents a unique URL that identifies a specific webpage. It is intended to serve as a stable and unambiguous reference to web content, ensuring consistent access to the webpage across various systems and applications. The URL should be a valid and well-formed HTTP or HTTPS address, uniquely pointing to a resource on the World Wide Web. NOT equivalent to schema.org's URL." ;
      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
-
-
-###  https://w3id.org/seovoc/Video
-:Video rdf:type owl:Class ;
-       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-       rdfs:comment "This class represents a video object, typically used to describe a video file or stream. It encompasses metadata about the video. The VideoObject class is designed to enhance the discoverability and understanding of video content on the web by providing structured data that can be interpreted by search engines and other applications." ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/WebPage
