@@ -31,7 +31,7 @@ The **SEOntology** is a framework that WordLift, other SEOs, software engineers,
   - Clicks & Impressions Metrics: `clicks7Days`, `click28Days`, `ctr7Days`, and so on for tracking webpage performance over time.
   - and more!
  
-## Schema Skeleton for the Data
+## SEOntology Visualized
 ![seontology logo-04](.assets/FINAL_SEONTOLOGY_WORDLIFT.png)
 
 ## Getting Started
@@ -67,6 +67,10 @@ We use [Semantic Versioning](http://semver.org/) for this project.
 
 - [Thread on X](https://x.com/cyberandy/status/1715853285838430358?s=20)
 - For issues, use the GitHub [issues](link_to_issues_page) page.
+
+## Publications
+
+* Andrea Volpini. "[Introducing SEOntology: The Future Of SEO In The Age Of AI](https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/)". Search Engine Journal, August 2024.
 
 ## Sponsor
 
