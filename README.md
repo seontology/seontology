@@ -71,6 +71,7 @@ We use [Semantic Versioning](http://semver.org/) for this project.
 ## Publications
 
 * Andrea Volpini. "[Introducing SEOntology: The Future Of SEO In The Age Of AI](https://www.searchenginejournal.com/introducing-seontology-the-future-of-seo-in-the-age-of-ai/524773/)". Search Engine Journal, August 2024.
+[![SEOntology : THe basis for Next-Gen SEO - Zagreb SEO Summit Presentation](https://img.youtube.com/vi/gM6egAImB1o/0.jpg)](https://www.youtube.com/watch?v=gM6egAImB1o)
 
 ## Sponsor
 
