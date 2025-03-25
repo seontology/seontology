@@ -1176,7 +1176,7 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>hasQuery</IRI>
         <Literal>The hasQuery property represents the relationship between a WebPage and the Query that leads users to that page. It indicates that the WebPage is relevant or has been optimized for the specified Query. This relationship is crucial for understanding SEO dynamics, as it reflects the connection between user search behavior and web content.</Literal>
     </AnnotationAssertion>
