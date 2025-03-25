@@ -46,6 +46,9 @@
         <AbbreviatedIRI>schema:</AbbreviatedIRI>
     </Annotation>
     <Declaration>
+        <Class abbreviatedIRI="schema:Language"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="schema:Thing"/>
     </Declaration>
     <Declaration>
@@ -55,7 +58,19 @@
         <Class IRI="AnchorText"/>
     </Declaration>
     <Declaration>
+        <Class IRI="Chunk"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="Link"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LinkGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PageGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Persona"/>
     </Declaration>
     <Declaration>
         <Class IRI="Query"/>
@@ -70,7 +85,40 @@
         <Class IRI="WebPage"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="about"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="anchorResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="describesPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasChunk"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasLink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasLinkGroup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPersona"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="hasQuery"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSchemaMarkup"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasURL"/>
@@ -79,16 +127,61 @@
         <ObjectProperty IRI="influencedByQuery"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="isChunkOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isLinkGroupOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isLinkOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPersonaFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPrimaryQueryOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="link"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="usesSchema"/>
+        <ObjectProperty IRI="mentions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="schema:identifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="schema:keywords"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="schema:name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="schema:position"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="schema:thumbnailUrl"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="ageRange"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="anchorValue"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="bounceRate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="chunkPosition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="chunkSetName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="chunkStrategy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="chunkText"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="clickDepth"/>
@@ -148,6 +241,15 @@
         <DataProperty IRI="embeddingText"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="end"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="groupName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="groupType"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="importHash"/>
     </Declaration>
     <Declaration>
@@ -178,10 +280,22 @@
         <DataProperty IRI="impressions7DaysTo3MonthsTrend"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="intent"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="isCrawlable"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="keywordType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="label"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="linkType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="markdownText"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="menu"/>
@@ -193,13 +307,13 @@
         <DataProperty IRI="metaTitle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="name"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="noFollow"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="position"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="position28Days"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="position28DaysTo3MonthsTrend"/>
@@ -217,10 +331,19 @@
         <DataProperty IRI="position7DaysTo3MonthsTrend"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="positon28Days"/>
+        <DataProperty IRI="preferredDevice"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="publishingDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="queryCategory"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="queryType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="role"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="schemaValue"/>
@@ -238,13 +361,22 @@
         <DataProperty IRI="sourceCode"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="start"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="status"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="title"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="tokenCount"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="value"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="weight"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI=""/>
@@ -280,6 +412,29 @@
         <Class IRI="WebPage"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="describesPage"/>
+        <ObjectProperty IRI="hasSchemaMarkup"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasChunk"/>
+        <ObjectProperty IRI="isChunkOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasLink"/>
+        <ObjectProperty IRI="isLinkOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasLinkGroup"/>
+        <ObjectProperty IRI="isLinkGroupOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+        <ObjectProperty IRI="isPrimaryQueryOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+    </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="hasURL"/>
     </FunctionalObjectProperty>
@@ -287,7 +442,63 @@
         <ObjectProperty IRI="hasURL"/>
     </InverseFunctionalObjectProperty>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <ObjectUnionOf>
+            <Class IRI="AnchorText"/>
+            <Class IRI="Chunk"/>
+            <Class IRI="LinkGroup"/>
+            <Class IRI="Persona"/>
+            <Class IRI="Query"/>
+            <Class IRI="Schema"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="about"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="anchorResource"/>
+        <Class IRI="Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="describesPage"/>
+        <Class IRI="Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasChunk"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasLink"/>
+        <Class IRI="LinkGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasLinkGroup"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPage"/>
+        <Class IRI="PageGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPersona"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+        <Class IRI="Chunk"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="hasQuery"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasSchemaMarkup"/>
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -299,16 +510,84 @@
         <Class IRI="AnchorText"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="isChunkOf"/>
+        <Class IRI="Chunk"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isLinkGroupOf"/>
+        <Class IRI="LinkGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isLinkOf"/>
+        <Class IRI="Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPersonaFor"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPrimaryQueryOf"/>
+        <Class IRI="Query"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="link"/>
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="usesSchema"/>
+        <ObjectProperty IRI="mentions"/>
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <Class abbreviatedIRI="schema:Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="about"/>
+        <Class abbreviatedIRI="schema:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="anchorResource"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="anchorResource"/>
+        <Class IRI="LinkGroup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="describesPage"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasChunk"/>
+        <Class IRI="Chunk"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasLink"/>
+        <Class IRI="Link"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasLinkGroup"/>
+        <Class IRI="LinkGroup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPage"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPersona"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPrimaryQuery"/>
+        <Class IRI="Query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="hasQuery"/>
         <Class IRI="Query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasSchemaMarkup"/>
+        <Class IRI="Schema"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasURL"/>
@@ -319,17 +598,57 @@
         <Class IRI="Query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="isChunkOf"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isLinkGroupOf"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isLinkOf"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isPersonaFor"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isPrimaryQueryOf"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="link"/>
         <Class IRI="Link"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="usesSchema"/>
-        <Class IRI="Schema"/>
+        <ObjectProperty IRI="mentions"/>
+        <Class abbreviatedIRI="schema:Thing"/>
     </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="name"/>
-        <DataProperty IRI="dateCreated"/>
-    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="schema:identifier"/>
+        <Class IRI="LinkGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="schema:keywords"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="schema:name"/>
+        <Class IRI="LinkGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="schema:position"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="schema:thumbnailUrl"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="ageRange"/>
+        <Class IRI="Persona"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="anchorValue"/>
         <Class IRI="AnchorText"/>
@@ -337,6 +656,22 @@
     <DataPropertyDomain>
         <DataProperty IRI="bounceRate"/>
         <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="chunkPosition"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="chunkSetName"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="chunkStrategy"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="chunkText"/>
+        <Class IRI="Chunk"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clickDepth"/>
@@ -415,6 +750,18 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="end"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="groupName"/>
+        <Class IRI="PageGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="groupType"/>
+        <Class IRI="PageGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="importHash"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </DataPropertyDomain>
@@ -455,12 +802,28 @@
         <Class IRI="Query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="intent"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="isCrawlable"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="keywordType"/>
+        <Class IRI="Query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="label"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="linkType"/>
         <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="markdownText"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="menu"/>
@@ -475,16 +838,16 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="name"/>
-        <Class IRI="Query"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="noFollow"/>
         <Class IRI="Link"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="position"/>
         <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="position28Days"/>
+        <Class IRI="Query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="position28DaysTo3MonthsTrend"/>
@@ -507,12 +870,24 @@
         <Class IRI="Query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="positon28Days"/>
-        <Class IRI="Query"/>
+        <DataProperty IRI="preferredDevice"/>
+        <Class IRI="Persona"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="publishingDate"/>
         <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="queryCategory"/>
+        <Class IRI="Query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="queryType"/>
+        <Class IRI="Query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="role"/>
+        <Class IRI="Persona"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="schemaValue"/>
@@ -535,6 +910,10 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="start"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="status"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
@@ -543,9 +922,41 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="tokenCount"/>
+        <Class IRI="Chunk"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="value"/>
         <Class IRI="URL"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="weight"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="schema:identifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="schema:keywords"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="schema:name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="schema:position"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="schema:thumbnailUrl"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="ageRange"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="anchorValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -553,6 +964,22 @@
     <DataPropertyRange>
         <DataProperty IRI="bounceRate"/>
         <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="chunkPosition"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="chunkSetName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="chunkStrategy"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="chunkText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="clickDepth"/>
@@ -631,6 +1058,18 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="end"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="groupName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="groupType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="importHash"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -671,8 +1110,20 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="intent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="isCrawlable"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="keywordType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="label"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="linkType"/>
@@ -680,6 +1131,10 @@
             <Literal>Inbound</Literal>
             <Literal>Outbound</Literal>
         </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="markdownText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="menu"/>
@@ -694,16 +1149,16 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="name"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="noFollow"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="position"/>
         <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="position28Days"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="position28DaysTo3MonthsTrend"/>
@@ -726,12 +1181,44 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="positon28Days"/>
-        <Datatype abbreviatedIRI="xsd:long"/>
+        <DataProperty IRI="preferredDevice"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="publishingDate"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="queryCategory"/>
+        <DataOneOf>
+            <Literal>Advice</Literal>
+            <Literal>Explanations</Literal>
+            <Literal>Facts</Literal>
+            <Literal>Planning</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="queryType"/>
+        <DataOneOf>
+            <Literal>Analytical</Literal>
+            <Literal>Causal</Literal>
+            <Literal>Commonsense</Literal>
+            <Literal>Cultural</Literal>
+            <Literal>Dynamic</Literal>
+            <Literal>Exploratory</Literal>
+            <Literal>Instructive</Literal>
+            <Literal>Lifestyle</Literal>
+            <Literal>Long-tail</Literal>
+            <Literal>Multi-hop</Literal>
+            <Literal>Philosophical</Literal>
+            <Literal>Popular</Literal>
+            <Literal>Recommendation</Literal>
+            <Literal>Spatio-temporal</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="role"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="schemaValue"/>
@@ -754,6 +1241,10 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="start"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="status"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
@@ -762,16 +1253,34 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="tokenCount"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="value"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="weight"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:Language</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:Language</AbbreviatedIRI>
+        <Literal>The Language class from Schema.org</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
         <Literal>The Thing class from Schema.org</Literal>
     </AnnotationAssertion>
@@ -781,9 +1290,69 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
         <Literal>The WebPage class from Schema.org</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:identifier</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:identifier</AbbreviatedIRI>
+        <Literal>A unique identifier for the LinkGroup, allowing differentiation between link clusters on a webpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
+        <Literal>Declares the natural language of a chunk of text</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:keywords</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:keywords</AbbreviatedIRI>
+        <Literal>A list of keywords associated with the specific link, aiding semantic classification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:name</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:name</AbbreviatedIRI>
+        <Literal>The human-readable name of the LinkGroup, typically reflecting its function or placement on a webpage (e.g., &apos;Footer Links&apos;, &apos;Sidebar Menu&apos;, &apos;Main Navigation&apos;).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:position</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:position</AbbreviatedIRI>
+        <Literal>The position of the link on the webpage or within a list). Uses Schema.org’s position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <AbbreviatedIRI>schema:thumbnailUrl</AbbreviatedIRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <AbbreviatedIRI>schema:thumbnailUrl</AbbreviatedIRI>
+        <Literal>A URL pointing to a thumbnail image for the link, useful for visually rich links</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -791,7 +1360,7 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
         <Literal>A Thing that may have a schema:url, hence may have analytics data bound to it.</Literal>
     </AnnotationAssertion>
@@ -816,12 +1385,7 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>AnchorText</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>AnchorText</IRI>
         <Literal>A class representing the anchor text of a hyperlink, which is the clickable text displayed for a link on a webpage. This class captures the textual content used to describe the target of the link, often influencing search engine optimization (SEO) and user experience. The AnchorText class is important for understanding how links are represented in the context of a webpage and how they contribute to the navigation and relevance of the content</Literal>
     </AnnotationAssertion>
@@ -832,11 +1396,26 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>Chunk</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>Chunk</IRI>
+        <Literal>Defines a Chunk, a self-contained section of a schema:WebPage used for vector search and structured representation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Chunk</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Link</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>Link</IRI>
         <Literal>A class representing a hyperlink found on a webpage. This class captures the attributes of a link and its type, such as whether the link is internal (pointing to the same domain) or external (pointing to a different domain). The Link class is crucial for understanding the structure and navigation of a website, as well as for analyzing the relationships between different web resources in the context of SEO and web development.</Literal>
     </AnnotationAssertion>
@@ -847,11 +1426,56 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>LinkGroup</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>LinkGroup</IRI>
+        <Literal>A collection of related links within a webpage, typically grouped by placement or function, such as navigation menus, footers, or sidebars. It helps structure internal linking and improves discoverability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>LinkGroup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>PageGroup</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>PageGroup</IRI>
+        <Literal>A class representing in which A/B testing group does the page belong: control A, control B, test A, test B and so on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>PageGroup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>Persona</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>Persona</IRI>
+        <Literal>A representation of a specific audience or user group defined by key characteristics, including their role, brand association, age range, gender, location, problems they aim to solve, and preferred devices. This class is used to tailor content or strategies to meet the needs and expectations of these target personas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Persona</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Query</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>Query</IRI>
         <Literal xml:lang="en">A class representing a search query. Instances of this class encapsulate the parameters, conditions, and terms submitted to a search engine by users or systems. This class is fundamental to modeling and analyzing search behavior, including keyword selection, query intent, and search patterns in the context of SEO.</Literal>
     </AnnotationAssertion>
@@ -871,7 +1495,7 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>Schema</IRI>
         <Literal>This class represents schema markup, a form of structured data that defines the semantic relationships between entities on a webpage. Schema markup is used to enhance the understanding of web content by search engines and other applications, facilitating better indexing, richer search results, and improved interoperability across different systems. This class provides a framework for describing the types, properties, and relationships that constitute schema markup, enabling consistent and meaningful representation of web content.</Literal>
     </AnnotationAssertion>
@@ -886,7 +1510,7 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>URL</IRI>
         <Literal>This class represents a unique URL that identifies a specific webpage. It is intended to serve as a stable and unambiguous reference to web content, ensuring consistent access to the webpage across various systems and applications. The URL should be a valid and well-formed HTTP or HTTPS address, uniquely pointing to a resource on the World Wide Web. NOT equivalent to schema.org&apos;s URL.</Literal>
     </AnnotationAssertion>
@@ -901,7 +1525,7 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>WebPage</IRI>
         <Literal xml:lang="en">A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.</Literal>
     </AnnotationAssertion>
@@ -921,12 +1545,57 @@
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>anchorValue</IRI>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>about</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>about</IRI>
+        <Literal>Each webpage has a main entity of type Thing: Person, Location, LocalBusiness etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>about</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ageRange</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>ageRange</IRI>
+        <Literal>Represents the age range of a persona, typically expressed as a string (e.g., &apos;18-25&apos;). This property helps categorize personas by their approximate age groups for tailored strategies or content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ageRange</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>anchorResource</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>anchorResource</IRI>
+        <Literal>Points to an entity representing the linked content, useful for dereferencing in GraphQL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>anchorResource</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>anchorValue</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>anchorValue</IRI>
         <Literal>The text of the anchor tied to the link itself</Literal>
     </AnnotationAssertion>
@@ -936,7 +1605,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>bounceRate</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>bounceRate</IRI>
         <Literal>The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4</Literal>
     </AnnotationAssertion>
@@ -946,7 +1620,72 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>chunkPosition</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>chunkPosition</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>chunkPosition</IRI>
+        <Literal>The order of the chunk on the webpage, starting from 1 for the first chunk. Useful for reconstructing the document from its parts or presenting chunks in context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>chunkSetName</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>chunkSetName</IRI>
+        <Literal>The name of the set of chunks (e.g., &quot;Introduction&quot;, &quot;Body&quot;, &quot;Summary&quot;). Useful for organizing chunks into meaningful groups</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>chunkSetName</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>chunkStrategy</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>chunkStrategy</IRI>
+        <Literal>Describes the chunking strategy applied to split the document (e.g., &quot;Semantic Segmentation&quot;, &quot;Fixed-Length&quot;, &quot;Sentence-based&quot;)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>chunkStrategy</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>chunkText</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>chunkText</IRI>
+        <Literal>The plain text content of the chunk, stripped of formatting, used for embeddings, analysis, or display in NLP applications</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>chunkText</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clickDepth</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clickDepth</IRI>
         <Literal>The click depth of the page itself. Example: https://wordlift.io/blog/en/seo-automation/ is on level 4 if we count the parts between //</Literal>
     </AnnotationAssertion>
@@ -956,7 +1695,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks</IRI>
         <Literal>The average number of clicks the pages have for a given time period.</Literal>
     </AnnotationAssertion>
@@ -966,7 +1710,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks28Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks28Days</IRI>
         <Literal>The total number of clicks the query has for a given time period of 28 Days</Literal>
     </AnnotationAssertion>
@@ -981,7 +1730,12 @@
         <Literal xml:lang="en">clicks28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks28DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks28DaysTo3MonthsTrend</IRI>
         <Literal>The trend of the clicks when we compare 28Days to 3Months period.</Literal>
     </AnnotationAssertion>
@@ -989,6 +1743,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks3Months</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>clicks3Months</IRI>
+        <Literal xml:lang="en">clicks3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1001,12 +1765,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>clicks3Months</IRI>
-        <Literal xml:lang="en">clicks3Months</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks7Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks7Days</IRI>
         <Literal>The total number of clicks the query has for a given time period of 7 days</Literal>
     </AnnotationAssertion>
@@ -1021,7 +1785,12 @@
         <Literal xml:lang="en">clicks7Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks7DaysTo28DaysTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks7DaysTo28DaysTrend</IRI>
         <Literal>The trend of the clicks when we compare 7Days to 28Days period</Literal>
     </AnnotationAssertion>
@@ -1031,7 +1800,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks7DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clicks7DaysTo3MonthsTrend</IRI>
         <Literal>The trend of the clicks when we compare 7Days to 3Months period</Literal>
     </AnnotationAssertion>
@@ -1041,7 +1815,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr</IRI>
         <Literal>The average click through rate (CTR) of the query for a given time period</Literal>
     </AnnotationAssertion>
@@ -1051,7 +1830,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr28Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr28Days</IRI>
         <Literal>The click through rate for 28 days period</Literal>
     </AnnotationAssertion>
@@ -1066,7 +1850,12 @@
         <Literal xml:lang="en">ctr28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr28DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr28DaysTo3MonthsTrend</IRI>
         <Literal>The click through rate trend for 28Days to 3Months period</Literal>
     </AnnotationAssertion>
@@ -1076,7 +1865,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr3Months</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr3Months</IRI>
         <Literal>The click through rate for 3 months period</Literal>
     </AnnotationAssertion>
@@ -1091,6 +1885,16 @@
         <Literal xml:lang="en">ctr3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr7Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>ctr7Days</IRI>
+        <Literal xml:lang="en">ctr7Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>ctr7Days</IRI>
         <Literal>The click through rate for 7Days period</Literal>
@@ -1101,22 +1905,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ctr7Days</IRI>
-        <Literal xml:lang="en">ctr7Days</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>ctr7DaysTo28DaysTrend</IRI>
-        <IRI></IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr7DaysTo28DaysTrend</IRI>
         <Literal>The click through rate trend of 7days to 28days period</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ctr7DaysTo28DaysTrend</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr7DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ctr7DaysTo3MonthsTrend</IRI>
         <Literal>The click through rate trend of 7Days to 3Months period</Literal>
     </AnnotationAssertion>
@@ -1126,7 +1935,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>dateCreated</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>dateCreated</IRI>
         <Literal xml:lang="en">The date/time this keyword analytics data has been extracted and imported in the KG.</Literal>
     </AnnotationAssertion>
@@ -1141,14 +1955,29 @@
         <Literal xml:lang="en">dateCreated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>describesPage</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>describesPage</IRI>
+        <Literal>Indicates the WebPage that is described by this schema markup block. Useful for linking structured data to content</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>describesPage</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>embedding</IRI>
-        <Literal>The actual vector value for the embedding itself.</Literal>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>embedding</IRI>
-        <Literal>The vector embedding of the WebPage itself</Literal>
+        <Literal>The actual vector value for the embedding itself.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1156,7 +1985,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>embeddingModel</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>embeddingModel</IRI>
         <Literal>The name of the NLP embedding model used to create vectorized version of the content.</Literal>
     </AnnotationAssertion>
@@ -1166,7 +2000,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>embeddingText</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>embeddingText</IRI>
         <Literal>The text used to create an embedding of the webpage itself.</Literal>
     </AnnotationAssertion>
@@ -1174,6 +2013,146 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>embeddingText</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>end</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>end</IRI>
+        <Literal>The end offset of the chunk in the text, expressed as character or token position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>end</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>groupName</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>groupName</IRI>
+        <Literal>Indicates the name of the group in which the page belongs, A , B, C (control A, control B, test A, test ...B)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>groupName</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>groupType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>groupType</IRI>
+        <Literal>Indicates the group type in which the page belongs, e.g. control or test.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>groupType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasChunk</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasChunk</IRI>
+        <Literal>Links a schema:WebPage to one or more Chunks representing segmented parts of the page</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasChunk</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasLink</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasLink</IRI>
+        <Literal>Defines the relationship between a LinkGroup and the individual links it contains, helping to structure internal and external linking within a webpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasLink</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasLinkGroup</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasLinkGroup</IRI>
+        <Literal>Connects a WebPage to one or more LinkGroups that organize its internal links (e.g., navigation menus, sidebar sections, related content blocks). Enables grouping of links by purpose or position on the page</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasLinkGroup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasPage</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasPage</IRI>
+        <Literal>The hasQuery property represents the relationship between a WebPage and the PageGroup class, designed to help identify in which group type, A/B testing-wise the group belongs to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasPage</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasPersona</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasPersona</IRI>
+        <Literal>Associates a webpage with a target persona, representing the intended audience based on characteristics such as interests, demographics, or behavior</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasPersona</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasPrimaryQuery</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasPrimaryQuery</IRI>
+        <Literal>This object attribute helps us with the querying process of queries equal to certain text</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasPrimaryQuery</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasQuery</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -1186,7 +2165,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasSchemaMarkup</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasSchemaMarkup</IRI>
+        <Literal>The usesSchema property describes the relationship between a WebPage and the Schema it employs. The Schema class represents structured data, such as JSON-LD, Microdata, or RDFa, that is embedded in the webpage to provide search engines and other tools with enhanced information about the content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasSchemaMarkup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasURL</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>hasURL</IRI>
         <Literal>The hasURL property establishes a unique and reciprocal relationship between a WebPage and its corresponding URL. It asserts that each WebPage is identified by exactly one URL, and conversely, each URL uniquely identifies one WebPage. As both a functional and inverse functional property, hasURL ensures that this link is both unique and bidirectional, which is critical for accurately representing the identity and accessibility of web content</Literal>
     </AnnotationAssertion>
@@ -1196,7 +2195,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>importHash</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>importHash</IRI>
         <Literal>A hash of the data to understand whether it changed</Literal>
     </AnnotationAssertion>
@@ -1206,7 +2210,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>importID</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>importID</IRI>
         <Literal>An ID when available</Literal>
     </AnnotationAssertion>
@@ -1216,7 +2225,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>importOrigin</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>importOrigin</IRI>
         <Literal>A string representing the source of data or the procedure</Literal>
     </AnnotationAssertion>
@@ -1226,7 +2240,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions</IRI>
         <Literal>Impressions of the webpage as a metric coming from Google Search Console</Literal>
     </AnnotationAssertion>
@@ -1236,7 +2255,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions28Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions28Days</IRI>
         <Literal>The impressions for a 28 months period</Literal>
     </AnnotationAssertion>
@@ -1251,7 +2275,12 @@
         <Literal xml:lang="en">impressions28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions28DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions28DaysTo3MonthsTrend</IRI>
         <Literal>The impressions trend when you compare 28Days to 3Months</Literal>
     </AnnotationAssertion>
@@ -1261,7 +2290,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions3Months</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions3Months</IRI>
         <Literal>The impressions of the webpage for a 3 months time period</Literal>
     </AnnotationAssertion>
@@ -1276,7 +2310,12 @@
         <Literal xml:lang="en">impressions3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions7Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions7Days</IRI>
         <Literal>The impressions for 7Days of the Webpage</Literal>
     </AnnotationAssertion>
@@ -1291,7 +2330,12 @@
         <Literal xml:lang="en">impressions7Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions7DaysTo28DaysTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions7DaysTo28DaysTrend</IRI>
         <Literal>The impressions trend of 7Days to 28Days</Literal>
     </AnnotationAssertion>
@@ -1301,7 +2345,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions7DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>impressions7DaysTo3MonthsTrend</IRI>
         <Literal>The impressions trend of 7Days to 3Months</Literal>
     </AnnotationAssertion>
@@ -1311,7 +2360,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>influencedByQuery</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>influencedByQuery</IRI>
         <Literal>The influencedByQuery property defines the relationship between AnchorText and the Query that may shape or determine the choice of that anchor text. It highlights how specific search queries can influence the wording and selection of anchor texts within a WebPage, reflecting SEO strategies aimed at optimizing link relevance and search engine visibility. This property is vital for understanding the interplay between user search behavior and content creation, particularly in the context of link building and on-page SEO</Literal>
     </AnnotationAssertion>
@@ -1319,6 +2373,41 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>influencedByQuery</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>intent</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>intent</IRI>
+        <Literal>Intent is done on a page level, so it will be added as a data property to the Page class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>intent</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isChunkOf</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isChunkOf</IRI>
+        <Literal>Links a Chunk to the parent WebPage it belongs to, defining the document structure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isChunkOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isCrawlable</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1331,7 +2420,102 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isLinkGroupOf</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isLinkGroupOf</IRI>
+        <Literal>Defines the relationship between a LinkGroup and the WebPage it belongs to, helping structure internal linking and improve content organization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isLinkGroupOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isLinkOf</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isLinkOf</IRI>
+        <Literal>Inverse property of seovoc:hasLink, linking a link back to its parent LinkGroup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isLinkOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isPersonaFor</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isPersonaFor</IRI>
+        <Literal>isPersonaFor links a Persona to the WebPage or Query it is intended to represent or target. It captures the relationship where a persona informs the content or intent behind a page or search query</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isPersonaFor</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>isPrimaryQueryOf</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isPrimaryQueryOf</IRI>
+        <Literal>Defines the relationship between a search query (seovoc:Query) and the webpage (seovoc:WebPage) for which it serves as the main or most relevant query</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isPrimaryQueryOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>keywordType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>keywordType</IRI>
+        <Literal>Primary and secondary keyword modeling are expressed through the use of the data property keywordType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>keywordType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>label</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>label</IRI>
+        <Literal>The label is the name of the entity, because Thing can be any entity, so we need to specify</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>label</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>link</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>link</IRI>
         <Literal>The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation.</Literal>
     </AnnotationAssertion>
@@ -1341,7 +2525,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>linkType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>linkType</IRI>
         <Literal>The type of the link, with two possible values inbound and outbound (internal link coming from the same website or external link coming from an external website)</Literal>
     </AnnotationAssertion>
@@ -1351,9 +2540,44 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>markdownText</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>markdownText</IRI>
+        <Literal>This property represents a Markdown-formatted version of a webpage’s content, specifically structured for Large Language Model (LLM) processing. It ensures that textual content is clean, structured, and semantically rich, enhancing readability, comprehension, and knowledge extraction.Iit eliminates unnecessary HTML/CSS/JS clutter, improving efficient tokenization and retrieval-augmented generation (RAG) in AI applications.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>markdownText</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>mentions</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>mentions</IRI>
+        <Literal>Each webpage has an entity of type Thing: Person, Location, LocalBusiness etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>mentions</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>menu</IRI>
-        <Literal>as a replacement for hasMenu</Literal>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>menu</IRI>
+        <Literal>As a replacement for hasMenu</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1361,7 +2585,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>metaDescription</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>metaDescription</IRI>
         <Literal>The meta description of the webpage</Literal>
     </AnnotationAssertion>
@@ -1371,7 +2600,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>metaTitle</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>metaTitle</IRI>
         <Literal>The meta title of the webpage</Literal>
     </AnnotationAssertion>
@@ -1381,17 +2615,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>name</IRI>
-        <IRI></IRI>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>noFollow</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>name</IRI>
-        <Literal xml:lang="en">name</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>noFollow</IRI>
         <Literal>A metric to define whether the nofollow is in place (True for Yes and False for No)</Literal>
     </AnnotationAssertion>
@@ -1401,7 +2630,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position</IRI>
         <Literal>The average ranking positon that the page has for a given time period on SERPs</Literal>
     </AnnotationAssertion>
@@ -1411,7 +2645,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position28Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>position28Days</IRI>
+        <Literal>The ranking position for 28 Days on SERPs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>position28Days</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position28DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position28DaysTo3MonthsTrend</IRI>
         <Literal>The ranking position trend for a given Query for 28Days to 3Months on SERPs</Literal>
     </AnnotationAssertion>
@@ -1421,7 +2675,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position3Months</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position3Months</IRI>
         <Literal>The ranking position of the given Query for a 3 months time period on SERPs</Literal>
     </AnnotationAssertion>
@@ -1436,7 +2695,12 @@
         <Literal xml:lang="en">position3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position7Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position7Days</IRI>
         <Literal>The ranking positon of the given query for a 7Days time period on SERPs</Literal>
     </AnnotationAssertion>
@@ -1451,7 +2715,12 @@
         <Literal xml:lang="en">position7Days </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position7DaysTo28DaysTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position7DaysTo28DaysTrend</IRI>
         <Literal>The ranking position trend of 7Days to 28Days on SERPs</Literal>
     </AnnotationAssertion>
@@ -1461,7 +2730,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>position7DaysTo3MonthsTrend</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position7DaysTo3MonthsTrend</IRI>
         <Literal>The ranking position trend of 7Days to 3Months on SERPs</Literal>
     </AnnotationAssertion>
@@ -1471,17 +2745,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>positon28Days</IRI>
-        <Literal>The ranking position for 28 Days on SERPs</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>preferredDevice</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>preferredDevice</IRI>
+        <Literal>Represents the device type a persona most commonly uses to access information or services. Examples include &apos;mobile&apos;, &apos;desktop&apos;, &apos;tablet&apos;, or &apos;smart speaker&apos;. This property helps in tailoring content and strategies to the persona&apos;s preferred platform</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>positon28Days</IRI>
+        <IRI>preferredDevice</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>publishingDate</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>publishingDate</IRI>
         <Literal>The date where the webpage was published</Literal>
     </AnnotationAssertion>
@@ -1491,7 +2775,62 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>queryCategory</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>queryCategory</IRI>
+        <Literal>Represents the broader category of a user&apos;s information-seeking query. This property classifies queries into four key categories based on their intent and expected outcome: 
+        - Advice: Queries that seek recommendations, suggestions, or guidance for decision-making. 
+        - Explanations: Queries aimed at understanding concepts, reasoning, or detailed clarifications.
+        - Facts: Queries that request verifiable and objective pieces of information.
+        - Planning: Queries focused on structuring activities, workflows, or determining sequential steps to achieve a goal.
+These categories help in organizing user search behaviors and improving query understanding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>queryCategory</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>queryType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>queryType</IRI>
+        <Literal>Specifies the type of query a user is performing, which must belong to a predefined set of query categories. These categories include: Popular, Long-tail, Dynamic, Multi-hop, Analytical, Commonsense, Causal, Exploratory, Instructive, Recommendation, Spatio-temporal, Lifestyle, Cultural, and Philosophical.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>queryType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>role</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>role</IRI>
+        <Literal>A specific function, position, or responsibility associated with a persona within a given context. This class defines how a persona interacts with a system, organization, or content, influencing their goals and actions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>role</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>schemaValue</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>schemaValue</IRI>
         <Literal>The schema value itself of the publicly available schema on the webpage</Literal>
     </AnnotationAssertion>
@@ -1501,7 +2840,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>score28Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>score28Days</IRI>
         <Literal>The overall score for the query for 28Days time period</Literal>
     </AnnotationAssertion>
@@ -1516,7 +2860,12 @@
         <Literal xml:lang="en">score28Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>score3Months</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>score3Months</IRI>
         <Literal>The overall score for the query for 3Months time period</Literal>
     </AnnotationAssertion>
@@ -1531,7 +2880,12 @@
         <Literal xml:lang="en">score3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>score7Days</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>score7Days</IRI>
         <Literal xml:lang="en">A calculated score ranging from 0.0 to 1.0 to determine the keywords with potential.</Literal>
     </AnnotationAssertion>
@@ -1546,7 +2900,12 @@
         <Literal xml:lang="en">score7Days </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>sourceCode</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>sourceCode</IRI>
         <Literal>The raw HTML of the webpage itself.</Literal>
     </AnnotationAssertion>
@@ -1556,7 +2915,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>start</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>start</IRI>
+        <Literal>The start offset of the chunk in the text, expressed as character or token position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>start</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>status</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>status</IRI>
         <Literal>The HTTP status (response code) of the Webpage itself</Literal>
     </AnnotationAssertion>
@@ -1566,7 +2945,12 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>title</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>title</IRI>
         <Literal>The actual title of the webpage itself</Literal>
     </AnnotationAssertion>
@@ -1576,17 +2960,27 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>usesSchema</IRI>
-        <Literal>The usesSchema property describes the relationship between a WebPage and the Schema it employs. The Schema class represents structured data, such as JSON-LD, Microdata, or RDFa, that is embedded in the webpage to provide search engines and other tools with enhanced information about the content. This property is crucial for understanding the implementation of semantic markup on webpages, which can significantly impact SEO by improving the visibility and interpretation of content in search engine results.</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>tokenCount</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>tokenCount</IRI>
+        <Literal>The number of tokens in the chunk, typically counted using a tokenizer compatible with the embedding model or LLM processing the content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>usesSchema</IRI>
+        <IRI>tokenCount</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>value</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>value</IRI>
         <Literal>The URL value of the Webpage itself</Literal>
     </AnnotationAssertion>
@@ -1594,6 +2988,21 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>value</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>weight</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>weight</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>weight</IRI>
+        <Literal>The weight of the link, useful for ranking or tag clouds</Literal>
     </AnnotationAssertion>
 </Ontology>
 
