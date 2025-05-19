@@ -32,7 +32,7 @@ The **SEOntology** is a framework that WordLift, other SEOs, software engineers,
   - and more!
  
 ## SEOntology Visualized
-![seontology logo-04](.assets/FINAL_SEONTOLOGY_WORDLIFT.png)
+![seontology logo-04](.assets/seontology_may_version.png)
 
 ## Getting Started
 
