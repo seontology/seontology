@@ -5,30 +5,64 @@
 
 ## Description
 
-The **SEOntology** is a framework that WordLift, other SEOs, software engineers, and knowledge graph experts developed for **content optimization**. Think of it as an operating system for your content strategy. This is an early draft.
+The **SEOntology** is the open-source semantic framework, initially developed by WordLift and then enriched with contributions from SEO experts, knowledge engineers, and developers. It serves as a semantic operating system for modern SEO, enabling agents, apps, and researchers to reason about, audit, and optimize web content through a shared vocabulary. Think of it as an operating system for your content strategy. This is an early draft. This ontology bridges SEO practice with linked data standards, powering automation, structured reasoning, and explainable AI across the entire content lifecycle.
 
 ## Features
 
 - **Main Classes**: Our ontology provides a comprehensive coverage of various SEO elements, such as:
   - `WebPage`: The primary entity representing a specific webpage, extended from Schema.org.
   - `Query`: The query for which the webpage ranks in SERPs, usually obtained through Google Search Console.
-  - `URL`: the unique identifier for the webpage.
-  - `AnchorText`: the anchor text which is influenced by the Query that the WebPage ranks for.
-  - `Link`: representing an internal or external link found on the webpage through crawling.
+  - `URL`: The unique identifier for the webpage.
+  - `AnchorText`: The anchor text which is influenced by the Query that the WebPage ranks for.
+  - `Link`: Representing an internal or external link found on the webpage through crawling.
+  - `LinkGroup`: A collection of links that are logically grouped, such as menus or footers.
+  - `Chunk`: A semantically meaningful text segment or section within a webpage.
+  - `EntityGap`: A placeholder for missing or unlinked entities relevant to the content.
+  - `ImageObject`: A representation of an image and its associated SEO metadata.
+  - `Language`: The language associated with content, useful for multilingual SEO.
+  - `Topic`: The central concept or subject a WebPage is about.
+  - `Schema`: All schema markup elements found on the webpage, in JSON-LD or other formats.
+  - `Model`: AI or ML models used for tasks such as summarization, classification, or scoring.
+  - `QualityScore`: A scoring container that aggregates content and SEO quality dimensions.
+  - `Persona`: The modeled archetype of a target user or audience segment.
+  - `DirectorySegment`: A logical segment in the site structure, derived from URL paths.
+  - `Domain`: A high-level grouping of pages based on domain or subdomain.
+  - `PageGroup`: A category or cluster of pages grouped by semantic or structural similarity.
   - `Thing`: The most generic type of item, expressed as an extension of the Thing class in Schema.org.
-  - `Schema`: all schema markup elements found on the webpage, in JSON-LD, or other formats.
 
+- **Selected Object Properties**: These define relationships between core SEO entities:
+  - `hasQuery` / `isQueryOf`: Links a WebPage to one or more Queries it ranks for.
+  - `hasPrimaryQuery` / `isPrimaryQueryOf`: Connects a WebPage or Chunk to its primary target Query.
+  - `hasChunk` / `isChunkOf`: Links a WebPage to its content segments (Chunks).
+  - `hasImage` / `isImageOf`: Connects a WebPage with embedded ImageObjects.
+  - `hasLinkGroup` / `isLinkGroupOf`: Associates a WebPage with its LinkGroups.
+  - `hasLink` / `isLinkOf`: Connects a LinkGroup to individual Links.
+  - `hasPersona` / `isPersonaOf`: Maps a WebPage to its targeted Persona.
+  - `hasURL` / `isURLOf`: Binds a WebPage to its canonical URL.
+  - `about` / `isDescribedBy`: Relates a WebPage to the main entity (Thing) it discusses.
+  - `mentions`: Identifies entities (Thing) mentioned within the content.
+  - `hasEntityGap` / `isEntityGapOf`: Captures missing or unlinked entities for a Query.
+  - `hasQualityScore` / `isQualityScoreOf`: Relates a WebPage to a container of quality metrics.
+  - `hasSchemaMarkup` / `describesPage`: Links a WebPage with its structured schema markup.
+  - `hasModel` / `isModelOfImage`: Associates an AI model with an image used or generated.
+  - `hasLanguage` / `isLanguageOfImage`: Defines the language of an image or associated text content.
+  - `hasTopic` / `isMainTopicOf`: Captures the core Topic of a WebPage.
 
-- **Object Properties**: These define relationships between classes. For instance:
-  - `hasQuery`: To indicate the queries for which a `WebPage` ranks.
-  - `influencedByQuery`: Indicating the connection between the `AnchorText` and the `Query` class.
-  - `hasURL`: Indicating the uniform resource locator (URL) for the `WebPage`.
-  - `link`: indicating the links found on the `WebPage`.
-  - `usesSchema`: indicating the schema markup used to describe the `WebPage` itself. 
-
-- **Data Properties**: These properties store specific values related to classes. Notably:
-  - `embeddingText`, `embedding`, `embeddingModel` for modeling embedding use cases with SEOntology.
-  - Clicks & Impressions Metrics: `clicks7Days`, `click28Days`, `ctr7Days`, and so on for tracking webpage performance over time.
+- **Selected Data Properties**: These attributes capture literal values and numerical metrics:
+  - `title`: The HTML or SERP title of the WebPage.
+  - `metaDescription`: The SEO meta description used for snippet generation.
+  - `bodyText`: The full textual content extracted from a WebPage.
+  - `chunkText`, `chunkPosition`: The text and order of appearance of a Chunk within a WebPage.
+  - `anchorValue`: The literal string value of an AnchorText.
+  - `aiGeneratedCaption`, `captionQualityScore`: AI-generated image metadata and quality assessment.
+  - `embeddingText`, `embeddingValue`: Textual input and vector output for AI embedding models.
+  - `contentAccuracyScore`, `contentDepthScore`, `seoScore`, `readabilityScore`: Quality dimensions that help assess and optimize content.
+  - `clicks`, `ctr`, `impressions`: Performance metrics retrieved from tools like Google Search Console.
+  - `forecastedTraffic`: Predicted traffic volume based on a model.
+  - `queryType`, `keywordType`, `queryCategory`: Classification of a query by intent or semantics.
+  - `slugNgram`, `urlSlug`: Linguistic and structural attributes derived from the URL.
+  - `intent`: The inferred or labeled intent behind a search Query or WebPage target.
+  - `evaluationID`: An identifier used for tracking scoring or benchmarking results.
   - and more!
  
 ## SEOntology Visualized
