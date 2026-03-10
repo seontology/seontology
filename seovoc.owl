@@ -212,6 +212,17 @@
 
 
 
+    <!-- https://w3id.org/seovoc/conversions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/conversions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Number of goal or conversion events (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
     <!-- https://w3id.org/seovoc/clicks28Days -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clicks28Days">
@@ -391,6 +402,39 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of the NLP embedding model used to create vectorized version of the content.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/engagedSessions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/engagedSessions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Sessions with meaningful interaction (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/engagementRate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/engagementRate">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Percentage of engaged sessions (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/averageEngagementTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/averageEngagementTime">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>Average time users actively engaged (GA4).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
 
@@ -779,6 +823,50 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The actual title of the webpage itself</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/trafficSource -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/trafficSource">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Channel or referral source of the visit (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/users -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/users">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Total users visiting the page (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/sessions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/sessions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Number of sessions on the page (GA4).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/seovoc/landingPage -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/landingPage">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Page where the session started (GA4).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
 

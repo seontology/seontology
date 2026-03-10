@@ -136,7 +136,10 @@
         <DataProperty IRI="ctr7DaysTo3MonthsTrend"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="dateCreated"/>
+        <DataProperty IRI="clicks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="conversions"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="embedding"/>
@@ -148,7 +151,16 @@
         <DataProperty IRI="embeddingText"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="importHash"/>
+        <DataProperty IRI="embeddingText"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="engagedSessions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="engagementRate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="averageEngagementTime"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="importID"/>
@@ -247,7 +259,19 @@
         <DataProperty IRI="value"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI=""/>
+        <DataProperty IRI="title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="trafficSource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="users"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="sessions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="landingPage"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -347,8 +371,12 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="clicks28Days"/>
-        <Class IRI="Query"/>
+        <DataProperty IRI="clicks"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="conversions"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks28DaysTo3MonthsTrend"/>
@@ -415,8 +443,20 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="importHash"/>
-        <Class abbreviatedIRI="owl:Thing"/>
+        <DataProperty IRI="embeddingText"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="engagedSessions"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="engagementRate"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="averageEngagementTime"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="importID"/>
@@ -543,8 +583,24 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="value"/>
-        <Class IRI="URL"/>
+        <DataProperty IRI="title"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="trafficSource"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="users"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="sessions"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="landingPage"/>
+        <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="anchorValue"/>
@@ -563,7 +619,11 @@
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="clicks28Days"/>
+        <DataProperty IRI="clicks"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="conversions"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -631,8 +691,20 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="importHash"/>
+        <DataProperty IRI="embeddingText"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="engagedSessions"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="engagementRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="averageEngagementTime"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="importID"/>
@@ -765,11 +837,26 @@
         <DataProperty IRI="value"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
-        <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
-        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
-    </AnnotationAssertion>
+    <DataPropertyRange>
+        <DataProperty IRI="value"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="trafficSource"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="users"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="sessions"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="landingPage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>

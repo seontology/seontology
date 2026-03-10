@@ -143,6 +143,14 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/conversions
+:conversions rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:long ;
+             rdfs:comment "Number of goal or conversion events (GA4)." ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
 ###  https://w3id.org/seovoc/clicks28Days
 :clicks28Days rdf:type owl:DatatypeProperty ;
               rdfs:domain :Query ;
@@ -277,6 +285,30 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 rdfs:comment "The name of the NLP embedding model used to create vectorized version of the content." ;
                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/engagedSessions
+:engagedSessions rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :WebPage ;
+                 rdfs:range xsd:long ;
+                 rdfs:comment "Sessions with meaningful interaction (GA4)." ;
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/engagementRate
+:engagementRate rdf:type owl:DatatypeProperty ;
+                rdfs:domain :WebPage ;
+                rdfs:range xsd:decimal ;
+                rdfs:comment "Percentage of engaged sessions (GA4)." ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/averageEngagementTime
+:averageEngagementTime rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :WebPage ;
+                       rdfs:range xsd:double ;
+                       rdfs:comment "Average time users actively engaged (GA4)." ;
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/embeddingText
@@ -558,6 +590,38 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
        rdfs:range xsd:string ;
        rdfs:comment "The actual title of the webpage itself" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/trafficSource
+:trafficSource rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WebPage ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Channel or referral source of the visit (GA4)." ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/users
+:users rdf:type owl:DatatypeProperty ;
+       rdfs:domain :WebPage ;
+       rdfs:range xsd:long ;
+       rdfs:comment "Total users visiting the page (GA4)." ;
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/sessions
+:sessions rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WebPage ;
+          rdfs:range xsd:long ;
+          rdfs:comment "Number of sessions on the page (GA4)." ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/landingPage
+:landingPage rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Page where the session started (GA4)." ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
 ###  https://w3id.org/seovoc/value
