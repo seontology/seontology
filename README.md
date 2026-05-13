@@ -79,7 +79,7 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - and more!
  
 ## SEOntology Visualized
-![seontology logo-04](.assets/seontology_may_version.png)
+![seontology logo-04](.assets/seovoc_HQ.png)
 
 ## Getting Started
 
