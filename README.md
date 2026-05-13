@@ -130,3 +130,7 @@ Detailed documentation will be soon available.
 
 ## License
 This project is licensed under the MIT [LICENSE](LICENSE.md) - see the LICENSE.md file for details.
+
+## Transparency 
+
+Regarding the performance evaluation (before and after) reported in our paper: it is intentionally limited to an aggregated and anonymized overview. The underlying post test was conducted in an applied setting with client-related data, internal workflows, and team feedback collected across operational channels such as Slack. Because the raw reports, task records, and feedback traces may reveal client information, company specific processes, or legally restricted operational details, we cannot release the full evaluation material publicly. Instead, we report only the aspects that can be shared responsibly: the task context, the before and after comparison enabled by the ontology, the observed efficiency and quality improvements, and a high level summary of team feedback. This limitation affects the reproducibility of the field evaluation, but it preserves confidentiality while still providing evidence of practical utility in a real deployment context.
