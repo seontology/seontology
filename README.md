@@ -78,8 +78,8 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `evaluationID`: An identifier used for tracking scoring or benchmarking results.
   - and more!
  
-## SEOntology Visualized
-![SEO VOC HQ](.assets/seeovoc_HQ.png)
+## SEOntology Fully Visualized
+![SEO VOC HQ](.assets/seovoc_full.svg)
 
 ## Getting Started
 
