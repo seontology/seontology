@@ -37,6 +37,8 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `Schema`: All schema markup elements found on the webpage, in JSON-LD or other formats.
   - `Model`: AI or ML models used for tasks such as summarization, classification, or scoring.
   - `QualityScore`: A scoring container that aggregates content and SEO quality dimensions.
+  - `QueryCluster`: A set of semantically or SERP-related search queries grouped for content planning and gap analysis.
+  - `ClusteringStrategy`: The method, model, or algorithm used to generate a QueryCluster.
   - `Persona`: The modeled archetype of a target user or audience segment.
   - `DirectorySegment`: A logical segment in the site structure, derived from URL paths.
   - `Domain`: A high-level grouping of pages based on domain or subdomain.
@@ -50,6 +52,9 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `hasImage` / `isImageOf`: Connects a WebPage with embedded ImageObjects.
   - `hasLinkGroup` / `isLinkGroupOf`: Associates a WebPage with its LinkGroups.
   - `hasLink` / `isLinkOf`: Connects a LinkGroup to individual Links.
+  - `hasClusterQuery` / `isClusterQueryOf`: Connects a QueryCluster to its member Queries without changing the WebPage-oriented `hasQuery` relationship.
+  - `clusteredBy`: Links a QueryCluster to the ClusteringStrategy used to generate it.
+  - `dominantSearchIntent`: Links a QueryCluster to its dominant search Intent.
   - `hasPersona` / `isPersonaOf`: Maps a WebPage to its targeted Persona.
   - `hasURL` / `isURLOf`: Binds a WebPage to its canonical URL.
   - `about` / `isDescribedBy`: Relates a WebPage to the main entity (Thing) it discusses.
@@ -71,12 +76,23 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `embeddingText`, `embeddingValue`: Textual input and vector output for AI embedding models.
   - `contentAccuracyScore`, `contentDepthScore`, `seoScore`, `readabilityScore`: Quality dimensions that help assess and optimize content.
   - `clicks`, `ctr`, `impressions`: Performance metrics retrieved from tools like Google Search Console.
+  - `users`, `sessions`, `engagedSessions`, `engagementRate`, `averageEngagementTime`, `conversions`, `trafficSource`, `landingPage`: GA4 engagement and traffic metrics associated with a WebPage in the measurement context supplied by the producing analytics dataset.
+  - `isThinContent`: A boolean classification signal indicating whether a Schema.org Thing has been classified as thin content.
+  - `clusterVolume`, `keywordsCount`: Aggregated demand and size metrics for QueryCluster instances.
   - `forecastedTraffic`: Predicted traffic volume based on a model.
   - `queryType`, `keywordType`, `queryCategory`: Classification of a query by intent or semantics.
   - `slugNgram`, `urlSlug`: Linguistic and structural attributes derived from the URL.
   - `intent`: The inferred or labeled intent behind a search Query or WebPage target.
   - `evaluationID`: An identifier used for tracking scoring or benchmarking results.
   - and more!
+
+## Compatibility Notes
+
+- `seovoc:hasLinkGroup` from `WebPage` to `LinkGroup`, followed by `seovoc:hasLink` from `LinkGroup` to `Link`, is the canonical pattern for structured navigational link groups. The direct `seovoc:link` property remains available as a compatibility shortcut for ungrouped or raw extracted links.
+- `seovoc:isLinkOf` now points from `Link` back to `LinkGroup`, matching its inverse relationship with `seovoc:hasLink`. Legacy data that used `isLinkOf` to point directly from `Link` to `WebPage` should either use `seovoc:link` for ungrouped/raw links or introduce a `LinkGroup` and connect the page with `seovoc:hasLinkGroup`.
+- `seovoc:evaluationID` uses `xsd:string` so identifiers such as `eval_1745567328195` can be represented.
+- Existing page-level quality properties such as `seovoc:seoScore` and `seovoc:readabilityGradeLevel` are preserved for compatibility. New integrations should prefer linking a `WebPage` or `Chunk` to a `QualityScore` when modeling assessment results.
+- Query clustering uses `seovoc:hasClusterQuery` / `seovoc:isClusterQueryOf` instead of overloading `seovoc:hasQuery` / `seovoc:isQueryOf`, which remain scoped to `WebPage` and `Query`.
  
 ## SEOntology Fully Visualized
 ![SEO VOC HQ](.assets/seovoc_full.svg)
@@ -126,7 +142,7 @@ This project is sponsored by [WordLift](https://www.wordlift.io/), a leading pro
 
 ## Documentation
 
-Detailed documentation will be soon available.
+- [Ontology update 0.0.2](docs/ontology-update-0.0.2.md)
 
 ## License
 This project is licensed under the MIT [LICENSE](LICENSE.md) - see the LICENSE.md file for details.

@@ -1,0 +1,54 @@
+digraph QueryCentricModel {
+  graph [
+    rankdir=LR,
+    bgcolor="white",
+    pad="0.25",
+    nodesep="0.45",
+    ranksep="0.7",
+    fontname="Helvetica"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#F8FAFC",
+    color="#1F2937",
+    fontname="Helvetica",
+    fontsize=11
+  ];
+
+  edge [
+    color="#334155",
+    fontname="Helvetica",
+    fontsize=10,
+    arrowsize=0.8
+  ];
+
+  Query [label="seovoc:Query", fillcolor="#ECFEFF", color="#0E7490"];
+  WebPage [label="seovoc:WebPage"];
+  URL [label="seovoc:URL"];
+  Persona [label="seovoc:Persona"];
+  SERPFeature [label="seovoc:SERPFeature", fillcolor="#F0F9FF", color="#0369A1"];
+  TopicCluster [label="seovoc:TopicCluster", fillcolor="#F0F9FF", color="#0369A1"];
+  SubTopic [label="seovoc:SubTopic", fillcolor="#F0F9FF", color="#0369A1"];
+  JobToBeDone [label="seovoc:JobToBeDone", fillcolor="#F0F9FF", color="#0369A1"];
+  TaxonomyNode [label="seovoc:TaxonomyNode", fillcolor="#F0F9FF", color="#0369A1"];
+
+  WebPage -> Query [label="hasQuery / hasPrimaryQuery"];
+  Query -> Persona [label="hasTargetPersona"];
+  Query -> URL [label="url (node form)"];
+  Query -> SERPFeature [label="hasSERPFeature"];
+  Query -> TopicCluster [label="hasTopicCluster"];
+  Query -> SubTopic [label="hasSubTopic"];
+  Query -> JobToBeDone [label="hasJobToBeDone"];
+  Query -> TaxonomyNode [label="inTaxonomyNode"];
+
+  QueryLiteral [
+    shape=note,
+    label="Query also carries literal fields:\nurl (literal), targetLocation, searchVolume,\nsearchVolumeTrend, currentPosition, rankZone,\nhasAIOverview, costPerClick, keywordDifficulty,\nrelevanceScore, historicalClicks, queryCtr,\nneedState, searchIntent, source, dateCreated, dateModified",
+    fillcolor="#FFFBEB",
+    color="#92400E"
+  ];
+
+  Query -> QueryLiteral [style=dashed, label="datatype properties"];
+}

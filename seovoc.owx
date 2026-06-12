@@ -73,6 +73,9 @@
         <Class IRI="Chunk"/>
     </Declaration>
     <Declaration>
+        <Class IRI="ClusteringStrategy"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="DirectorySegment"/>
     </Declaration>
     <Declaration>
@@ -124,6 +127,9 @@
         <Class IRI="Query"/>
     </Declaration>
     <Declaration>
+        <Class IRI="QueryCluster"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="Schema"/>
     </Declaration>
     <Declaration>
@@ -151,7 +157,13 @@
         <ObjectProperty IRI="classifiedByModel"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="clusteredBy"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="describesPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="dominantSearchIntent"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasAgent"/>
@@ -167,6 +179,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasChunkQualityScore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasClusterQuery"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasDomain"/>
@@ -251,6 +266,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="isChunkQualityScoreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isClusterQueryOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="isContainedInSegment"/>
@@ -376,6 +394,9 @@
         <DataProperty IRI="averagePosition7DaysTo3MonthsTrend"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="averageEngagementTime"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="averagePositon7Days"/>
     </Declaration>
     <Declaration>
@@ -409,6 +430,9 @@
         <DataProperty IRI="classificationConfidence"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="clusterVolume"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="clickDepth"/>
     </Declaration>
     <Declaration>
@@ -434,6 +458,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="confidence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="conversions"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="content"/>
@@ -499,6 +526,12 @@
         <DataProperty IRI="employeeName"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="engagedSessions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="engagementRate"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="end"/>
     </Declaration>
     <Declaration>
@@ -533,6 +566,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="googleCategory"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="isThinContent"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="groupType"/>
@@ -613,6 +649,9 @@
         <DataProperty IRI="keywords"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="keywordsCount"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="label"/>
     </Declaration>
     <Declaration>
@@ -626,6 +665,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="lastDirectory"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="landingPage"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="lastModified"/>
@@ -739,6 +781,9 @@
         <DataProperty IRI="segmentDepth"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="sessions"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="seoScore"/>
     </Declaration>
     <Declaration>
@@ -790,10 +835,16 @@
         <DataProperty IRI="totalLinkCount"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="trafficSource"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="type"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="urlSlug"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="users"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="value"/>
@@ -885,6 +936,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="hasChunkQualityScore"/>
         <ObjectProperty IRI="isChunkQualityScoreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasClusterQuery"/>
+        <ObjectProperty IRI="isClusterQueryOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="hasEntityGap"/>
@@ -987,8 +1042,16 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="clusteredBy"/>
+        <Class IRI="QueryCluster"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="describesPage"/>
         <Class IRI="Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="dominantSearchIntent"/>
+        <Class IRI="QueryCluster"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasAgent"/>
@@ -1012,6 +1075,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasChunkQualityScore"/>
         <Class IRI="Chunk"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasClusterQuery"/>
+        <Class IRI="QueryCluster"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasDomain"/>
@@ -1139,6 +1206,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="isChunkQualityScoreOf"/>
         <Class IRI="QualityScore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isClusterQueryOf"/>
+        <Class IRI="Query"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="isContainedInSegment"/>
@@ -1256,8 +1327,16 @@
         <Class IRI="Model"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="clusteredBy"/>
+        <Class IRI="ClusteringStrategy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="describesPage"/>
         <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="dominantSearchIntent"/>
+        <Class IRI="Intent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasAgent"/>
@@ -1281,6 +1360,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasChunkQualityScore"/>
         <Class IRI="QualityScore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasClusterQuery"/>
+        <Class IRI="Query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasDomain"/>
@@ -1395,6 +1478,10 @@
         <Class IRI="Chunk"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="isClusterQueryOf"/>
+        <Class IRI="QueryCluster"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="isContainedInSegment"/>
         <Class IRI="DirectorySegment"/>
     </ObjectPropertyRange>
@@ -1428,7 +1515,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="isLinkOf"/>
-        <Class IRI="WebPage"/>
+        <Class IRI="LinkGroup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="isMainTopicOf"/>
@@ -1823,6 +1910,10 @@
         <Class IRI="Query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="averageEngagementTime"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="averagePositon7Days"/>
         <Class IRI="Query"/>
     </DataPropertyDomain>
@@ -1907,6 +1998,14 @@
         <Class IRI="EntityGap"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="clusterVolume"/>
+        <Class IRI="QueryCluster"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="conversions"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="content"/>
         <Class IRI="Prompt"/>
     </DataPropertyDomain>
@@ -1976,6 +2075,14 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="embeddingValue"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="engagedSessions"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="engagementRate"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -2119,6 +2226,10 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="isThinContent"/>
+        <Class abbreviatedIRI="schema:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="keywordOptimizationScore"/>
         <Class IRI="QualityScore"/>
     </DataPropertyDomain>
@@ -2129,6 +2240,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="keywords"/>
         <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="keywordsCount"/>
+        <Class IRI="QueryCluster"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="label"/>
@@ -2148,6 +2263,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="lastDirectory"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="landingPage"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -2295,6 +2414,10 @@
         <Class IRI="DirectorySegment"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="sessions"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="seoScore"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
@@ -2363,11 +2486,19 @@
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="trafficSource"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="type"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="urlSlug"/>
+        <Class IRI="WebPage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="users"/>
         <Class IRI="WebPage"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -2451,6 +2582,10 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="averageEngagementTime"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="averagePositon7Days"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
@@ -2495,6 +2630,10 @@
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="clusterVolume"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="clickDepth"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
@@ -2531,6 +2670,10 @@
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="conversions"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="content"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -2540,7 +2683,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="contentDepthScore"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="contentPurposeScore"/>
@@ -2603,6 +2746,14 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="engagedSessions"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="engagementRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="employeeName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -2636,7 +2787,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="evaluationID"/>
-        <Datatype abbreviatedIRI="xsd:int"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="externalLinkCount"/>
@@ -2743,6 +2894,10 @@
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="isThinContent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="keywordOptimizationScore"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
@@ -2753,6 +2908,10 @@
     <DataPropertyRange>
         <DataProperty IRI="keywords"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="keywordsCount"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="label"/>
@@ -2772,6 +2931,10 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="lastDirectory"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="landingPage"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2935,6 +3098,10 @@
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="sessions"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="seoScore"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
@@ -3003,12 +3170,20 @@
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="trafficSource"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="type"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="urlSlug"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="users"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="value"/>
@@ -3840,7 +4015,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>bounceRate</IRI>
-        <Literal>The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4</Literal>
+        <Literal>The percentage of sessions that were not engaged, as reported by the producing analytics dataset. Compatible with GA4 engagement reporting.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -5610,7 +5785,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>isLinkOf</IRI>
-        <Literal>Inverse property of seovoc:hasLink, linking a link back to its parent LinkGroup</Literal>
+        <Literal>Inverse property of seovoc:hasLink, linking a Link back to its parent LinkGroup. Legacy data that linked a Link directly to a WebPage should use seovoc:link for ungrouped links or introduce a LinkGroup connected from the page with seovoc:hasLinkGroup.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -5975,7 +6150,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>link</IRI>
-        <Literal>The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation.</Literal>
+        <Literal>Compatibility shortcut linking a WebPage directly to an ungrouped or raw extracted Link. For structured navigational link groups, prefer hasLinkGroup from WebPage to LinkGroup and hasLink from LinkGroup to Link.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -6907,9 +7082,93 @@ These categories help in organizing user search behaviors and improving query un
         <IRI>weight</IRI>
         <Literal>The weight of the link, useful for ranking or tag clouds</Literal>
     </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>ClusteringStrategy</IRI>
+        <Literal>The method, model, or algorithm used to group queries into a QueryCluster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>QueryCluster</IRI>
+        <Literal>A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>clusteredBy</IRI>
+        <Literal>Links a QueryCluster to the ClusteringStrategy used to generate it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>dominantSearchIntent</IRI>
+        <Literal>Links a QueryCluster to the dominant Intent shared by its member queries.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasClusterQuery</IRI>
+        <Literal>Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isClusterQueryOf</IRI>
+        <Literal>Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>averageEngagementTime</IRI>
+        <Literal>Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>clusterVolume</IRI>
+        <Literal>Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>conversions</IRI>
+        <Literal>Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>engagedSessions</IRI>
+        <Literal>Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>engagementRate</IRI>
+        <Literal>Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>isThinContent</IRI>
+        <Literal>Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>keywordsCount</IRI>
+        <Literal>Number of keyword or query variants included in a QueryCluster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>landingPage</IRI>
+        <Literal>Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>sessions</IRI>
+        <Literal>Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>trafficSource</IRI>
+        <Literal>Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>users</IRI>
+        <Literal>Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
-

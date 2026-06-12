@@ -151,6 +151,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/clusteredBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/clusteredBy">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/ClusteringStrategy"/>
+        <dc:description>Links a QueryCluster to the ClusteringStrategy used to generate it.</dc:description>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/describesPage -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/describesPage">
@@ -160,6 +170,16 @@
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Indicates the WebPage that is described by this schema markup block. Useful for linking structured data to content</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/dominantSearchIntent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/dominantSearchIntent">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/Intent"/>
+        <dc:description>Links a QueryCluster to the dominant Intent shared by its member queries.</dc:description>
     </owl:ObjectProperty>
     
 
@@ -239,6 +259,17 @@
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Establishes the relationship between a Chunk and its associated QualityScore assessment. This property enables quality evaluation at the content segment level, allowing for granular analysis of individual text portions within a webpage. Unlike page-level quality assessment, chunk-level scoring focuses on the coherence, relevance, and quality characteristics of specific content segments, supporting fine-grained content optimization and automated content analysis workflows.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/hasClusterQuery -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/hasClusterQuery">
+        <owl:inverseOf rdf:resource="https://w3id.org/seovoc/isClusterQueryOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/Query"/>
+        <dc:description>Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships.</dc:description>
     </owl:ObjectProperty>
     
 
@@ -606,6 +637,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/isClusterQueryOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/isClusterQueryOf">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/Query"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <dc:description>Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to.</dc:description>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/isContainedInSegment -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/isContainedInSegment">
@@ -702,9 +743,9 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/isLinkOf">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/Link"/>
-        <rdfs:range rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="https://w3id.org/seovoc/LinkGroup"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>Inverse property of seovoc:hasLink, linking a link back to its parent LinkGroup</dc:description>
+        <dc:description>Inverse property of seovoc:hasLink, linking a Link back to its parent LinkGroup. Legacy data that linked a Link directly to a WebPage should use seovoc:link for ungrouped links or introduce a LinkGroup connected from the page with seovoc:hasLinkGroup.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
@@ -893,7 +934,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="https://w3id.org/seovoc/Link"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation.</dc:description>
+        <dc:description>Compatibility shortcut linking a WebPage directly to an ungrouped or raw extracted Link. For structured navigational link groups, prefer hasLinkGroup from WebPage to LinkGroup and hasLink from LinkGroup to Link.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:ObjectProperty>
     
@@ -1066,6 +1107,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/averageEngagementTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/averageEngagementTime">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dc:description>Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/averagePosition -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/averagePosition">
@@ -1176,7 +1227,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4</dc:description>
+        <dc:description>The percentage of sessions that were not engaged, as reported by the producing analytics dataset. Compatible with GA4 engagement reporting.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
     </owl:DatatypeProperty>
     
@@ -1383,6 +1434,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/clusterVolume -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/clusterVolume">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <dc:description>Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/confidence -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/confidence">
@@ -1425,7 +1486,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/contentDepthScore">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/seovoc/score"/>
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/QualityScore"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Depth of content coverage</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
@@ -1442,6 +1503,16 @@
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Score for content purpose alignment</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/conversions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/conversions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <dc:description>Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
     </owl:DatatypeProperty>
     
 
@@ -1665,6 +1736,26 @@
     
 
 
+    <!-- https://w3id.org/seovoc/engagedSessions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/engagedSessions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <dc:description>Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/engagementRate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/engagementRate">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <dc:description>Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/entityDateCreated -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/entityDateCreated">
@@ -1748,7 +1839,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/evaluationID">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/seovoc/identifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>A unique string identifying the content evaluation session</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
@@ -2089,6 +2180,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/isThinContent -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/isThinContent">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <dc:description>Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/keywordOptimizationScore -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/keywordOptimizationScore">
@@ -2128,6 +2229,16 @@
     
 
 
+    <!-- https://w3id.org/seovoc/keywordsCount -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/keywordsCount">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/QueryCluster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dc:description>Number of keyword or query variants included in a QueryCluster.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/label -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/label">
@@ -2136,6 +2247,16 @@
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>The label name of the identified item</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/landingPage -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/landingPage">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description>Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
     </owl:DatatypeProperty>
     
 
@@ -2798,6 +2919,16 @@ These categories help in organizing user search behaviors and improving query un
     
 
 
+    <!-- https://w3id.org/seovoc/sessions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/sessions">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <dc:description>Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/slugNgram -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/slugNgram">
@@ -2985,6 +3116,16 @@ These categories help in organizing user search behaviors and improving query un
     
 
 
+    <!-- https://w3id.org/seovoc/trafficSource -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/trafficSource">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description>Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/seovoc/type -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/type">
@@ -3002,6 +3143,16 @@ These categories help in organizing user search behaviors and improving query un
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Links a web page to its domain or subdomain</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/seovoc/users -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/users">
+        <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <dc:description>Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</dc:description>
     </owl:DatatypeProperty>
     
 
@@ -3151,6 +3302,14 @@ These categories help in organizing user search behaviors and improving query un
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Defines a Chunk, a self-contained section of a schema:WebPage used for vector search and structured representation</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seovoc/ClusteringStrategy -->
+
+    <owl:Class rdf:about="https://w3id.org/seovoc/ClusteringStrategy">
+        <dc:description>The method, model, or algorithm used to group queries into a QueryCluster.</dc:description>
     </owl:Class>
     
 
@@ -3325,6 +3484,14 @@ These categories help in organizing user search behaviors and improving query un
         <dc:description xml:lang="en">A class representing a search query. Instances of this class encapsulate the parameters, conditions, and terms submitted to a search engine by users or systems. This class is fundamental to modeling and analyzing search behavior, including keyword selection, query intent, and search patterns in the context of SEO.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">Query</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seovoc/QueryCluster -->
+
+    <owl:Class rdf:about="https://w3id.org/seovoc/QueryCluster">
+        <dc:description>A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy.</dc:description>
     </owl:Class>
     
 

@@ -1,0 +1,52 @@
+digraph KeywordPortfolioModel {
+  graph [
+    rankdir=LR,
+    bgcolor="white",
+    pad="0.25",
+    nodesep="0.45",
+    ranksep="0.65",
+    fontname="Helvetica"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#F8FAFC",
+    color="#1F2937",
+    fontname="Helvetica",
+    fontsize=11
+  ];
+
+  edge [
+    color="#334155",
+    fontname="Helvetica",
+    fontsize=10,
+    arrowsize=0.8
+  ];
+
+  Query [label="seovoc:Query"];
+  WebPage [label="seovoc:WebPage"];
+  Persona [label="seovoc:Persona"];
+  URL [label="seovoc:URL"];
+
+  KeywordPortfolioEntry [label="seovoc:KeywordPortfolioEntry", fillcolor="#ECFEFF", color="#0E7490"];
+  SERPFeature [label="seovoc:SERPFeature", fillcolor="#F0F9FF", color="#0369A1"];
+  TopicCluster [label="seovoc:TopicCluster", fillcolor="#F0F9FF", color="#0369A1"];
+  SubTopic [label="seovoc:SubTopic", fillcolor="#F0F9FF", color="#0369A1"];
+  JobToBeDone [label="seovoc:JobToBeDone", fillcolor="#F0F9FF", color="#0369A1"];
+  TaxonomyNode [label="seovoc:TaxonomyNode", fillcolor="#F0F9FF", color="#0369A1"];
+
+  WebPage -> Query [label="hasQuery / hasPrimaryQuery"];
+  WebPage -> Persona [label="hasPersona"];
+  WebPage -> URL [label="hasURL"];
+
+  KeywordPortfolioEntry -> Query [label="forQuery"];
+  KeywordPortfolioEntry -> WebPage [label="forWebPage"];
+  KeywordPortfolioEntry -> SERPFeature [label="hasSERPFeature"];
+  KeywordPortfolioEntry -> TopicCluster [label="hasTopicCluster"];
+  KeywordPortfolioEntry -> SubTopic [label="hasSubTopic"];
+  KeywordPortfolioEntry -> JobToBeDone [label="hasJobToBeDone"];
+  KeywordPortfolioEntry -> TaxonomyNode [label="inTaxonomyNode"];
+
+  Query -> Persona [label="hasTargetPersona", color="#0F766E", fontcolor="#0F766E", penwidth=1.5];
+}

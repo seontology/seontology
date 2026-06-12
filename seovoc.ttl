@@ -100,6 +100,13 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/clusteredBy
+:clusteredBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :QueryCluster ;
+             rdfs:range :ClusteringStrategy ;
+             dc:description "Links a QueryCluster to the ClusteringStrategy used to generate it." .
+
+
 ###  https://w3id.org/seovoc/describesPage
 :describesPage rdf:type owl:ObjectProperty ;
                owl:inverseOf :hasSchemaMarkup ;
@@ -108,6 +115,13 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Indicates the WebPage that is described by this schema markup block. Useful for linking structured data to content" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/dominantSearchIntent
+:dominantSearchIntent rdf:type owl:ObjectProperty ;
+                      rdfs:domain :QueryCluster ;
+                      rdfs:range :Intent ;
+                      dc:description "Links a QueryCluster to the dominant Intent shared by its member queries." .
 
 
 ###  https://w3id.org/seovoc/hasAgent
@@ -166,6 +180,14 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                       dc:description "Establishes the relationship between a Chunk and its associated QualityScore assessment. This property enables quality evaluation at the content segment level, allowing for granular analysis of individual text portions within a webpage. Unlike page-level quality assessment, chunk-level scoring focuses on the coherence, relevance, and quality characteristics of specific content segments, supporting fine-grained content optimization and automated content analysis workflows." ;
                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/hasClusterQuery
+:hasClusterQuery rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isClusterQueryOf ;
+                 rdfs:domain :QueryCluster ;
+                 rdfs:range :Query ;
+                 dc:description "Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships." .
 
 
 ###  https://w3id.org/seovoc/hasDomain
@@ -444,6 +466,13 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/isClusterQueryOf
+:isClusterQueryOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Query ;
+                  rdfs:range :QueryCluster ;
+                  dc:description "Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to." .
+
+
 ###  https://w3id.org/seovoc/isContainedInSegment
 :isContainedInSegment rdf:type owl:ObjectProperty ;
                       rdfs:domain :WebPage ;
@@ -515,9 +544,9 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/isLinkOf
 :isLinkOf rdf:type owl:ObjectProperty ;
           rdfs:domain :Link ;
-          rdfs:range :WebPage ;
+          rdfs:range :LinkGroup ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-          dc:description "Inverse property of seovoc:hasLink, linking a link back to its parent LinkGroup" ;
+          dc:description "Inverse property of seovoc:hasLink, linking a Link back to its parent LinkGroup. Legacy data that linked a Link directly to a WebPage should use seovoc:link for ungrouped links or introduce a LinkGroup connected from the page with seovoc:hasLinkGroup." ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -658,7 +687,7 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
       rdfs:domain :WebPage ;
       rdfs:range :Link ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-      dc:description "The link property represents the relationship between a WebPage and the various Links contained within it. Each instance of the Link class corresponds to a hyperlink found on the WebPage, capturing both internal and external connections. This property is essential for modeling the structure of a webpage, understanding the flow of traffic between pages, and analyzing link-based SEO strategies, as it reflects the network of connections that can influence search engine rankings and user navigation." ;
+      dc:description "Compatibility shortcut linking a WebPage directly to an ungrouped or raw extracted Link. For structured navigational link groups, prefer hasLinkGroup from WebPage to LinkGroup and hasLink from LinkGroup to Link." ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -782,6 +811,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/averageEngagementTime
+:averageEngagementTime rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :WebPage ;
+                       rdfs:range xsd:double ;
+                       dc:description "Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset." .
+
+
 ###  https://w3id.org/seovoc/averagePosition
 :averagePosition rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :position ;
@@ -867,7 +903,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
             rdfs:domain :WebPage ;
             rdfs:range xsd:decimal ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-            dc:description "The bounce rate, originally coming as a metric from Universal Google Analytics. Needs to be accordingly modeled for GA4" ;
+            dc:description "The percentage of sessions that were not engaged, as reported by the producing analytics dataset. Compatible with GA4 engagement reporting." ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
@@ -1024,6 +1060,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/clusterVolume
+:clusterVolume rdf:type owl:DatatypeProperty ;
+               rdfs:domain :QueryCluster ;
+               rdfs:range xsd:decimal ;
+               dc:description "Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster." .
+
+
 ###  https://w3id.org/seovoc/confidence
 :confidence rdf:type owl:DatatypeProperty ;
             rdfs:domain :EntityGap ;
@@ -1056,7 +1099,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 :contentDepthScore rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf :score ;
                    rdfs:domain :QualityScore ;
-                   rdfs:range xsd:double ;
+                   rdfs:range xsd:float ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Depth of content coverage" ;
                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
@@ -1070,6 +1113,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "Score for content purpose alignment" ;
                      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/conversions
+:conversions rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:long ;
+             dc:description "Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
 
 
 ###  https://w3id.org/seovoc/crawlable
@@ -1237,6 +1287,20 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/engagedSessions
+:engagedSessions rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :WebPage ;
+                 rdfs:range xsd:long ;
+                 dc:description "Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+
+
+###  https://w3id.org/seovoc/engagementRate
+:engagementRate rdf:type owl:DatatypeProperty ;
+                rdfs:domain :WebPage ;
+                rdfs:range xsd:decimal ;
+                dc:description "Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset." .
+
+
 ###  https://w3id.org/seovoc/entityDateCreated
 :entityDateCreated rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf :date ;
@@ -1301,7 +1365,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 :evaluationID rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf :identifier ;
               rdfs:domain :WebPage ;
-              rdfs:range xsd:int ;
+              rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "A unique string identifying the content evaluation session" ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
@@ -1559,6 +1623,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/isThinContent
+:isThinContent rdf:type owl:DatatypeProperty ;
+               rdfs:domain schema:Thing ;
+               rdfs:range xsd:boolean ;
+               dc:description "Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type." .
+
+
 ###  https://w3id.org/seovoc/keywordOptimizationScore
 :keywordOptimizationScore rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf :score ;
@@ -1589,6 +1660,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
           skos:exactMatch <https://schema.org/keywords> .
 
 
+###  https://w3id.org/seovoc/keywordsCount
+:keywordsCount rdf:type owl:DatatypeProperty ;
+               rdfs:domain :QueryCluster ;
+               rdfs:range xsd:integer ;
+               dc:description "Number of keyword or query variants included in a QueryCluster." .
+
+
 ###  https://w3id.org/seovoc/label
 :label rdf:type owl:DatatypeProperty ;
        rdfs:domain owl:Thing ;
@@ -1596,6 +1674,13 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The label name of the identified item" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/landingPage
+:landingPage rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range xsd:string ;
+             dc:description "Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset." .
 
 
 ###  https://w3id.org/seovoc/languageCode
@@ -2069,6 +2154,13 @@ These categories help in organizing user search behaviors and improving query un
               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/sessions
+:sessions rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WebPage ;
+          rdfs:range xsd:long ;
+          dc:description "Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+
+
 ###  https://w3id.org/seovoc/slugNgram
 :slugNgram rdf:type owl:DatatypeProperty ;
            rdfs:domain :WebPage ;
@@ -2211,6 +2303,13 @@ These categories help in organizing user search behaviors and improving query un
                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/trafficSource
+:trafficSource rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WebPage ;
+               rdfs:range xsd:string ;
+               dc:description "Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset." .
+
+
 ###  https://w3id.org/seovoc/type
 :type rdf:type owl:DatatypeProperty ;
       rdfs:domain owl:Thing ;
@@ -2224,6 +2323,13 @@ These categories help in organizing user search behaviors and improving query un
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Links a web page to its domain or subdomain" ;
          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/users
+:users rdf:type owl:DatatypeProperty ;
+       rdfs:domain :WebPage ;
+       rdfs:range xsd:long ;
+       dc:description "Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
 
 
 ###  https://w3id.org/seovoc/value
@@ -2326,6 +2432,11 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "Defines a Chunk, a self-contained section of a schema:WebPage used for vector search and structured representation" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/ClusteringStrategy
+:ClusteringStrategy rdf:type owl:Class ;
+                    dc:description "The method, model, or algorithm used to group queries into a QueryCluster." .
 
 
 ###  https://w3id.org/seovoc/DirectorySegment
@@ -2449,6 +2560,11 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
        dc:description "A class representing a search query. Instances of this class encapsulate the parameters, conditions, and terms submitted to a search engine by users or systems. This class is fundamental to modeling and analyzing search behavior, including keyword selection, query intent, and search patterns in the context of SEO."@en ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
        rdfs:label "Query"@en .
+
+
+###  https://w3id.org/seovoc/QueryCluster
+:QueryCluster rdf:type owl:Class ;
+              dc:description "A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy." .
 
 
 ###  https://w3id.org/seovoc/Schema

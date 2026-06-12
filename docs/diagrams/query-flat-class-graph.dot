@@ -1,0 +1,44 @@
+digraph QueryFlatModel {
+  graph [
+    rankdir=LR,
+    bgcolor="white",
+    pad="0.25",
+    nodesep="0.45",
+    ranksep="0.7",
+    fontname="Helvetica"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#F8FAFC",
+    color="#1F2937",
+    fontname="Helvetica",
+    fontsize=11
+  ];
+
+  edge [
+    color="#334155",
+    fontname="Helvetica",
+    fontsize=10,
+    arrowsize=0.8
+  ];
+
+  Query [label="seovoc:Query", fillcolor="#ECFEFF", color="#0E7490"];
+  WebPage [label="seovoc:WebPage"];
+  URL [label="seovoc:URL"];
+  Persona [label="seovoc:Persona"];
+
+  WebPage -> Query [label="hasQuery / hasPrimaryQuery"];
+  Query -> Persona [label="hasTargetPersona"];
+  Query -> URL [label="url (node form, optional)"];
+
+  QueryLiteral [
+    shape=note,
+    label="Flat literal properties on Query:\nurl, source, dateCreated, dateModified,\ntargetLocation, searchDemandType,\nsearchVolume, searchVolumeTrend, currentPosition,\nrankZone, serpFeatures, hasAIOverview,\ncostPerClick, keywordDifficulty, relevanceScore,\nhistoricalClicks, queryCtr, needState, searchIntent,\ntopicCluster, subTopic, jobToBeDone, taxonomyPath",
+    fillcolor="#FFFBEB",
+    color="#92400E"
+  ];
+
+  Query -> QueryLiteral [style=dashed, label="datatype properties"];
+}
