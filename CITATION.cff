@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use SEOntology, please cite the repository and the accepted SEMANTiCS 2026 paper."
+title: "SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows"
+authors:
+  - family-names: Gjorgjevska
+    given-names: Emilija
+  - family-names: Riccitelli
+    given-names: David
+  - family-names: Jovanovik
+    given-names: Milos
+  - family-names: Volpini
+    given-names: Andrea
+year: 2026
+type: software
+url: "https://github.com/seontology/seontology/"
+repository-code: "https://github.com/seontology/seontology/"
+abstract: "SEOntology is a Schema.org-aligned OWL 2 ontology for semantic modeling of Search Engine Optimization workflows as provenance-aware knowledge-graph structures."
+keywords:
+  - SEO
+  - ontology
+  - knowledge graph
+  - semantic web
+  - provenance
+  - Schema.org
+  - OWL 2
+license: MIT
+
+preferred-citation:
+  type: conference-paper
+  title: "SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows"
+  authors:
+    - family-names: Gjorgjevska
+      given-names: Emilija
+    - family-names: Riccitelli
+      given-names: David
+    - family-names: Jovanovik
+      given-names: Milos
+    - family-names: Volpini
+      given-names: Andrea
+  year: 2026
+  conference:
+    name: "SEMANTiCS 2026"
+  notes: "Accepted at SEMANTiCS 2026 Research&Innovation Track"
