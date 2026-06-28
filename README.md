@@ -5,6 +5,9 @@
 
 ## Description
 
+> **Accepted at SEMANTiCS 2026 — Research Track**  
+> SEOntology has been accepted as a research paper at [SEMANTiCS 2026](https://2026-eu.semantics.cc/page/accepted_research): **“SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows”** by Emilija Gjorgjevska, David Riccitelli, Milos Jovanovik, and Andrea Volpini.
+
 The **SEOntology** is the open-source semantic framework, initially developed by WordLift and then enriched with contributions from SEO experts, knowledge engineers, and developers. It serves as a semantic operating system for modern SEO, enabling agents, apps, and researchers to reason about, audit, and optimize web content through a shared vocabulary. To simplify, think of it as an operating system for your content strategy. This ontology bridges SEO practice with linked data standards, powering automation, structured reasoning, and explainable AI across the entire content lifecycle. This is an early draft.
 
 ## Use Cases Covered
@@ -150,3 +153,16 @@ This project is licensed under the MIT [LICENSE](LICENSE.md) - see the LICENSE.m
 ## Transparency 
 
 Regarding the performance evaluation (before and after) reported in our paper: it is intentionally limited to an aggregated and anonymized overview. The underlying post test was conducted in an applied setting with client-related data, internal workflows, and team feedback collected across operational channels such as Slack. Because the raw reports, task records, and feedback traces may reveal client information, company specific processes, or legally restricted operational details, we cannot release the full evaluation material publicly. Instead, we report only the aspects that can be shared responsibly: the task context, the before and after comparison enabled by the ontology, the observed efficiency and quality improvements, and a high level summary of team feedback. This limitation affects the reproducibility of the field evaluation, but it preserves confidentiality while still providing evidence of practical utility in a real deployment context.
+
+## Citation
+
+If you use SEOntology, please cite the repository and the accepted SEMANTiCS 2026 paper:
+
+```bibtex
+@software{gjorgjevska2026seontology,
+  title        = {SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows},
+  author       = {Gjorgjevska, Emilija and Riccitelli, David and Jovanovik, Milos and Volpini, Andrea},
+  year         = {2026},
+  url          = {https://github.com/seontology/seontology},
+  note         = {Accepted at SEMANTiCS 2026 Research & Innovation Track}
+}
