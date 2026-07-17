@@ -126,12 +126,9 @@ The **SEOntology** is the open-source semantic framework, initially developed by
 
 ## How to Contribute
 
-1. Fork this repository.
-2. Create a new branch for your changes.
-3. Make and commit your changes.
-4. Push your branch to your fork.
-5. Open a pull request from your fork to this repository.
-6. After review and discussion, if your changes are approved, they will be merged.
+SEOntology contributions start as GitHub issues that present concrete SEO use cases and propose new classes, properties, semantic changes, or documentation clarifications.
+
+Before ontology files are changed, proposals should mature into a reviewed modeling request with a clear YAML-LD definition and a concrete TTL example. See [Contributing Ontology Proposals](docs/contributing-ontology-proposals.md) for the full workflow.
 
 ## Versioning
 
@@ -153,7 +150,9 @@ This project is sponsored by [WordLift](https://www.wordlift.io/), a leading pro
 
 ## Documentation
 
+- [Contributing Ontology Proposals](docs/contributing-ontology-proposals.md)
 - [Structured Data Profiles](docs/structured-data-profiles.md)
+- [Ontology update 0.0.4](docs/ontology-update-0.0.4.md)
 - [Ontology update 0.0.3](docs/ontology-update-0.0.3.md)
 - [Ontology update 0.0.2](docs/ontology-update-0.0.2.md)
 
