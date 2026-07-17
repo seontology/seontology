@@ -5,6 +5,7 @@
 @prefix seo: <https://wordlift.io/ontology/SEO_Ontology#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
@@ -54,6 +55,30 @@ schema:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
 skos:exactMatch rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/seovoc/expectedMainEntitySchemaType
+:expectedMainEntitySchemaType rdf:type owl:AnnotationProperty ;
+                              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                              dc:description "Advises an IRI identifying the RDF class expected for the main entity in a structured-data graph. This annotation does not type or constrain graph nodes." ;
+                              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                              rdfs:label "expected main entity schema type"@en .
+
+
+###  https://w3id.org/seovoc/expectedPageSchemaType
+:expectedPageSchemaType rdf:type owl:AnnotationProperty ;
+                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                        dc:description "Advises an IRI identifying the RDF class expected for the page node in a structured-data graph. This annotation does not type or constrain graph nodes." ;
+                        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                        rdfs:label "expected page schema type"@en .
+
+
+###  https://w3id.org/seovoc/expectedSupportingSchemaType
+:expectedSupportingSchemaType rdf:type owl:AnnotationProperty ;
+                              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                              dc:description "Advises an IRI identifying an RDF class expected for a supporting node in a structured-data graph. This annotation does not type or constrain graph nodes." ;
+                              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                              rdfs:label "expected supporting schema type"@en .
 
 
 ###  https://w3id.org/seovoc/extends
@@ -124,6 +149,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                       dc:description "Links a QueryCluster to the dominant Intent shared by its member queries." .
 
 
+###  https://w3id.org/seovoc/generatedUsingStructuredDataProfile
+:generatedUsingStructuredDataProfile rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :Schema ;
+                                     rdfs:range :StructuredDataProfile ;
+                                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                                     dc:description "Records the StructuredDataProfile used to generate a Schema artifact. This generation provenance does not assert validation or conformance." ;
+                                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                     rdfs:label "generated using structured data profile"@en .
+
+
 ###  https://w3id.org/seovoc/hasAgent
 :hasAgent rdf:type owl:ObjectProperty ;
           owl:inverseOf :hasPrompt ;
@@ -150,6 +185,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Specifies the content unit (WebPage or Chunk) that is being analyzed by an AnalyzeAction. This property enables flexible analysis workflows that can operate at different granularities - from full webpage assessment to focused chunk-level evaluation. Essential for tracking which specific content segments are subject to automated quality analysis, performance evaluation, or SEO assessment within content optimization pipelines." ;
                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/hasApplicableStructuredDataProfile
+:hasApplicableStructuredDataProfile rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :PageType ;
+                                    rdfs:range :StructuredDataProfile ;
+                                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                                    dc:description "Identifies a candidate StructuredDataProfile applicable to a PageType without implying selection, generation, validation, or conformance." ;
+                                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                    rdfs:label "has applicable structured data profile"@en .
 
 
 ###  https://w3id.org/seovoc/hasChildSegment
@@ -304,6 +349,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Domain contains this webpage" ;
                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/hasPageType
+:hasPageType rdf:type owl:ObjectProperty ;
+             rdfs:domain :WebPage ;
+             rdfs:range :PageType ;
+             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+             dc:description "Assigns a reusable page-purpose or content PageType classification to a WebPage." ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "has page type"@en .
 
 
 ###  https://w3id.org/seovoc/hasParentSegment
@@ -698,6 +753,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Each webpage has an entity of type Thing: Person, Location, LocalBusiness etc." ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/usesStructuredDataProfile
+:usesStructuredDataProfile rdf:type owl:ObjectProperty ;
+                           rdfs:domain :WebPage ;
+                           rdfs:range :StructuredDataProfile ;
+                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                           dc:description "Records a StructuredDataProfile explicitly selected for a WebPage after application-level grounding and policy checks." ;
+                           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                           rdfs:label "uses structured data profile"@en .
 
 
 ###  https://w3id.org/seovoc/usesTool
@@ -2398,6 +2463,10 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
           skos:exactMatch schema:Thing .
 
 
+###  http://www.w3.org/ns/dx/prof/Profile
+prof:Profile rdf:type owl:Class .
+
+
 ###  https://w3id.org/seovoc/Action
 :Action rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
@@ -2525,6 +2594,14 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/PageType
+:PageType rdf:type owl:Class ;
+          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+          dc:description "A reusable page-purpose or content classification for a WebPage, represented by individuals and kept independent from A/B-testing PageGroup cohorts." ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "Page Type"@en .
+
+
 ###  https://w3id.org/seovoc/Person
 :Person rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
@@ -2579,6 +2656,15 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "A conceptual entity representing the emotional polarity (e.g., positive, negative) of a query or content chunk" ;
            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/StructuredDataProfile
+:StructuredDataProfile rdf:type owl:Class ;
+                       rdfs:subClassOf prof:Profile ;
+                       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+                       dc:description "A declarative profile describing structured-data graph expectations that may be selected for a WebPage and implemented by downstream validation or generation resources." ;
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                       rdfs:label "Structured Data Profile"@en .
 
 
 ###  https://w3id.org/seovoc/Tool

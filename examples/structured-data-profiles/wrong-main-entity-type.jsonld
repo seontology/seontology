@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "seovoc": "https://w3id.org/seovoc/"
+  },
+  "@graph": [
+    {
+      "@id": "https://example.com/products/wrong-main-entity",
+      "@type": ["seovoc:WebPage", "schema:WebPage"],
+      "seovoc:hasPageType": {"@id": "https://example.com/structured-data-profile/ProductDetailPageType"},
+      "seovoc:usesStructuredDataProfile": {"@id": "https://example.com/structured-data-profile/ProductPageProfile-v1"},
+      "schema:mainEntity": {"@id": "https://example.com/products/wrong-main-entity#breadcrumbs"}
+    },
+    {
+      "@id": "https://example.com/products/wrong-main-entity#breadcrumbs",
+      "@type": "schema:BreadcrumbList",
+      "schema:name": "Breadcrumbs are not a Product",
+      "schema:offers": {"@id": "https://example.com/offers/wrong-main-entity"}
+    },
+    {
+      "@id": "https://example.com/offers/wrong-main-entity",
+      "@type": "schema:Offer",
+      "schema:price": "99.00",
+      "schema:priceCurrency": "USD"
+    }
+  ]
+}

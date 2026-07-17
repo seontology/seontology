@@ -45,7 +45,9 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `Persona`: The modeled archetype of a target user or audience segment.
   - `DirectorySegment`: A logical segment in the site structure, derived from URL paths.
   - `Domain`: A high-level grouping of pages based on domain or subdomain.
-  - `PageGroup`: A category or cluster of pages grouped by semantic or structural similarity.
+  - `PageGroup`: An A/B-testing cohort such as a control or test group.
+  - `PageType`: A reusable page-purpose or content classification for a WebPage, independent of A/B-testing cohorts.
+  - `StructuredDataProfile`: A declarative structured-data profile aligned with W3C PROF.
   - `Thing`: The most generic type of item, expressed as an extension of the Thing class in Schema.org.
 
 - **Selected Object Properties**: These define relationships between core SEO entities:
@@ -65,6 +67,10 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `hasEntityGap` / `isEntityGapOf`: Captures missing or unlinked entities for a Query.
   - `hasQualityScore` / `isQualityScoreOf`: Relates a WebPage to a container of quality metrics.
   - `hasSchemaMarkup` / `describesPage`: Links a WebPage with its structured schema markup.
+  - `hasPageType`: Assigns one or more reusable PageType classifications to a WebPage.
+  - `hasApplicableStructuredDataProfile`: Identifies candidate profiles for a PageType without selecting or applying them automatically.
+  - `usesStructuredDataProfile`: Records the profile explicitly selected for a WebPage.
+  - `generatedUsingStructuredDataProfile`: Records generation provenance for a Schema artifact without asserting conformance.
   - `hasModel` / `isModelOfImage`: Associates an AI model with an image used or generated.
   - `hasLanguage` / `isLanguageOfImage`: Defines the language of an image or associated text content.
   - `hasTopic` / `isMainTopicOf`: Captures the core Topic of a WebPage.
@@ -96,6 +102,8 @@ The **SEOntology** is the open-source semantic framework, initially developed by
 - `seovoc:evaluationID` uses `xsd:string` so identifiers such as `eval_1745567328195` can be represented.
 - Existing page-level quality properties such as `seovoc:seoScore` and `seovoc:readabilityGradeLevel` are preserved for compatibility. New integrations should prefer linking a `WebPage` or `Chunk` to a `QualityScore` when modeling assessment results.
 - Query clustering uses `seovoc:hasClusterQuery` / `seovoc:isClusterQueryOf` instead of overloading `seovoc:hasQuery` / `seovoc:isQueryOf`, which remain scoped to `WebPage` and `Query`.
+- `PageGroup` remains scoped to A/B-testing cohorts. Use `PageType` for functional classifications such as product-detail or editorial pages; no inference connects the two concepts.
+- Structured-data profile applicability, explicit selection, artifact generation, and validated conformance are separate states. Profile applicability does not authorize generation or guarantee search-engine eligibility or outcomes.
  
 ## SEOntology Fully Visualized
 ![SEO VOC HQ](.assets/seovoc_full.svg)
@@ -145,6 +153,8 @@ This project is sponsored by [WordLift](https://www.wordlift.io/), a leading pro
 
 ## Documentation
 
+- [Structured Data Profiles](docs/structured-data-profiles.md)
+- [Ontology update 0.0.3](docs/ontology-update-0.0.3.md)
 - [Ontology update 0.0.2](docs/ontology-update-0.0.2.md)
 
 ## License

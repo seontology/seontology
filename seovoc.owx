@@ -9,6 +9,7 @@
     <Prefix name="" IRI="https://w3id.org/seovoc/"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="prof" IRI="http://www.w3.org/ns/dx/prof/"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="seo" IRI="https://wordlift.io/ontology/SEO_Ontology#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -56,6 +57,9 @@
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="schema:WebPage"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prof:Profile"/>
     </Declaration>
     <Declaration>
         <Class IRI="Action"/>
@@ -112,6 +116,9 @@
         <Class IRI="PageGroup"/>
     </Declaration>
     <Declaration>
+        <Class IRI="PageType"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="Person"/>
     </Declaration>
     <Declaration>
@@ -131,6 +138,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="Schema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="StructuredDataProfile"/>
     </Declaration>
     <Declaration>
         <Class IRI="Sentiment"/>
@@ -166,7 +176,13 @@
         <ObjectProperty IRI="dominantSearchIntent"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="generatedUsingStructuredDataProfile"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="hasAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasApplicableStructuredDataProfile"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasAnalysisTarget"/>
@@ -215,6 +231,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPageType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasPageInDomain"/>
@@ -341,6 +360,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="mentions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesStructuredDataProfile"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="usesTool"/>
@@ -877,6 +899,15 @@
         <AnnotationProperty abbreviatedIRI="dc:title"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty IRI="expectedMainEntitySchemaType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="expectedPageSchemaType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="expectedSupportingSchemaType"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty abbreviatedIRI="schema:license"/>
     </Declaration>
     <Declaration>
@@ -904,6 +935,10 @@
     <SubClassOf>
         <Class IRI="Persona"/>
         <Class IRI="Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="StructuredDataProfile"/>
+        <Class abbreviatedIRI="prof:Profile"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="WebPage"/>
@@ -1054,11 +1089,19 @@
         <Class IRI="QueryCluster"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="generatedUsingStructuredDataProfile"/>
+        <Class IRI="Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="hasAgent"/>
         <ObjectUnionOf>
             <Class IRI="Action"/>
             <Class IRI="Prompt"/>
         </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasApplicableStructuredDataProfile"/>
+        <Class IRI="PageType"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasAnalysisTarget"/>
@@ -1127,6 +1170,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasPage"/>
         <Class IRI="PageGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasPageType"/>
+        <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="hasPageInDomain"/>
@@ -1308,6 +1355,10 @@
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesStructuredDataProfile"/>
+        <Class IRI="WebPage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="usesTool"/>
         <Class IRI="Agent"/>
     </ObjectPropertyDomain>
@@ -1339,8 +1390,16 @@
         <Class IRI="Intent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="generatedUsingStructuredDataProfile"/>
+        <Class IRI="StructuredDataProfile"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="hasAgent"/>
         <Class IRI="Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasApplicableStructuredDataProfile"/>
+        <Class IRI="StructuredDataProfile"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasAnalysisTarget"/>
@@ -1408,6 +1467,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasPage"/>
         <Class IRI="WebPage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasPageType"/>
+        <Class IRI="PageType"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="hasPageInDomain"/>
@@ -1584,6 +1647,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="mentions"/>
         <Class abbreviatedIRI="schema:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesStructuredDataProfile"/>
+        <Class IRI="StructuredDataProfile"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="usesTool"/>
@@ -7166,6 +7233,186 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>users</IRI>
         <Literal>Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>PageType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>PageType</IRI>
+        <Literal>A reusable page-purpose or content classification for a WebPage, represented by individuals and kept independent from A/B-testing PageGroup cohorts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>PageType</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PageType</IRI>
+        <Literal xml:lang="en">Page Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>StructuredDataProfile</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>StructuredDataProfile</IRI>
+        <Literal>A declarative profile describing structured-data graph expectations that may be selected for a WebPage and implemented by downstream validation or generation resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>StructuredDataProfile</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>StructuredDataProfile</IRI>
+        <Literal xml:lang="en">Structured Data Profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>generatedUsingStructuredDataProfile</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>generatedUsingStructuredDataProfile</IRI>
+        <Literal>Records the StructuredDataProfile used to generate a Schema artifact. This generation provenance does not assert validation or conformance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>generatedUsingStructuredDataProfile</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatedUsingStructuredDataProfile</IRI>
+        <Literal xml:lang="en">generated using structured data profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasApplicableStructuredDataProfile</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasApplicableStructuredDataProfile</IRI>
+        <Literal>Identifies a candidate StructuredDataProfile applicable to a PageType without implying selection, generation, validation, or conformance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasApplicableStructuredDataProfile</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasApplicableStructuredDataProfile</IRI>
+        <Literal xml:lang="en">has applicable structured data profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasPageType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasPageType</IRI>
+        <Literal>Assigns a reusable page-purpose or content PageType classification to a WebPage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasPageType</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPageType</IRI>
+        <Literal xml:lang="en">has page type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>usesStructuredDataProfile</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>usesStructuredDataProfile</IRI>
+        <Literal>Records a StructuredDataProfile explicitly selected for a WebPage after application-level grounding and policy checks.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>usesStructuredDataProfile</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesStructuredDataProfile</IRI>
+        <Literal xml:lang="en">uses structured data profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>expectedMainEntitySchemaType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>expectedMainEntitySchemaType</IRI>
+        <Literal>Advises an IRI identifying the RDF class expected for the main entity in a structured-data graph. This annotation does not type or constrain graph nodes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>expectedMainEntitySchemaType</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>expectedMainEntitySchemaType</IRI>
+        <Literal xml:lang="en">expected main entity schema type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>expectedPageSchemaType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>expectedPageSchemaType</IRI>
+        <Literal>Advises an IRI identifying the RDF class expected for the page node in a structured-data graph. This annotation does not type or constrain graph nodes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>expectedPageSchemaType</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>expectedPageSchemaType</IRI>
+        <Literal xml:lang="en">expected page schema type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>expectedSupportingSchemaType</IRI>
+        <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>expectedSupportingSchemaType</IRI>
+        <Literal>Advises an IRI identifying an RDF class expected for a supporting node in a structured-data graph. This annotation does not type or constrain graph nodes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>expectedSupportingSchemaType</IRI>
+        <IRI>https://w3id.org/seovoc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>expectedSupportingSchemaType</IRI>
+        <Literal xml:lang="en">expected supporting schema type</Literal>
     </AnnotationAssertion>
 </Ontology>
 
