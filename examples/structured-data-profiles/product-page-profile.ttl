@@ -1,0 +1,66 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.com/structured-data-profile/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <http://schema.org/> .
+@prefix seovoc: <https://w3id.org/seovoc/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ProductDetailPageType
+    a seovoc:PageType ;
+    seovoc:hasApplicableStructuredDataProfile ex:ProductPageProfile-v1 .
+
+ex:ProductPageProfile-v1
+    a seovoc:StructuredDataProfile ;
+    dct:isVersionOf ex:ProductPageProfile ;
+    dct:issued "2026-07-17"^^xsd:date ;
+    dct:publisher ex:ExamplePublisher ;
+    dct:audience ex:ExamplePublisherStructuredDataConsumers ;
+    owl:versionInfo "1.0.0" ;
+    prof:isProfileOf <http://schema.org/> ;
+    prof:hasResource ex:ProductPageShapeResource ;
+    seovoc:expectedPageSchemaType schema:WebPage ;
+    seovoc:expectedMainEntitySchemaType schema:Product ;
+    seovoc:expectedSupportingSchemaType schema:BreadcrumbList .
+
+ex:ProductPageShapeResource
+    a prof:ResourceDescriptor ;
+    prof:hasArtifact <product-page-shape.ttl> ;
+    prof:hasRole role:constraints, role:validation ;
+    dct:format <https://w3id.org/mediatype/text/turtle> ;
+    dct:conformsTo <https://www.w3.org/TR/shacl/> .
+
+ex:ExamplePublisher
+    a schema:Organization ;
+    schema:name "Example Publisher" .
+
+ex:ExamplePublisherStructuredDataConsumers
+    a dct:AgentClass ;
+    dct:title "Example Publisher structured-data consumers" .
+
+ex:page123
+    a seovoc:WebPage, schema:WebPage ;
+    seovoc:hasPageType ex:ProductDetailPageType ;
+    seovoc:usesStructuredDataProfile ex:ProductPageProfile-v1 ;
+    seovoc:hasSchemaMarkup ex:schemaBlock123 ;
+    schema:mainEntity ex:product123 ;
+    schema:breadcrumb ex:breadcrumbs123 .
+
+ex:product123
+    a schema:Product ;
+    schema:name "Example Product" ;
+    schema:offers ex:offer123 .
+
+ex:offer123
+    a schema:Offer ;
+    schema:price "99.00" ;
+    schema:priceCurrency "USD" .
+
+ex:breadcrumbs123
+    a schema:BreadcrumbList .
+
+ex:schemaBlock123
+    a seovoc:Schema ;
+    seovoc:describesPage ex:page123 ;
+    seovoc:generatedUsingStructuredDataProfile ex:ProductPageProfile-v1 .

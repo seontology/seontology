@@ -1,0 +1,47 @@
+@prefix ex: <https://example.com/structured-data-profile/> .
+@prefix schema: <http://schema.org/> .
+@prefix seovoc: <https://w3id.org/seovoc/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+ex:ProductPageShape
+    a sh:NodeShape ;
+    sh:targetClass seovoc:WebPage ;
+    sh:property [
+        sh:path schema:mainEntity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A product page must identify exactly one Product main entity."@en
+    ] ;
+    sh:property [
+        sh:path schema:mainEntity ;
+        sh:node ex:ProductEntityShape ;
+        sh:message "The main entity must satisfy the Product profile constraints."@en
+    ] .
+
+ex:ProductEntityShape
+    a sh:NodeShape ;
+    sh:class schema:Product ;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:message "The Product must have a name under this example publisher policy."@en
+    ] ;
+    sh:property [
+        sh:path schema:offers ;
+        sh:minCount 1 ;
+        sh:node ex:OfferShape ;
+        sh:message "The Product must have an Offer under this example publisher policy."@en
+    ] .
+
+ex:OfferShape
+    a sh:NodeShape ;
+    sh:class schema:Offer ;
+    sh:property [
+        sh:path schema:price ;
+        sh:minCount 1
+    ] ;
+    sh:property [
+        sh:path schema:priceCurrency ;
+        sh:minCount 1
+    ] .
