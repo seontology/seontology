@@ -32,6 +32,8 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `AnchorText`: The anchor text which is influenced by the Query that the WebPage ranks for.
   - `Link`: Representing an internal or external link found on the webpage through crawling.
   - `LinkGroup`: A collection of links that are logically grouped, such as menus or footers.
+  - `TrafficSource`: An analytics traffic source as reported by the producing dataset (e.g. a GA4 session source string such as `google`, `(direct)`, `chatgpt.com`).
+  - `TrafficChannel`: A governed channel classification for traffic sources (organic search, direct, referral, social, email, affiliate, AI assistant, ...), enabling AI-surface referrals to be distinguished from generic referrals.
   - `Chunk`: A semantically meaningful text segment or section within a webpage.
   - `EntityGap`: A placeholder for missing or unlinked entities relevant to the content.
   - `ImageObject`: A representation of an image and its associated SEO metadata.
@@ -57,6 +59,7 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `hasImage` / `isImageOf`: Connects a WebPage with embedded ImageObjects.
   - `hasLinkGroup` / `isLinkGroupOf`: Associates a WebPage with its LinkGroups.
   - `hasLink` / `isLinkOf`: Connects a LinkGroup to individual Links.
+  - `hasTrafficChannel`: Assigns a TrafficSource to its governed TrafficChannel.
   - `hasClusterQuery` / `isClusterQueryOf`: Connects a QueryCluster to its member Queries without changing the WebPage-oriented `hasQuery` relationship.
   - `clusteredBy`: Links a QueryCluster to the ClusteringStrategy used to generate it.
   - `dominantSearchIntent`: Links a QueryCluster to its dominant search Intent.
@@ -96,6 +99,11 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - and more!
 
 ## Compatibility Notes
+
+- **Windowed search metrics are now attachable at page level as well as query level.** The domains of the windowed GSC metrics (`clicks7Days/28Days/3Months/6Months`, `impressions*`, `ctr*`, `averagePosition*`, and their trend properties) were widened from `Query` to `Query ∪ WebPage`. This is a monotonic change: all existing query-level data remains valid; no migration is needed.
+- **A 6-months window was added** (`clicks6Months`, `impressions6Months`, `ctr6Months`, `averagePosition6Months`), matching sources that export a six-month observation window.
+- **`averagePositon7Days` is deprecated** (misspelled IRI). Use the newly added `averagePosition7Days`. The deprecated IRI is retained for backward compatibility with existing data.
+- **`linkGroupType`** complements `linkGroupName`: the name is free-text display ("Footer links"); the type is the machine-checkable placement axis (`header | footer | body | sidebar | navigation`) that consumers can gate on — for example, excluding header/footer boilerplate from editorial link analysis.
 
 - `seovoc:hasLinkGroup` from `WebPage` to `LinkGroup`, followed by `seovoc:hasLink` from `LinkGroup` to `Link`, is the canonical pattern for structured navigational link groups. The direct `seovoc:link` property remains available as a compatibility shortcut for ungrouped or raw extracted links.
 - `seovoc:isLinkOf` now points from `Link` back to `LinkGroup`, matching its inverse relationship with `seovoc:hasLink`. Legacy data that used `isLinkOf` to point directly from `Link` to `WebPage` should either use `seovoc:link` for ungrouped/raw links or introduce a `LinkGroup` and connect the page with `seovoc:hasLinkGroup`.

@@ -460,6 +460,16 @@ skos:exactMatch rdf:type owl:AnnotationProperty .
               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/hasTrafficChannel
+:hasTrafficChannel rdf:type owl:ObjectProperty ;
+                   rdfs:domain :TrafficSource ;
+                   rdfs:range :TrafficChannel ;
+                   dc:contributors "Andrea Volpini" ;
+                   dc:description "Assigns a TrafficSource to its governed TrafficChannel. One source, one channel; sources an application cannot classify should carry an explicit 'unclassified' channel rather than no assertion." ;
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "hasTrafficChannel"@en .
+
+
 ###  https://w3id.org/seovoc/hasURL
 :hasURL rdf:type owl:ObjectProperty ;
         owl:inverseOf :isURLOf ;
@@ -896,7 +906,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 ###  https://w3id.org/seovoc/averagePosition28Days
 :averagePosition28Days rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf :position ;
-                       rdfs:domain :Query ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Query
+                                                   :WebPage
+                                                 )
+                                   ] ;
                        rdfs:range xsd:double ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "The ranking position for 28 Days on SERPs" ;
@@ -906,7 +920,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 ###  https://w3id.org/seovoc/averagePosition28DaysTo3MonthsTrend
 :averagePosition28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                                      rdfs:subPropertyOf :position ;
-                                     rdfs:domain :Query ;
+                                     rdfs:domain [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :Query
+                                                                 :WebPage
+                                                               )
+                                                 ] ;
                                      rdfs:range xsd:double ;
                                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                      dc:description "The ranking position trend for 28Days to 3Months on SERPs" ;
@@ -916,17 +934,55 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 ###  https://w3id.org/seovoc/averagePosition3Months
 :averagePosition3Months rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf :position ;
-                        rdfs:domain :Query ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Query
+                                                    :WebPage
+                                                  )
+                                    ] ;
                         rdfs:range xsd:double ;
                         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                         dc:description "The ranking position for 3 Months on SERPs" ;
                         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/averagePosition6Months
+:averagePosition6Months rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :position ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Query
+                                                    :WebPage
+                                                  )
+                                    ] ;
+                        rdfs:range xsd:double ;
+                        dc:contributors "Andrea Volpini" ;
+                        dc:description "The average ranking position on SERPs for a 6 months period. Attachable at query level or page level." ;
+                        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                        rdfs:label "averagePosition6Months"@en .
+
+
+###  https://w3id.org/seovoc/averagePosition7Days
+:averagePosition7Days rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf :position ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :Query
+                                                  :WebPage
+                                                )
+                                  ] ;
+                      rdfs:range xsd:double ;
+                      dc:contributors "Andrea Volpini" ;
+                      dc:description "The average ranking position on SERPs for a 7 days period. Attachable at query level or page level. Correctly-spelled replacement for the deprecated averagePositon7Days." ;
+                      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                      rdfs:label "averagePosition7Days"@en .
+
+
 ###  https://w3id.org/seovoc/averagePosition7DaysTo28DaysTrend
 :averagePosition7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
                                    rdfs:subPropertyOf :position ;
-                                   rdfs:domain :Query ;
+                                   rdfs:domain [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Query
+                                                               :WebPage
+                                                             )
+                                               ] ;
                                    rdfs:range xsd:double ;
                                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                    dc:description "The ranking position trend of 7Days to 28Days on SERPs" ;
@@ -936,7 +992,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 ###  https://w3id.org/seovoc/averagePosition7DaysTo3MonthsTrend
 :averagePosition7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
                                     rdfs:subPropertyOf :position ;
-                                    rdfs:domain :Query ;
+                                    rdfs:domain [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Query
+                                                                :WebPage
+                                                              )
+                                                ] ;
                                     rdfs:range xsd:double ;
                                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                     dc:description "The ranking position trend of 7Days to 3Months on SERPs" ;
@@ -950,7 +1010,9 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                      rdfs:range xsd:double ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "The ranking position for 7 Days on SERPs" ;
-                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                     rdfs:comment "DEPRECATED: misspelled IRI (missing 'i' in 'Position'). Use averagePosition7Days. Retained for backward compatibility with existing data." ;
+                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/bodyText
@@ -1070,7 +1132,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/clicks28Days
 :clicks28Days rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Query ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Query
+                                          :WebPage
+                                        )
+                          ] ;
               rdfs:range xsd:long ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "The total number of clicks the query has for a given time period of 28 Days" ;
@@ -1080,7 +1146,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/clicks28DaysTo3MonthsTrend
 :clicks28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                            rdfs:domain :Query ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( :Query
+                                                        :WebPage
+                                                      )
+                                        ] ;
                             rdfs:range xsd:double ;
                             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                             dc:description "The trend of the clicks when we compare 28Days to 3Months period." ;
@@ -1089,7 +1159,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/clicks3Months
 :clicks3Months rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Query ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Query
+                                           :WebPage
+                                         )
+                           ] ;
                rdfs:range xsd:long ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "clicks3Months"@en ;
@@ -1097,9 +1171,27 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/clicks6Months
+:clicks6Months rdf:type owl:DatatypeProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Query
+                                           :WebPage
+                                         )
+                           ] ;
+               rdfs:range xsd:long ;
+               dc:contributors "Andrea Volpini" ;
+               dc:description "The total number of clicks for a given time period of 6 months. Attachable at query level or page level (see the widened domain on all windowed metrics)." ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "clicks6Months"@en .
+
+
 ###  https://w3id.org/seovoc/clicks7Days
 :clicks7Days rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Query ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Query
+                                         :WebPage
+                                       )
+                         ] ;
              rdfs:range xsd:long ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "The total number of clicks the query has for a given time period of 7 days" ;
@@ -1109,7 +1201,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/clicks7DaysTo28DaysTrend
 :clicks7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :Query ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( :Query
+                                                      :WebPage
+                                                    )
+                                      ] ;
                           rdfs:range xsd:double ;
                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                           dc:description "The trend of the clicks when we compare 7Days to 28Days period" ;
@@ -1118,7 +1214,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/clicks7DaysTo3MonthsTrend
 :clicks7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                           rdfs:domain :Query ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( :Query
+                                                       :WebPage
+                                                     )
+                                       ] ;
                            rdfs:range xsd:double ;
                            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                            dc:description "The trend of the clicks when we compare 7Days to 3Months period" ;
@@ -1207,7 +1307,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/ctr28Days
 :ctr28Days rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Query ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Query
+                                       :WebPage
+                                     )
+                       ] ;
            rdfs:range xsd:double ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "The click through rate for 28 days period" ;
@@ -1217,7 +1321,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/ctr28DaysTo3MonthsTrend
 :ctr28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                         rdfs:domain :Query ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( :Query
+                                                     :WebPage
+                                                   )
+                                     ] ;
                          rdfs:range xsd:double ;
                          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                          dc:description "The click through rate trend for 28Days to 3Months period" ;
@@ -1226,7 +1334,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/ctr3Months
 :ctr3Months rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Query ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Query
+                                        :WebPage
+                                      )
+                        ] ;
             rdfs:range xsd:double ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The click through rate for 3 months period" ;
@@ -1234,9 +1346,27 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
             rdfs:label "ctr3Months"@en .
 
 
+###  https://w3id.org/seovoc/ctr6Months
+:ctr6Months rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Query
+                                        :WebPage
+                                      )
+                        ] ;
+            rdfs:range xsd:double ;
+            dc:contributors "Andrea Volpini" ;
+            dc:description "The click through rate for a 6 months period, expressed as a rate in [0,1]. Attachable at query level or page level." ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "ctr6Months"@en .
+
+
 ###  https://w3id.org/seovoc/ctr7Days
 :ctr7Days rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Query ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Query
+                                      :WebPage
+                                    )
+                      ] ;
           rdfs:range xsd:double ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "ctr7Days"@en ;
@@ -1246,7 +1376,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/ctr7DaysTo28DaysTrend
 :ctr7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Query ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Query
+                                                   :WebPage
+                                                 )
+                                   ] ;
                        rdfs:range xsd:double ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "The click through rate trend of 7days to 28days period" ;
@@ -1255,7 +1389,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/ctr7DaysTo3MonthsTrend
 :ctr7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :Query ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Query
+                                                    :WebPage
+                                                  )
+                                    ] ;
                         rdfs:range xsd:double ;
                         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                         dc:description "The click through rate trend of 7Days to 3Months period" ;
@@ -1597,7 +1735,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/impressions28Days
 :impressions28Days rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Query ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Query
+                                               :WebPage
+                                             )
+                               ] ;
                    rdfs:range xsd:long ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "The impressions for a 28 months period" ;
@@ -1607,7 +1749,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/impressions28DaysTo3MonthsTrend
 :impressions28DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :Query ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Query
+                                                             :WebPage
+                                                           )
+                                             ] ;
                                  rdfs:range xsd:double ;
                                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                  dc:description "The impressions trend when you compare 28Days to 3Months" ;
@@ -1616,7 +1762,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/impressions3Months
 :impressions3Months rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Query ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Query
+                                                :WebPage
+                                              )
+                                ] ;
                     rdfs:range xsd:long ;
                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                     dc:description "The impressions of the webpage for a 3 months time period" ;
@@ -1624,9 +1774,27 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                     rdfs:label "impressions3Months"@en .
 
 
+###  https://w3id.org/seovoc/impressions6Months
+:impressions6Months rdf:type owl:DatatypeProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Query
+                                                :WebPage
+                                              )
+                                ] ;
+                    rdfs:range xsd:long ;
+                    dc:contributors "Andrea Volpini" ;
+                    dc:description "The impressions for a given time period of 6 months. Attachable at query level or page level." ;
+                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                    rdfs:label "impressions6Months"@en .
+
+
 ###  https://w3id.org/seovoc/impressions7Days
 :impressions7Days rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Query ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Query
+                                              :WebPage
+                                            )
+                              ] ;
                   rdfs:range xsd:long ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "The impressions for 7Days of the Webpage" ;
@@ -1636,7 +1804,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/impressions7DaysTo28DaysTrend
 :impressions7DaysTo28DaysTrend rdf:type owl:DatatypeProperty ;
-                               rdfs:domain :Query ;
+                               rdfs:domain [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Query
+                                                           :WebPage
+                                                         )
+                                           ] ;
                                rdfs:range xsd:double ;
                                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                dc:description "The impressions trend of 7Days to 28Days" ;
@@ -1645,7 +1817,11 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 
 ###  https://w3id.org/seovoc/impressions7DaysTo3MonthsTrend
 :impressions7DaysTo3MonthsTrend rdf:type owl:DatatypeProperty ;
-                                rdfs:domain :Query ;
+                                rdfs:domain [ rdf:type owl:Class ;
+                                              owl:unionOf ( :Query
+                                                            :WebPage
+                                                          )
+                                            ] ;
                                 rdfs:range xsd:double ;
                                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                 dc:description "The impressions trend of 7Days to 3Months" ;
@@ -1803,6 +1979,16 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The human-readable name of the LinkGroup, typically reflecting its function or placement on a webpage (e.g., 'Footer Links', 'Sidebar Menu', 'Main Navigation'))" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/linkGroupType
+:linkGroupType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :LinkGroup ;
+               rdfs:range xsd:string ;
+               dc:contributors "Andrea Volpini" ;
+               dc:description "The governed placement type of a LinkGroup. Expected values: header, footer, body, sidebar, navigation. Complements linkGroupName, which carries the free-text display name; linkGroupType is the machine-checkable axis consumers can gate on (for example excluding header/footer boilerplate from editorial link analysis)." ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "linkGroupType"@en .
 
 
 ###  https://w3id.org/seovoc/linkLocation
@@ -2679,6 +2865,22 @@ prof:Profile rdf:type owl:Class .
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "A dedicated class for modeling the subject or main theme of a web page or content segment. It can represent an entity, theme, or abstract concept the content is centered on" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/TrafficChannel
+:TrafficChannel rdf:type owl:Class ;
+                dc:contributors "Andrea Volpini" ;
+                dc:description "A governed channel classification for traffic sources: how a visit reached the site. Typical individuals (defined by the consuming application): organic-search, paid, direct, referral, social, email, affiliate, ai-assistant, unclassified. The ai-assistant channel names referrals from conversational AI surfaces (chatgpt.com, perplexity.ai, gemini.google.com), which existing analytics vocabularies cannot distinguish from generic referrals." ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "TrafficChannel"@en .
+
+
+###  https://w3id.org/seovoc/TrafficSource
+:TrafficSource rdf:type owl:Class ;
+               dc:contributors "Andrea Volpini" ;
+               dc:description "An analytics traffic source as reported by the producing dataset (for example a GA4 session source string such as 'google', '(direct)' or 'chatgpt.com'). The source string is the observation; its interpretation is carried by hasTrafficChannel." ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "TrafficSource"@en .
 
 
 ###  https://w3id.org/seovoc/URL
