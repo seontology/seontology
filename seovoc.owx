@@ -464,6 +464,33 @@
         <DataProperty IRI="clicks28Days"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="clicks6Months"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="impressions6Months"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="ctr6Months"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="averagePosition6Months"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="averagePosition7Days"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="linkGroupType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TrafficSource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TrafficChannel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasTrafficChannel"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="clicks28DaysTo3MonthsTrend"/>
     </Declaration>
     <Declaration>
@@ -1160,6 +1187,10 @@
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasTrafficChannel"/>
+        <Class IRI="TrafficSource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="hasMainTopic"/>
         <Class IRI="WebPage"/>
     </ObjectPropertyDomain>
@@ -1457,6 +1488,10 @@
         <Class IRI="LinkGroup"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="hasTrafficChannel"/>
+        <Class IRI="TrafficChannel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="hasMainTopic"/>
         <Class IRI="Topic"/>
     </ObjectPropertyRange>
@@ -1670,6 +1705,14 @@
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="averagePosition28Days"/>
+        <DataProperty IRI="position"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="averagePosition6Months"/>
+        <DataProperty IRI="position"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="averagePosition7Days"/>
         <DataProperty IRI="position"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -1958,23 +2001,38 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averagePosition28Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averagePosition28DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averagePosition3Months"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averagePosition7DaysTo28DaysTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averagePosition7DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="averageEngagementTime"/>
@@ -2038,27 +2096,84 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks28Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="clicks6Months"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="impressions6Months"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="ctr6Months"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="averagePosition6Months"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="averagePosition7Days"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="linkGroupType"/>
+        <Class IRI="LinkGroup"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks28DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks3Months"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks7Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks7DaysTo28DaysTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="clicks7DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="confidence"/>
@@ -2098,27 +2213,45 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr28Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr28DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr3Months"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr7Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr7DaysTo28DaysTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="ctr7DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="customField"/>
@@ -2254,27 +2387,45 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions28Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions28DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions3Months"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions7Days"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions7DaysTo28DaysTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="impressions7DaysTo3MonthsTrend"/>
-        <Class IRI="Query"/>
+        <ObjectUnionOf>
+            <Class IRI="Query"/>
+            <Class IRI="WebPage"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="incomingLinkCount"/>
@@ -2711,6 +2862,30 @@
     <DataPropertyRange>
         <DataProperty IRI="clicks28Days"/>
         <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="clicks6Months"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="impressions6Months"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="ctr6Months"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="averagePosition6Months"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="averagePosition7Days"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="linkGroupType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="clicks28DaysTo3MonthsTrend"/>
@@ -7413,6 +7588,196 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>expectedSupportingSchemaType</IRI>
         <Literal xml:lang="en">expected supporting schema type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>clicks6Months</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>clicks6Months</IRI>
+        <Literal>The total number of clicks for a given time period of 6 months. Attachable at query level or page level (see the widened domain on all windowed metrics).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>clicks6Months</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks6Months</IRI>
+        <Literal xml:lang="en">clicks6Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>impressions6Months</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>impressions6Months</IRI>
+        <Literal>The impressions for a given time period of 6 months. Attachable at query level or page level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>impressions6Months</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>impressions6Months</IRI>
+        <Literal xml:lang="en">impressions6Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>ctr6Months</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>ctr6Months</IRI>
+        <Literal>The click through rate for a 6 months period, expressed as a rate in [0,1]. Attachable at query level or page level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ctr6Months</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr6Months</IRI>
+        <Literal xml:lang="en">ctr6Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>averagePosition6Months</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>averagePosition6Months</IRI>
+        <Literal>The average ranking position on SERPs for a 6 months period. Attachable at query level or page level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>averagePosition6Months</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition6Months</IRI>
+        <Literal xml:lang="en">averagePosition6Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>averagePosition7Days</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>averagePosition7Days</IRI>
+        <Literal>The average ranking position on SERPs for a 7 days period. Attachable at query level or page level. Correctly-spelled replacement for the deprecated averagePositon7Days.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>averagePosition7Days</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition7Days</IRI>
+        <Literal xml:lang="en">averagePosition7Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>linkGroupType</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>linkGroupType</IRI>
+        <Literal>The governed placement type of a LinkGroup. Expected values: header, footer, body, sidebar, navigation. Complements linkGroupName, which carries the free-text display name; linkGroupType is the machine-checkable axis consumers can gate on (for example excluding header/footer boilerplate from editorial link analysis).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>linkGroupType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkGroupType</IRI>
+        <Literal xml:lang="en">linkGroupType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>TrafficSource</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>TrafficSource</IRI>
+        <Literal>An analytics traffic source as reported by the producing dataset (for example a GA4 session source string such as 'google', '(direct)' or 'chatgpt.com'). The source string is the observation; its interpretation is carried by hasTrafficChannel.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TrafficSource</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TrafficSource</IRI>
+        <Literal xml:lang="en">TrafficSource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>TrafficChannel</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>TrafficChannel</IRI>
+        <Literal>A governed channel classification for traffic sources: how a visit reached the site. Typical individuals (defined by the consuming application): organic-search, paid, direct, referral, social, email, affiliate, ai-assistant, unclassified. The ai-assistant channel names referrals from conversational AI surfaces (chatgpt.com, perplexity.ai, gemini.google.com), which existing analytics vocabularies cannot distinguish from generic referrals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TrafficChannel</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TrafficChannel</IRI>
+        <Literal xml:lang="en">TrafficChannel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:contributors"/>
+        <IRI>hasTrafficChannel</IRI>
+        <Literal>Andrea Volpini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>hasTrafficChannel</IRI>
+        <Literal>Assigns a TrafficSource to its governed TrafficChannel. One source, one channel; sources an application cannot classify should carry an explicit 'unclassified' channel rather than no assertion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasTrafficChannel</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasTrafficChannel</IRI>
+        <Literal xml:lang="en">hasTrafficChannel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>averagePositon7Days</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>averagePositon7Days</IRI>
+        <Literal>DEPRECATED: misspelled IRI (missing 'i' in 'Position'). Use averagePosition7Days. Retained for backward compatibility with existing data.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
