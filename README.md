@@ -10,6 +10,10 @@
 
 The **SEOntology** is the open-source semantic framework, initially developed by WordLift and then enriched with contributions from SEO experts, knowledge engineers, and developers. It serves as a semantic operating system for modern SEO, enabling agents, apps, and researchers to reason about, audit, and optimize web content through a shared vocabulary. To simplify, think of it as an operating system for your content strategy. This ontology bridges SEO practice with linked data standards, powering automation, structured reasoning, and explainable AI across the entire content lifecycle. This is an early draft.
 
+<p align="center">
+  <img src=".assets/seontology-doodle.png" alt="SEOntology" width="800">
+</p>
+
 ## Use Cases Covered
 
 - **AI-Powered Content Summarization and Metadata Generation**
