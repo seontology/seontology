@@ -5,8 +5,8 @@
 
 ## Description
 
-> **Accepted at SEMANTiCS 2026 — Research Track**  
-> SEOntology has been accepted as a research paper at [SEMANTiCS 2026](https://2026-eu.semantics.cc/page/accepted_research): **“SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows”** by Emilija Gjorgjevska, David Riccitelli, Milos Jovanovik, and Andrea Volpini.
+> **Best Student Paper at SEMANTiCS 2026 — Research Track**  
+> SEOntology was accepted and awarded **[Best Student Paper at SEMANTiCS 2026](https://2026-eu.semantics.cc/page/awards.html)** for the research paper **“SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows”** by Emilija Gjorgjevska, David Riccitelli, Milos Jovanovik, and Andrea Volpini.
 
 The **SEOntology** is the open-source semantic framework, initially developed by WordLift and then enriched with contributions from SEO experts, knowledge engineers, and developers. It serves as a semantic operating system for modern SEO, enabling agents, apps, and researchers to reason about, audit, and optimize web content through a shared vocabulary. To simplify, think of it as an operating system for your content strategy. This ontology bridges SEO practice with linked data standards, powering automation, structured reasoning, and explainable AI across the entire content lifecycle. This is an early draft.
 
