@@ -19,7 +19,7 @@ You can also open the ontology in [Protégé](https://protege.stanford.edu/) or 
 
 ## A first example in JSON-LD
 
-The example below describes one page: its canonical URL, 28-day Search Console metrics, a query it ranks for, a content chunk, and a footer link group. The SEOntology JSON-LD context maps short names such as `hasQuery` to their `seovoc:` IRIs and gives numeric metrics their XSD datatypes.
+The example below describes one page: its canonical URL, 28-day Search Console metrics, a query it ranks for, a content chunk, and two link groups: footer boilerplate and an editorial link whose destination is a page in the same graph. Every `Link` states its href with `linkTargetUrl`; `linkTarget` adds the resolved destination node once you have one. The SEOntology JSON-LD context maps short names such as `hasQuery` to their `seovoc:` IRIs and gives numeric metrics their XSD datatypes.
 
 ```json
 {
@@ -51,12 +51,34 @@ The example below describes one page: its canonical URL, 28-day Search Console m
       "chunkText": "Blue widgets come in three sizes..."
     }
   ],
-  "hasLinkGroup": {
-    "@type": "LinkGroup",
-    "linkGroupName": "Footer links",
-    "linkGroupType": "footer",
-    "hasLink": [{ "@type": "Link", "linkText": "About us" }]
-  }
+  "hasLinkGroup": [
+    {
+      "@type": "LinkGroup",
+      "linkGroupName": "Footer links",
+      "linkGroupType": "footer",
+      "hasLink": [
+        {
+          "@type": "Link",
+          "linkText": "About us",
+          "linkTargetUrl": "https://example.com/about/"
+        }
+      ]
+    },
+    {
+      "@type": "LinkGroup",
+      "linkGroupName": "Related guides",
+      "linkGroupType": "body",
+      "hasLink": [
+        {
+          "@type": "Link",
+          "position": 1,
+          "linkText": { "@value": "how to choose a widget", "@language": "en" },
+          "linkTargetUrl": "https://example.com/guides/choosing-widgets/",
+          "linkTarget": "https://example.com/guides/choosing-widgets/"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -85,7 +107,22 @@ The example below describes one page: its canonical URL, 28-day Search Console m
         a seovoc:LinkGroup ;
         seovoc:linkGroupName "Footer links" ;
         seovoc:linkGroupType "footer" ;
-        seovoc:hasLink [ a seovoc:Link ; seovoc:linkText "About us" ]
+        seovoc:hasLink [
+            a seovoc:Link ;
+            seovoc:linkText "About us" ;
+            seovoc:linkTargetUrl "https://example.com/about/"
+        ]
+    ] , [
+        a seovoc:LinkGroup ;
+        seovoc:linkGroupName "Related guides" ;
+        seovoc:linkGroupType "body" ;
+        seovoc:hasLink [
+            a seovoc:Link ;
+            seovoc:position 1 ;
+            seovoc:linkText "how to choose a widget"@en ;
+            seovoc:linkTargetUrl "https://example.com/guides/choosing-widgets/" ;
+            seovoc:linkTarget <https://example.com/guides/choosing-widgets/>
+        ]
     ] .
 
 <https://example.com/blue-widgets/#url> a seovoc:URL ;
@@ -116,20 +153,24 @@ WHERE {
 ORDER BY DESC(?clicks)
 ```
 
-Exclude boilerplate navigation when analyzing editorial links:
+Find the pages that link to a destination, with their anchor text and placement, excluding boilerplate navigation. The query joins on the `linkTargetUrl` string, so it also finds links whose destination was never resolved to a node:
 
 ```sparql
 PREFIX seovoc: <https://w3id.org/seovoc/>
 
-SELECT ?page ?text
+SELECT ?page ?text ?placement
 WHERE {
-  ?page seovoc:hasLinkGroup ?group .
-  ?group seovoc:hasLink ?link .
-  ?link seovoc:linkText ?text .
-  FILTER NOT EXISTS {
-    ?group seovoc:linkGroupType ?type .
-    FILTER (?type IN ("header", "footer", "navigation"))
+  ?link seovoc:linkTargetUrl "https://example.com/guides/choosing-widgets/" .
+  OPTIONAL { ?link seovoc:linkText ?text }
+  {
+    ?page seovoc:hasLinkGroup ?group .
+    ?group seovoc:hasLink ?link .
+    OPTIONAL { ?group seovoc:linkGroupType ?placement }
+  } UNION {
+    ?page seovoc:link ?link .
+    OPTIONAL { ?link seovoc:linkLocation ?placement }
   }
+  FILTER (!BOUND(?placement) || ?placement NOT IN ("header", "footer", "navigation"))
 }
 ```
 
