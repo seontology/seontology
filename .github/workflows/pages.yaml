@@ -22,9 +22,12 @@ on:
 permissions:
   contents: read
 
+# PR builds cancel superseded runs of the same PR. Deploys queue instead of
+# cancelling each other, and runs after a failed conversion (which build
+# nothing) get their own group so they cannot cancel a pending deploy.
 concurrency:
-  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'deploy' }}
-  cancel-in-progress: true
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success') && format('skip-{0}', github.run_id) || 'deploy' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
