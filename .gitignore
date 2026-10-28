@@ -1,3 +1,5 @@
+.venv/
+_site/
 build/
 
 # Claude Code: per-machine state stays local; .claude/agents/ is shared

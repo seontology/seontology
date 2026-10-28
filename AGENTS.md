@@ -9,6 +9,10 @@ This repository currently contains one ontology project centered on SEOntology.
 - Change detection checksum: `seovoc.owx.md5`
 - Conversion automation script: `.bin/publish.sh`
 - CI workflow: `.github/workflows/publish.yaml`
+- Documentation site: `mkdocs.yml`, guide pages in `docs/`, build hooks in `.site/hooks.py`, deployed to GitHub Pages by `.github/workflows/pages.yaml`
+- Proposed w3id redirect rules: `.w3id/.htaccess`
+
+The site's ontology reference, `context.jsonld`, `seovoc.jsonld`, `llms.txt` and `llms-full.txt` are generated from `seovoc.ttl` at build time; never commit generated site output (`_site/`). When adding a guide page, add it to `nav` in `mkdocs.yml` and give it a `description` in front matter, which `llms.txt` uses. Verify with `mkdocs build --strict`.
 
 The publish workflow runs conversion and publishing logic from `.bin/publish.sh` on pushes/PRs to `main` and `develop`, and on semantic-style tags.
 
