@@ -1,1 +1,5 @@
 build/
+
+# Claude Code: per-machine state stays local; .claude/agents/ is shared
+.claude/worktrees/
+.claude/settings.local.json
