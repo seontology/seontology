@@ -1957,10 +1957,6 @@
         <DataProperty IRI="identifier"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-        <Class IRI="DirectorySegment"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="ageRange"/>
         <Class IRI="Persona"/>
     </DataPropertyDomain>
@@ -2736,10 +2732,6 @@
         <DataProperty IRI="weight"/>
         <Class IRI="Link"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="ageRange"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -3518,11 +3510,6 @@
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
         <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
         <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <AbbreviatedIRI>owl:topDataProperty</AbbreviatedIRI>
-        <Literal>Establishes the relationship between a Chunk and its associated QualityScore assessment. This property enables quality evaluation at the content segment level, allowing for granular analysis of individual text portions within a webpage. Unlike page-level quality assessment, chunk-level scoring focuses on the coherence, relevance, and quality characteristics of specific content segments, supporting fine-grained content optimization and automated content analysis workflows.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
