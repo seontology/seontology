@@ -36,12 +36,29 @@ Query classification properties include `queryType`, `keywordType`, `queryCatego
 
 ## Links
 
-Use **`hasLinkGroup`** from a `WebPage` to a **`LinkGroup`**, then **`hasLink`** from the group to each **`Link`**. This is the canonical pattern for navigation and other grouped links.
+Each hyperlink on a page is a **`Link`**. A page reaches its links in one of two ways:
 
-- `linkGroupName` is free text for display ("Footer links").
-- `linkGroupType` is the machine-checkable placement: `header`, `footer`, `body`, `sidebar` or `navigation`. Use it to exclude boilerplate links from editorial analysis.
-- `Link` carries `linkText`, `linkType`, `linkLocation`, `noFollow` and `anchorResource`. `AnchorText` models anchor text influenced by the queries a page ranks for.
-- The direct `link` property from `WebPage` to `Link` remains as a shortcut for ungrouped or raw extracted links.
+- **Grouped**: **`hasLinkGroup`** from the `WebPage` to a **`LinkGroup`**, then **`hasLink`** from the group to each `Link`. This is the canonical pattern for navigation, footers, related-content blocks and other clusters of links.
+- **Ungrouped**: the direct **`link`** property from `WebPage` to `Link`, for raw extracted links or a single inline link in body text.
+
+A `LinkGroup` carries `linkGroupName`, free text for display ("Footer links"), `linkGroupType`, the machine-checkable placement (`header`, `footer`, `body`, `sidebar` or `navigation`), and `linkGroupID`.
+
+A `Link` describes one hyperlink and where it points:
+
+| Term | Meaning |
+|---|---|
+| `linkTargetUrl` | The absolute href, as a string. Always set it: it is the destination fact you have from parsing the markup alone. |
+| `linkTarget` | The resolved destination node: a `WebPage` in the graph, a `URL` node, or the entity the destination represents. Set it only once the destination has been resolved. Its inverse is `isLinkTargetOf`. |
+| `linkText` | The anchor text. Accepts language-tagged literals. |
+| `linkRel` | One `rel` token per value: `nofollow`, `sponsored`, `ugc`, `noopener`, and so on. |
+| `linkLocation` | Placement of an ungrouped link, with the same values as `linkGroupType`. When a `LinkGroup` exists, its `linkGroupType` takes precedence. |
+| `position` | Order of the link within its group. |
+
+Internal versus external is not a property of the link. Compare domains instead: a link is internal when its `linkTarget` page shares a `Domain` (`hasDomain`) with the source page, or, for destinations that were not crawled, when the `linkTargetUrl` host matches the source page's `domainName`.
+
+`anchorResource`, `linkgroupID`, `noFollow`, `linkType` and the `AnchorText` class are deprecated. See [Compatibility notes](compatibility.md#links).
+
+The [Links](links.md) guide explains the model in depth, with worked examples and queries.
 
 ## Content and entities
 

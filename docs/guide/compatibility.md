@@ -15,6 +15,18 @@ description: Changes that affect existing SEOntology data, deprecated terms, and
 - `hasLinkGroup` from `WebPage` to `LinkGroup`, followed by `hasLink` from `LinkGroup` to `Link`, is the canonical pattern for grouped links. The direct `link` property remains for ungrouped or raw extracted links.
 - `isLinkOf` points from `Link` back to `LinkGroup`, as the inverse of `hasLink`. Data that used `isLinkOf` to point from a `Link` directly to a `WebPage` should use `link` for ungrouped links, or add a `LinkGroup` and connect the page with `hasLinkGroup`.
 - `linkGroupType` complements `linkGroupName`. The name is free-text display; the type (`header`, `footer`, `body`, `sidebar`, `navigation`) is the value consumers can filter on.
+- **Links state their destination (0.1.0).** `linkTargetUrl` holds the href as a string and should be set on every `Link`. `linkTarget` points to the resolved destination node (a `WebPage`, a `URL` node or an entity) once there is one. `linkRel` holds one `rel` token per value.
+- `linkText` widened from `xsd:string` to `rdfs:Literal`, so anchors can carry a language tag. Existing values stay valid.
+- `linkLocation` and `linkGroupType` share one enumeration: `header`, `footer`, `body`, `sidebar`, `navigation`. Data that used `nav` for `linkLocation` should use `navigation`. When a `LinkGroup` exists, its `linkGroupType` takes precedence over `linkLocation`.
+- These terms are deprecated. Their IRIs stay resolvable and existing data stays valid:
+
+| Deprecated | Use instead |
+|---|---|
+| `anchorResource` | `linkTarget` |
+| `linkgroupID` | `linkGroupID`, typed `xsd:string` rather than `xsd:int` |
+| `noFollow` | `linkRel` with the value `nofollow` |
+| `linkType` | Nothing. Derive internal versus external from `Domain`: compare the source and target pages' `hasDomain`, or the `linkTargetUrl` host with the source page's `domainName`. |
+| `AnchorText` (class) | `linkText` on the `Link`. `anchorValue` and `influencedByQuery` are unchanged for now. |
 
 ## Other
 

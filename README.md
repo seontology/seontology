@@ -33,8 +33,7 @@ The **SEOntology** is the open-source semantic framework, initially developed by
   - `WebPage`: The primary entity representing a specific webpage, extended from Schema.org.
   - `Query`: The query for which the webpage ranks in SERPs, usually obtained through Google Search Console.
   - `URL`: The unique identifier for the webpage.
-  - `AnchorText`: The anchor text which is influenced by the Query that the WebPage ranks for.
-  - `Link`: Representing an internal or external link found on the webpage through crawling.
+  - `Link`: Representing an internal or external link found on the webpage through crawling. `linkTargetUrl` states where it points and `linkTarget` the resolved destination node.
   - `LinkGroup`: A collection of links that are logically grouped, such as menus or footers.
   - `TrafficSource`: An analytics traffic source as reported by the producing dataset (e.g. a GA4 session source string such as `google`, `(direct)`, `chatgpt.com`).
   - `TrafficChannel`: A governed channel classification for traffic sources (organic search, direct, referral, social, email, affiliate, AI assistant, ...), enabling AI-surface referrals to be distinguished from generic referrals.

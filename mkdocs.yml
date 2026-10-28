@@ -18,6 +18,7 @@ theme:
     - navigation.sections
     - navigation.top
     - content.code.copy
+    - content.tabs.link
     - search.highlight
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -41,13 +42,20 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
 
 nav:
   - Home: index.md
   - Guide:
       - Getting started: guide/getting-started.md
       - Core model: guide/core-model.md
+      - Links: guide/links.md
       - Compatibility notes: guide/compatibility.md
       - Structured data profiles: structured-data-profiles.md
   - Ontology reference: https://seontology.github.io/seontology/reference/
