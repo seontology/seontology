@@ -11,16 +11,18 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:voaf="http://purl.org/vocommons/voaf#"
-     xmlns:schema="http://schema.org/"
+     xmlns:schema="https://schema.org/"
      xmlns:seovoc="https://w3id.org/seovoc/">
     <owl:Ontology rdf:about="https://w3id.org/seovoc/">
+        <owl:versionIRI rdf:resource="https://w3id.org/seovoc/0.1.0"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:creator rdf:resource="https://wordlift.io"/>
         <dc:description xml:lang="en">The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate.</dc:description>
         <dc:identifier>SEO Vocabulary</dc:identifier>
         <dc:issued>2023-10-29T00:00:00Z</dc:issued>
         <dc:title>SEO Vocabulary</dc:title>
-        <extends rdf:resource="http://schema.org/"/>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <extends rdf:resource="https://schema.org/"/>
     </owl:Ontology>
     
 
@@ -72,15 +74,15 @@
     
 
 
-    <!-- http://schema.org/license -->
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/license"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- https://schema.org/license -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/license"/>
     
 
 
@@ -139,7 +141,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/about">
         <owl:inverseOf rdf:resource="https://w3id.org/seovoc/isDescribedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
-        <rdfs:range rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="https://schema.org/Thing"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Each webpage has a main entity of type Thing: Person, Location, LocalBusiness etc.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
@@ -1030,7 +1032,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/seovoc/mentions">
         <rdfs:domain rdf:resource="https://w3id.org/seovoc/WebPage"/>
-        <rdfs:range rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="https://schema.org/Thing"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>Each webpage has an entity of type Thing: Person, Location, LocalBusiness etc.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
@@ -2547,7 +2549,7 @@
     <!-- https://w3id.org/seovoc/isThinContent -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/seovoc/isThinContent">
-        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <dc:description>Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type.</dc:description>
     </owl:DatatypeProperty>
@@ -3582,44 +3584,6 @@ These categories help in organizing user search behaviors and improving query un
     
 
 
-    <!-- http://schema.org/Action -->
-
-    <owl:Class rdf:about="http://schema.org/Action">
-        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>The Action class from Schema.org</dc:description>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.org/Person -->
-
-    <owl:Class rdf:about="http://schema.org/Person">
-        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:identifier rdf:resource="https://w3id.org/seovoc/"/>
-        <rdfs:isDefinedBy>The Person class from Schema.org</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.org/Thing -->
-
-    <owl:Class rdf:about="http://schema.org/Thing">
-        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>The Thing class from Schema.org</dc:description>
-        <rdfs:comment>should i use the URI to define exact match or create schema -alike classes?</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.org/WebPage -->
-
-    <owl:Class rdf:about="http://schema.org/WebPage">
-        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
-        <dc:description>The WebPage class from Schema.org</dc:description>
-    </owl:Class>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
@@ -3627,7 +3591,7 @@ These categories help in organizing user search behaviors and improving query un
         <dc:description>A Thing that may have a schema:url, hence may have analytics data bound to it.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label>Thing</rdfs:label>
-        <skos:exactMatch rdf:resource="http://schema.org/Thing"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Thing"/>
     </rdf:Description>
     
 
@@ -3638,12 +3602,50 @@ These categories help in organizing user search behaviors and improving query un
     
 
 
+    <!-- https://schema.org/Action -->
+
+    <owl:Class rdf:about="https://schema.org/Action">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <dc:description>The Action class from Schema.org</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+    <owl:Class rdf:about="https://schema.org/Person">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <dc:identifier rdf:resource="https://w3id.org/seovoc/"/>
+        <rdfs:isDefinedBy>The Person class from Schema.org</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Thing -->
+
+    <owl:Class rdf:about="https://schema.org/Thing">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <dc:description>The Thing class from Schema.org</dc:description>
+        <rdfs:comment>should i use the URI to define exact match or create schema -alike classes?</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/WebPage -->
+
+    <owl:Class rdf:about="https://schema.org/WebPage">
+        <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
+        <dc:description>The WebPage class from Schema.org</dc:description>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/seovoc/Action -->
 
     <owl:Class rdf:about="https://w3id.org/seovoc/Action">
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
-        <skos:exactMatch rdf:resource="http://schema.org/Action"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Action"/>
     </owl:Class>
     
 
@@ -3725,7 +3727,7 @@ These categories help in organizing user search behaviors and improving query un
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:identifier rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:isDefinedBy>A type of Person, defined in SEOntology</rdfs:isDefinedBy>
-        <skos:exactMatch rdf:resource="http://schema.org/Person"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Person"/>
     </owl:Class>
     
 
@@ -3835,7 +3837,7 @@ These categories help in organizing user search behaviors and improving query un
     <owl:Class rdf:about="https://w3id.org/seovoc/Person">
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:identifier rdf:resource="https://w3id.org/seovoc/"/>
-        <skos:exactMatch rdf:resource="http://schema.org/Person"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Person"/>
     </owl:Class>
     
 
@@ -3982,7 +3984,7 @@ These categories help in organizing user search behaviors and improving query un
         <dc:description xml:lang="en">A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:label xml:lang="en">WebPage</rdfs:label>
-        <skos:exactMatch rdf:resource="http://schema.org/WebPage"/>
+        <skos:exactMatch rdf:resource="https://schema.org/WebPage"/>
     </owl:Class>
     
 

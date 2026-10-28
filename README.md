@@ -146,6 +146,8 @@ Before ontology files are changed, proposals should mature into a reviewed model
 
 We use [Semantic Versioning](http://semver.org/) for this project.
 
+The ontology header carries the release it belongs to: `owl:versionIRI` (for example `<https://w3id.org/seovoc/0.1.0>`) and `owl:versionInfo` (for example `"0.1.0"`). Both match the `VERSION` file. Consumers that need a stable vocabulary should import the version IRI rather than `https://w3id.org/seovoc/`, which always resolves to the latest release.
+
 ## Communication & Discussion
 
 - [Thread on X](https://x.com/cyberandy/status/1715853285838430358?s=20)
