@@ -1,0 +1,60 @@
+site_name: SEOntology
+site_description: A Schema.org-aligned OWL 2 ontology for semantic modeling of SEO workflows.
+site_url: https://seontology.github.io/seontology/
+repo_url: https://github.com/seontology/seontology
+repo_name: seontology/seontology
+edit_uri: edit/main/docs/
+copyright: SEOntology is released under the MIT License.
+
+docs_dir: docs
+site_dir: _site
+
+theme:
+  name: material
+  custom_dir: .site/overrides
+  logo: assets/images/seontology_logo.png
+  favicon: assets/images/seontology_logo.png
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+hooks:
+  - .site/hooks.py
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Guide:
+      - Getting started: guide/getting-started.md
+      - Core model: guide/core-model.md
+      - Compatibility notes: guide/compatibility.md
+      - Structured data profiles: structured-data-profiles.md
+  - Ontology reference: https://seontology.github.io/seontology/reference/
+  - For agents: for-agents.md
+  - Contributing: contributing-ontology-proposals.md
+  - Release notes:
+      - Ontology update 0.0.4: ontology-update-0.0.4.md
+      - Ontology update 0.0.3: ontology-update-0.0.3.md
+      - Ontology update 0.0.2: ontology-update-0.0.2.md
+  - Citing: citing.md

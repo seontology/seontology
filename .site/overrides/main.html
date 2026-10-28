@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {#- Machine-readable alternates of the ontology and of this page. -#}
+  <link rel="alternate" type="text/turtle" title="SEOntology (Turtle)" href="{{ config.site_url }}seovoc.ttl">
+  <link rel="alternate" type="application/rdf+xml" title="SEOntology (RDF/XML)" href="{{ config.site_url }}seovoc.owl">
+  <link rel="alternate" type="application/ld+json" title="SEOntology (JSON-LD)" href="{{ config.site_url }}seovoc.jsonld">
+  {%- if page %}
+  <link rel="alternate" type="text/markdown" title="This page (Markdown)" href="{{ config.site_url }}{{ page.url }}index.md">
+  {%- endif %}
+  {%- if page and page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": "https://w3id.org/seovoc/",
+    "name": "SEOntology",
+    "alternateName": "SEO Vocabulary",
+    "description": "{{ config.site_description }}",
+    "url": "{{ config.site_url }}",
+    "license": "https://opensource.org/licenses/MIT",
+    "isBasedOn": "https://schema.org/",
+    "encoding": [
+      {"@type": "MediaObject", "encodingFormat": "text/turtle", "contentUrl": "{{ config.site_url }}seovoc.ttl"},
+      {"@type": "MediaObject", "encodingFormat": "application/rdf+xml", "contentUrl": "{{ config.site_url }}seovoc.owl"},
+      {"@type": "MediaObject", "encodingFormat": "application/ld+json", "contentUrl": "{{ config.site_url }}seovoc.jsonld"}
+    ],
+    "creator": {"@type": "Organization", "name": "WordLift", "url": "https://wordlift.io"},
+    "citation": "Gjorgjevska, E., Riccitelli, D., Jovanovik, M., Volpini, A. SEOntology: A Domain Ontology for Semantic Modeling of Search Engine Optimization Workflows. SEMANTiCS 2026."
+  }
+  </script>
+  {%- endif %}
+{% endblock %}

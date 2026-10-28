@@ -162,6 +162,18 @@ This project is sponsored by [WordLift](https://www.wordlift.io/), a leading pro
 
 ## Documentation
 
+The documentation site at **https://seontology.github.io/seontology/** combines the guide in `docs/` with an ontology reference generated from `seovoc.ttl`. It also publishes the ontology files, a JSON-LD context (`context.jsonld`) and `llms.txt` for agents. The [Publish Site](.github/workflows/pages.yaml) workflow builds it with MkDocs on every push to `main`, and after each ontology conversion.
+
+To build it locally:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r .site/requirements.txt
+.venv/bin/mkdocs serve
+```
+
+Guide pages live in `docs/` and are listed in `mkdocs.yml`; the generated reference, agent files and Markdown copies of pages come from `.site/hooks.py`. The proposed w3id redirect rules are in [`.w3id/`](.w3id/README.md).
+
 - [Contributing Ontology Proposals](docs/contributing-ontology-proposals.md)
 - [Structured Data Profiles](docs/structured-data-profiles.md)
 - [Ontology update 0.0.4](docs/ontology-update-0.0.4.md)
