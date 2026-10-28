@@ -13,12 +13,14 @@
 @base <https://w3id.org/seovoc/> .
 
 <https://w3id.org/seovoc/> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/seovoc/0.1.0> ;
                             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                             dc:creator <https://wordlift.io> ;
                             dc:description "The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate."@en ;
                             dc:identifier "SEO Vocabulary" ;
                             dc:issued "2023-10-29T00:00:00Z" ;
                             dc:title "SEO Vocabulary" ;
+                            owl:versionInfo "0.1.0" ;
                             :extends schema: .
 
 #################################################################
