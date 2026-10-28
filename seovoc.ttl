@@ -790,12 +790,6 @@ schema:license rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:domain :DirectorySegment ;
-                    rdfs:range xsd:string ;
-                    dc:description "Establishes the relationship between a Chunk and its associated QualityScore assessment. This property enables quality evaluation at the content segment level, allowing for granular analysis of individual text portions within a webpage. Unlike page-level quality assessment, chunk-level scoring focuses on the coherence, relevance, and quality characteristics of specific content segments, supporting fine-grained content optimization and automated content analysis workflows." .
-
-
 ###  https://w3id.org/seovoc/ageRange
 :ageRange rdf:type owl:DatatypeProperty ;
           rdfs:domain :Persona ;
