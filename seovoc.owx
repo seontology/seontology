@@ -17,7 +17,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
     <Prefix name="voaf" IRI="http://purl.org/vocommons/voaf#"/>
-    <Prefix name="schema" IRI="http://schema.org/"/>
+    <Prefix name="schema" IRI="https://schema.org/"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
