@@ -10,6 +10,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/seovoc/> .
 
 <https://w3id.org/seovoc/> rdf:type owl:Ontology ;
@@ -49,6 +50,14 @@ dc:issued rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/elements/1.1/title
 dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isReplacedBy
+dcterms:isReplacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
@@ -111,7 +120,10 @@ schema:license rdf:type owl:AnnotationProperty .
                            ] ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Points to an entity representing the linked content, useful for dereferencing in GraphQL" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                dcterms:isReplacedBy :linkTarget ;
+                rdfs:comment "DEPRECATED: use seovoc:linkTarget. Retained for backward compatibility with existing data." ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/classifiedByModel
@@ -617,6 +629,16 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/isLinkTargetOf
+:isLinkTargetOf rdf:type owl:ObjectProperty ;
+                owl:inverseOf :linkTarget ;
+                rdfs:domain schema:Thing ;
+                rdfs:range :Link ;
+                rdfs:comment "Inverse of seovoc:linkTarget. Need not be materialised in data."@en ;
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "isLinkTargetOf"@en .
+
+
 ###  https://w3id.org/seovoc/isMainTopicOf
 :isMainTopicOf rdf:type owl:ObjectProperty ;
                rdfs:domain :Topic ;
@@ -756,6 +778,15 @@ schema:license rdf:type owl:AnnotationProperty .
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "Compatibility shortcut linking a WebPage directly to an ungrouped or raw extracted Link. For structured navigational link groups, prefer hasLinkGroup from WebPage to LinkGroup and hasLink from LinkGroup to Link." ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/linkTarget
+:linkTarget rdf:type owl:ObjectProperty ;
+            rdfs:domain :Link ;
+            rdfs:range schema:Thing ;
+            rdfs:comment "The resolved destination of a hyperlink: a seovoc:WebPage when the destination is in the graph, a seovoc:URL node, or the entity the destination represents."@en ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "linkTarget"@en .
 
 
 ###  https://w3id.org/seovoc/mentions
@@ -1967,6 +1998,16 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
 
 
+###  https://w3id.org/seovoc/linkGroupID
+:linkGroupID rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :identifier ;
+             rdfs:domain :LinkGroup ;
+             rdfs:range xsd:string ;
+             rdfs:comment "A unique string identifier for a LinkGroup."@en ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "linkGroupID"@en .
+
+
 ###  https://w3id.org/seovoc/linkGroupName
 :linkGroupName rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf :name ;
@@ -1980,7 +2021,24 @@ schema:license rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/linkGroupType
 :linkGroupType rdf:type owl:DatatypeProperty ;
                rdfs:domain :LinkGroup ;
-               rdfs:range xsd:string ;
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:oneOf [ rdf:type rdf:List ;
+                                        rdf:first "body" ;
+                                        rdf:rest [ rdf:type rdf:List ;
+                                                   rdf:first "footer" ;
+                                                   rdf:rest [ rdf:type rdf:List ;
+                                                              rdf:first "header" ;
+                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                         rdf:first "navigation" ;
+                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                    rdf:first "sidebar" ;
+                                                                                    rdf:rest rdf:nil
+                                                                                  ]
+                                                                       ]
+                                                            ]
+                                                 ]
+                                      ]
+                          ] ;
                dc:contributors "Andrea Volpini" ;
                dc:description "The governed placement type of a LinkGroup. Expected values: header, footer, body, sidebar, navigation. Complements linkGroupName, which carries the free-text display name; linkGroupType is the machine-checkable axis consumers can gate on (for example excluding header/footer boilerplate from editorial link analysis)." ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
@@ -1990,17 +2048,53 @@ schema:license rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/seovoc/linkLocation
 :linkLocation rdf:type owl:DatatypeProperty ;
               rdfs:domain :Link ;
-              rdfs:range xsd:string ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first "body" ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first "footer" ;
+                                                  rdf:rest [ rdf:type rdf:List ;
+                                                             rdf:first "header" ;
+                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                        rdf:first "navigation" ;
+                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                   rdf:first "sidebar" ;
+                                                                                   rdf:rest rdf:nil
+                                                                                 ]
+                                                                      ]
+                                                           ]
+                                                ]
+                                     ]
+                         ] ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-              dc:description "Location of the link within the layout (e.g., nav, header, footer, body)" ;
+              dc:description "Location of the link within the layout: one of header, footer, body, sidebar, navigation (the same values as linkGroupType). When the Link belongs to a LinkGroup, the group's linkGroupType is authoritative and linkLocation is redundant; linkLocation carries placement for links reached through the seovoc:link shortcut, which have no LinkGroup." ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+
+
+###  https://w3id.org/seovoc/linkRel
+:linkRel rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Link ;
+         rdfs:range xsd:string ;
+         rdfs:comment "A rel token present on the hyperlink, such as nofollow, sponsored, ugc or noopener. Multi-valued."@en ;
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "linkRel"@en .
+
+
+###  https://w3id.org/seovoc/linkTargetUrl
+:linkTargetUrl rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Link ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The absolute URL a hyperlink points at, as resolved from the markup. Always present on a Link."@en ;
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "linkTargetUrl"@en ;
+               skos:closeMatch schema:url .
 
 
 ###  https://w3id.org/seovoc/linkText
 :linkText rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :text ;
           rdfs:domain :Link ;
-          rdfs:range xsd:string ;
+          rdfs:range rdfs:Literal ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Text used as the anchor for the hyperlink" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
@@ -2012,7 +2106,9 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:domain :Link ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "The type of the link, with two possible values inbound and outbound (internal link coming from the same website or external link coming from an external website)" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:comment "DEPRECATED: no replacement. Derive internal/external from seovoc:Domain via hasDomain, or by comparing the linkTargetUrl host to the source page's domainName." ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/linkgroupID
@@ -2022,7 +2118,10 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:int ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "A unique string identifier for distinguishing individual resources, such as link groups" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             dcterms:isReplacedBy :linkGroupID ;
+             rdfs:comment "DEPRECATED: misnamed IRI, and ranged xsd:int against its own definition. Use seovoc:linkGroupID." ;
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/locationName
@@ -2106,7 +2205,10 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:boolean ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "A metric to define whether the nofollow is in place (True for Yes and False for No)" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          dcterms:isReplacedBy :linkRel ;
+          rdfs:comment "DEPRECATED: use seovoc:linkRel, which carries every rel token." ;
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/occurrences
@@ -2675,7 +2777,9 @@ schema:WebPage rdf:type owl:Class ;
 :AnchorText rdf:type owl:Class ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A class representing the anchor text of a hyperlink, which is the clickable text displayed for a link on a webpage. This class captures the textual content used to describe the target of the link, often influencing search engine optimization (SEO) and user experience. The AnchorText class is important for understanding how links are represented in the context of a webpage and how they contribute to the navigation and relevance of the content" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:comment "DEPRECATED: anchor text is carried by seovoc:linkText. influencedByQuery should be relocated to an analysis node; that relocation is a separate proposal. anchorValue and influencedByQuery are retained unchanged until then." ;
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/seovoc/Chunk

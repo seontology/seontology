@@ -9,6 +9,7 @@
      versionIRI="https://w3id.org/seovoc/0.1.0">
     <Prefix name="" IRI="https://w3id.org/seovoc/"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="prof" IRI="http://www.w3.org/ns/dx/prof/"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -167,6 +168,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="anchorResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isLinkTargetOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="linkTarget"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="classifiedByModel"/>
@@ -742,6 +749,15 @@
         <DataProperty IRI="linkgroupID"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="linkGroupID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="linkRel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="linkTargetUrl"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="locationName"/>
     </Declaration>
     <Declaration>
@@ -946,6 +962,12 @@
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:closeMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:isReplacedBy"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty IRI="extends"/>
     </Declaration>
     <SubClassOf>
@@ -976,6 +998,10 @@
         <Class IRI="WebPage"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="linkTarget"/>
+        <ObjectProperty IRI="isLinkTargetOf"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="about"/>
         <ObjectProperty IRI="isDescribedBy"/>
@@ -1100,6 +1126,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="anchorResource"/>
         <Class IRI="Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="linkTarget"/>
+        <Class IRI="Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isLinkTargetOf"/>
+        <Class abbreviatedIRI="schema:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="classifiedByModel"/>
@@ -1401,6 +1435,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="about"/>
         <Class abbreviatedIRI="schema:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="linkTarget"/>
+        <Class abbreviatedIRI="schema:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isLinkTargetOf"/>
+        <Class IRI="Link"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="anchorResource"/>
@@ -1881,6 +1923,10 @@
         <DataProperty IRI="identifier"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty IRI="linkGroupID"/>
+        <DataProperty IRI="identifier"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="markdownText"/>
         <DataProperty IRI="text"/>
     </SubDataPropertyOf>
@@ -2513,6 +2559,18 @@
         <Class IRI="LinkGroup"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="linkGroupID"/>
+        <Class IRI="LinkGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="linkRel"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="linkTargetUrl"/>
+        <Class IRI="Link"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="locationName"/>
         <Class IRI="EntityGap"/>
     </DataPropertyDomain>
@@ -2882,7 +2940,13 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="linkGroupType"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <DataOneOf>
+            <Literal>header</Literal>
+            <Literal>footer</Literal>
+            <Literal>body</Literal>
+            <Literal>sidebar</Literal>
+            <Literal>navigation</Literal>
+        </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="clicks28DaysTo3MonthsTrend"/>
@@ -3186,15 +3250,33 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="linkLocation"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <DataOneOf>
+            <Literal>header</Literal>
+            <Literal>footer</Literal>
+            <Literal>body</Literal>
+            <Literal>sidebar</Literal>
+            <Literal>navigation</Literal>
+        </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="linkText"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="linkgroupID"/>
         <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="linkGroupID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="linkRel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="linkTargetUrl"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="locationName"/>
@@ -6414,7 +6496,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>linkLocation</IRI>
-        <Literal>Location of the link within the layout (e.g., nav, header, footer, body)</Literal>
+        <Literal>Location of the link within the layout: one of header, footer, body, sidebar, navigation (the same values as linkGroupType). When the Link belongs to a LinkGroup, the group's linkGroupType is authoritative and linkLocation is redundant; linkLocation carries placement for links reached through the seovoc:link shortcut, which have no LinkGroup.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -7770,6 +7852,151 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>averagePositon7Days</IRI>
         <Literal>DEPRECATED: misspelled IRI (missing 'i' in 'Position'). Use averagePosition7Days. Retained for backward compatibility with existing data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkTargetUrl</IRI>
+        <Literal xml:lang="en">linkTargetUrl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkTargetUrl</IRI>
+        <Literal xml:lang="en">The absolute URL a hyperlink points at, as resolved from the markup. Always present on a Link.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>linkTargetUrl</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:closeMatch"/>
+        <IRI>linkTargetUrl</IRI>
+        <IRI>https://schema.org/url</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkTarget</IRI>
+        <Literal xml:lang="en">linkTarget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkTarget</IRI>
+        <Literal xml:lang="en">The resolved destination of a hyperlink: a seovoc:WebPage when the destination is in the graph, a seovoc:URL node, or the entity the destination represents.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>linkTarget</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isLinkTargetOf</IRI>
+        <Literal xml:lang="en">isLinkTargetOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isLinkTargetOf</IRI>
+        <Literal xml:lang="en">Inverse of seovoc:linkTarget. Need not be materialised in data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isLinkTargetOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkRel</IRI>
+        <Literal xml:lang="en">linkRel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkRel</IRI>
+        <Literal xml:lang="en">A rel token present on the hyperlink, such as nofollow, sponsored, ugc or noopener. Multi-valued.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>linkRel</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkGroupID</IRI>
+        <Literal xml:lang="en">linkGroupID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkGroupID</IRI>
+        <Literal xml:lang="en">A unique string identifier for a LinkGroup.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>linkGroupID</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>anchorResource</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>anchorResource</IRI>
+        <Literal>DEPRECATED: use seovoc:linkTarget. Retained for backward compatibility with existing data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:isReplacedBy"/>
+        <IRI>anchorResource</IRI>
+        <IRI>linkTarget</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>linkgroupID</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkgroupID</IRI>
+        <Literal>DEPRECATED: misnamed IRI, and ranged xsd:int against its own definition. Use seovoc:linkGroupID.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:isReplacedBy"/>
+        <IRI>linkgroupID</IRI>
+        <IRI>linkGroupID</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>noFollow</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>noFollow</IRI>
+        <Literal>DEPRECATED: use seovoc:linkRel, which carries every rel token.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:isReplacedBy"/>
+        <IRI>noFollow</IRI>
+        <IRI>linkRel</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>linkType</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>linkType</IRI>
+        <Literal>DEPRECATED: no replacement. Derive internal/external from seovoc:Domain via hasDomain, or by comparing the linkTargetUrl host to the source page&apos;s domainName.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>AnchorText</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AnchorText</IRI>
+        <Literal>DEPRECATED: anchor text is carried by seovoc:linkText. influencedByQuery should be relocated to an analysis node; that relocation is a separate proposal. anchorValue and influencedByQuery are retained unchanged until then.</Literal>
     </AnnotationAssertion>
 </Ontology>
 

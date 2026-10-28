@@ -116,6 +116,27 @@ The **SEOntology** is the open-source semantic framework, initially developed by
 - Query clustering uses `seovoc:hasClusterQuery` / `seovoc:isClusterQueryOf` instead of overloading `seovoc:hasQuery` / `seovoc:isQueryOf`, which remain scoped to `WebPage` and `Query`.
 - `PageGroup` remains scoped to A/B-testing cohorts. Use `PageType` for functional classifications such as product-detail or editorial pages; no inference connects the two concepts.
 - Structured-data profile applicability, explicit selection, artifact generation, and validated conformance are separate states. Profile applicability does not authorize generation or guarantee search-engine eligibility or outcomes.
+
+### Link destinations (0.1.0)
+
+A `Link` can now state where it points. New terms:
+
+- `linkTargetUrl`: the absolute href of the link, as an `xsd:string`. Aligned to `schema:url` with `skos:closeMatch`, not `rdfs:subPropertyOf`, to keep the ontology in OWL 2 DL.
+- `linkTarget` / `isLinkTargetOf`: the resolved destination node (range `schema:Thing`: a `WebPage`, a `URL` node, or an entity). Use it only once the destination has been resolved.
+- `linkRel`: one rel token per value (`nofollow`, `sponsored`, `ugc`, `noopener`, ...). Can have several values.
+- `linkGroupID`: string identifier for a `LinkGroup`.
+
+Deprecated, still resolvable, existing data stays valid:
+
+| Deprecated | Use instead |
+|---|---|
+| `anchorResource` | `linkTarget` |
+| `linkgroupID` | `linkGroupID` (`xsd:string` rather than `xsd:int`) |
+| `noFollow` | `linkRel` |
+| `linkType` | none: derive internal/external from `Domain` (`hasDomain`, `domainName`) |
+| `AnchorText` (class) | none: anchor text is `linkText`. `anchorValue` and `influencedByQuery` stay unchanged for now |
+
+Range changes: `linkText` widens from `xsd:string` to `rdfs:Literal`, so it accepts language-tagged anchors. `linkLocation` and `linkGroupType` share the enumeration `header | footer | body | sidebar | navigation` (the old `linkLocation` example value `nav` becomes `navigation`). When a `LinkGroup` exists, its `linkGroupType` takes precedence and `linkLocation` is redundant.
  
 ## SEOntology Fully Visualized
 ![SEO VOC HQ](.assets/seovoc_full.svg)
