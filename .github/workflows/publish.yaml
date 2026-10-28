@@ -16,6 +16,25 @@ on:
       - develop
 
 jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate
+        run: ./.bin/validate.sh
+
+      - name: Upload ROBOT report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-report
+          path: build/
+          if-no-files-found: warn
+
   convert:
     name: Convert
     runs-on: ubuntu-latest

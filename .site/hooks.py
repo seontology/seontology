@@ -17,7 +17,6 @@ import logging
 import os
 import re
 import shutil
-import subprocess
 from pathlib import Path
 
 from mkdocs.structure.files import File
@@ -31,7 +30,7 @@ REPO_URL = "https://github.com/seontology/seontology"
 SEOVOC = Namespace("https://w3id.org/seovoc/")
 ONTOLOGY = URIRef(str(SEOVOC))
 DC = Namespace("http://purl.org/dc/elements/1.1/")
-SCHEMA = Namespace("http://schema.org/")
+SCHEMA = Namespace("https://schema.org/")
 
 # Markdown source of each rendered page, keyed by page URL in nav order.
 _pages: dict[str, dict] = {}
@@ -41,19 +40,12 @@ def _rendered_pages():
     return [(url, page) for url, page in _pages.items() if page is not None]
 
 
-def ontology_version() -> str:
-    """The latest release tag, falling back to the VERSION file."""
+def ontology_version(g: Graph) -> str:
+    """The ontology's owl:versionInfo, falling back to the VERSION file."""
     env = os.environ.get("SEOVOC_VERSION")
     if env:
         return env.lstrip("v")
-    try:
-        tag = subprocess.run(
-            ["git", "describe", "--tags", "--abbrev=0"],
-            cwd=ROOT, capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        return tag.lstrip("v")
-    except (OSError, subprocess.CalledProcessError):
-        return (ROOT / "VERSION").read_text().strip()
+    return first(g, ONTOLOGY, OWL.versionInfo) or (ROOT / "VERSION").read_text().strip()
 
 
 def load_ontology() -> Graph:
@@ -194,10 +186,19 @@ def fix_anchors(html: str) -> str:
             continue
         if wanted != fid:
             mapping[fid] = wanted
-    if not mapping:
-        return html
-    pattern = re.compile(r'(id="|href="#)(' + "|".join(map(re.escape, mapping)) + r')"')
-    return pattern.sub(lambda m: m.group(1) + mapping[m.group(2)] + '"', html)
+    if mapping:
+        pattern = re.compile(r'(id="|href="#)(' + "|".join(map(re.escape, mapping)) + r')"')
+        html = pattern.sub(lambda m: m.group(1) + mapping[m.group(2)] + '"', html)
+
+    # Namespace IRIs without an entry, such as the owl:versionIRI
+    # https://w3id.org/seovoc/0.1.0, are linked as in-page fragments; link
+    # them to the IRI instead.
+    ids = set(re.findall(r'id="([^"]+)"', html))
+    return re.sub(
+        r'href="#([^"]+)"',
+        lambda m: m.group(0) if m.group(1) in ids else f'href="{SEOVOC}{m.group(1)}"',
+        html,
+    )
 
 
 def build_reference_html(g: Graph, dest: Path, site_url: str):
@@ -304,8 +305,8 @@ def on_page_markdown(markdown, page, config, files):
 def on_post_build(config):
     site_dir = Path(config["site_dir"])
     site_url = config["site_url"]
-    version = ontology_version()
     g = load_ontology()
+    version = ontology_version(g)
 
     for name in ("seovoc.ttl", "seovoc.owl"):
         shutil.copy2(ROOT / name, site_dir / name)

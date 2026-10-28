@@ -9,16 +9,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @base <https://w3id.org/seovoc/> .
 
 <https://w3id.org/seovoc/> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/seovoc/0.1.0> ;
                             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                             dc:creator <https://wordlift.io> ;
                             dc:description "The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate."@en ;
                             dc:identifier "SEO Vocabulary" ;
                             dc:issued "2023-10-29T00:00:00Z" ;
                             dc:title "SEO Vocabulary" ;
+                            owl:versionInfo "0.1.0" ;
                             :extends schema: .
 
 #################################################################
@@ -49,12 +51,12 @@ dc:issued rdf:type owl:AnnotationProperty .
 dc:title rdf:type owl:AnnotationProperty .
 
 
-###  http://schema.org/license
-schema:license rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
 skos:exactMatch rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/license
+schema:license rdf:type owl:AnnotationProperty .
 
 
 ###  https://w3id.org/seovoc/expectedMainEntitySchemaType
@@ -1071,7 +1073,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The order of the chunk on the webpage, starting from 1 for the first chunk. Useful for reconstructing the document from its parts or presenting chunks in context" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-               skos:exactMatch <https://schema.org/position> .
+               skos:exactMatch schema:position .
 
 
 ###  https://w3id.org/seovoc/chunkSetName
@@ -1413,14 +1415,14 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 :date rdf:type owl:DatatypeProperty ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "A date value in ISO 8601 date format" ;
-      skos:exactMatch <https://schema.org/Date> .
+      skos:exactMatch schema:Date .
 
 
 ###  https://w3id.org/seovoc/description
 :description rdf:type owl:DatatypeProperty ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "A description of the item" ;
-             skos:exactMatch <https://schema.org/description> .
+             skos:exactMatch schema:description .
 
 
 ###  https://w3id.org/seovoc/directoryLabel
@@ -1693,7 +1695,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 :identifier rdf:type owl:DatatypeProperty ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A general-purpose string or URI identifier for any resource in the ontology" ;
-            skos:exactMatch <https://schema.org/identifier> .
+            skos:exactMatch schema:identifier .
 
 
 ###  https://w3id.org/seovoc/importHash
@@ -1898,7 +1900,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "A list of keywords associated with the specific link, aiding semantic classification" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-          skos:exactMatch <https://schema.org/keywords> .
+          skos:exactMatch schema:keywords .
 
 
 ###  https://w3id.org/seovoc/keywordsCount
@@ -2101,7 +2103,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "The human-readable name of the LinkGroup, typically reflecting its function or placement on a webpage (e.g., 'Footer Links', 'Sidebar Menu', 'Main Navigation')" ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-      skos:exactMatch <https://schema.org/name> .
+      skos:exactMatch schema:name .
 
 
 ###  https://w3id.org/seovoc/noFollow
@@ -2145,7 +2147,7 @@ owl:topDataProperty rdfs:domain :DirectorySegment ;
 :position rdf:type owl:DatatypeProperty ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "The position of an item in a series or sequence of items" ;
-          skos:exactMatch <https://schema.org/position> .
+          skos:exactMatch schema:position .
 
 
 ###  https://w3id.org/seovoc/preferredDevice
@@ -2455,7 +2457,7 @@ These categories help in organizing user search behaviors and improving query un
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "The plain text content of the chunk, stripped of formatting, used for embeddings, analysis, or display in NLP applications" ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-      skos:exactMatch <https://schema.org/text> .
+      skos:exactMatch schema:text .
 
 
 ###  https://w3id.org/seovoc/thingLabel
@@ -2475,7 +2477,7 @@ These categories help in organizing user search behaviors and improving query un
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "A URL pointing to a thumbnail image for the link, useful for visually rich links" ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-              skos:exactMatch <https://schema.org/thumbnailUrl> .
+              skos:exactMatch schema:thumbnailUrl .
 
 
 ###  https://w3id.org/seovoc/title
@@ -2485,7 +2487,7 @@ These categories help in organizing user search behaviors and improving query un
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The actual title of the webpage itself" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-       skos:exactMatch <https://schema.org/title> .
+       skos:exactMatch schema:title .
 
 
 ###  https://w3id.org/seovoc/tokenCount
@@ -2615,32 +2617,6 @@ These categories help in organizing user search behaviors and improving query un
 #    Classes
 #################################################################
 
-###  http://schema.org/Action
-schema:Action rdf:type owl:Class ;
-              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-              dc:description "The Action class from Schema.org" .
-
-
-###  http://schema.org/Person
-schema:Person rdf:type owl:Class ;
-              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-              dc:identifier <https://w3id.org/seovoc/> ;
-              rdfs:isDefinedBy "The Person class from Schema.org" .
-
-
-###  http://schema.org/Thing
-schema:Thing rdf:type owl:Class ;
-             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-             dc:description "The Thing class from Schema.org" ;
-             rdfs:comment "should i use the URI to define exact match or create schema -alike classes?" .
-
-
-###  http://schema.org/WebPage
-schema:WebPage rdf:type owl:Class ;
-               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-               dc:description "The WebPage class from Schema.org" .
-
-
 ###  http://www.w3.org/2002/07/owl#Thing
 owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "A Thing that may have a schema:url, hence may have analytics data bound to it." ;
@@ -2651,6 +2627,32 @@ owl:Thing dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska
 
 ###  http://www.w3.org/ns/dx/prof/Profile
 prof:Profile rdf:type owl:Class .
+
+
+###  https://schema.org/Action
+schema:Action rdf:type owl:Class ;
+              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+              dc:description "The Action class from Schema.org" .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+              dc:identifier <https://w3id.org/seovoc/> ;
+              rdfs:isDefinedBy "The Person class from Schema.org" .
+
+
+###  https://schema.org/Thing
+schema:Thing rdf:type owl:Class ;
+             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+             dc:description "The Thing class from Schema.org" ;
+             rdfs:comment "should i use the URI to define exact match or create schema -alike classes?" .
+
+
+###  https://schema.org/WebPage
+schema:WebPage rdf:type owl:Class ;
+               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+               dc:description "The WebPage class from Schema.org" .
 
 
 ###  https://w3id.org/seovoc/Action
@@ -2735,7 +2737,7 @@ prof:Profile rdf:type owl:Class .
 
 ###  https://w3id.org/seovoc/ImageObject
 :ImageObject rdf:type owl:Class ;
-             skos:exactMatch <https://schema.org/ImageObject> .
+             skos:exactMatch schema:ImageObject .
 
 
 ###  https://w3id.org/seovoc/Intent
@@ -2749,7 +2751,7 @@ prof:Profile rdf:type owl:Class .
 :Language rdf:type owl:Class ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Natural languages such as Spanish, Tamil, Hindi, English, etc" ;
-          skos:exactMatch <https://schema.org/Language> .
+          skos:exactMatch schema:Language .
 
 
 ###  https://w3id.org/seovoc/Link

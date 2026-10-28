@@ -36,10 +36,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Build the latest main after a conversion run, and fetch tags so the
-          # site can report the current ontology version.
+          # Build the latest main after a conversion run.
           ref: ${{ github.event_name == 'workflow_run' && 'main' || '' }}
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
