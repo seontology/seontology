@@ -2,5 +2,6 @@ mkdocs==1.6.1
 mkdocs-material==9.8.0
 rdflib==7.6.0
 pylode==3.6.0
-# pylode 3.6.0 imports kurra.labels.get_missing_labels, removed in kurra 3.1.
-kurra==3.0.0
+# pylode 3.6.0 needs kurra>=3.0.5 but imports kurra.labels.get_missing_labels,
+# which kurra 3.0.7 removed.
+kurra==3.0.6
