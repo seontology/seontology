@@ -14,12 +14,14 @@
      xmlns:schema="https://schema.org/"
      xmlns:seovoc="https://w3id.org/seovoc/">
     <owl:Ontology rdf:about="https://w3id.org/seovoc/">
+        <owl:versionIRI rdf:resource="https://w3id.org/seovoc/0.1.0"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:creator rdf:resource="https://wordlift.io"/>
         <dc:description xml:lang="en">The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate.</dc:description>
         <dc:identifier>SEO Vocabulary</dc:identifier>
         <dc:issued>2023-10-29T00:00:00Z</dc:issued>
         <dc:title>SEO Vocabulary</dc:title>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
         <extends rdf:resource="https://schema.org/"/>
     </owl:Ontology>
     
