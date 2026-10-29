@@ -2,6 +2,8 @@
 
 # Validates seovoc.owx with ROBOT: `robot report` (OBO quality checks) and
 # `robot reason` (HermiT, which also rejects anything outside OWL 2 DL).
+# The report is scoped to seovoc terms (--base-iri), so the schema.org terms
+# the ontology declares are not held to its labelling rules.
 # Outputs go to build/ so they can be uploaded as CI artifacts.
 # Both checks always run; the script fails if either of them fails.
 
@@ -13,7 +15,7 @@ STATUS=0
 
 echo "*** Running robot report..."
 docker run --rm -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
-    robot report --input "/work/seovoc.owx" --fail-on ERROR --output "/work/build/report.tsv" || STATUS=1
+    robot report --input "/work/seovoc.owx" --base-iri "https://w3id.org/seovoc/" --fail-on ERROR --output "/work/build/report.tsv" || STATUS=1
 
 echo "*** Running robot reason (HermiT)..."
 docker run --rm -v "${SCRIPT_DIR}/../:/work" obolibrary/robot \
