@@ -6,7 +6,7 @@ description: Changes that affect existing SEOntology data, deprecated terms, and
 
 ## Pages
 
-- **`WebPage` is equivalent to `schema:WebPage` (0.1.0).** The two classes are linked by `owl:equivalentClass`, replacing a `skos:exactMatch` annotation that reasoners ignore. Under OWL reasoning, a node typed `schema:WebPage` is a `seovoc:WebPage` and the reverse, so the data does not need to declare both types. Existing data that declares both stays valid.
+- **`WebPage` is equivalent to `schema:WebPage` (after 0.1.0).** The two classes are linked by `owl:equivalentClass`, replacing a `skos:exactMatch` annotation that reasoners ignore. Under OWL reasoning, a node typed `schema:WebPage` is a `seovoc:WebPage` and the reverse, so the data does not need to declare both types. Existing data that declares both stays valid.
 - **The equivalence only applies when a reasoner runs.** Plain SPARQL queries and SHACL validation without inference match the declared type only: a shape with `sh:targetClass seovoc:WebPage` does not target a node typed only `schema:WebPage`. When data is read that way, declare both types or materialize the inference first. The [structured-data profile examples](../structured-data-profiles.md) declare both for this reason.
 - Schema.org subtypes such as `schema:ItemPage` or `schema:CollectionPage` are inferred to be `seovoc:WebPage` only when the Schema.org class hierarchy is loaded alongside SEOntology, which does not import it.
 
