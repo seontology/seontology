@@ -45,6 +45,10 @@
         <Literal>SEO Vocabulary</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <IRI>https://spdx.org/licenses/MIT</IRI>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
         <Literal>0.1.0</Literal>
     </Annotation>
@@ -966,6 +970,9 @@
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:isReplacedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="extends"/>
@@ -3608,6 +3615,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Action</IRI>
+        <Literal xml:lang="en">Action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
         <IRI>Action</IRI>
         <AbbreviatedIRI>schema:Action</AbbreviatedIRI>
@@ -3628,6 +3640,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Agent</IRI>
+        <Literal xml:lang="en">Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>AnalyzeAction</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3641,6 +3658,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>AnalyzeAction</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AnalyzeAction</IRI>
+        <Literal xml:lang="en">AnalyzeAction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3673,6 +3695,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Chunk</IRI>
+        <Literal xml:lang="en">Chunk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>DirectorySegment</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3686,6 +3713,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>DirectorySegment</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DirectorySegment</IRI>
+        <Literal xml:lang="en">DirectorySegment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3703,6 +3735,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Domain</IRI>
+        <Literal xml:lang="en">Domain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Employee</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3716,6 +3753,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>Employee</IRI>
         <Literal>A type of Person, defined in SEOntology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Employee</IRI>
+        <Literal xml:lang="en">Employee</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -3738,6 +3780,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>EntityGap</IRI>
+        <Literal xml:lang="en">EntityGap</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>ExtractAction</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3751,6 +3798,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ExtractAction</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ExtractAction</IRI>
+        <Literal xml:lang="en">ExtractAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ImageObject</IRI>
+        <Literal xml:lang="en">ImageObject</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -3773,6 +3830,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Intent</IRI>
+        <Literal xml:lang="en">Intent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Language</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3781,6 +3843,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>Language</IRI>
         <Literal>Natural languages such as Spanish, Tamil, Hindi, English, etc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Language</IRI>
+        <Literal xml:lang="en">Language</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -3803,6 +3870,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Link</IRI>
+        <Literal xml:lang="en">Link</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>LinkGroup</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3816,6 +3888,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>LinkGroup</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>LinkGroup</IRI>
+        <Literal xml:lang="en">LinkGroup</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3833,6 +3910,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Model</IRI>
+        <Literal xml:lang="en">Model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>PageGroup</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3848,6 +3930,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PageGroup</IRI>
+        <Literal xml:lang="en">PageGroup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Person</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3856,6 +3943,11 @@
         <AnnotationProperty abbreviatedIRI="dc:identifier"/>
         <IRI>Person</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Person</IRI>
+        <Literal xml:lang="en">Person</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -3878,6 +3970,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Persona</IRI>
+        <Literal xml:lang="en">Persona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Prompt</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3893,6 +3990,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Prompt</IRI>
+        <Literal xml:lang="en">Prompt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>QualityScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3906,6 +4008,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>QualityScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>QualityScore</IRI>
+        <Literal xml:lang="en">QualityScore</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3943,6 +4050,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Schema</IRI>
+        <Literal xml:lang="en">Schema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Sentiment</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3956,6 +4068,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>Sentiment</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Sentiment</IRI>
+        <Literal xml:lang="en">Sentiment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3973,6 +4090,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Tool</IRI>
+        <Literal xml:lang="en">Tool</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>Topic</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3988,6 +4110,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Topic</IRI>
+        <Literal xml:lang="en">Topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>URL</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4001,6 +4128,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>URL</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>URL</IRI>
+        <Literal xml:lang="en">URL</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4043,6 +4175,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>about</IRI>
+        <Literal xml:lang="en">about</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>ageRange</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4056,6 +4193,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ageRange</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ageRange</IRI>
+        <Literal xml:lang="en">ageRange</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4073,6 +4215,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>agentID</IRI>
+        <Literal xml:lang="en">agentID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>agentType</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4086,6 +4233,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>agentType</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>agentType</IRI>
+        <Literal xml:lang="en">agentType</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4103,6 +4255,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>agentVersion</IRI>
+        <Literal xml:lang="en">agentVersion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>aiGeneratedCaption</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4116,6 +4273,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>aiGeneratedCaption</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>aiGeneratedCaption</IRI>
+        <Literal xml:lang="en">aiGeneratedCaption</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4133,6 +4295,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>aiGeneratedFileName</IRI>
+        <Literal xml:lang="en">aiGeneratedFileName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>analysisMethod</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4146,6 +4313,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>analysisMethod</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>analysisMethod</IRI>
+        <Literal xml:lang="en">analysisMethod</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4163,6 +4335,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>analysisScope</IRI>
+        <Literal xml:lang="en">analysisScope</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>analysisType</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4176,6 +4353,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>analysisType</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>analysisType</IRI>
+        <Literal xml:lang="en">analysisType</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4208,6 +4390,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>anchorValue</IRI>
+        <Literal xml:lang="en">anchorValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>averagePosition</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4221,6 +4408,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>averagePosition</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition</IRI>
+        <Literal xml:lang="en">averagePosition</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4238,6 +4430,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition28Days</IRI>
+        <Literal xml:lang="en">averagePosition28Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>averagePosition28DaysTo3MonthsTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4251,6 +4448,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>averagePosition28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition28DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">averagePosition28DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4268,6 +4470,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition3Months</IRI>
+        <Literal xml:lang="en">averagePosition3Months</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>averagePosition7DaysTo28DaysTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4283,6 +4490,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition7DaysTo28DaysTrend</IRI>
+        <Literal xml:lang="en">averagePosition7DaysTo28DaysTrend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>averagePosition7DaysTo3MonthsTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4296,6 +4508,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>averagePosition7DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averagePosition7DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">averagePosition7DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4328,6 +4545,11 @@
         <Literal>Main textual body content of the page</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>bodyText</IRI>
+        <Literal xml:lang="en">bodyText</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>bounceRate</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4341,6 +4563,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>bounceRate</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>bounceRate</IRI>
+        <Literal xml:lang="en">bounceRate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4358,6 +4585,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>captionQualityScore</IRI>
+        <Literal xml:lang="en">captionQualityScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>changeFrequency</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4371,6 +4603,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>changeFrequency</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>changeFrequency</IRI>
+        <Literal xml:lang="en">changeFrequency</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4388,6 +4625,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>chunkID</IRI>
+        <Literal xml:lang="en">chunkID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>chunkPosition</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4401,6 +4643,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>chunkPosition</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>chunkPosition</IRI>
+        <Literal xml:lang="en">chunkPosition</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -4423,6 +4670,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>chunkSetName</IRI>
+        <Literal xml:lang="en">chunkSetName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>chunkStrategy</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4436,6 +4688,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>chunkStrategy</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>chunkStrategy</IRI>
+        <Literal xml:lang="en">chunkStrategy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4453,6 +4710,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>chunkText</IRI>
+        <Literal xml:lang="en">chunkText</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>classificationConfidence</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4466,6 +4728,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>classificationConfidence</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>classificationConfidence</IRI>
+        <Literal xml:lang="en">classificationConfidence</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4483,6 +4750,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>classifiedByModel</IRI>
+        <Literal xml:lang="en">classifiedByModel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>clickDepth</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4498,6 +4770,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clickDepth</IRI>
+        <Literal xml:lang="en">clickDepth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>clicks</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4511,6 +4788,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks</IRI>
+        <Literal xml:lang="en">clicks</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4548,6 +4830,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks28DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">clicks28DaysTo3MonthsTrend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>clicks3Months</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4566,6 +4853,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks3Months</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks3Months</IRI>
+        <Literal xml:lang="en">clicks3Months</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4603,6 +4895,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks7DaysTo28DaysTrend</IRI>
+        <Literal xml:lang="en">clicks7DaysTo28DaysTrend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>clicks7DaysTo3MonthsTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4616,6 +4913,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>clicks7DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clicks7DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">clicks7DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4633,6 +4935,11 @@
         <Literal>A float value expressing the system’s confidence that the identified entity is a relevant and meaningful gap in the content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>confidence</IRI>
+        <Literal xml:lang="en">confidence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>content</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4646,6 +4953,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>content</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>content</IRI>
+        <Literal xml:lang="en">content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4663,6 +4975,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>contentAccuracyScore</IRI>
+        <Literal xml:lang="en">contentAccuracyScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>contentDepthScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4676,6 +4993,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>contentDepthScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>contentDepthScore</IRI>
+        <Literal xml:lang="en">contentDepthScore</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4693,6 +5015,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>contentPurposeScore</IRI>
+        <Literal xml:lang="en">contentPurposeScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>crawlable</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4708,6 +5035,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>crawlable</IRI>
+        <Literal xml:lang="en">crawlable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>ctr</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4721,6 +5053,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ctr</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr</IRI>
+        <Literal xml:lang="en">ctr</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4756,6 +5093,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ctr28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr28DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">ctr28DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4798,6 +5140,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr7Days</IRI>
+        <Literal xml:lang="en">ctr7Days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>ctr7DaysTo28DaysTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4811,6 +5158,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>ctr7DaysTo28DaysTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr7DaysTo28DaysTrend</IRI>
+        <Literal xml:lang="en">ctr7DaysTo28DaysTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4828,6 +5180,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ctr7DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">ctr7DaysTo3MonthsTrend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>customField</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4843,6 +5200,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>customField</IRI>
+        <Literal xml:lang="en">customField</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>date</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4851,6 +5213,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>date</IRI>
         <Literal>A date value in ISO 8601 date format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>date</IRI>
+        <Literal xml:lang="en">date</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -4873,6 +5240,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>describesPage</IRI>
+        <Literal xml:lang="en">describesPage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>description</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4881,6 +5253,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>description</IRI>
         <Literal>A description of the item</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>description</IRI>
+        <Literal xml:lang="en">description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -4903,6 +5280,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>directoryLabel</IRI>
+        <Literal xml:lang="en">directoryLabel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>domainName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4916,6 +5298,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>domainName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>domainName</IRI>
+        <Literal xml:lang="en">domainName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4933,6 +5320,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>embeddingModel</IRI>
+        <Literal xml:lang="en">embeddingModel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>embeddingText</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4946,6 +5338,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>embeddingText</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>embeddingText</IRI>
+        <Literal xml:lang="en">embeddingText</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4963,6 +5360,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>embeddingValue</IRI>
+        <Literal xml:lang="en">embeddingValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>employeeName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -4976,6 +5378,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>employeeName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>employeeName</IRI>
+        <Literal xml:lang="en">employeeName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -4993,6 +5400,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>end</IRI>
+        <Literal xml:lang="en">end</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>entityDateCreated</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5006,6 +5418,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>entityDateCreated</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entityDateCreated</IRI>
+        <Literal xml:lang="en">entityDateCreated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5023,6 +5440,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entityDescription</IRI>
+        <Literal xml:lang="en">entityDescription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>entityID</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5036,6 +5458,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>entityID</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entityID</IRI>
+        <Literal xml:lang="en">entityID</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5053,6 +5480,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entityLabel</IRI>
+        <Literal xml:lang="en">entityLabel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>entityType</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5066,6 +5498,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>entityType</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entityType</IRI>
+        <Literal xml:lang="en">entityType</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5083,6 +5520,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>entitygapText</IRI>
+        <Literal xml:lang="en">entitygapText</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>evaluationID</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5096,6 +5538,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>evaluationID</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>evaluationID</IRI>
+        <Literal xml:lang="en">evaluationID</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5113,6 +5560,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>externalLinkCount</IRI>
+        <Literal xml:lang="en">externalLinkCount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>forecastedTraffic</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5126,6 +5578,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>forecastedTraffic</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>forecastedTraffic</IRI>
+        <Literal xml:lang="en">forecastedTraffic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5143,6 +5600,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>fullSegmentPath</IRI>
+        <Literal xml:lang="en">fullSegmentPath</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>googleCategory</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5156,6 +5618,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>googleCategory</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>googleCategory</IRI>
+        <Literal xml:lang="en">googleCategory</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5173,6 +5640,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>groupType</IRI>
+        <Literal xml:lang="en">groupType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>h1</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5186,6 +5658,11 @@
         <AnnotationProperty abbreviatedIRI="dc:identifier"/>
         <IRI>h1</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h1</IRI>
+        <Literal xml:lang="en">h1</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5203,6 +5680,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h2</IRI>
+        <Literal xml:lang="en">h2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>h3</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5216,6 +5698,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>h3</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h3</IRI>
+        <Literal xml:lang="en">h3</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5233,6 +5720,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h4</IRI>
+        <Literal xml:lang="en">h4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>h5</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5246,6 +5738,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>h5</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h5</IRI>
+        <Literal xml:lang="en">h5</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5263,6 +5760,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>h6</IRI>
+        <Literal xml:lang="en">h6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasAgent</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5276,6 +5778,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasAgent</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasAgent</IRI>
+        <Literal xml:lang="en">hasAgent</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5293,6 +5800,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasAnalysisTarget</IRI>
+        <Literal xml:lang="en">hasAnalysisTarget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasChildSegment</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5306,6 +5818,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasChildSegment</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasChildSegment</IRI>
+        <Literal xml:lang="en">hasChildSegment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5323,6 +5840,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasChunk</IRI>
+        <Literal xml:lang="en">hasChunk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasChunkQualityScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5336,6 +5858,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasChunkQualityScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasChunkQualityScore</IRI>
+        <Literal xml:lang="en">hasChunkQualityScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasDomain</IRI>
+        <Literal xml:lang="en">hasDomain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5353,6 +5885,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasEntityGap</IRI>
+        <Literal xml:lang="en">hasEntityGap</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasExtractedChunk</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5368,6 +5905,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasExtractedChunk</IRI>
+        <Literal xml:lang="en">hasExtractedChunk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasImage</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5376,6 +5918,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasImage</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasImage</IRI>
+        <Literal xml:lang="en">hasImage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5393,6 +5940,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasIntent</IRI>
+        <Literal xml:lang="en">hasIntent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasLanguage</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5406,6 +5958,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasLanguage</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLanguage</IRI>
+        <Literal xml:lang="en">hasLanguage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5423,6 +5980,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLink</IRI>
+        <Literal xml:lang="en">hasLink</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasLinkGroup</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5436,6 +5998,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasLinkGroup</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLinkGroup</IRI>
+        <Literal xml:lang="en">hasLinkGroup</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5453,6 +6020,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasMainTopic</IRI>
+        <Literal xml:lang="en">hasMainTopic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasModel</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5466,6 +6038,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasModel</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasModel</IRI>
+        <Literal xml:lang="en">hasModel</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5483,6 +6060,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPage</IRI>
+        <Literal xml:lang="en">hasPage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasPageInDomain</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5496,6 +6078,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasPageInDomain</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPageInDomain</IRI>
+        <Literal xml:lang="en">hasPageInDomain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5513,6 +6100,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasParentSegment</IRI>
+        <Literal xml:lang="en">hasParentSegment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasPathRoot</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5526,6 +6118,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasPathRoot</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPathRoot</IRI>
+        <Literal xml:lang="en">hasPathRoot</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5543,6 +6140,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPersona</IRI>
+        <Literal xml:lang="en">hasPersona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasPrimaryQuery</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5556,6 +6158,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasPrimaryQuery</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPrimaryQuery</IRI>
+        <Literal xml:lang="en">hasPrimaryQuery</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5573,6 +6180,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasPrompt</IRI>
+        <Literal xml:lang="en">hasPrompt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasQualityScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5586,6 +6198,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasQualityScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasQualityScore</IRI>
+        <Literal xml:lang="en">hasQualityScore</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5603,6 +6220,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasQuery</IRI>
+        <Literal xml:lang="en">hasQuery</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasSchemaMarkup</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5616,6 +6238,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasSchemaMarkup</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSchemaMarkup</IRI>
+        <Literal xml:lang="en">hasSchemaMarkup</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -5633,6 +6260,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSegmentPage</IRI>
+        <Literal xml:lang="en">hasSegmentPage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>hasSentiment</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5646,6 +6278,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>hasSentiment</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSentiment</IRI>
+        <Literal xml:lang="en">hasSentiment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5663,6 +6300,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasURL</IRI>
+        <Literal xml:lang="en">hasURL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>heading</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5678,6 +6320,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>heading</IRI>
+        <Literal xml:lang="en">heading</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>identifier</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5686,6 +6333,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>identifier</IRI>
         <Literal>A general-purpose string or URI identifier for any resource in the ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>identifier</IRI>
+        <Literal xml:lang="en">identifier</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -5708,6 +6360,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>importHash</IRI>
+        <Literal xml:lang="en">importHash</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>importID</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5721,6 +6378,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>importID</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>importID</IRI>
+        <Literal xml:lang="en">importID</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5738,6 +6400,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>importOrigin</IRI>
+        <Literal xml:lang="en">importOrigin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>impressions</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5751,6 +6418,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>impressions</IRI>
+        <Literal xml:lang="en">impressions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5786,6 +6458,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions28DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>impressions28DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">impressions28DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5843,6 +6520,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>impressions7DaysTo28DaysTrend</IRI>
+        <Literal xml:lang="en">impressions7DaysTo28DaysTrend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>impressions7DaysTo3MonthsTrend</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5856,6 +6538,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>impressions7DaysTo3MonthsTrend</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>impressions7DaysTo3MonthsTrend</IRI>
+        <Literal xml:lang="en">impressions7DaysTo3MonthsTrend</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5873,6 +6560,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>incomingLinkCount</IRI>
+        <Literal xml:lang="en">incomingLinkCount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>influencedByQuery</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5886,6 +6578,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>influencedByQuery</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>influencedByQuery</IRI>
+        <Literal xml:lang="en">influencedByQuery</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5903,6 +6600,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>intent</IRI>
+        <Literal xml:lang="en">intent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>internalLinkCount</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5916,6 +6618,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>internalLinkCount</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>internalLinkCount</IRI>
+        <Literal xml:lang="en">internalLinkCount</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5933,6 +6640,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>internalPageRank</IRI>
+        <Literal xml:lang="en">internalPageRank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isAnalysisTargetOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5946,6 +6658,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isAnalysisTargetOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isAnalysisTargetOf</IRI>
+        <Literal xml:lang="en">isAnalysisTargetOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5963,6 +6680,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isChunkOf</IRI>
+        <Literal xml:lang="en">isChunkOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isChunkOfExtraction</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -5976,6 +6698,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isChunkOfExtraction</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isChunkOfExtraction</IRI>
+        <Literal xml:lang="en">isChunkOfExtraction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -5993,6 +6720,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isChunkQualityScoreOf</IRI>
+        <Literal xml:lang="en">isChunkQualityScoreOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isContainedInSegment</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6006,6 +6738,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isContainedInSegment</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isContainedInSegment</IRI>
+        <Literal xml:lang="en">isContainedInSegment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6023,6 +6760,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isDescribedBy</IRI>
+        <Literal xml:lang="en">isDescribedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isEntityGapOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6036,6 +6778,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isEntityGapOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isEntityGapOf</IRI>
+        <Literal xml:lang="en">isEntityGapOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6053,6 +6800,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isImageOf</IRI>
+        <Literal xml:lang="en">isImageOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isIntentOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6066,6 +6818,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isIntentOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isIntentOf</IRI>
+        <Literal xml:lang="en">isIntentOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6083,6 +6840,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isLanguageOfImage</IRI>
+        <Literal xml:lang="en">isLanguageOfImage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isLinkGroupOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6096,6 +6858,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isLinkGroupOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isLinkGroupOf</IRI>
+        <Literal xml:lang="en">isLinkGroupOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6113,6 +6880,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isLinkOf</IRI>
+        <Literal xml:lang="en">isLinkOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isMainTopicOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6126,6 +6898,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isMainTopicOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isMainTopicOf</IRI>
+        <Literal xml:lang="en">isMainTopicOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6143,6 +6920,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isModelOfImage</IRI>
+        <Literal xml:lang="en">isModelOfImage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isPageOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6156,6 +6938,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isPageOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPageOf</IRI>
+        <Literal xml:lang="en">isPageOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6173,6 +6960,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPartOfDirectorySegment</IRI>
+        <Literal xml:lang="en">isPartOfDirectorySegment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isPartOfDomain</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6186,6 +6978,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isPartOfDomain</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPartOfDomain</IRI>
+        <Literal xml:lang="en">isPartOfDomain</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6203,6 +7000,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPersonaOf</IRI>
+        <Literal xml:lang="en">isPersonaOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isPrimaryQueryOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6216,6 +7018,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isPrimaryQueryOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPrimaryQueryOf</IRI>
+        <Literal xml:lang="en">isPrimaryQueryOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6233,6 +7040,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isQualityScoreOf</IRI>
+        <Literal xml:lang="en">isQualityScoreOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isQueryOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6246,6 +7058,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isQueryOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isQueryOf</IRI>
+        <Literal xml:lang="en">isQueryOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6263,6 +7080,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isRootOfWebpage</IRI>
+        <Literal xml:lang="en">isRootOfWebpage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isSentimentOf</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6276,6 +7098,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isSentimentOf</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isSentimentOf</IRI>
+        <Literal xml:lang="en">isSentimentOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6293,6 +7120,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isURLOf</IRI>
+        <Literal xml:lang="en">isURLOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>isUsedByAgent</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6306,6 +7138,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>isUsedByAgent</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isUsedByAgent</IRI>
+        <Literal xml:lang="en">isUsedByAgent</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6323,6 +7160,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>issuedBy</IRI>
+        <Literal xml:lang="en">issuedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>keywordOptimizationScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6336,6 +7178,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>keywordOptimizationScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>keywordOptimizationScore</IRI>
+        <Literal xml:lang="en">keywordOptimizationScore</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6353,6 +7200,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>keywordType</IRI>
+        <Literal xml:lang="en">keywordType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>keywords</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6366,6 +7218,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>keywords</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>keywords</IRI>
+        <Literal xml:lang="en">keywords</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -6388,6 +7245,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>label</IRI>
+        <Literal xml:lang="en">label</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>languageCode</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6401,6 +7263,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>languageCode</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>languageCode</IRI>
+        <Literal xml:lang="en">languageCode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6418,6 +7285,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>languageName</IRI>
+        <Literal xml:lang="en">languageName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>languageRegion</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6431,6 +7303,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>languageRegion</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>languageRegion</IRI>
+        <Literal xml:lang="en">languageRegion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6448,6 +7325,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>lastDirectory</IRI>
+        <Literal xml:lang="en">lastDirectory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>lastModified</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6461,6 +7343,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>lastModified</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>lastModified</IRI>
+        <Literal xml:lang="en">lastModified</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6478,6 +7365,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>link</IRI>
+        <Literal xml:lang="en">link</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>linkGroupName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6491,6 +7383,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>linkGroupName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkGroupName</IRI>
+        <Literal xml:lang="en">linkGroupName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6508,6 +7405,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkLocation</IRI>
+        <Literal xml:lang="en">linkLocation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>linkText</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6521,6 +7423,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>linkText</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>linkText</IRI>
+        <Literal xml:lang="en">linkText</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6568,6 +7475,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>locationName</IRI>
+        <Literal xml:lang="en">locationName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>markdownText</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6581,6 +7493,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>markdownText</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>markdownText</IRI>
+        <Literal xml:lang="en">markdownText</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6598,6 +7515,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>mentions</IRI>
+        <Literal xml:lang="en">mentions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>menu</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6611,6 +7533,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>menu</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>menu</IRI>
+        <Literal xml:lang="en">menu</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6628,6 +7555,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>metaDescription</IRI>
+        <Literal xml:lang="en">metaDescription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>metaTitle</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6641,6 +7573,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>metaTitle</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>metaTitle</IRI>
+        <Literal xml:lang="en">metaTitle</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6658,6 +7595,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>modelName</IRI>
+        <Literal xml:lang="en">modelName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>modelUrl</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6673,6 +7615,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>modelUrl</IRI>
+        <Literal xml:lang="en">modelUrl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>name</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6686,6 +7633,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>name</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>name</IRI>
+        <Literal xml:lang="en">name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -6723,6 +7675,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>occurrences</IRI>
+        <Literal xml:lang="en">occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>pageGroupName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6736,6 +7693,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>pageGroupName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>pageGroupName</IRI>
+        <Literal xml:lang="en">pageGroupName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6753,6 +7715,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>performedAt</IRI>
+        <Literal xml:lang="en">performedAt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>position</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6761,6 +7728,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>position</IRI>
         <Literal>The position of an item in a series or sequence of items</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>position</IRI>
+        <Literal xml:lang="en">position</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -6783,6 +7755,11 @@
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>preferredDevice</IRI>
+        <Literal xml:lang="en">preferredDevice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>priorityScore</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6796,6 +7773,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>priorityScore</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>priorityScore</IRI>
+        <Literal xml:lang="en">priorityScore</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -6813,6 +7795,11 @@
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>promptDate</IRI>
+        <Literal xml:lang="en">promptDate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>publishingDate</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6826,6 +7813,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>publishingDate</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>publishingDate</IRI>
+        <Literal xml:lang="en">publishingDate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6848,6 +7840,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>queryCategory</IRI>
+        <Literal xml:lang="en">queryCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>queryDateCreated</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6861,6 +7858,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>queryDateCreated</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>queryDateCreated</IRI>
+        <Literal xml:lang="en">queryDateCreated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6878,6 +7880,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>queryType</IRI>
+        <Literal xml:lang="en">queryType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>readabilityGradeLevel</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6891,6 +7898,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>readabilityGradeLevel</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>readabilityGradeLevel</IRI>
+        <Literal xml:lang="en">readabilityGradeLevel</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6908,6 +7920,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>readabilityScore</IRI>
+        <Literal xml:lang="en">readabilityScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>role</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6921,6 +7938,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>role</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>role</IRI>
+        <Literal xml:lang="en">role</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -6938,6 +7960,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>rootSegmentFlag</IRI>
+        <Literal xml:lang="en">rootSegmentFlag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>schemaValue</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6953,6 +7980,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>schemaValue</IRI>
+        <Literal xml:lang="en">schemaValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>score</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -6966,6 +7998,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>score</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>score</IRI>
+        <Literal xml:lang="en">score</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7025,7 +8062,7 @@ These categories help in organizing user search behaviors and improving query un
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>score7Days</IRI>
-        <Literal xml:lang="en">score7Days </Literal>
+        <Literal xml:lang="en">score7Days</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7043,6 +8080,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>searchStage</IRI>
+        <Literal xml:lang="en">searchStage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>segmentDepth</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7056,6 +8098,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>segmentDepth</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>segmentDepth</IRI>
+        <Literal xml:lang="en">segmentDepth</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7073,6 +8120,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>seoScore</IRI>
+        <Literal xml:lang="en">seoScore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>serpPosition</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7086,6 +8138,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>serpPosition</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>serpPosition</IRI>
+        <Literal xml:lang="en">serpPosition</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7103,6 +8160,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>slugNgram</IRI>
+        <Literal xml:lang="en">slugNgram</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>sourceCode</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7116,6 +8178,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>sourceCode</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sourceCode</IRI>
+        <Literal xml:lang="en">sourceCode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7133,6 +8200,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>start</IRI>
+        <Literal xml:lang="en">start</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>status</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7148,6 +8220,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>status</IRI>
+        <Literal xml:lang="en">status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>text</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7161,6 +8238,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>text</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>text</IRI>
+        <Literal xml:lang="en">text</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -7183,6 +8265,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>thingLabel</IRI>
+        <Literal xml:lang="en">thingLabel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>thumbnailUrl</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7196,6 +8283,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>thumbnailUrl</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>thumbnailUrl</IRI>
+        <Literal xml:lang="en">thumbnailUrl</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
@@ -7218,6 +8310,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>title</IRI>
+        <Literal xml:lang="en">title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:exactMatch"/>
         <IRI>title</IRI>
         <IRI>https://schema.org/title</IRI>
@@ -7238,6 +8335,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>tokenCount</IRI>
+        <Literal xml:lang="en">tokenCount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>toolName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7251,6 +8353,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>toolName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>toolName</IRI>
+        <Literal xml:lang="en">toolName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7268,6 +8375,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>toolType</IRI>
+        <Literal xml:lang="en">toolType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>toolUrl</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7281,6 +8393,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>toolUrl</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>toolUrl</IRI>
+        <Literal xml:lang="en">toolUrl</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7298,6 +8415,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>topicID</IRI>
+        <Literal xml:lang="en">topicID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>topicName</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7311,6 +8433,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>topicName</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>topicName</IRI>
+        <Literal xml:lang="en">topicName</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7328,6 +8455,16 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>totalLinkCount</IRI>
+        <Literal xml:lang="en">totalLinkCount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>type</IRI>
+        <Literal xml:lang="en">type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>urlSlug</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7341,6 +8478,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>urlSlug</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>urlSlug</IRI>
+        <Literal xml:lang="en">urlSlug</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7358,6 +8500,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesTool</IRI>
+        <Literal xml:lang="en">usesTool</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>value</IRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -7371,6 +8518,11 @@ These categories help in organizing user search behaviors and improving query un
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>value</IRI>
         <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>value</IRI>
+        <Literal xml:lang="en">value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -7388,6 +8540,11 @@ These categories help in organizing user search behaviors and improving query un
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>versionID</IRI>
+        <Literal xml:lang="en">versionID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <IRI>weight</IRI>
         <IRI></IRI>
@@ -7403,9 +8560,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>The weight of the link, useful for ranking or tag clouds</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>weight</IRI>
+        <Literal xml:lang="en">weight</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>ClusteringStrategy</IRI>
         <Literal>The method, model, or algorithm used to group queries into a QueryCluster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ClusteringStrategy</IRI>
+        <Literal xml:lang="en">ClusteringStrategy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7413,9 +8580,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>QueryCluster</IRI>
+        <Literal xml:lang="en">QueryCluster</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>clusteredBy</IRI>
         <Literal>Links a QueryCluster to the ClusteringStrategy used to generate it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clusteredBy</IRI>
+        <Literal xml:lang="en">clusteredBy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7423,9 +8600,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Links a QueryCluster to the dominant Intent shared by its member queries.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>dominantSearchIntent</IRI>
+        <Literal xml:lang="en">dominantSearchIntent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>hasClusterQuery</IRI>
         <Literal>Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasClusterQuery</IRI>
+        <Literal xml:lang="en">hasClusterQuery</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7433,9 +8620,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isClusterQueryOf</IRI>
+        <Literal xml:lang="en">isClusterQueryOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>averageEngagementTime</IRI>
         <Literal>Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>averageEngagementTime</IRI>
+        <Literal xml:lang="en">averageEngagementTime</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7443,9 +8640,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>clusterVolume</IRI>
+        <Literal xml:lang="en">clusterVolume</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>conversions</IRI>
         <Literal>Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>conversions</IRI>
+        <Literal xml:lang="en">conversions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7453,9 +8660,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>engagedSessions</IRI>
+        <Literal xml:lang="en">engagedSessions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>engagementRate</IRI>
         <Literal>Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>engagementRate</IRI>
+        <Literal xml:lang="en">engagementRate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7463,9 +8680,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isThinContent</IRI>
+        <Literal xml:lang="en">isThinContent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>keywordsCount</IRI>
         <Literal>Number of keyword or query variants included in a QueryCluster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>keywordsCount</IRI>
+        <Literal xml:lang="en">keywordsCount</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7473,9 +8700,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>landingPage</IRI>
+        <Literal xml:lang="en">landingPage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>sessions</IRI>
         <Literal>Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sessions</IRI>
+        <Literal xml:lang="en">sessions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -7483,9 +8720,19 @@ These categories help in organizing user search behaviors and improving query un
         <Literal>Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>trafficSource</IRI>
+        <Literal xml:lang="en">trafficSource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>users</IRI>
         <Literal>Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>users</IRI>
+        <Literal xml:lang="en">users</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>

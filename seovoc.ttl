@@ -21,6 +21,7 @@
                             dc:identifier "SEO Vocabulary" ;
                             dc:issued "2023-10-29T00:00:00Z" ;
                             dc:title "SEO Vocabulary" ;
+                            dcterms:license <https://spdx.org/licenses/MIT> ;
                             owl:versionInfo "0.1.0" ;
                             :extends schema: .
 
@@ -54,6 +55,10 @@ dc:title rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/isReplacedBy
 dcterms:isReplacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
@@ -107,7 +112,8 @@ schema:license rdf:type owl:AnnotationProperty .
        rdfs:range schema:Thing ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "Each webpage has a main entity of type Thing: Person, Location, LocalBusiness etc." ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "about"@en .
 
 
 ###  https://w3id.org/seovoc/anchorResource
@@ -136,14 +142,16 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range :Model ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Links an instance of Intent or Sentiment to the model that classified it" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "classifiedByModel"@en .
 
 
 ###  https://w3id.org/seovoc/clusteredBy
 :clusteredBy rdf:type owl:ObjectProperty ;
              rdfs:domain :QueryCluster ;
              rdfs:range :ClusteringStrategy ;
-             dc:description "Links a QueryCluster to the ClusteringStrategy used to generate it." .
+             dc:description "Links a QueryCluster to the ClusteringStrategy used to generate it." ;
+             rdfs:label "clusteredBy"@en .
 
 
 ###  https://w3id.org/seovoc/describesPage
@@ -153,14 +161,16 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :WebPage ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Indicates the WebPage that is described by this schema markup block. Useful for linking structured data to content" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "describesPage"@en .
 
 
 ###  https://w3id.org/seovoc/dominantSearchIntent
 :dominantSearchIntent rdf:type owl:ObjectProperty ;
                       rdfs:domain :QueryCluster ;
                       rdfs:range :Intent ;
-                      dc:description "Links a QueryCluster to the dominant Intent shared by its member queries." .
+                      dc:description "Links a QueryCluster to the dominant Intent shared by its member queries." ;
+                      rdfs:label "dominantSearchIntent"@en .
 
 
 ###  https://w3id.org/seovoc/generatedUsingStructuredDataProfile
@@ -184,7 +194,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Agent ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Links a Prompt, AnalyzeAction, or other SEO workflow entity to the Agent responsible for executing or generating it. It captures accountability and provenance within SEO workflows, identifying who or what performed the action, issued the instruction, or conducted the analysis." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "hasAgent"@en .
 
 
 ###  https://w3id.org/seovoc/hasAnalysisTarget
@@ -198,7 +209,8 @@ schema:license rdf:type owl:AnnotationProperty .
                               ] ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Specifies the content unit (WebPage or Chunk) that is being analyzed by an AnalyzeAction. This property enables flexible analysis workflows that can operate at different granularities - from full webpage assessment to focused chunk-level evaluation. Essential for tracking which specific content segments are subject to automated quality analysis, performance evaluation, or SEO assessment within content optimization pipelines." ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "hasAnalysisTarget"@en .
 
 
 ###  https://w3id.org/seovoc/hasApplicableStructuredDataProfile
@@ -218,7 +230,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :DirectorySegment ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Inverse of hasParentSegment; points to subsegments" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "hasChildSegment"@en .
 
 
 ###  https://w3id.org/seovoc/hasChunk
@@ -228,7 +241,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Chunk ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Links a schema:WebPage to one or more Chunks representing segmented parts of the page" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "hasChunk"@en .
 
 
 ###  https://w3id.org/seovoc/hasChunkQualityScore
@@ -238,7 +252,8 @@ schema:license rdf:type owl:AnnotationProperty .
                       rdfs:range :QualityScore ;
                       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                       dc:description "Establishes the relationship between a Chunk and its associated QualityScore assessment. This property enables quality evaluation at the content segment level, allowing for granular analysis of individual text portions within a webpage. Unlike page-level quality assessment, chunk-level scoring focuses on the coherence, relevance, and quality characteristics of specific content segments, supporting fine-grained content optimization and automated content analysis workflows." ;
-                      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                      rdfs:label "hasChunkQualityScore"@en .
 
 
 ###  https://w3id.org/seovoc/hasClusterQuery
@@ -246,13 +261,15 @@ schema:license rdf:type owl:AnnotationProperty .
                  owl:inverseOf :isClusterQueryOf ;
                  rdfs:domain :QueryCluster ;
                  rdfs:range :Query ;
-                 dc:description "Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships." .
+                 dc:description "Links a QueryCluster to a Query that belongs to the cluster without overloading hasQuery, which remains scoped to WebPage and Query relationships." ;
+                 rdfs:label "hasClusterQuery"@en .
 
 
 ###  https://w3id.org/seovoc/hasDomain
 :hasDomain rdf:type owl:ObjectProperty ;
            rdfs:domain :WebPage ;
-           rdfs:range :Domain .
+           rdfs:range :Domain ;
+           rdfs:label "hasDomain"@en .
 
 
 ###  https://w3id.org/seovoc/hasEntityGap
@@ -262,7 +279,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range :EntityGap ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Relates a query or context to the entity gaps identified in its content" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "hasEntityGap"@en .
 
 
 ###  https://w3id.org/seovoc/hasExtractedChunk
@@ -272,7 +290,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range :Chunk ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Establishes the relationship between an extraction operation and the content chunks it analyzes to retrieve specific information." ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "hasExtractedChunk"@en .
 
 
 ###  https://w3id.org/seovoc/hasImage
@@ -281,7 +300,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:domain :WebPage ;
           rdfs:range :ImageObject ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "hasImage"@en .
 
 
 ###  https://w3id.org/seovoc/hasIntent
@@ -292,7 +312,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range :Intent ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Links a content unit to its classified intent" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "hasIntent"@en .
 
 
 ###  https://w3id.org/seovoc/hasLanguage
@@ -302,7 +323,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range :Language ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Indicates the language used in the generated or translated caption" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "hasLanguage"@en .
 
 
 ###  https://w3id.org/seovoc/hasLink
@@ -312,7 +334,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range :Link ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Defines the relationship between a LinkGroup and the individual links it contains, helping to structure internal and external linking within a webpage" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "hasLink"@en .
 
 
 ###  https://w3id.org/seovoc/hasLinkGroup
@@ -322,7 +345,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range :LinkGroup ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Connects a WebPage to one or more LinkGroups that organize its internal links (e.g., navigation menus, sidebar sections, related content blocks). Enables grouping of links by purpose or position on the page" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "hasLinkGroup"@en .
 
 
 ###  https://w3id.org/seovoc/hasMainTopic
@@ -332,7 +356,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range :Topic ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Connects the web page to its central semantic subject" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "hasMainTopic"@en .
 
 
 ###  https://w3id.org/seovoc/hasModel
@@ -342,7 +367,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Model ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Connects an image to the model used to generate its caption" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "hasModel"@en .
 
 
 ###  https://w3id.org/seovoc/hasPage
@@ -352,7 +378,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range :WebPage ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "The hasQuery property represents the relationship between a WebPage and the PageGroup class, designed to help identify in which group type, A/B testing-wise the group belongs to." ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "hasPage"@en .
 
 
 ###  https://w3id.org/seovoc/hasPageInDomain
@@ -362,7 +389,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :WebPage ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Domain contains this webpage" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "hasPageInDomain"@en .
 
 
 ###  https://w3id.org/seovoc/hasPageType
@@ -381,7 +409,8 @@ schema:license rdf:type owl:AnnotationProperty .
                   rdfs:range :DirectorySegment ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "Points to the parent directory in the hierarchy (e.g. /blog/seo/ → /blog/)" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "hasParentSegment"@en .
 
 
 ###  https://w3id.org/seovoc/hasPathRoot
@@ -391,7 +420,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range :DirectorySegment ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Indicates which top-level segment a page belongs to" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "hasPathRoot"@en .
 
 
 ###  https://w3id.org/seovoc/hasPersona
@@ -401,7 +431,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range :Persona ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "Associates a webpage with a target persona, representing the intended audience based on characteristics such as interests, demographics, or behavior" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "hasPersona"@en .
 
 
 ###  https://w3id.org/seovoc/hasPrimaryQuery
@@ -413,7 +444,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :Query ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "This object attribute helps us with the querying process of queries equal to certain text" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "hasPrimaryQuery"@en .
 
 
 ###  https://w3id.org/seovoc/hasPrompt
@@ -422,7 +454,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range :Prompt ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ,
                            "hasPrompt links an entity (such as a Task, Agent, or Query) to a specific Prompt that guides or constrains the behavior of an Agent. It expresses the dependency on a natural language instruction or template used to initiate or shape an AI-driven action." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "hasPrompt"@en .
 
 
 ###  https://w3id.org/seovoc/hasQualityScore
@@ -432,7 +465,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :QualityScore ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Links the page to its evaluation result" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "hasQualityScore"@en .
 
 
 ###  https://w3id.org/seovoc/hasQuery
@@ -442,7 +476,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Query ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "The hasQuery property represents the relationship between a WebPage and the Query that leads users to that page. It indicates that the WebPage is relevant or has been optimized for the specified Query. This relationship is crucial for understanding SEO dynamics, as it reflects the connection between user search behavior and web content." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "hasQuery"@en .
 
 
 ###  https://w3id.org/seovoc/hasSchemaMarkup
@@ -451,7 +486,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :Schema ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "The usesSchema property describes the relationship between a WebPage and the Schema it employs. The Schema class represents structured data, such as JSON-LD, Microdata, or RDFa, that is embedded in the webpage to provide search engines and other tools with enhanced information about the content." ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "hasSchemaMarkup"@en .
 
 
 ###  https://w3id.org/seovoc/hasSegmentPage
@@ -460,7 +496,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range :WebPage ;
                 dc:description "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ,
                                "Segment contains this webpage" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "hasSegmentPage"@en .
 
 
 ###  https://w3id.org/seovoc/hasSentiment
@@ -471,7 +508,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range :Sentiment ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Links a content unit to its classified sentiment" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "hasSentiment"@en .
 
 
 ###  https://w3id.org/seovoc/hasTrafficChannel
@@ -493,7 +531,8 @@ schema:license rdf:type owl:AnnotationProperty .
         rdfs:range :URL ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "The hasURL property establishes a unique and reciprocal relationship between a WebPage and its corresponding URL. It asserts that each WebPage is identified by exactly one URL, and conversely, each URL uniquely identifies one WebPage. As both a functional and inverse functional property, hasURL ensures that this link is both unique and bidirectional, which is critical for accurately representing the identity and accessibility of web content" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "hasURL"@en .
 
 
 ###  https://w3id.org/seovoc/influencedByQuery
@@ -502,7 +541,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range :Query ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "The influencedByQuery property defines the relationship between AnchorText and the Query that may shape or determine the choice of that anchor text. It highlights how specific search queries can influence the wording and selection of anchor texts within a WebPage, reflecting SEO strategies aimed at optimizing link relevance and search engine visibility. This property is vital for understanding the interplay between user search behavior and content creation, particularly in the context of link building and on-page SEO" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "influencedByQuery"@en .
 
 
 ###  https://w3id.org/seovoc/isAnalysisTargetOf
@@ -515,7 +555,8 @@ schema:license rdf:type owl:AnnotationProperty .
                     rdfs:range :AnalyzeAction ;
                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                     dc:description "Inverse of hasAnalysisTarget. Links content units (WebPage or Chunk) back to the AnalyzeAction instances that examine them, enabling reverse navigation from content to its analysis activities and supporting queries that identify all analysis operations performed on specific content segments." ;
-                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                    rdfs:label "isAnalysisTargetOf"@en .
 
 
 ###  https://w3id.org/seovoc/isChunkOf
@@ -524,7 +565,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range :WebPage ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Links a Chunk to the parent WebPage it belongs to, defining the document structure" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "isChunkOf"@en .
 
 
 ###  https://w3id.org/seovoc/isChunkOfExtraction
@@ -533,7 +575,8 @@ schema:license rdf:type owl:AnnotationProperty .
                      rdfs:range :ExtractAction ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "Enables navigation from content chunks to all extraction actions that have analyzed them for information retrieval." ;
-                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                     rdfs:label "isChunkOfExtraction"@en .
 
 
 ###  https://w3id.org/seovoc/isChunkQualityScoreOf
@@ -542,14 +585,16 @@ schema:license rdf:type owl:AnnotationProperty .
                        rdfs:range :Chunk ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "Inverse property of hasChunkQualityScore that links a QualityScore instance back to the specific Chunk it evaluates. This relationship enables navigation from quality assessment results to their corresponding content segments, facilitating analysis workflows that need to identify which chunk produced particular quality metrics. Essential for content optimization systems that require traceability between quality scores and their source content segments within automated SEO and content analysis pipelines." ;
-                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                       rdfs:label "isChunkQualityScoreOf"@en .
 
 
 ###  https://w3id.org/seovoc/isClusterQueryOf
 :isClusterQueryOf rdf:type owl:ObjectProperty ;
                   rdfs:domain :Query ;
                   rdfs:range :QueryCluster ;
-                  dc:description "Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to." .
+                  dc:description "Inverse of hasClusterQuery; links a Query to the QueryCluster it belongs to." ;
+                  rdfs:label "isClusterQueryOf"@en .
 
 
 ###  https://w3id.org/seovoc/isContainedInSegment
@@ -558,7 +603,8 @@ schema:license rdf:type owl:AnnotationProperty .
                       rdfs:range :DirectorySegment ;
                       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                       dc:description "Indicates the segment that contains a web page" ;
-                      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                      rdfs:label "isContainedInSegment"@en .
 
 
 ###  https://w3id.org/seovoc/isDescribedBy
@@ -567,7 +613,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :WebPage ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Inverse of about. Points from an entity to the page that describes it" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isDescribedBy"@en .
 
 
 ###  https://w3id.org/seovoc/isEntityGapOf
@@ -576,7 +623,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :Query ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Links an entity gap to the query or analysis context it belongs to" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isEntityGapOf"@en .
 
 
 ###  https://w3id.org/seovoc/isImageOf
@@ -585,7 +633,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range :WebPage ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Inverse of hasImage; links an image back to its source page" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "isImageOf"@en .
 
 
 ###  https://w3id.org/seovoc/isIntentOf
@@ -599,7 +648,8 @@ schema:license rdf:type owl:AnnotationProperty .
                        ] ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "Inverse: Links intent to the content units it classifies" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "isIntentOf"@en .
 
 
 ###  https://w3id.org/seovoc/isLanguageOfImage
@@ -608,7 +658,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range :ImageObject ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Inverse of hasLanguage; returns images captioned in the given language" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "isLanguageOfImage"@en .
 
 
 ###  https://w3id.org/seovoc/isLinkGroupOf
@@ -617,7 +668,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :WebPage ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Defines the relationship between a LinkGroup and the WebPage it belongs to, helping structure internal linking and improve content organization" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isLinkGroupOf"@en .
 
 
 ###  https://w3id.org/seovoc/isLinkOf
@@ -626,7 +678,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :LinkGroup ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Inverse property of seovoc:hasLink, linking a Link back to its parent LinkGroup. Legacy data that linked a Link directly to a WebPage should use seovoc:link for ungrouped links or introduce a LinkGroup connected from the page with seovoc:hasLinkGroup." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "isLinkOf"@en .
 
 
 ###  https://w3id.org/seovoc/isLinkTargetOf
@@ -645,7 +698,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :WebPage ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Inverse of hasMainTopic; links a topic to the pages where it is featured" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isMainTopicOf"@en .
 
 
 ###  https://w3id.org/seovoc/isModelOfImage
@@ -654,7 +708,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range :ImageObject ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Inverse of hasModel; identifies images a model has been used for" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "isModelOfImage"@en .
 
 
 ###  https://w3id.org/seovoc/isPageOf
@@ -663,7 +718,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :PageGroup ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Inverse of hasPage. Indicates which page group a web page belongs to" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "isPageOf"@en .
 
 
 ###  https://w3id.org/seovoc/isPartOfDirectorySegment
@@ -672,7 +728,8 @@ schema:license rdf:type owl:AnnotationProperty .
                           rdfs:range :DirectorySegment ;
                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                           dc:description "Indicates the directory segment of the page’s URL" ;
-                          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                          rdfs:label "isPartOfDirectorySegment"@en .
 
 
 ###  https://w3id.org/seovoc/isPartOfDomain
@@ -681,7 +738,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range :Domain ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Indicates the domain or subdomain to which the page belongs" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "isPartOfDomain"@en .
 
 
 ###  https://w3id.org/seovoc/isPersonaOf
@@ -690,7 +748,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range :WebPage ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Inverse of hasPersona. Links a persona to the page it is associated with" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "isPersonaOf"@en .
 
 
 ###  https://w3id.org/seovoc/isPrimaryQueryOf
@@ -699,7 +758,8 @@ schema:license rdf:type owl:AnnotationProperty .
                   rdfs:range :WebPage ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "Defines the relationship between a search query (seovoc:Query) and the webpage (seovoc:WebPage) for which it serves as the main or most relevant query" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "isPrimaryQueryOf"@en .
 
 
 ###  https://w3id.org/seovoc/isQualityScoreOf
@@ -708,7 +768,8 @@ schema:license rdf:type owl:AnnotationProperty .
                   rdfs:range :WebPage ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "Inverse of seovoc:hasQualityScore. Links a quality score instance back to the web page it evaluates" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "isQualityScoreOf"@en .
 
 
 ###  https://w3id.org/seovoc/isQueryOf
@@ -717,7 +778,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range :WebPage ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Inverse of hasQuery. Indicates which web page a query relates to" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "isQueryOf"@en .
 
 
 ###  https://w3id.org/seovoc/isRootOfWebpage
@@ -726,7 +788,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range :WebPage ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Indicates a root segment responsible for a page" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "isRootOfWebpage"@en .
 
 
 ###  https://w3id.org/seovoc/isSentimentOf
@@ -740,7 +803,8 @@ schema:license rdf:type owl:AnnotationProperty .
                           ] ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Relates the sentiment to the piece of content to which the sentiment applies" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isSentimentOf"@en .
 
 
 ###  https://w3id.org/seovoc/isURLOf
@@ -749,7 +813,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range :WebPage ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Inverse of hasURL. Connects a URL to the web page it represents" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "isURLOf"@en .
 
 
 ###  https://w3id.org/seovoc/isUsedByAgent
@@ -759,7 +824,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range :Agent ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Inverse of usesTool. Links a Tool back to the Agent(s) that utilize it." ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "isUsedByAgent"@en .
 
 
 ###  https://w3id.org/seovoc/issuedBy
@@ -768,7 +834,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Employee ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "issuedBy links a Prompt to the Employee who authored, formulated, or issued it. It captures the origin and authorship of instructional input, supporting traceability, collaboration, and evaluation in SEO workflows." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "issuedBy"@en .
 
 
 ###  https://w3id.org/seovoc/link
@@ -777,7 +844,8 @@ schema:license rdf:type owl:AnnotationProperty .
       rdfs:range :Link ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "Compatibility shortcut linking a WebPage directly to an ungrouped or raw extracted Link. For structured navigational link groups, prefer hasLinkGroup from WebPage to LinkGroup and hasLink from LinkGroup to Link." ;
-      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "link"@en .
 
 
 ###  https://w3id.org/seovoc/linkTarget
@@ -795,7 +863,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range schema:Thing ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Each webpage has an entity of type Thing: Person, Location, LocalBusiness etc." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "mentions"@en .
 
 
 ###  https://w3id.org/seovoc/usesStructuredDataProfile
@@ -814,7 +883,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range :Tool ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Links an Agent to the Tool(s) they employ to perform analysis actions. This relationship captures the instrumental means by which agents execute their analytical tasks." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "usesTool"@en .
 
 
 #################################################################
@@ -827,7 +897,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:string ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Represents the age range of a persona, typically expressed as a string (e.g., '18-25'). This property helps categorize personas by their approximate age groups for tailored strategies or content." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "ageRange"@en .
 
 
 ###  https://w3id.org/seovoc/agentID
@@ -837,7 +908,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range xsd:int ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Unique identifier for the agent" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "agentID"@en .
 
 
 ###  https://w3id.org/seovoc/agentType
@@ -847,7 +919,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Indicates the type of agent (human, AI, bot, system...)" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "agentType"@en .
 
 
 ###  https://w3id.org/seovoc/agentVersion
@@ -856,7 +929,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Indicates the version number for the agent" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "agentVersion"@en .
 
 
 ###  https://w3id.org/seovoc/aiGeneratedCaption
@@ -865,7 +939,8 @@ schema:license rdf:type owl:AnnotationProperty .
                     rdfs:range xsd:string ;
                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                     dc:description "Caption generated by an AI model describing the image content" ;
-                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                    rdfs:label "aiGeneratedCaption"@en .
 
 
 ###  https://w3id.org/seovoc/aiGeneratedFileName
@@ -874,7 +949,8 @@ schema:license rdf:type owl:AnnotationProperty .
                      rdfs:range xsd:string ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "SEO-optimized file name generated by an AI mode" ;
-                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                     rdfs:label "aiGeneratedFileName"@en .
 
 
 ###  https://w3id.org/seovoc/analysisMethod
@@ -883,7 +959,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Method used for performing the analysis. Examples: 'automated' for tool-based analysis without human intervention, 'manual' for human-conducted evaluation, 'hybrid' for combined automated and manual review, 'ai-based' for LLM or machine learning analysis, 'tool-based' for analysis using specific software tools like Lighthouse or PageSpeed Insight." ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "analysisMethod"@en .
 
 
 ###  https://w3id.org/seovoc/analysisScope
@@ -892,7 +969,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Scope or granularity of the analysis. Examples: 'page' for single webpage analysis, 'site' for entire website evaluation, 'domain' for domain-wide assessment including subdomains, 'element' for specific HTML elements or components, 'resource' for individual files like CSS or JavaScript, 'chunk' for content segments or text blocks within a page." ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "analysisScope"@en .
 
 
 ###  https://w3id.org/seovoc/analysisType
@@ -901,7 +979,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Type of analysis to perform. Examples: 'content' for readability and quality assessment, 'performance' for speed and Core Web Vitals, 'accessibility' for WCAG compliance, 'security' for HTTPS and headers, 'technical-seo' for meta tags and markup, 'usability' for user experience factors, 'mobile' for mobile-specific analysis, 'core-web-vitals' for LCP/FID/CLS metrics." ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "analysisType"@en .
 
 
 ###  https://w3id.org/seovoc/anchorValue
@@ -910,14 +989,16 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "The text of the anchor tied to the link itself" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "anchorValue"@en .
 
 
 ###  https://w3id.org/seovoc/averageEngagementTime
 :averageEngagementTime rdf:type owl:DatatypeProperty ;
                        rdfs:domain :WebPage ;
                        rdfs:range xsd:double ;
-                       dc:description "Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset." .
+                       dc:description "Average active engagement time for a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+                       rdfs:label "averageEngagementTime"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition
@@ -927,7 +1008,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range xsd:double ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "The average ranking positon that the page has for a given time period on SERPs" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "averagePosition"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition28Days
@@ -941,7 +1023,8 @@ schema:license rdf:type owl:AnnotationProperty .
                        rdfs:range xsd:double ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "The ranking position for 28 Days on SERPs" ;
-                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                       rdfs:label "averagePosition28Days"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition28DaysTo3MonthsTrend
@@ -955,7 +1038,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                      rdfs:range xsd:double ;
                                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                      dc:description "The ranking position trend for 28Days to 3Months on SERPs" ;
-                                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                     rdfs:label "averagePosition28DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition3Months
@@ -969,7 +1053,8 @@ schema:license rdf:type owl:AnnotationProperty .
                         rdfs:range xsd:double ;
                         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                         dc:description "The ranking position for 3 Months on SERPs" ;
-                        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                        rdfs:label "averagePosition3Months"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition6Months
@@ -1013,7 +1098,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                    rdfs:range xsd:double ;
                                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                    dc:description "The ranking position trend of 7Days to 28Days on SERPs" ;
-                                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                   rdfs:label "averagePosition7DaysTo28DaysTrend"@en .
 
 
 ###  https://w3id.org/seovoc/averagePosition7DaysTo3MonthsTrend
@@ -1027,7 +1113,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                     rdfs:range xsd:double ;
                                     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                     dc:description "The ranking position trend of 7Days to 3Months on SERPs" ;
-                                    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                                    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                    rdfs:label "averagePosition7DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/averagePositon7Days
@@ -1049,7 +1136,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:string ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description <https://w3id.org/seovoc/> ,
-                         "Main textual body content of the page" .
+                         "Main textual body content of the page" ;
+          rdfs:label "bodyText"@en .
 
 
 ###  https://w3id.org/seovoc/bounceRate
@@ -1058,7 +1146,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:decimal ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The percentage of sessions that were not engaged, as reported by the producing analytics dataset. Compatible with GA4 engagement reporting." ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "bounceRate"@en .
 
 
 ###  https://w3id.org/seovoc/captionQualityScore
@@ -1068,7 +1157,8 @@ schema:license rdf:type owl:AnnotationProperty .
                      rdfs:range xsd:float ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "Numeric score indicating the quality of the AI-generated caption" ;
-                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                     rdfs:label "captionQualityScore"@en .
 
 
 ###  https://w3id.org/seovoc/changeFrequency
@@ -1077,7 +1167,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range xsd:string ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Describes how often the page is expected to change (e.g., \"daily\", \"weekly\")" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "changeFrequency"@en .
 
 
 ###  https://w3id.org/seovoc/chunkID
@@ -1087,7 +1178,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range xsd:int ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "A unique string identifier for distinguishing individual resources, such as chunks" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "chunkID"@en .
 
 
 ###  https://w3id.org/seovoc/chunkPosition
@@ -1098,6 +1190,7 @@ schema:license rdf:type owl:AnnotationProperty .
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The order of the chunk on the webpage, starting from 1 for the first chunk. Useful for reconstructing the document from its parts or presenting chunks in context" ;
                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "chunkPosition"@en ;
                skos:exactMatch schema:position .
 
 
@@ -1107,7 +1200,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "The name of the set of chunks (e.g., \"Introduction\", \"Body\", \"Summary\"). Useful for organizing chunks into meaningful groups" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "chunkSetName"@en .
 
 
 ###  https://w3id.org/seovoc/chunkStrategy
@@ -1116,7 +1210,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Describes the chunking strategy applied to split the document (e.g., \"Semantic Segmentation\", \"Fixed-Length\", \"Sentence-based\")" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "chunkStrategy"@en .
 
 
 ###  https://w3id.org/seovoc/chunkText
@@ -1126,7 +1221,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "chunkText is a portion or segment of a larger body of text, typically created by dividing the text into smaller, manageable pieces for processing or embedding" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "chunkText"@en .
 
 
 ###  https://w3id.org/seovoc/classificationConfidence
@@ -1136,7 +1232,8 @@ schema:license rdf:type owl:AnnotationProperty .
                           rdfs:range xsd:float ;
                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                           dc:description "Numeric score (0.0–1.0) indicating the model's confidence in its classification of intent or sentiment" ;
-                          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                          rdfs:label "classificationConfidence"@en .
 
 
 ###  https://w3id.org/seovoc/clickDepth
@@ -1145,7 +1242,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:integer ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The click depth of the page itself. Example: https://wordlift.io/blog/en/seo-automation/ is on level 4 if we count the parts between //" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "clickDepth"@en .
 
 
 ###  https://w3id.org/seovoc/clicks
@@ -1154,7 +1252,8 @@ schema:license rdf:type owl:AnnotationProperty .
         rdfs:range xsd:long ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "The average number of clicks the pages have for a given time period." ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "clicks"@en .
 
 
 ###  https://w3id.org/seovoc/clicks28Days
@@ -1181,7 +1280,8 @@ schema:license rdf:type owl:AnnotationProperty .
                             rdfs:range xsd:double ;
                             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                             dc:description "The trend of the clicks when we compare 28Days to 3Months period." ;
-                            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                            rdfs:label "clicks28DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/clicks3Months
@@ -1195,7 +1295,8 @@ schema:license rdf:type owl:AnnotationProperty .
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "clicks3Months"@en ;
                rdfs:comment "The total number of clicks the query has for a given time period of 3 months" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "clicks3Months"@en .
 
 
 ###  https://w3id.org/seovoc/clicks6Months
@@ -1236,7 +1337,8 @@ schema:license rdf:type owl:AnnotationProperty .
                           rdfs:range xsd:double ;
                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                           dc:description "The trend of the clicks when we compare 7Days to 28Days period" ;
-                          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                          rdfs:label "clicks7DaysTo28DaysTrend"@en .
 
 
 ###  https://w3id.org/seovoc/clicks7DaysTo3MonthsTrend
@@ -1249,14 +1351,16 @@ schema:license rdf:type owl:AnnotationProperty .
                            rdfs:range xsd:double ;
                            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                            dc:description "The trend of the clicks when we compare 7Days to 3Months period" ;
-                           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                           rdfs:label "clicks7DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/clusterVolume
 :clusterVolume rdf:type owl:DatatypeProperty ;
                rdfs:domain :QueryCluster ;
                rdfs:range xsd:decimal ;
-               dc:description "Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster." .
+               dc:description "Aggregate monthly search volume or equivalent demand estimate for all queries in a QueryCluster." ;
+               rdfs:label "clusterVolume"@en .
 
 
 ###  https://w3id.org/seovoc/confidence
@@ -1265,7 +1369,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:float ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description <https://w3id.org/seovoc/> ,
-                           "A float value expressing the system’s confidence that the identified entity is a relevant and meaningful gap in the content" .
+                           "A float value expressing the system’s confidence that the identified entity is a relevant and meaningful gap in the content" ;
+            rdfs:label "confidence"@en .
 
 
 ###  https://w3id.org/seovoc/content
@@ -1274,7 +1379,8 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range xsd:string ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "The content of the Prompt itself" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "content"@en .
 
 
 ###  https://w3id.org/seovoc/contentAccuracyScore
@@ -1284,7 +1390,8 @@ schema:license rdf:type owl:AnnotationProperty .
                       rdfs:range xsd:float ;
                       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                       dc:description "Score for factual accuracy" ;
-                      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                      rdfs:label "contentAccuracyScore"@en .
 
 
 ###  https://w3id.org/seovoc/contentDepthScore
@@ -1294,7 +1401,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:float ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Depth of content coverage" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "contentDepthScore"@en .
 
 
 ###  https://w3id.org/seovoc/contentPurposeScore
@@ -1304,14 +1412,16 @@ schema:license rdf:type owl:AnnotationProperty .
                      rdfs:range xsd:float ;
                      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                      dc:description "Score for content purpose alignment" ;
-                     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                     rdfs:label "contentPurposeScore"@en .
 
 
 ###  https://w3id.org/seovoc/conversions
 :conversions rdf:type owl:DatatypeProperty ;
              rdfs:domain :WebPage ;
              rdfs:range xsd:long ;
-             dc:description "Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+             dc:description "Number of conversion events attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+             rdfs:label "conversions"@en .
 
 
 ###  https://w3id.org/seovoc/crawlable
@@ -1320,7 +1430,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:boolean ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Whether the page can be crawled according to robots.txt" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "crawlable"@en .
 
 
 ###  https://w3id.org/seovoc/ctr
@@ -1329,7 +1440,8 @@ schema:license rdf:type owl:AnnotationProperty .
      rdfs:range xsd:double ;
      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
      dc:description "The average click through rate (CTR) of the query for a given time period" ;
-     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+     rdfs:label "ctr"@en .
 
 
 ###  https://w3id.org/seovoc/ctr28Days
@@ -1356,7 +1468,8 @@ schema:license rdf:type owl:AnnotationProperty .
                          rdfs:range xsd:double ;
                          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                          dc:description "The click through rate trend for 28Days to 3Months period" ;
-                         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                         rdfs:label "ctr28DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/ctr3Months
@@ -1398,7 +1511,8 @@ schema:license rdf:type owl:AnnotationProperty .
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "ctr7Days"@en ;
           rdfs:comment "The click through rate for 7Days period" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "ctr7Days"@en .
 
 
 ###  https://w3id.org/seovoc/ctr7DaysTo28DaysTrend
@@ -1411,7 +1525,8 @@ schema:license rdf:type owl:AnnotationProperty .
                        rdfs:range xsd:double ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "The click through rate trend of 7days to 28days period" ;
-                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                       rdfs:label "ctr7DaysTo28DaysTrend"@en .
 
 
 ###  https://w3id.org/seovoc/ctr7DaysTo3MonthsTrend
@@ -1424,7 +1539,8 @@ schema:license rdf:type owl:AnnotationProperty .
                         rdfs:range xsd:double ;
                         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                         dc:description "The click through rate trend of 7Days to 3Months period" ;
-                        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                        rdfs:label "ctr7DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/customField
@@ -1433,13 +1549,15 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Custom content extracted via XPath/CSS (e.g., price, author)" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "customField"@en .
 
 
 ###  https://w3id.org/seovoc/date
 :date rdf:type owl:DatatypeProperty ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "A date value in ISO 8601 date format" ;
+      rdfs:label "date"@en ;
       skos:exactMatch schema:Date .
 
 
@@ -1447,6 +1565,7 @@ schema:license rdf:type owl:AnnotationProperty .
 :description rdf:type owl:DatatypeProperty ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "A description of the item" ;
+             rdfs:label "description"@en ;
              skos:exactMatch schema:description .
 
 
@@ -1457,7 +1576,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "A human-readable name that identifies the purpose or semantic meaning of a directory segment within a website’s URL structure (e.g. \"/blog\", \"/products\", \"/guides\")" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "directoryLabel"@en .
 
 
 ###  https://w3id.org/seovoc/domainName
@@ -1467,7 +1587,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:string ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "Full domain name" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "domainName"@en .
 
 
 ###  https://w3id.org/seovoc/embeddingModel
@@ -1476,7 +1597,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "The name of the NLP embedding model used to create vectorized version of the content." ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "embeddingModel"@en .
 
 
 ###  https://w3id.org/seovoc/embeddingText
@@ -1486,7 +1608,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "embeddingText refers to a string of text that is transformed into a fixed-length vector representation using a language model" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "embeddingText"@en .
 
 
 ###  https://w3id.org/seovoc/embeddingValue
@@ -1495,7 +1618,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "The actual vector value for the embedding itself." ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "embeddingValue"@en .
 
 
 ###  https://w3id.org/seovoc/employeeName
@@ -1505,7 +1629,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "The name of the employee" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "employeeName"@en .
 
 
 ###  https://w3id.org/seovoc/end
@@ -1514,21 +1639,24 @@ schema:license rdf:type owl:AnnotationProperty .
      rdfs:range xsd:integer ;
      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
      dc:description "The end offset of the chunk in the text, expressed as character or token position" ;
-     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+     rdfs:label "end"@en .
 
 
 ###  https://w3id.org/seovoc/engagedSessions
 :engagedSessions rdf:type owl:DatatypeProperty ;
                  rdfs:domain :WebPage ;
                  rdfs:range xsd:long ;
-                 dc:description "Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+                 dc:description "Number of engaged sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+                 rdfs:label "engagedSessions"@en .
 
 
 ###  https://w3id.org/seovoc/engagementRate
 :engagementRate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WebPage ;
                 rdfs:range xsd:decimal ;
-                dc:description "Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset." .
+                dc:description "Ratio or percentage of sessions that were engaged for a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+                rdfs:label "engagementRate"@en .
 
 
 ###  https://w3id.org/seovoc/entityDateCreated
@@ -1538,7 +1666,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:dateTime ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "The date and time when the entity gap was identified or logged" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "entityDateCreated"@en .
 
 
 ###  https://w3id.org/seovoc/entityDescription
@@ -1548,7 +1677,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:string ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "A short textual summary or explanation of the missing entity" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "entityDescription"@en .
 
 
 ###  https://w3id.org/seovoc/entityID
@@ -1558,7 +1688,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:int ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "A unique string identifier for distinguishing individual resources, such as missing entity" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "entityID"@en .
 
 
 ###  https://w3id.org/seovoc/entityLabel
@@ -1568,7 +1699,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "The human-readable label of the missing entity" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "entityLabel"@en .
 
 
 ###  https://w3id.org/seovoc/entityType
@@ -1578,7 +1710,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:string ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A string indicating the category of the missing entity" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "entityType"@en .
 
 
 ###  https://w3id.org/seovoc/entitygapText
@@ -1588,7 +1721,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "A snippet of text where the entity is contextually relevant but missing" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "entitygapText"@en .
 
 
 ###  https://w3id.org/seovoc/evaluationID
@@ -1598,7 +1732,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "A unique string identifying the content evaluation session" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "evaluationID"@en .
 
 
 ###  https://w3id.org/seovoc/externalLinkCount
@@ -1607,7 +1742,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:int ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Number of links that point to external domains" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "externalLinkCount"@en .
 
 
 ###  https://w3id.org/seovoc/forecastedTraffic
@@ -1616,7 +1752,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:float ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Predicted number of clicks or visits for a given query" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "forecastedTraffic"@en .
 
 
 ###  https://w3id.org/seovoc/fullSegmentPath
@@ -1625,7 +1762,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range xsd:string ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Full relative URL path of the segment (e.g. /blog/seo/)" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "fullSegmentPath"@en .
 
 
 ###  https://w3id.org/seovoc/googleCategory
@@ -1634,7 +1772,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Label from Google's categorization (e.g., SHORT_FACT, REASON, DEFINITION)" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "googleCategory"@en .
 
 
 ###  https://w3id.org/seovoc/groupType
@@ -1644,7 +1783,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Indicates the group type in which the page belongs, e.g. control or test." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "groupType"@en .
 
 
 ###  https://w3id.org/seovoc/h1
@@ -1654,7 +1794,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ,
                     "Main heading (<h1>) of the page" ;
-    dc:identifier <https://w3id.org/seovoc/> .
+    dc:identifier <https://w3id.org/seovoc/> ;
+    rdfs:label "h1"@en .
 
 
 ###  https://w3id.org/seovoc/h2
@@ -1664,7 +1805,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
     dc:description "Subheading (<h2>); repeatable for clustered content" ;
-    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+    rdfs:label "h2"@en .
 
 
 ###  https://w3id.org/seovoc/h3
@@ -1674,7 +1816,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
     dc:description "Optional tertiary heading (<h3>)" ;
-    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+    rdfs:label "h3"@en .
 
 
 ###  https://w3id.org/seovoc/h4
@@ -1684,7 +1827,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
     dc:description "Optional heading level 4 (<h4>)" ;
-    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+    rdfs:label "h4"@en .
 
 
 ###  https://w3id.org/seovoc/h5
@@ -1694,7 +1838,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
     dc:description "Optional heading level 5 (<h5>)" ;
-    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+    rdfs:label "h5"@en .
 
 
 ###  https://w3id.org/seovoc/h6
@@ -1704,7 +1849,8 @@ schema:license rdf:type owl:AnnotationProperty .
     rdfs:range xsd:string ;
     dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
     dc:description "Optional heading level 6 (<h6>)" ;
-    rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+    rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+    rdfs:label "h6"@en .
 
 
 ###  https://w3id.org/seovoc/heading
@@ -1713,13 +1859,15 @@ schema:license rdf:type owl:AnnotationProperty .
          rdfs:range xsd:string ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Represents any on-page heading element, from <h1> to <h6>, allowing generalized access to a page’s structural content hierarchy" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "heading"@en .
 
 
 ###  https://w3id.org/seovoc/identifier
 :identifier rdf:type owl:DatatypeProperty ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A general-purpose string or URI identifier for any resource in the ontology" ;
+            rdfs:label "identifier"@en ;
             skos:exactMatch schema:identifier .
 
 
@@ -1729,7 +1877,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:string ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A hash of the data to understand whether it changed" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "importHash"@en .
 
 
 ###  https://w3id.org/seovoc/importID
@@ -1739,7 +1888,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:int ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "An ID when available" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "importID"@en .
 
 
 ###  https://w3id.org/seovoc/importOrigin
@@ -1748,7 +1898,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "A string representing the source of data or the procedure" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "importOrigin"@en .
 
 
 ###  https://w3id.org/seovoc/impressions
@@ -1757,7 +1908,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:long ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Impressions of the webpage as a metric coming from Google Search Console" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "impressions"@en .
 
 
 ###  https://w3id.org/seovoc/impressions28Days
@@ -1784,7 +1936,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                  rdfs:range xsd:double ;
                                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                  dc:description "The impressions trend when you compare 28Days to 3Months" ;
-                                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                 rdfs:label "impressions28DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/impressions3Months
@@ -1839,7 +1992,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                rdfs:range xsd:double ;
                                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                dc:description "The impressions trend of 7Days to 28Days" ;
-                               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                               rdfs:label "impressions7DaysTo28DaysTrend"@en .
 
 
 ###  https://w3id.org/seovoc/impressions7DaysTo3MonthsTrend
@@ -1852,7 +2006,8 @@ schema:license rdf:type owl:AnnotationProperty .
                                 rdfs:range xsd:double ;
                                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                                 dc:description "The impressions trend of 7Days to 3Months" ;
-                                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                                rdfs:label "impressions7DaysTo3MonthsTrend"@en .
 
 
 ###  https://w3id.org/seovoc/incomingLinkCount
@@ -1861,7 +2016,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:int ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Number of other pages that link to this page (link popularity signal)" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "incomingLinkCount"@en .
 
 
 ###  https://w3id.org/seovoc/intent
@@ -1870,7 +2026,8 @@ schema:license rdf:type owl:AnnotationProperty .
         rdfs:range xsd:string ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "Intent is done on a page level, so it will be added as a data property to the Page class" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "intent"@en .
 
 
 ###  https://w3id.org/seovoc/internalLinkCount
@@ -1879,7 +2036,8 @@ schema:license rdf:type owl:AnnotationProperty .
                    rdfs:range xsd:int ;
                    dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                    dc:description "Number of links that point to the same domain as the current page" ;
-                   rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                   rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                   rdfs:label "internalLinkCount"@en .
 
 
 ###  https://w3id.org/seovoc/internalPageRank
@@ -1888,14 +2046,16 @@ schema:license rdf:type owl:AnnotationProperty .
                   rdfs:range xsd:int ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "PageRank score computed based on internal link structure" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "internalPageRank"@en .
 
 
 ###  https://w3id.org/seovoc/isThinContent
 :isThinContent rdf:type owl:DatatypeProperty ;
                rdfs:domain schema:Thing ;
                rdfs:range xsd:boolean ;
-               dc:description "Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type." .
+               dc:description "Indicates whether a schema:Thing has been classified as thin content by an evaluating system. This is a mutable evaluation signal, not an immutable type." ;
+               rdfs:label "isThinContent"@en .
 
 
 ###  https://w3id.org/seovoc/keywordOptimizationScore
@@ -1905,7 +2065,8 @@ schema:license rdf:type owl:AnnotationProperty .
                           rdfs:range xsd:float ;
                           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                           dc:description "Keyword usage and distribution score" ;
-                          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                          rdfs:label "keywordOptimizationScore"@en .
 
 
 ###  https://w3id.org/seovoc/keywordType
@@ -1915,7 +2076,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Primary and secondary keyword modeling are expressed through the use of the data property keywordType" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "keywordType"@en .
 
 
 ###  https://w3id.org/seovoc/keywords
@@ -1925,6 +2087,7 @@ schema:license rdf:type owl:AnnotationProperty .
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "A list of keywords associated with the specific link, aiding semantic classification" ;
           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "keywords"@en ;
           skos:exactMatch schema:keywords .
 
 
@@ -1932,7 +2095,8 @@ schema:license rdf:type owl:AnnotationProperty .
 :keywordsCount rdf:type owl:DatatypeProperty ;
                rdfs:domain :QueryCluster ;
                rdfs:range xsd:integer ;
-               dc:description "Number of keyword or query variants included in a QueryCluster." .
+               dc:description "Number of keyword or query variants included in a QueryCluster." ;
+               rdfs:label "keywordsCount"@en .
 
 
 ###  https://w3id.org/seovoc/label
@@ -1941,14 +2105,16 @@ schema:license rdf:type owl:AnnotationProperty .
        rdfs:range xsd:string ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The label name of the identified item" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "label"@en .
 
 
 ###  https://w3id.org/seovoc/landingPage
 :landingPage rdf:type owl:DatatypeProperty ;
              rdfs:domain :WebPage ;
              rdfs:range xsd:string ;
-             dc:description "Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset." .
+             dc:description "Landing page path or identifier associated with a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+             rdfs:label "landingPage"@en .
 
 
 ###  https://w3id.org/seovoc/languageCode
@@ -1957,7 +2123,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "ISO 639-1 or 639-2 code" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "languageCode"@en .
 
 
 ###  https://w3id.org/seovoc/languageName
@@ -1967,7 +2134,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Full language name" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "languageName"@en .
 
 
 ###  https://w3id.org/seovoc/languageRegion
@@ -1976,7 +2144,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:string ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Regional variant (e.g., en-US)" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "languageRegion"@en .
 
 
 ###  https://w3id.org/seovoc/lastDirectory
@@ -1985,7 +2154,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The last directory in the URL path, useful for sub-clustering" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "lastDirectory"@en .
 
 
 ###  https://w3id.org/seovoc/lastModified
@@ -1995,7 +2165,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:dateTime ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Timestamp of the last update to the content" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "lastModified"@en .
 
 
 ###  https://w3id.org/seovoc/linkGroupID
@@ -2015,7 +2186,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The human-readable name of the LinkGroup, typically reflecting its function or placement on a webpage (e.g., 'Footer Links', 'Sidebar Menu', 'Main Navigation'))" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "linkGroupName"@en .
 
 
 ###  https://w3id.org/seovoc/linkGroupType
@@ -2068,7 +2240,8 @@ schema:license rdf:type owl:AnnotationProperty .
                          ] ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Location of the link within the layout: one of header, footer, body, sidebar, navigation (the same values as linkGroupType). When the Link belongs to a LinkGroup, the group's linkGroupType is authoritative and linkLocation is redundant; linkLocation carries placement for links reached through the seovoc:link shortcut, which have no LinkGroup." ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "linkLocation"@en .
 
 
 ###  https://w3id.org/seovoc/linkRel
@@ -2097,7 +2270,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range rdfs:Literal ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Text used as the anchor for the hyperlink" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "linkText"@en .
 
 
 ###  https://w3id.org/seovoc/linkType
@@ -2130,7 +2304,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Indicates where in the content or source the entity gap was detected" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "locationName"@en .
 
 
 ###  https://w3id.org/seovoc/markdownText
@@ -2140,7 +2315,8 @@ schema:license rdf:type owl:AnnotationProperty .
               rdfs:range xsd:string ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Represents a Markdown-formatted version of a webpage’s content, specifically structured for Large Language Model (LLM) processing, meant for efficient tokenization and retrieval-augmented generation (RAG) in AI applications" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "markdownText"@en .
 
 
 ###  https://w3id.org/seovoc/menu
@@ -2149,7 +2325,8 @@ schema:license rdf:type owl:AnnotationProperty .
       rdfs:range xsd:boolean ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "As a replacement for hasMenu" ;
-      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "menu"@en .
 
 
 ###  https://w3id.org/seovoc/metaDescription
@@ -2159,7 +2336,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range xsd:string ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "The meta description of the webpage" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "metaDescription"@en .
 
 
 ###  https://w3id.org/seovoc/metaTitle
@@ -2168,7 +2346,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "The meta title of the webpage" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "metaTitle"@en .
 
 
 ###  https://w3id.org/seovoc/modelName
@@ -2177,7 +2356,8 @@ schema:license rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Human-readable identifier of the model used (e.g., “BLIP Large”)" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "modelName"@en .
 
 
 ###  https://w3id.org/seovoc/modelUrl
@@ -2186,7 +2366,8 @@ schema:license rdf:type owl:AnnotationProperty .
           rdfs:range xsd:anyURI ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Web-accessible URI pointing to the model, documentation, or registry entry" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "modelUrl"@en .
 
 
 ###  https://w3id.org/seovoc/name
@@ -2196,6 +2377,7 @@ schema:license rdf:type owl:AnnotationProperty .
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "The human-readable name of the LinkGroup, typically reflecting its function or placement on a webpage (e.g., 'Footer Links', 'Sidebar Menu', 'Main Navigation')" ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "name"@en ;
       skos:exactMatch schema:name .
 
 
@@ -2217,7 +2399,8 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:int ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "An integer indicating how many times the missing entity appears in the analyzed data" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "occurrences"@en .
 
 
 ###  https://w3id.org/seovoc/pageGroupName
@@ -2227,7 +2410,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:string ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Indicates the name of the group in which the page belongs, A , B, C (control A, control B, test A, test ...B)" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "pageGroupName"@en .
 
 
 ###  https://w3id.org/seovoc/performedAt
@@ -2236,13 +2420,15 @@ schema:license rdf:type owl:AnnotationProperty .
              rdfs:range xsd:dateTime ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Timestamp indicating when the action was executed, enabling temporal tracking and audit trails within SEO workflows." ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "performedAt"@en .
 
 
 ###  https://w3id.org/seovoc/position
 :position rdf:type owl:DatatypeProperty ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "The position of an item in a series or sequence of items" ;
+          rdfs:label "position"@en ;
           skos:exactMatch schema:position .
 
 
@@ -2252,7 +2438,8 @@ schema:license rdf:type owl:AnnotationProperty .
                  rdfs:range xsd:string ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Represents the device type a persona most commonly uses to access information or services. Examples include 'mobile', 'desktop', 'tablet', or 'smart speaker'. This property helps in tailoring content and strategies to the persona's preferred platform" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "preferredDevice"@en .
 
 
 ###  https://w3id.org/seovoc/priorityScore
@@ -2262,7 +2449,8 @@ schema:license rdf:type owl:AnnotationProperty .
                rdfs:range xsd:float ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Used in automated sitemap generation and crawl scheduling to prioritize the discovery and indexing of pages that are central to the website's architecture or frequently updated" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "priorityScore"@en .
 
 
 ###  https://w3id.org/seovoc/promptDate
@@ -2272,7 +2460,8 @@ schema:license rdf:type owl:AnnotationProperty .
             rdfs:range xsd:dateTime ;
             dc:description "A date when the prompt was put into the system" ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> ,
-                             "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" .
+                             "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
+            rdfs:label "promptDate"@en .
 
 
 ###  https://w3id.org/seovoc/publishingDate
@@ -2282,7 +2471,8 @@ schema:license rdf:type owl:AnnotationProperty .
                 rdfs:range xsd:dateTime ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "The date where the webpage was published" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "publishingDate"@en .
 
 
 ###  https://w3id.org/seovoc/queryCategory
@@ -2310,7 +2500,8 @@ schema:license rdf:type owl:AnnotationProperty .
         - Facts: Queries that request verifiable and objective pieces of information.
         - Planning: Queries focused on structuring activities, workflows, or determining sequential steps to achieve a goal.
 These categories help in organizing user search behaviors and improving query understanding.""" ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "queryCategory"@en .
 
 
 ###  https://w3id.org/seovoc/queryDateCreated
@@ -2320,7 +2511,8 @@ These categories help in organizing user search behaviors and improving query un
                   rdfs:range xsd:dateTime ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "The date/time this keyword analytics data has been extracted and imported in the KG." ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "queryDateCreated"@en .
 
 
 ###  https://w3id.org/seovoc/queryType
@@ -2374,7 +2566,8 @@ These categories help in organizing user search behaviors and improving query un
                       ] ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Specifies the type of query a user is performing, which must belong to a predefined set of query categories. These categories include: Popular, Long-tail, Dynamic, Multi-hop, Analytical, Commonsense, Causal, Exploratory, Instructive, Recommendation, Spatio-temporal, Lifestyle, Cultural, and Philosophical." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "queryType"@en .
 
 
 ###  https://w3id.org/seovoc/readabilityGradeLevel
@@ -2383,7 +2576,8 @@ These categories help in organizing user search behaviors and improving query un
                        rdfs:range xsd:string ;
                        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                        dc:description "An ordinal estimate (e.g., U.S. school grade level)" ;
-                       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                       rdfs:label "readabilityGradeLevel"@en .
 
 
 ###  https://w3id.org/seovoc/readabilityScore
@@ -2393,7 +2587,8 @@ These categories help in organizing user search behaviors and improving query un
                   rdfs:range xsd:float ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "Readability score for the webpage" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "readabilityScore"@en .
 
 
 ###  https://w3id.org/seovoc/role
@@ -2402,7 +2597,8 @@ These categories help in organizing user search behaviors and improving query un
       rdfs:range xsd:string ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "A specific function, position, or responsibility associated with a persona within a given context. This class defines how a persona interacts with a system, organization, or content, influencing their goals and actions." ;
-      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "role"@en .
 
 
 ###  https://w3id.org/seovoc/rootSegmentFlag
@@ -2411,7 +2607,8 @@ These categories help in organizing user search behaviors and improving query un
                  rdfs:range xsd:boolean ;
                  dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                  dc:description "Indicates if this is the top-level segment in the site's hierarchy" ;
-                 rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                 rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                 rdfs:label "rootSegmentFlag"@en .
 
 
 ###  https://w3id.org/seovoc/schemaValue
@@ -2420,7 +2617,8 @@ These categories help in organizing user search behaviors and improving query un
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "The schema value itself of the publicly available schema on the webpage" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "schemaValue"@en .
 
 
 ###  https://w3id.org/seovoc/score
@@ -2429,7 +2627,8 @@ These categories help in organizing user search behaviors and improving query un
        rdfs:range xsd:float ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "General numeric quality or performance score" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "score"@en .
 
 
 ###  https://w3id.org/seovoc/score28Days
@@ -2462,7 +2661,7 @@ These categories help in organizing user search behaviors and improving query un
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "A calculated score ranging from 0.0 to 1.0 to determine the keywords with potential."@en ;
             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
-            rdfs:label "score7Days "@en .
+            rdfs:label "score7Days"@en .
 
 
 ###  https://w3id.org/seovoc/searchStage
@@ -2471,7 +2670,8 @@ These categories help in organizing user search behaviors and improving query un
              rdfs:range xsd:string ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "Funnel-stage classification (e.g., INFORMATIONAL, COMMERCIAL, TRANSACTIONAL)" ;
-             rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+             rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+             rdfs:label "searchStage"@en .
 
 
 ###  https://w3id.org/seovoc/segmentDepth
@@ -2480,7 +2680,8 @@ These categories help in organizing user search behaviors and improving query un
               rdfs:range xsd:int ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Indicates the depth level of a directory segment within a URL path hierarchy" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "segmentDepth"@en .
 
 
 ###  https://w3id.org/seovoc/seoScore
@@ -2490,7 +2691,8 @@ These categories help in organizing user search behaviors and improving query un
           rdfs:range xsd:double ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Measures how optimized a page is for SEO or how good the on-page SEO score is" ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "seoScore"@en .
 
 
 ###  https://w3id.org/seovoc/serpPosition
@@ -2500,14 +2702,16 @@ These categories help in organizing user search behaviors and improving query un
               rdfs:range xsd:int ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "An integer indicating the search engine results page (SERP) position where the entity gap was observed" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "serpPosition"@en .
 
 
 ###  https://w3id.org/seovoc/sessions
 :sessions rdf:type owl:DatatypeProperty ;
           rdfs:domain :WebPage ;
           rdfs:range xsd:long ;
-          dc:description "Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+          dc:description "Number of sessions attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+          rdfs:label "sessions"@en .
 
 
 ###  https://w3id.org/seovoc/slugNgram
@@ -2516,7 +2720,8 @@ These categories help in organizing user search behaviors and improving query un
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Semantic content clues derived from n-grams in the slug (for ML segmentation)" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "slugNgram"@en .
 
 
 ###  https://w3id.org/seovoc/sourceCode
@@ -2525,7 +2730,8 @@ These categories help in organizing user search behaviors and improving query un
             rdfs:range xsd:string ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The raw HTML of the webpage itself." ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "sourceCode"@en .
 
 
 ###  https://w3id.org/seovoc/start
@@ -2534,7 +2740,8 @@ These categories help in organizing user search behaviors and improving query un
        rdfs:range xsd:integer ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The start offset of the chunk in the text, expressed as character or token position" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "start"@en .
 
 
 ###  https://w3id.org/seovoc/status
@@ -2543,7 +2750,8 @@ These categories help in organizing user search behaviors and improving query un
         rdfs:range xsd:int ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "The HTTP status (response code) of the Webpage itself" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "status"@en .
 
 
 ###  https://w3id.org/seovoc/text
@@ -2553,6 +2761,7 @@ These categories help in organizing user search behaviors and improving query un
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "The plain text content of the chunk, stripped of formatting, used for embeddings, analysis, or display in NLP applications" ;
       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "text"@en ;
       skos:exactMatch schema:text .
 
 
@@ -2563,7 +2772,8 @@ These categories help in organizing user search behaviors and improving query un
             rdfs:range xsd:string ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The name of the Thing item" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "thingLabel"@en .
 
 
 ###  https://w3id.org/seovoc/thumbnailUrl
@@ -2573,6 +2783,7 @@ These categories help in organizing user search behaviors and improving query un
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "A URL pointing to a thumbnail image for the link, useful for visually rich links" ;
               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "thumbnailUrl"@en ;
               skos:exactMatch schema:thumbnailUrl .
 
 
@@ -2583,6 +2794,7 @@ These categories help in organizing user search behaviors and improving query un
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The actual title of the webpage itself" ;
        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "title"@en ;
        skos:exactMatch schema:title .
 
 
@@ -2592,7 +2804,8 @@ These categories help in organizing user search behaviors and improving query un
             rdfs:range xsd:integer ;
             dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
             dc:description "The number of tokens in the chunk, typically counted using a tokenizer compatible with the embedding model or LLM processing the content" ;
-            rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+            rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+            rdfs:label "tokenCount"@en .
 
 
 ###  https://w3id.org/seovoc/toolName
@@ -2602,7 +2815,8 @@ These categories help in organizing user search behaviors and improving query un
           rdfs:range xsd:string ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Human-readable identifier of the tool (e.g., \"Screaming Frog\", \"Lighthouse\", \"Custom Crawler\")." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "toolName"@en .
 
 
 ###  https://w3id.org/seovoc/toolType
@@ -2611,7 +2825,8 @@ These categories help in organizing user search behaviors and improving query un
           rdfs:range xsd:string ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Category or classification of the tool (e.g., \"crawler\", \"analyzer\", \"validator\", \"performance-monitor\")." ;
-          rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+          rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+          rdfs:label "toolType"@en .
 
 
 ###  https://w3id.org/seovoc/toolUrl
@@ -2620,7 +2835,8 @@ These categories help in organizing user search behaviors and improving query un
          rdfs:range xsd:string ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Web-accessible URI pointing to the tool's homepage, documentation, or registry entry." ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "toolUrl"@en .
 
 
 ###  https://w3id.org/seovoc/topicID
@@ -2630,7 +2846,8 @@ These categories help in organizing user search behaviors and improving query un
          rdfs:range xsd:int ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Unique topic identifier" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "topicID"@en .
 
 
 ###  https://w3id.org/seovoc/topicName
@@ -2640,7 +2857,8 @@ These categories help in organizing user search behaviors and improving query un
            rdfs:range xsd:string ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Human-readable topic name" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "topicName"@en .
 
 
 ###  https://w3id.org/seovoc/totalLinkCount
@@ -2649,20 +2867,23 @@ These categories help in organizing user search behaviors and improving query un
                 rdfs:range xsd:int ;
                 dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                 dc:description "Total number of hyperlinks found on the page" ;
-                rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                rdfs:label "totalLinkCount"@en .
 
 
 ###  https://w3id.org/seovoc/trafficSource
 :trafficSource rdf:type owl:DatatypeProperty ;
                rdfs:domain :WebPage ;
                rdfs:range xsd:string ;
-               dc:description "Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset." .
+               dc:description "Traffic source, channel, or referral descriptor associated with a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+               rdfs:label "trafficSource"@en .
 
 
 ###  https://w3id.org/seovoc/type
 :type rdf:type owl:DatatypeProperty ;
       rdfs:domain owl:Thing ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:label "type"@en .
 
 
 ###  https://w3id.org/seovoc/urlSlug
@@ -2671,14 +2892,16 @@ These categories help in organizing user search behaviors and improving query un
          rdfs:range xsd:string ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "Links a web page to its domain or subdomain" ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "urlSlug"@en .
 
 
 ###  https://w3id.org/seovoc/users
 :users rdf:type owl:DatatypeProperty ;
        rdfs:domain :WebPage ;
        rdfs:range xsd:long ;
-       dc:description "Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." .
+       dc:description "Number of users attributed to a WebPage in the measurement context supplied by the producing GA4 dataset." ;
+       rdfs:label "users"@en .
 
 
 ###  https://w3id.org/seovoc/value
@@ -2687,7 +2910,8 @@ These categories help in organizing user search behaviors and improving query un
        rdfs:range xsd:string ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "The URL value of the Webpage itself" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "value"@en .
 
 
 ###  https://w3id.org/seovoc/versionID
@@ -2697,7 +2921,8 @@ These categories help in organizing user search behaviors and improving query un
            rdfs:range xsd:int ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "An integer identifier representing the current version of a web page" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "versionID"@en .
 
 
 ###  https://w3id.org/seovoc/weight
@@ -2706,7 +2931,8 @@ These categories help in organizing user search behaviors and improving query un
         rdfs:range xsd:float ;
         dc:contributors <https://w3id.org/seovoc/> ,
                         "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-        dc:description "The weight of the link, useful for ranking or tag clouds" .
+        dc:description "The weight of the link, useful for ranking or tag clouds" ;
+        rdfs:label "weight"@en .
 
 
 #################################################################
@@ -2756,6 +2982,7 @@ schema:WebPage rdf:type owl:Class ;
 :Action rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "Action"@en ;
         skos:exactMatch schema:Action .
 
 
@@ -2763,7 +2990,8 @@ schema:WebPage rdf:type owl:Class ;
 :Agent rdf:type owl:Class ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "An Agent is any autonomous or semi-autonomous system—such as an AI model, human user, or software tool that performs actions on SEO-relevant entities (e.g. generating content, classifying queries, linking pages). Agents are responsible for producing, transforming, or evaluating outputs within SEO workflows." ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "Agent"@en .
 
 
 ###  https://w3id.org/seovoc/AnalyzeAction
@@ -2771,7 +2999,8 @@ schema:WebPage rdf:type owl:Class ;
                rdfs:subClassOf :Action ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "General-purpose analysis action that can evaluate any aspect of web resources including content quality, performance, accessibility, security, technical SEO, and other measurable characteristics." ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "AnalyzeAction"@en .
 
 
 ###  https://w3id.org/seovoc/AnchorText
@@ -2787,12 +3016,14 @@ schema:WebPage rdf:type owl:Class ;
 :Chunk rdf:type owl:Class ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "Defines a Chunk, a self-contained section of a schema:WebPage used for vector search and structured representation" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "Chunk"@en .
 
 
 ###  https://w3id.org/seovoc/ClusteringStrategy
 :ClusteringStrategy rdf:type owl:Class ;
-                    dc:description "The method, model, or algorithm used to group queries into a QueryCluster." .
+                    dc:description "The method, model, or algorithm used to group queries into a QueryCluster." ;
+                    rdfs:label "ClusteringStrategy"@en .
 
 
 ###  https://w3id.org/seovoc/DirectorySegment
@@ -2800,14 +3031,16 @@ schema:WebPage rdf:type owl:Class ;
                   rdfs:subClassOf :WebPage ;
                   dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                   dc:description "A top-level or intermediate directory segment in a URL path (e.g., /products/)" ;
-                  rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+                  rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+                  rdfs:label "DirectorySegment"@en .
 
 
 ###  https://w3id.org/seovoc/Domain
 :Domain rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "A domain or subdomain (e.g., example.com, blog.example.com)" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "Domain"@en .
 
 
 ###  https://w3id.org/seovoc/Employee
@@ -2816,6 +3049,7 @@ schema:WebPage rdf:type owl:Class ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:identifier <https://w3id.org/seovoc/> ;
           rdfs:isDefinedBy "A type of Person, defined in SEOntology" ;
+          rdfs:label "Employee"@en ;
           skos:exactMatch schema:Person .
 
 
@@ -2823,7 +3057,8 @@ schema:WebPage rdf:type owl:Class ;
 :EntityGap rdf:type owl:Class ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "Represents a relevant but missing entity that should be added to content to enhance semantic coverage and SEO performance" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "EntityGap"@en .
 
 
 ###  https://w3id.org/seovoc/ExtractAction
@@ -2831,11 +3066,13 @@ schema:WebPage rdf:type owl:Class ;
                rdfs:subClassOf :Action ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "Represents systematic extraction of structured or unstructured information from web content, including entity extraction, fact retrieval, data mining, and relationship identification. Distinct from summarization by focusing on specific information retrieval rather than content condensation." ;
-               rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+               rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+               rdfs:label "ExtractAction"@en .
 
 
 ###  https://w3id.org/seovoc/ImageObject
 :ImageObject rdf:type owl:Class ;
+             rdfs:label "ImageObject"@en ;
              skos:exactMatch schema:ImageObject .
 
 
@@ -2843,13 +3080,15 @@ schema:WebPage rdf:type owl:Class ;
 :Intent rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "A reusable conceptual entity representing the purpose of a query or content chunk" ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "Intent"@en .
 
 
 ###  https://w3id.org/seovoc/Language
 :Language rdf:type owl:Class ;
           dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
           dc:description "Natural languages such as Spanish, Tamil, Hindi, English, etc" ;
+          rdfs:label "Language"@en ;
           skos:exactMatch schema:Language .
 
 
@@ -2857,28 +3096,32 @@ schema:WebPage rdf:type owl:Class ;
 :Link rdf:type owl:Class ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "A class representing a hyperlink found on a webpage. This class captures the attributes of a link and its type, such as whether the link is internal (pointing to the same domain) or external (pointing to a different domain). The Link class is crucial for understanding the structure and navigation of a website, as well as for analyzing the relationships between different web resources in the context of SEO and web development." ;
-      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "Link"@en .
 
 
 ###  https://w3id.org/seovoc/LinkGroup
 :LinkGroup rdf:type owl:Class ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "A collection of related links within a webpage, typically grouped by placement or function, such as navigation menus, footers, or sidebars. It helps structure internal linking and improves discoverability." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "LinkGroup"@en .
 
 
 ###  https://w3id.org/seovoc/Model
 :Model rdf:type owl:Class ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "A generic ML model class for provenance traceabilit" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "Model"@en .
 
 
 ###  https://w3id.org/seovoc/PageGroup
 :PageGroup rdf:type owl:Class ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "A class representing in which A/B testing group does the page belong: control A, control B, test A, test B and so on." ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "PageGroup"@en .
 
 
 ###  https://w3id.org/seovoc/PageType
@@ -2893,6 +3136,7 @@ schema:WebPage rdf:type owl:Class ;
 :Person rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:identifier <https://w3id.org/seovoc/> ;
+        rdfs:label "Person"@en ;
         skos:exactMatch schema:Person .
 
 
@@ -2901,21 +3145,24 @@ schema:WebPage rdf:type owl:Class ;
          rdfs:subClassOf :Person ;
          dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
          dc:description "A representation of a specific audience or user group defined by key characteristics, including their role, brand association, age range, gender, location, problems they aim to solve, and preferred devices. This class is used to tailor content or strategies to meet the needs and expectations of these target personas." ;
-         rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+         rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+         rdfs:label "Persona"@en .
 
 
 ###  https://w3id.org/seovoc/Prompt
 :Prompt rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "Represents a structured natural language input used to guide AI models in generating or transforming SEO-relevant content. It serves as a semantic instruction or query that elicits specific types of responses from generative or analytical AI systems, including but not limited to content generation, classification, rewriting, summarization, and entity extraction." ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "Prompt"@en .
 
 
 ###  https://w3id.org/seovoc/QualityScore
 :QualityScore rdf:type owl:Class ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:description "Represents an overall content quality evaluation" ;
-              rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+              rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+              rdfs:label "QualityScore"@en .
 
 
 ###  https://w3id.org/seovoc/Query
@@ -2928,21 +3175,24 @@ schema:WebPage rdf:type owl:Class ;
 
 ###  https://w3id.org/seovoc/QueryCluster
 :QueryCluster rdf:type owl:Class ;
-              dc:description "A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy." .
+              dc:description "A set of related search queries grouped by semantic similarity, SERP overlap, or another clustering strategy." ;
+              rdfs:label "QueryCluster"@en .
 
 
 ###  https://w3id.org/seovoc/Schema
 :Schema rdf:type owl:Class ;
         dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
         dc:description "This class represents schema markup, a form of structured data that defines the semantic relationships between entities on a webpage. Schema markup is used to enhance the understanding of web content by search engines and other applications, facilitating better indexing, richer search results, and improved interoperability across different systems. This class provides a framework for describing the types, properties, and relationships that constitute schema markup, enabling consistent and meaningful representation of web content." ;
-        rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+        rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+        rdfs:label "Schema"@en .
 
 
 ###  https://w3id.org/seovoc/Sentiment
 :Sentiment rdf:type owl:Class ;
            dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
            dc:description "A conceptual entity representing the emotional polarity (e.g., positive, negative) of a query or content chunk" ;
-           rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+           rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+           rdfs:label "Sentiment"@en .
 
 
 ###  https://w3id.org/seovoc/StructuredDataProfile
@@ -2958,14 +3208,16 @@ schema:WebPage rdf:type owl:Class ;
 :Tool rdf:type owl:Class ;
       dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
       dc:description "A software application, platform, or instrument used to perform SEO analysis, content evaluation, or web assessment. Tools are utilized by Agents to execute specific analysis tasks and generate measurable outputs." ;
-      rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+      rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+      rdfs:label "Tool"@en .
 
 
 ###  https://w3id.org/seovoc/Topic
 :Topic rdf:type owl:Class ;
        dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
        dc:description "A dedicated class for modeling the subject or main theme of a web page or content segment. It can represent an entity, theme, or abstract concept the content is centered on" ;
-       rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+       rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+       rdfs:label "Topic"@en .
 
 
 ###  https://w3id.org/seovoc/TrafficChannel
@@ -2988,7 +3240,8 @@ schema:WebPage rdf:type owl:Class ;
 :URL rdf:type owl:Class ;
      dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
      dc:description "This class represents a unique URL that identifies a specific webpage. It is intended to serve as a stable and unambiguous reference to web content, ensuring consistent access to the webpage across various systems and applications. The URL should be a valid and well-formed HTTP or HTTPS address, uniquely pointing to a resource on the World Wide Web. NOT equivalent to schema.org's URL." ;
-     rdfs:isDefinedBy <https://w3id.org/seovoc/> .
+     rdfs:isDefinedBy <https://w3id.org/seovoc/> ;
+     rdfs:label "URL"@en .
 
 
 ###  https://w3id.org/seovoc/WebPage
