@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/seovoc/"
-     versionIRI="https://w3id.org/seovoc/0.1.0">
+     versionIRI="https://w3id.org/seovoc/0.2.0">
     <Prefix name="" IRI="https://w3id.org/seovoc/"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
@@ -50,7 +50,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal>0.1.0</Literal>
+        <Literal>0.2.0</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="extends"/>
@@ -67,6 +67,9 @@
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="schema:WebPage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/WebPage"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="prof:Profile"/>
@@ -977,6 +980,14 @@
     <Declaration>
         <AnnotationProperty IRI="extends"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="WebPage"/>
+        <Class IRI="http://schema.org/WebPage"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="WebPage"/>
+        <Class abbreviatedIRI="schema:WebPage"/>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="AnalyzeAction"/>
         <Class IRI="Action"/>
@@ -3574,6 +3585,11 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
         <Literal>The WebPage class from Schema.org</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/WebPage</IRI>
+        <Literal xml:lang="en">The http:// form of schema:WebPage, which the Schema.org JSON-LD context and most published markup use. Declared equivalent to seovoc:WebPage and schema:WebPage so that such data is inferred to be a seovoc:WebPage.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>

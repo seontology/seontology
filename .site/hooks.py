@@ -145,6 +145,11 @@ def reference_markdown(g: Graph, version: str, site_url: str) -> str:
             supers += [curie(g, o) for o in g.objects(iri, RDFS.subPropertyOf)]
             if supers:
                 details.append("subOf " + ", ".join(sorted(supers)))
+            # owl:equivalentClass is symmetric; ROBOT may state it on either class.
+            equivalents = {o for o in g.objects(iri, OWL.equivalentClass) if isinstance(o, URIRef)}
+            equivalents |= {s for s in g.subjects(OWL.equivalentClass, iri) if isinstance(s, URIRef)}
+            if equivalents:
+                details.append("equivalentTo " + ", ".join(sorted(curie(g, e) for e in equivalents)))
             domains = [curie(g, o) for o in g.objects(iri, RDFS.domain)]
             if domains:
                 details.append("domain " + ", ".join(domains))
@@ -211,6 +216,10 @@ def build_reference_html(g: Graph, dest: Path, site_url: str):
         doc_graph.add(t)
     doc_graph.add((ONTOLOGY, VANN.preferredNamespacePrefix, Literal("seovoc")))
     doc_graph.add((ONTOLOGY, VANN.preferredNamespaceUri, Literal(str(SEOVOC))))
+    # ROBOT states owl:equivalentClass on one class only, often the external
+    # one; add the reverse so the seovoc term's own entry lists it too.
+    for s, o in list(g.subject_objects(OWL.equivalentClass)):
+        doc_graph.add((o, OWL.equivalentClass, s))
 
     html = fix_anchors(OntPub(ontology=doc_graph).make_html())
     banner = (

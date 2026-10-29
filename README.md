@@ -30,7 +30,7 @@ The **SEOntology** is the open-source semantic framework, initially developed by
 ## Features
 
 - **Main Classes**: Our ontology provides a comprehensive coverage of various SEO elements, such as:
-  - `WebPage`: The primary entity representing a specific webpage, extended from Schema.org.
+  - `WebPage`: The primary entity representing a specific webpage, declared equivalent to Schema.org's `WebPage`, in both its `https://` and `http://` forms (`owl:equivalentClass`).
   - `Query`: The query for which the webpage ranks in SERPs, usually obtained through Google Search Console.
   - `URL`: The unique identifier for the webpage.
   - `Link`: Representing an internal or external link found on the webpage through crawling. `linkTargetUrl` states where it points and `linkTarget` the resolved destination node.

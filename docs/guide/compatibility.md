@@ -4,6 +4,13 @@ description: Changes that affect existing SEOntology data, deprecated terms, and
 
 # Compatibility notes
 
+## Pages
+
+- **`WebPage` is equivalent to `schema:WebPage` (0.2.0).** `seovoc:WebPage` is linked by `owl:equivalentClass` to both `https://schema.org/WebPage` and `http://schema.org/WebPage`. The `http://` form is the one the Schema.org JSON-LD context and most published markup use. Under OWL reasoning, a node typed with either form is a `seovoc:WebPage` and the reverse, so the data does not need to declare both types. The earlier `skos:exactMatch` annotation, which reasoners ignore, is kept alongside. Existing data that declares both types stays valid.
+- **The equivalence only applies when a reasoner runs.** Plain SPARQL queries and SHACL validation without inference match the declared type only: a shape with `sh:targetClass seovoc:WebPage` does not target a node typed only `schema:WebPage`. When data is read that way, declare both types or materialize the inference first. The [structured-data profile examples](../structured-data-profiles.md) declare both for this reason.
+- Schema.org subtypes such as `schema:ItemPage` or `schema:CollectionPage` are inferred to be `seovoc:WebPage` only when the Schema.org class hierarchy is loaded alongside SEOntology, which does not import it. The hierarchy must use the same `http://` or `https://` form as the data.
+- **The inference also runs the other way.** Everything a reasoner concludes is a `seovoc:WebPage` is now also a `schema:WebPage`. That includes every `DirectorySegment`, a subclass of `WebPage`, and the subject of any property whose domain is `WebPage`, such as `title`, `about`, `mentions`, `status` or `evaluationID`. If you materialize inferences and export Schema.org types, use those properties on pages only, or nodes such as quality scores or URL nodes will be typed `schema:WebPage`.
+
 ## Metrics
 
 - **Windowed search metrics can be attached to pages as well as queries.** The domains of the windowed Search Console metrics (`clicks7Days`, `clicks28Days`, `clicks3Months`, `clicks6Months`, the matching `impressions*`, `ctr*` and `averagePosition*` properties, and their trend properties) were widened from `Query` to `Query ∪ WebPage`. Existing query-level data remains valid; no migration is needed.

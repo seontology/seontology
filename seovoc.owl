@@ -15,7 +15,7 @@
      xmlns:seovoc="https://w3id.org/seovoc/"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/seovoc/">
-        <owl:versionIRI rdf:resource="https://w3id.org/seovoc/0.1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/seovoc/0.2.0"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:creator rdf:resource="https://wordlift.io"/>
         <dc:description xml:lang="en">The SEO RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language. The vocabulary builds on and refers to schema.org where appropriate.</dc:description>
@@ -23,7 +23,7 @@
         <dc:issued>2023-10-29T00:00:00Z</dc:issued>
         <dc:title>SEO Vocabulary</dc:title>
         <dcterms:license rdf:resource="https://spdx.org/licenses/MIT"/>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <owl:versionInfo>0.2.0</owl:versionInfo>
         <extends rdf:resource="https://schema.org/"/>
     </owl:Ontology>
     
@@ -3957,6 +3957,15 @@ These categories help in organizing user search behaviors and improving query un
     
 
 
+    <!-- http://schema.org/WebPage -->
+
+    <owl:Class rdf:about="http://schema.org/WebPage">
+        <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/WebPage"/>
+        <rdfs:comment xml:lang="en">The http:// form of schema:WebPage, which the Schema.org JSON-LD context and most published markup use. Declared equivalent to seovoc:WebPage and schema:WebPage so that such data is inferred to be a seovoc:WebPage.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
@@ -4007,6 +4016,7 @@ These categories help in organizing user search behaviors and improving query un
     <!-- https://schema.org/WebPage -->
 
     <owl:Class rdf:about="https://schema.org/WebPage">
+        <owl:equivalentClass rdf:resource="https://w3id.org/seovoc/WebPage"/>
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>The WebPage class from Schema.org</dc:description>
     </owl:Class>
