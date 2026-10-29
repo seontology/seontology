@@ -3536,11 +3536,6 @@
         <Literal>The Action class from Schema.org</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>schema:Action</AbbreviatedIRI>
-        <Literal xml:lang="en">schema:Action</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <AbbreviatedIRI>schema:Person</AbbreviatedIRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3554,11 +3549,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <AbbreviatedIRI>schema:Person</AbbreviatedIRI>
         <Literal>The Person class from Schema.org</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>schema:Person</AbbreviatedIRI>
-        <Literal xml:lang="en">schema:Person</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
@@ -3576,11 +3566,6 @@
         <Literal>should i use the URI to define exact match or create schema -alike classes?</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>schema:Thing</AbbreviatedIRI>
-        <Literal xml:lang="en">schema:Thing</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
         <Literal>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</Literal>
@@ -3589,11 +3574,6 @@
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
         <Literal>The WebPage class from Schema.org</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>schema:WebPage</AbbreviatedIRI>
-        <Literal xml:lang="en">schema:WebPage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="dc:contributors"/>

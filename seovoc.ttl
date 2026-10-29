@@ -2954,31 +2954,27 @@ prof:Profile rdf:type owl:Class .
 ###  https://schema.org/Action
 schema:Action rdf:type owl:Class ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-              dc:description "The Action class from Schema.org" ;
-              rdfs:label "schema:Action"@en .
+              dc:description "The Action class from Schema.org" .
 
 
 ###  https://schema.org/Person
 schema:Person rdf:type owl:Class ;
               dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
               dc:identifier <https://w3id.org/seovoc/> ;
-              rdfs:isDefinedBy "The Person class from Schema.org" ;
-              rdfs:label "schema:Person"@en .
+              rdfs:isDefinedBy "The Person class from Schema.org" .
 
 
 ###  https://schema.org/Thing
 schema:Thing rdf:type owl:Class ;
              dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
              dc:description "The Thing class from Schema.org" ;
-             rdfs:comment "should i use the URI to define exact match or create schema -alike classes?" ;
-             rdfs:label "schema:Thing"@en .
+             rdfs:comment "should i use the URI to define exact match or create schema -alike classes?" .
 
 
 ###  https://schema.org/WebPage
 schema:WebPage rdf:type owl:Class ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
-               dc:description "The WebPage class from Schema.org" ;
-               rdfs:label "schema:WebPage"@en .
+               dc:description "The WebPage class from Schema.org" .
 
 
 ###  https://w3id.org/seovoc/Action

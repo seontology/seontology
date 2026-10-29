@@ -3980,7 +3980,6 @@ These categories help in organizing user search behaviors and improving query un
     <owl:Class rdf:about="https://schema.org/Action">
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>The Action class from Schema.org</dc:description>
-        <rdfs:label xml:lang="en">schema:Action</rdfs:label>
     </owl:Class>
     
 
@@ -3991,7 +3990,6 @@ These categories help in organizing user search behaviors and improving query un
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:identifier rdf:resource="https://w3id.org/seovoc/"/>
         <rdfs:isDefinedBy>The Person class from Schema.org</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">schema:Person</rdfs:label>
     </owl:Class>
     
 
@@ -4002,7 +4000,6 @@ These categories help in organizing user search behaviors and improving query un
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>The Thing class from Schema.org</dc:description>
         <rdfs:comment>should i use the URI to define exact match or create schema -alike classes?</rdfs:comment>
-        <rdfs:label xml:lang="en">schema:Thing</rdfs:label>
     </owl:Class>
     
 
@@ -4012,7 +4009,6 @@ These categories help in organizing user search behaviors and improving query un
     <owl:Class rdf:about="https://schema.org/WebPage">
         <dc:contributors>Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik</dc:contributors>
         <dc:description>The WebPage class from Schema.org</dc:description>
-        <rdfs:label xml:lang="en">schema:WebPage</rdfs:label>
     </owl:Class>
     
 
