@@ -10,7 +10,7 @@ SEOntology is centered on the **`WebPage`**: the pages a site publishes, the **q
 
 | Term | Meaning |
 |---|---|
-| `WebPage` | A specific web page. Equivalent to Schema.org's `WebPage` (`owl:equivalentClass`), so under OWL reasoning a `schema:WebPage` is a `seovoc:WebPage`; see [Compatibility notes](compatibility.md#pages) for data read without a reasoner. |
+| `WebPage` | A specific web page. Equivalent to Schema.org's `WebPage` in both its `https://` and `http://` forms (`owl:equivalentClass`), so under OWL reasoning a `schema:WebPage` is a `seovoc:WebPage`; see [Compatibility notes](compatibility.md#pages) for data read without a reasoner. |
 | `URL` | The page's URL. `hasURL` / `isURLOf` binds a page to its canonical URL. |
 | `Domain` | A grouping of pages by domain or subdomain. |
 | `DirectorySegment` | A logical site segment derived from URL paths. |

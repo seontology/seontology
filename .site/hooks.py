@@ -216,6 +216,10 @@ def build_reference_html(g: Graph, dest: Path, site_url: str):
         doc_graph.add(t)
     doc_graph.add((ONTOLOGY, VANN.preferredNamespacePrefix, Literal("seovoc")))
     doc_graph.add((ONTOLOGY, VANN.preferredNamespaceUri, Literal(str(SEOVOC))))
+    # ROBOT states owl:equivalentClass on one class only, often the external
+    # one; add the reverse so the seovoc term's own entry lists it too.
+    for s, o in list(g.subject_objects(OWL.equivalentClass)):
+        doc_graph.add((o, OWL.equivalentClass, s))
 
     html = fix_anchors(OntPub(ontology=doc_graph).make_html())
     banner = (
