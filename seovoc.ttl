@@ -2747,6 +2747,7 @@ schema:Thing rdf:type owl:Class ;
 
 ###  https://schema.org/WebPage
 schema:WebPage rdf:type owl:Class ;
+               owl:equivalentClass :WebPage ;
                dc:contributors "Andrea Volpini, David Riccitelli, Emilija Gjorgjevska, Milos Jovanovik" ;
                dc:description "The WebPage class from Schema.org" .
 

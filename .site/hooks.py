@@ -145,6 +145,11 @@ def reference_markdown(g: Graph, version: str, site_url: str) -> str:
             supers += [curie(g, o) for o in g.objects(iri, RDFS.subPropertyOf)]
             if supers:
                 details.append("subOf " + ", ".join(sorted(supers)))
+            # owl:equivalentClass is symmetric; ROBOT may state it on either class.
+            equivalents = {o for o in g.objects(iri, OWL.equivalentClass) if isinstance(o, URIRef)}
+            equivalents |= {s for s in g.subjects(OWL.equivalentClass, iri) if isinstance(s, URIRef)}
+            if equivalents:
+                details.append("equivalentTo " + ", ".join(sorted(curie(g, e) for e in equivalents)))
             domains = [curie(g, o) for o in g.objects(iri, RDFS.domain)]
             if domains:
                 details.append("domain " + ", ".join(domains))

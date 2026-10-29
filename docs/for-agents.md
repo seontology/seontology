@@ -56,5 +56,6 @@ Object properties are typed as IRIs and numeric data properties carry their XSD 
 
 - Prefer the term index or `seovoc.ttl` over the HTML reference; they contain the same definitions in less space.
 - Check a property's domain and range in the term index before asserting it. Several metrics apply to both `Query` and `WebPage`.
+- `seovoc:WebPage` and `schema:WebPage` are equivalent classes. Only a reasoner draws that inference, so when the data will be queried or validated without one, type pages with both.
 - Do not use deprecated terms in new data (for example `averagePositon7Days`; use `averagePosition7Days`).
 - When the ontology does not cover a concept, propose it through the [contribution workflow](contributing-ontology-proposals.md) rather than inventing `seovoc:` terms.

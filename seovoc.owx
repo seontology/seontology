@@ -970,6 +970,10 @@
     <Declaration>
         <AnnotationProperty IRI="extends"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="WebPage"/>
+        <Class abbreviatedIRI="schema:WebPage"/>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="AnalyzeAction"/>
         <Class IRI="Action"/>
